@@ -12,7 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require showdown
 //= require react
+//= require bootstrap.min
+//= require materialize.min
 //= require_tree .
+
+
+$(document).ready(function(){
+    $(".dropdown-toggle").dropdown();
+    $.material.ripples(".btn");
+});
