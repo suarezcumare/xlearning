@@ -12,3 +12,5 @@ gem 'react-rails', github: 'reactjs/react-rails', branch: 'master'
 gem 'showdown-rails'
 gem 'mysql2'  
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+gem 'devise', '~> 3.1.0'
+gem 'apartment'

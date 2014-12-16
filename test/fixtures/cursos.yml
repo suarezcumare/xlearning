@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  descripcion: MyText
+  objetivos: MyText
+  prerequisitos: MyText
+  perfil_estudiante: MyText
+  pago: 1
+  costo: 1.5
+  matricula_maxima: 1
+  puntaje_aprobacion: 1.5
+  horas_semanales: 1
+  estatus: 1
+
+two:
+  nombre: MyString
+  descripcion: MyText
+  objetivos: MyText
+  prerequisitos: MyText
+  perfil_estudiante: MyText
+  pago: 1
+  costo: 1.5
+  matricula_maxima: 1
+  puntaje_aprobacion: 1.5
+  horas_semanales: 1
+  estatus: 1
