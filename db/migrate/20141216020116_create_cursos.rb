@@ -6,14 +6,12 @@ class CreateCursos < ActiveRecord::Migration
       t.text :objetivos
       t.text :prerequisitos
       t.text :perfil_estudiante
-      t.integer :pago
+      t.boolean :pago
       t.float :costo
       t.integer :matricula_maxima
       t.float :puntaje_aprobacion
       t.integer :horas_semanales
       t.integer :estatus
-
-      t.timestamps
     end
   end
 end

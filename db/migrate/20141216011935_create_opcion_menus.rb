@@ -7,8 +7,6 @@ class CreateOpcionMenus < ActiveRecord::Migration
       t.integer :padre
       t.references :menu, index: true
       t.string :icono
-
-      t.timestamps
     end
   end
 end
