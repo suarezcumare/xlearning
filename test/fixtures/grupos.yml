@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha_inicio: 
+  fecha_fin: 2014-12-16
+  cierre_inscripcion: 2014-12-16
+  estatus: 1
+  curso_id: 
+  usuario_id: 
+
+two:
+  fecha_inicio: 
+  fecha_fin: 2014-12-16
+  cierre_inscripcion: 2014-12-16
+  estatus: 1
+  curso_id: 
+  usuario_id: 

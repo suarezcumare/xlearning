@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  estatus: 1
+  usuario_id: 
+  grupo_id: 
+  fecha: 2014-12-16 20:23:14
+
+two:
+  estatus: 1
+  usuario_id: 
+  grupo_id: 
+  fecha: 2014-12-16 20:23:14

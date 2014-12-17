@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comentario: MyText
+  puntuacion: 1.5
+  fecha_subido: 2014-12-16 20:18:06
+  archivo: 
+  estatus: 1
+  feedback: MyText
+  asignaciongrupo_id: 
+  tipoformato_id: 
+  usuario_id: 
+
+two:
+  comentario: MyText
+  puntuacion: 1.5
+  fecha_subido: 2014-12-16 20:18:06
+  archivo: 
+  estatus: 1
+  feedback: MyText
+  asignaciongrupo_id: 
+  tipoformato_id: 
+  usuario_id: 
