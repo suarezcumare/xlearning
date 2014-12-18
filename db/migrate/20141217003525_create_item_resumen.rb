@@ -4,8 +4,6 @@ class CreateItemResumen < ActiveRecord::Migration
       t.text :titulo
       t.text :descripcion
       t.references :resumen, index: true
-
-      t.timestamps
     end
   end
 end

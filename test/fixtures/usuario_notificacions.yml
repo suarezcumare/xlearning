@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  revisado: 
+  notificacion_id: 
+  usuario_id: 
+
+two:
+  revisado: 
+  notificacion_id: 
+  usuario_id: 

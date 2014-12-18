@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  suma_puntajes: 1.5
+  cantidad_votos: 1
+  curso_id: 
+
+two:
+  suma_puntajes: 1.5
+  cantidad_votos: 1
+  curso_id: 

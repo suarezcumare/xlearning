@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  puntuacion: 1.5
+  fecha_presentacion: 2014-12-17 23:09:13
+  feedback: MyText
+  usuario_id: 
+  evaluacion_grupo_id: 
+
+two:
+  puntuacion: 1.5
+  fecha_presentacion: 2014-12-17 23:09:13
+  feedback: MyText
+  usuario_id: 
+  evaluacion_grupo_id: 

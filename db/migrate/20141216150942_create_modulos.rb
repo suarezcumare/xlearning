@@ -4,7 +4,7 @@ class CreateModulos < ActiveRecord::Migration
       t.string :nombre
       t.text :descripcion
       t.integer :orden
-      t.integer :estatus
+      t.boolean :estatus
       t.references :curso, index: true
     end
   end

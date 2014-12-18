@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  monto: 1.5
+  fecha: 2014-12-17 23:46:46
+  numero_operacion: MyString
+  modo_pago_id: 
+  usuario_id: 
+
+two:
+  monto: 1.5
+  fecha: 2014-12-17 23:46:46
+  numero_operacion: MyString
+  modo_pago_id: 
+  usuario_id: 

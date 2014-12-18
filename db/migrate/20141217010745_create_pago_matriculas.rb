@@ -6,9 +6,7 @@ class CreatePagoMatriculas < ActiveRecord::Migration
       t.float :monto
       t.datetime :fecha
       t.string :numero_operacion
-      t.integer :estatus
-
-      t.timestamps
+      t.boolean :estatus
     end
   end
 end

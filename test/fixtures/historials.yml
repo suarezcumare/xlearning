@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nota: 1.5
+  aprobado: 
+  curso_id: 
+  usuario_id: 
+
+two:
+  nota: 1.5
+  aprobado: 
+  curso_id: 
+  usuario_id: 

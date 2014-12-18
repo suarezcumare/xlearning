@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contenido: MyText
+  puntuacion: 1.5
+  autor_id: 
+  curso_id: 
+  fecha: 2014-12-18 00:03:30
+
+two:
+  contenido: MyText
+  puntuacion: 1.5
+  autor_id: 
+  curso_id: 
+  fecha: 2014-12-18 00:03:30

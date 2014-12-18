@@ -11,7 +11,9 @@ class CreateCursos < ActiveRecord::Migration
       t.integer :matricula_maxima
       t.float :puntaje_aprobacion
       t.integer :horas_semanales
-      t.integer :estatus
+      t.boolean :estatus
+      t.references :facilitador, index: true
+      t.references :comentario, index: true
     end
   end
 end

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  curso_id: 
+  titulo: MyString
+  descripcion: MyText
+  duracion: 1
+  estatus: 
+  maxintentos: 1
+  cant_preguntas_cerradas: 1
+  cant_preguntas_abiertas: 1
+  valor_preguntas_abiertas: 1.5
+  valor_preguntas_cerradas: 1.5
+  puntuacion: 1.5
+  tipo: 
+
+two:
+  curso_id: 
+  titulo: MyString
+  descripcion: MyText
+  duracion: 1
+  estatus: 
+  maxintentos: 1
+  cant_preguntas_cerradas: 1
+  cant_preguntas_abiertas: 1
+  valor_preguntas_abiertas: 1.5
+  valor_preguntas_cerradas: 1.5
+  puntuacion: 1.5
+  tipo: 

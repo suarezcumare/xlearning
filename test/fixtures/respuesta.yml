@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  valor: MyText
+  correcta: 
+  evaluacion_id: 
+
+two:
+  valor: MyText
+  correcta: 
+  evaluacion_id: 

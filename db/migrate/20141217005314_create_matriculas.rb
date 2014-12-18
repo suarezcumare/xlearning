@@ -5,8 +5,6 @@ class CreateMatriculas < ActiveRecord::Migration
       t.references :usuario, index: true
       t.references :grupo, index: true
       t.datetime :fecha
-
-      t.timestamps
     end
   end
 end

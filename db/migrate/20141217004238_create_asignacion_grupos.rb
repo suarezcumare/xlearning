@@ -5,8 +5,6 @@ class CreateAsignacionGrupos < ActiveRecord::Migration
       t.datetime :fecha_cierre
       t.references :grupo, index: true
       t.references :asignacion, index: true
-
-      t.timestamps
     end
   end
 end

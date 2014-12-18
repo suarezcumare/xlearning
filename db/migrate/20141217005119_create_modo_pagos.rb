@@ -3,8 +3,6 @@ class CreateModoPagos < ActiveRecord::Migration
     create_table :modo_pagos do |t|
       t.string :nombre
       t.text :descripcion
-
-      t.timestamps
     end
   end
 end

@@ -10,8 +10,6 @@ class CreateEntregaAsignacions < ActiveRecord::Migration
       t.references :asignaciongrupo, index: true
       t.references :tipoformato, index: true
       t.references :usuario, index: true
-
-      t.timestamps
     end
   end
 end
