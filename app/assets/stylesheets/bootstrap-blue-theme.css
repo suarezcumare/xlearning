@@ -9,6 +9,10 @@
  * Config saved to config.json and https://gist.github.com/dd9976b8d66c8d1a5e31
  */
 
+main{
+  padding: 25px 0px;
+}
+
 .thumbnail,
 .img-thumbnail {
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
@@ -190,6 +194,126 @@ ul.dropdown-menu:before {
   border-color: transparent transparent blue;
 }
 
+.nav, .nav-wrapper{
+  color:#4A4A4A;
+}
+
+.nav-wrapper{
+  background-color: white;
+  padding: 0px 0px 0px 20px;
+}
+
+.nav-wrapper .brand-logo{
+  color: #7D929D;
+}
+
+.nav-wrapper .brand-logo img{
+  margin-top: -5px;
+}
+nav ul a{
+  color:#767676 !important;
+}
+a.activar-busqueda{
+  display: block;
+  width: 70px;
+  font-size: 18px;
+  float: right;
+  color: #929191;
+  height: 64px;
+  border-left: 1px solid #E8E8E8;
+  text-align: center;
+}
+
+.logged-in-usuario{
+  border-radius: 100%;
+  width: 200px;
+}
+
+.logged-in-usuario .media-body{
+  line-height: 12px;
+  padding-top: 15px;
+}
+
+.logged-in-usuario .media-body h6{
+  font-weight: bold;
+}
+.logged-in-usuario .media-body .rol{
+  font-size: 15px;
+  font-style: italic;
+}
+nav ul i{
+  font-size: 20px !important;
+}
+nav ul li:hover{
+  background-color: transparent;
+}
+nav ul > li > a{
+  box-sizing:border-box;
+  -moz-transition: border-top 0.1s;
+  -webkit-transition: border-top 0.1s;
+  transition: border-top 0.1s;
+}
+nav ul > li > a:hover{
+  border-top: 3px solid #03A9F4;
+}
+
+/*****************************************************/
+/*                     FOOTER                        */
+/*****************************************************/
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #1976d2 ;
+}
+footer .footer-copyright{
+  background-color: #1565c0;
+}
+
+/*****************************************************/
+/*                     SIDEBAR                       */
+/*****************************************************/
+
+#sidebar-menu{
+  display: block;
+}
+
+#sidebar-menu div{
+  width: 90%;
+  display: inline-block;
+  margin: 0px auto;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.nav-pills > li > a{
+  -moz-transition: background-color 1s;
+  -webkit-transition: background-color 1s;
+  transition: background-color 1s;
+  color:#7D929D;
+}
+
+.nav-pills > li > a span{
+  margin-left: 0px;
+  -moz-transition: margin-left 0.5s;
+  -webkit-transition: margin-left 0.5s;
+  transition: margin-left 0.5s; 
+}
+
+.nav-pills > li > a:hover, .nav-pills > li.active > a{
+  background-color: #03A9F4;
+  color:#fff;
+  border-left: 3px solid #5C9ACF !important;
+  margin-left: -3px;
+  padding-left: 15px; 
+}
+
+.nav-pills > li > a:hover span{
+  margin-left: 10px;
+}
+
+
 /*****************************************************/
 /*                   FORMULARIO                      */
 /*****************************************************/
@@ -319,14 +443,7 @@ label{
   box-shadow: none;
   margin-bottom: 0px;
 }
-/*****************************************************/
-/*                                                   */
-/*****************************************************/
 
-.nav.nav-tabs a{
-  text-transform: uppercase;
-
-}
 
 /*****************************************************/
 /*                   TITULOS y TEXTO                 */

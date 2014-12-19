@@ -8,6 +8,6 @@ Xlearning::Application.routes.draw do
   	constraints(SubdomainPresent) do
   		devise_for :usuarios
 	end
-	root 'bienvenido#index'
+	root 'portal#index'
 	resources :organizacions
 end

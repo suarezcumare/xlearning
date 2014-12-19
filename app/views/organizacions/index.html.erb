@@ -1,0 +1,32 @@
+<h1>Listing organizacions</h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Subdominio</th>
+      <th>Estatus</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @organizacions.each do |organizacion| %>
+      <tr>
+        <td><%= organizacion.nombre %></td>
+        <td><%= organizacion.subdominio %></td>
+        <td><%= organizacion.estatus %></td>
+        <td><%= link_to 'Show', organizacion %></td>
+        <td><%= link_to 'Edit', edit_organizacion_path(organizacion) %></td>
+        <td><%= link_to 'Destroy', organizacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Organizacion', new_organizacion_path %>
+<br>
+<i class="fa fa-facebook"></i> <i class="fa fa-twitter"></i>
