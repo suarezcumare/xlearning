@@ -1,0 +1,332 @@
+ 
+
+ <div class="row">
+  <div class="col-md-9">
+  </div>
+  <div class="col-md-3">
+     <ul class="nav nav-tabs nav-justified" id="myTabEvaluaciones">
+       <li class="tooltop-test" title="Listado de evaluaciones del curso"> <a href="#listadoEvaluacionesCurso"><i class="fa fa-list"> </i></a></li>
+
+        <li class="tooltop-test" title="Evaluaciones por tabla del curso"> <a href="#tablasEvaluacionesCurso"><i class="fa fa-table"> </i></a></li>   
+      </ul>
+  </div>   
+ </div>
+       
+
+  <div class="tab-content">
+    <!-- Inicio del panel tablasEvaluacionesCurso -->
+    <div class="tab-pane" id="tablasEvaluacionesCurso">
+                    
+      <div class="row">
+         <div class="col-md-4" ><b> Evaluación </b> </div>
+          <div class="col-md-2"><b> Calificación </b></div>
+          <div class="col-md-3"><b> Ultimo Intento </b> </div>
+                      
+      </div>
+      <br>
+         <!-- Aqui empezaria el for -->
+
+      <div class="row border">
+       <div class="col-md-4 font12px"> Quiz 1: Distancia Euclidiana </div>
+        <div class="col-md-2 font12px"> 15/20 </div>
+        <div class="col-md-2 font12px"> 12/11/2014 </div>
+         <div class="col-md-4 font12px">
+              <form>
+                <button type="button" id="presentar(id/curso/examen)" class="btn-group btn-primary btn-group-xs font8px"> PRESENTAR  </button>
+                  <button type="button" id="feedback(id/curso/examen)" class="btn-group btn-info btn-group-xs font8px"> FEEDBACK  </button>
+                </form>
+            </div>
+        </div>
+
+                    <!-- Fin for -->
+                    
+     <div class="row border">
+       <div class="col-md-4 font12px"> Quiz 1: Distancia Euclidiana </div>
+        <div class="col-md-2 font12px"> 15/20 </div>
+        <div class="col-md-2 font12px"> 12/11/2014 </div>
+         <div class="col-md-4 font12px">
+              <form>
+                <button type="button" id="presentar(id/curso/examen)" class="btn-group btn-primary btn-group-xs font8px"> PRESENTAR  </button>
+                  <button type="button" id="feedback(id/curso/examen)" class="btn-group btn-info btn-group-xs font8px"> FEEDBACK  </button>
+                </form>
+            </div>
+       </div>
+
+
+
+  </div>
+    
+
+    <!-- Fin del panel tablasEvaluacionesCurso -->
+    <!-- Inicio Panel listadoEvaluacionCurso -->
+    <div class="tab-pane" id="listadoEvaluacionesCurso">
+                        
+      <!--Inicio del acordion -->
+      <div class="panel-group" id="accordionevaluaciones" role="tablist" aria-multiselectable="true">
+          
+          <!-- Aqui ira el for, cambiando el id="headingNumero", href="collapseNumero" -->
+
+          
+              <div class="panel">
+              <div class="panel-heading" role="tab" id="evaluacionesheading1">
+                <div class="row">
+                 <div class="col-md-9">
+                    <h4 class="panel-title">
+                       <a data-toggle="collapse" data-parent="#accordionevaluaciones" href="#evaluacionescollapse1" aria-expanded="true" aria-controls="evaluacionescollapse1" > Leccion 1: Distancia Euleriana 
+                       </a> 
+                      </h4>
+                  </div>
+                </div>
+              </div>
+
+              <div id="evaluacionescollapse1" class="panel-collapse collapse in" role="#tabpanel" aria-labelledby="evaluacionesheading1">
+                 <div class="panel-body">
+
+
+
+                    <!-- Inicio de las Evaluaciones -->
+                      <div style="border-bottom: 1px solid #eeeeee;" >
+                        <!-- Button trigger modal -->
+                               <button type="button" class="btn-group btn-primary btn-group" data-toggle="modal" data-target="#instrucciones1">
+                                  Ver Instrucciones
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal" style="width: 100%"  id="instrucciones1" aria-hidden="true">
+                                 
+                                    <div class="modal-content" >
+                                      <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Distancia Euclediana</h4>
+                                      </div>
+                                      <div class="modal-body">
+                                        Breve informacion de las instrucciones del parcial
+                                      </div>
+                                  
+                                    </div>
+                                  
+                                </div>
+                 
+                      <br>
+                      <b>Fecha tope: 12 de Nov del 2014, 5:00pm</b>
+                      <br><br>
+
+                      <div class="row">
+                        <div class="col-md-1">
+                          
+                           <span class="fa-stack ">
+                               <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                               <i class="fa fa-info fa-stack-1x fa-inverse" ></i>
+                            </span>
+
+                        </div>
+                        <div class="col-md-8 font12px">
+                          <p> Aqui sera una pequeña informacion del examen, pequeña muy pequeñita, muy muy muy pequeña </p>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-2">
+                         <b> Calificación</b>
+                        </div>
+                        <div class="col-md-4">
+                           <b> Último intento</b>
+
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-2">
+                          20/30
+                        </div>
+                        <div class="col-md-4">
+                          11/11/2014 4:47pm
+                        </div>
+                        <div class="col-md-6">
+                             <form>
+                        <button type="button" id="presentar(id/curso/examen)" class="btn-group btn-primary btn-group-xs font8px" > PRESENTAR  </button>
+                               <button type="button" id="feedback(id/curso/examen)" class="btn-group btn-info btn-group-xs font8px" > FEEDBACK  </button>
+                          </form>
+                        </div>
+                      </div>
+                    <br>
+                  </div>
+                  <!-- Fin Evaluaciones -->
+
+
+                     <div style="border-bottom: 1px solid #eeeeee;" >
+                     <br>
+                        <!-- Button trigger modal -->
+                             <button type="button" class="btn-group btn-primary btn-group" data-toggle="modal" data-target="#instrucciones1">
+                                  Ver Instrucciones
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal" id="instrucciones1" aria-hidden="true">
+                                 
+                                    <div class="modal-content" >
+                                      <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Distancia Euclediana</h4>
+                                      </div>
+                                      <div class="modal-body">
+                                        Breve informacion de las instrucciones del parcial
+                                      </div>
+                                  
+                                    </div>
+                                  
+                                </div>
+                 
+                      <br>
+                     <b> Fecha tope: 12 de Nov del 2014, 5:00pm </b>
+                      <br><br>
+
+                      <div class="row">
+                        <div class="col-md-1">
+                          
+                           <span class="fa-stack ">
+                               <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                               <i class="fa fa-info fa-stack-1x fa-inverse" ></i>
+                            </span>
+
+                        </div>
+                        <div class="col-md-8">
+                          <p style="font-size: 12px;"> Aqui sera una pequeña informacion del examen, pequeña muy pequeñita, muy muy muy pequeña </p>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-2">
+                         <b> Calificación</b>
+                        </div>
+                        <div class="col-md-4">
+                           <b> Último intento</b>
+
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-2">
+                          20/30
+                        </div>
+                        <div class="col-md-4">
+                          11/11/2014 4:47pm
+                        </div>
+                        <div class="col-md-6">
+                             <form>
+                        <button type="button" id="presentar(id/curso/examen)" class="btn-group btn-primary btn-group-xs font8px" > PRESENTAR  </button>
+                               <button type="button" id="feedback(id/curso/examen)" class="btn-group btn-info btn-group-xs font8px" > FEEDBACK  </button>
+                          </form>
+                        
+                        </div>
+                      </div>
+                    <br>
+                  </div>
+
+
+
+
+
+
+               </div>
+           </div>
+          </div>
+
+
+
+          <div class="panel">
+              <div class="panel-heading" role="tab" id="evaluacionesheading2">
+                <div class="row">
+                 <div class="col-md-9">
+                    <h4 class="panel-title">
+                       <a data-toggle="collapse" data-parent="#accordionevaluaciones" href="#evaluacionescollapse2" aria-expanded="true" aria-controls="evaluacionescollapse2" > Leccion 1: Distancia Euleriana 
+                       </a> 
+                      </h4>
+                  </div>
+                </div>
+              </div>
+
+              <div id="evaluacionescollapse2" class="panel-collapse collapse in" role="#tabpanel" aria-labelledby="evaluacionesheading2">
+                 <div class="panel-body">
+
+
+
+                    <!-- Inicio de las Evaluaciones -->
+
+                        <!-- Button trigger modal -->
+                                <button type="button" class="btn-group btn-primary btn-group" data-toggle="modal" data-target="#instrucciones2">
+                                  Ver Instrucciones
+                                </button>
+
+
+
+                                <!-- Modal -->
+                                <div class="modal" id="instrucciones2" aria-hidden="true">
+                                 
+                                    <div class="modal-content" >
+                                      <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Distancia Euclediana</h4>
+                                      </div>
+                                      <div class="modal-body">
+                                        Breve informacion de las instrucciones del parcial
+                                      </div>
+                                  
+                                    </div>
+                                  
+                                </div>
+                 
+                      <br>
+                      <b>Fecha tope: 12 de Nov del 2014, 5:00pm</b>
+                      <br><br>
+
+                      <div class="row">
+                        <div class="col-md-1">
+                          
+                           <span class="fa-stack ">
+                               <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                               <i class="fa fa-info fa-stack-1x fa-inverse" ></i>
+                            </span>
+
+                        </div>
+                        <div class="col-md-8 font12px">
+                          <p> Aqui sera una pequeña informacion del examen, pequeña muy pequeñita, muy muy muy pequeña </p>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-2">
+                          <b>Calificación</b>
+                        </div>
+                        <div class="col-md-4">
+                          <b>  Último intento</b>
+
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-2">
+                          20/30
+                        </div>
+                        <div class="col-md-4">
+                          11/11/2014 4:47pm
+                        </div>
+                        <div class="col-md-6">
+                             <form>
+                        <button type="button" id="presentar(id/curso/examen)" class="btn-group btn-primary btn-group-xs font8px"> PRESENTAR  </button>
+                               <button type="button" id="feedback(id/curso/examen)" class="btn-group btn-info btn-group-xs font8px" > FEEDBACK  </button>
+                          </form>
+                        
+                        </div>
+                      </div>
+                    <br><br>
+
+                  <!-- Fin Evaluaciones -->
+
+               </div>
+           </div>
+          </div>
+
+        </div>
+        <!-- fin del acordion -->
+                        
+                 </div>
+              <!-- Fin de listadoEvaluacionCurso -->
+    </div>
