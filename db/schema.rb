@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141218044838) do
+ActiveRecord::Schema.define(version: 20141220060521) do
 
   create_table "archivo_objeto_aprendizajes", force: true do |t|
     t.binary   "archivo"
@@ -426,6 +426,8 @@ ActiveRecord::Schema.define(version: 20141218044838) do
     t.datetime "remember_created_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true, using: :btree

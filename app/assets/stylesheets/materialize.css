@@ -6678,14 +6678,14 @@ ul.tabs li.tab {
 
 .btn, .btn-large, .btn-flat {
   display: inline-block;
-  height: 36px;
+  height: 30px;
   margin-bottom: 15px;
-  padding: 0 2rem;
+  padding: 0 1rem;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
   background-clip: padding-box;
-  line-height: 36px;
+  line-height: 30px;
   text-transform: uppercase;
   border: none;
 }
@@ -6901,9 +6901,7 @@ ul.tabs li.tab {
 
 .modal {
   display: none;
-  background-color: #eee;
-  padding: 24px;
-  max-height: 70%;
+  max-height: 100%;
   max-width: 55%;
   left: 0;
   right: 0;
@@ -7041,10 +7039,10 @@ textarea {
   border: none;
   border-bottom: 1px solid #bdbdbd;
   outline: none;
-  height: 2.25rem;
+  height: 1.8rem;
   width: 100%;
   font-size: 1rem;
-  margin: 0 0 15px 0;
+  margin: 0 0 12px 0;
   padding: 0;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -7195,7 +7193,7 @@ form p:last-child {
 [type="checkbox"]:not(:checked) + label,
 [type="checkbox"]:checked + label {
   position: relative;
-  padding-left: 35px;
+  padding-left: 20px;
   cursor: pointer;
   display: inline-block;
   height: 25px;
@@ -7214,7 +7212,7 @@ form p:last-child {
 [type="checkbox"] + label:before {
   content: '';
   position: absolute;
-  margin-top: 2px;
+  margin-top: 5px;
   left: 0;
   z-index: 0;
   -webkit-border-radius: 1px;

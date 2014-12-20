@@ -262,8 +262,6 @@ nav ul > li > a:hover{
 /*****************************************************/
 
 footer{
-  position: absolute;
-  bottom: 0;
   width: 100%;
   background-color: #1976d2 ;
 }
@@ -283,7 +281,7 @@ footer .footer-copyright{
   width: 90%;
   display: inline-block;
   margin: 0px auto;
-  background-color: white;
+  background-color: rgb(63, 61, 61);
   border-radius: 5px;
 }
 
@@ -291,7 +289,15 @@ footer .footer-copyright{
   -moz-transition: background-color 1s;
   -webkit-transition: background-color 1s;
   transition: background-color 1s;
-  color:#7D929D;
+  color:white;
+  text-transform: uppercase;
+  font-size: 13px; 
+  font-weight: 300;
+}
+
+.nav-pills > li > a i{
+  margin-top: 10px;
+  font-size: 20px;
 }
 
 .nav-pills > li > a span{
@@ -442,6 +448,63 @@ label{
   -webkit-box-shadow: none;
   box-shadow: none;
   margin-bottom: 0px;
+}
+
+.panel-heading{
+  border-radius: 5px 5px 0px 0px;
+}
+
+/*****************************************************/
+/*                    LOGIN FORM                     */
+/*****************************************************/
+
+#login-form{
+  width: 400px;
+  border-radius: 5px;
+  /*height: 400px;*/
+  background-color: #6c7a8d;
+}
+#login-form legend{
+  color:#03a9f4;
+  text-transform: uppercase;
+}
+#login-form .panel-body{
+  background-color: #eceef1;
+}
+
+#login-form .panel-footer{
+  background-color: transparent;
+  text-transform: uppercase;
+  padding: 10px 0px;
+}
+
+#login-form .panel-footer a{
+  color: #c3cedd;
+  font-weight: 600;
+  font-size: 15px;
+}
+.fb, .tw, .gp{
+  border-radius: 100%;
+  margin: 0px 5px;
+  color:white;
+  display: inline-block;
+  width: 32px;
+  text-align: center;
+  height: 32px;
+  padding-top: 5px;
+}
+.fb:hover, .tw:hover, .gp:hover{
+  color:white;
+}
+.fb{
+  background-color: #3B5998;
+}
+
+.tw{
+  background-color: #55ACEE;
+}
+.gp{
+  background-color: #d34836;
 }
 
 

@@ -6,8 +6,8 @@ end
 
 Xlearning::Application.routes.draw do
   	constraints(SubdomainPresent) do
-  		devise_for :usuarios
 	end
+	devise_for :usuarios
 	root 'portal#index'
 	resources :organizacions
 end

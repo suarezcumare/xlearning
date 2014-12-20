@@ -1,33 +1,32 @@
-
-
 <div id ="login-form" class="panel panel-info modal">
 	<!-- <div class="panel-heading text-center">
 		<h3 class="panel-title">Inicia sesi&oacute;n</h3>
 	</div> -->
 	<div class="panel-body">
-		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-		  <!--<legend class="text-center">Inicia sesi&oacute;n</legend>-->
-			  <div><%= f.label :email %><br />
+		<%= form_for(:usuario, :url => session_path(:usuario)) do |f| %>
+		  	<legend class="text-center">Inicia sesi&oacute;n</legend>
+			  <div><%= f.label :email,"Email" %><br />
 			  <%= f.email_field :email, :autofocus => true %></div>
 
-			  <div><%= f.label :password %><br />
+			  <div><%= f.label :password, "Contraseña" %><br />
 			  <%= f.password_field :password %></div>
 			  <% if devise_mapping.rememberable? -%>
-			    <span class="pull-right"><%= f.check_box :remember_me %> <%= f.label :remember_me %></span>
+			    <span class="pull-right"><%= f.check_box :remember_me %> <%= f.label :remember_me, "No cerrar sesión" %></span>
 			  <% end -%>
 			  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
 				  <%= link_to "Olvide mi contraseña", new_password_path(resource_name) %><br />
 			  <% end -%>
 			  <input type="submit" value="Entrar" class= "btn btn-primary"></input>
 			  
-			  <br>
-			  <hr/>
-			  <span class="text-center">
+			  <div class="text-center">
 			  <strong>O inicia sesi&oacute;n con </strong>
 			  <a href="javascript:void(0)" class="fb"><i class="fa fa-facebook"></i></a>
 			  <a href="javascript:void(0)" class="tw"><i class="fa fa-twitter"></i></a>
 			  <a href="javascript:void(0)" class="gp"><i class="fa fa-google-plus"></i></a>
-			</span>
+			</div>
 		<% end %>
+	</div>
+	<div class="panel-footer text-center">
+		 <%= link_to "Crea una cuenta", new_registration_path(resource_name) %>
 	</div>
 </div>

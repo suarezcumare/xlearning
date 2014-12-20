@@ -20,6 +20,7 @@
 
 
 $(document).ready(function(){
+    $('.modal-trigger').leanModal();
     $(".dropdown-toggle").dropdown();
     $.material.ripples(".btn");
 });

@@ -30,9 +30,13 @@
       	<ul id="nav-mobile" class="right side-nav">
 	        <li><a href="sass.html"  class="no-effect">Ofertas de estudio</a></li>
 	        <li><a href="sass.html">Registrarse</a></li>
-	        <li><a href="javascript.html">Iniciar sesi&oacute;n</a></li>
+	        <li><a href="#login-form" class="modal-trigger">Iniciar sesi&oacute;n</a></li>
 	      </ul>
       <% end %>
       <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
   </div>
 </nav>
+
+<% if !usuario_signed_in? %>
+<%= render "devise/sessions/new" %>
+<% end %>

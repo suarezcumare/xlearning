@@ -5350,14 +5350,14 @@ a.list-group-item-danger.active:focus {
 .panel-info {
  }
 .panel-info > .panel-heading {
-  color: #0288D1;
-  background-color: #63c3f3;
+  color: #C2C2C2;
+  background-color: #444444;
 }
 .panel-info > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #63c3f3;
+  border-top-color: #444;
 }
 .panel-info > .panel-heading .badge {
-  color: #63c3f3;
+  color:#FDDB5C;
 }
 .panel-info > .panel-footer + .panel-collapse > .panel-body {
  }
@@ -5467,7 +5467,7 @@ button.close {
 .modal-open {
   overflow: hidden;
 }
-.modal {
+/*.modal {
   display: none;
   overflow: hidden;
   position: fixed;
@@ -5478,7 +5478,7 @@ button.close {
   z-index: 1040;
   -webkit-overflow-scrolling: touch;
   outline: 0;
-}
+}*/
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
   -ms-transform: translate(0, -25%);
