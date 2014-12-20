@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Xlearning</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <%= stylesheet_link_tag    "bootstrap-blue" %>
+    <%= stylesheet_link_tag    "materialize" %>
+    <%= stylesheet_link_tag    "bootstrap-blue-theme" %>
+    <%= stylesheet_link_tag    "font-awesome.min" %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Roboto" %>
+    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Raleway:600" %>
+
+    
+    <% content_for :css_personalizado do %> <title>A simple page</title><% end %>
+    
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%= render "application/header" %>
+    </header>
+    <main class="container-fluid">
+      <div class="row">
+        <div class="col-md-3 col-lg-3">
+          <%= render "application/menu" %>
+        </div>
+        <div class="col-md-9 col-lg-9">
+          <%= yield %>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <%= render "application/footer" %>
+      <%= javascript_include_tag 'application' %>
+<script>
+  
+$(function () {
+    $('#myTab a:last').tab('show');
+  })
+$(function () {
+    $('#myTabEvaluaciones a:last').tab('show');
+  })
+
+$(function(){
+  $('#myTab a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');})
+})
+$(function(){
+  $('#myTabEvaluaciones a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');})
+})
+
+</script>
+
+       
+      <%= yield :js_personalizado %>
+    </footer>
+
+
+  </body>
+</html>

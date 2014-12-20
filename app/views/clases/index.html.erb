@@ -1,0 +1,64 @@
+
+<div class="row">
+  <div class="col-md-7">
+             
+      <%= render "clases/application/header" %>
+
+      <div class="row">
+    <div class="col-md-12">
+               <!-- Inicio cuadro Generar, llevado por un tabs -->
+        
+                 <br>
+<div class="tab-content">
+  <div class="tab-pane" id="leccionesCurso">
+    
+       <%= render "clases/elementos/lista" %>
+
+  </div>
+  <div class="tab-pane" id="bitacoraCurso">
+  
+      <%= render "clases/elementos/bitacora" %>
+  
+  </div>
+  <div class="tab-pane" id="evaluacionesCurso">
+    
+           <%= render "clases/elementos/evaluaciones" %>
+  </div>
+  <div class="tab-pane" id="calendarioCurso">
+      
+      
+      <%= render "clases/elementos/calendario" %>
+  </div>
+  <div class="tab-pane" id="notificacionesEvaluacionesCurso">
+      
+       <%= render "clases/elementos/notificaciones" %>
+
+  </div>
+  <div class="tab-pane" id="descipcionesCurso">
+
+      <%= render "clases/elementos/descripciones" %>
+
+  </div>
+
+</div>
+
+              <!-- Fin cuadro Generar, llevado por un tabs -->      
+
+    </div>
+  </div>
+
+
+  </div>
+  <div class="col-md-3">
+      
+    <%= render "clases/application/instructor" %>
+
+      <div class="row">
+          <%= render "clases/application/panelDerecha" %>
+      </div>
+
+  </div>
+
+</div>
+
+
