@@ -9,8 +9,58 @@
  * Config saved to config.json and https://gist.github.com/dd9976b8d66c8d1a5e31
  */
 
+
+#form-registro-container{
+  display: block;
+  width: 60%;
+  min-width: 450px;
+  margin: 0 auto; 
+}
+
+#form-registro-container div#titulo{
+  border-bottom: 1px solid #ECEBEB;
+  padding-bottom: 25px;
+}
+
+#form-registro-container div.seccion{
+  display: inline-block;
+  width: 50%;
+  padding: 15px 45px;
+}
+
+#form-registro-container > div:nth-child(2){
+  border-right: 1px solid #ECEBEB;
+}
+
+#form-registro-container > div:nth-child(3) i{
+  font-size: 60px;
+}
+
 main{
-  padding: 25px 0px;
+  margin-top: 65px;
+}
+
+.pad15{
+  padding: 15px 0px;
+}
+
+.pad30{
+  padding: 30px 0px;
+}
+
+.pad45{
+  padding: 45px 0px;
+}
+
+
+.no-padding{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.no-margin{
+  margin-left: 0px !important;
+  margin-right: 0px !important; 
 }
 
 .thumbnail,
@@ -194,6 +244,13 @@ ul.dropdown-menu:before {
   border-color: transparent transparent blue;
 }
 
+#menu-header{
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+}
 .nav, .nav-wrapper{
   color:#4A4A4A;
 }
@@ -273,23 +330,23 @@ footer .footer-copyright{
 /*                     SIDEBAR                       */
 /*****************************************************/
 
-#sidebar-menu{
-  display: block;
-}
 
-#sidebar-menu div{
-  width: 90%;
+#sidebar-menu {
+  width: 228px;
   display: inline-block;
   margin: 0px auto;
-  background-color: rgb(63, 61, 61);
-  border-radius: 5px;
+  position: fixed;
+  top: 64px;
+  bottom: 0;
+  z-index: 99;
+  background-color: #F4F1F1;
 }
 
 .nav-pills > li > a{
   -moz-transition: background-color 1s;
   -webkit-transition: background-color 1s;
   transition: background-color 1s;
-  color:white;
+  color:rgb(144, 144, 144);
   text-transform: uppercase;
   font-size: 13px; 
   font-weight: 300;
@@ -335,6 +392,14 @@ footer .footer-copyright{
   background-color: transparent;
   box-shadow: none !important;
 }*/
+
+.msj-error{
+  text-transform: uppercase;
+  font-size: 11px;
+  margin-bottom: 15px;
+  color: #d34836;
+}
+
 input:-webkit-autofill, textarea:-webkit-autofill {
     background-color: transparent !important;
 }
@@ -485,13 +550,14 @@ label{
 }
 .fb, .tw, .gp{
   border-radius: 100%;
-  margin: 0px 5px;
+  margin: 0px 2px;
   color:white;
   display: inline-block;
   width: 32px;
   text-align: center;
   height: 32px;
   padding-top: 5px;
+  font-size: 26px !important;
 }
 .fb:hover, .tw:hover, .gp:hover{
   color:white;

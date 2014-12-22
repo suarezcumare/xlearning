@@ -1,222 +1,165 @@
- <!--Inicio del acordion -->
-      <div class="panel-group" id="leccionesaccordion" role="tablist" aria-multiselectable="true">
-          
-          <!-- Aqui ira el for, cambiando el id="headingNumero", href="collapseNumero" -->
+<!--Inicio del acordion -->
+<div class="panel-group" id="leccionesaccordion" role="tablist" aria-multiselectable="true">
 
-          <div class="panel panel-primary">
-              <div class="panel-heading" role="tab" id="leccionesheading1">
-                <div class="row">
-                 <div class="col-md-9">
-                    <h4 class="panel-title">
-                       <a data-toggle="collapse" data-parent="#leccionesaccordion" href="#leccionescollapse1" aria-expanded="true" aria-controls="leccionescollapse1" > Leccion 1: Distancia Euleriana 
-                       </a> 
-                      </h4>
-                  </div>
-                  <div clas="col-md-3">
-                      <span class="porcentaje-completado"> completado 100% </span>
-                </div>
-                </div>
-              </div>
+  <!-- Aqui ira el for, cambiando el id="headingNumero", href="collapseNumero" -->
+  <div class="panel panel-primary">
+    <div class="panel-heading" role="tab" id="leccionesheading1">
+      <a data-toggle="collapse" data-parent="#leccionesaccordion" href="#leccionescollapse1" 
+        aria-expanded="true" aria-controls="leccionescollapse1" class="panel-title">
+        <h4>
+           Lección 1: Distancias Euleriana 
+        </h4>
+        <span class="porcentaje-completado"> completado 100% </span>
+      </a>
+    </div>
 
-              <div id="leccionescollapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="leccionesheading1">
-                 <div class="panel-body">
+    <div id="leccionescollapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="leccionesheading1">
+      <div class="panel-body">
+        <div class="descripcion-leccion pad15">Descripcion del material es la que va en este espacio pero como no la 
+            tengo que solo estoy inventando un poco.</div>
+          <!-- Inicio de Material -->
+          <table class="contenido material">
+            <tr>
+              <th style="width:25px;"><i class="fa fa-graduation-cap" ></i></th>
+              <th>Material</th>
+              <th><span  class="separador"></span></th>
+              <th><a href="javascript:void(0)"><i class="fa fa-download"></i></a></th>
+            </tr>
+            <!-- aqui seria el for -->
+            <tr>
+              <td>
+              </td>
+              <td>
+                <span class="fa-stack ">
+                  <i class="fa fa-circle fa-stack-2x red-text lighten-1"></i>
+                  <i class="fa fa-video-camera fa-stack-1x white-text" ></i>
+                </span>
+                Contenido <span class="new badge  blue-grey lighten-4">15 min.</span>
+                <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+              </td>
+              <td>
+                <span class="fa-stack ">
+                  <i class="fa fa-circle fa-stack-2x red-text lighten-1"></i>
+                  <i class="fa fa-file-zip-o fa-stack-1x white-text" ></i>
+                </span>
+                Archivo zip <span class="new badge  blue-grey lighten-4">37 Mb</span>
+                <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
+              </td>
+            </tr>
+             <!-- Aqui termina el for -->
+          </table>
+          <!-- fin de material -->
 
+          <!-- Inicio Evaluaciones  -->
+          <table class="contenido evaluaciones">
+            <tr>
+              <th style="width:25px;"><i class="fa fa-graduation-cap" ></i></th>
+              <th>Evaluaciones</th>
+            </tr>
+            <!-- aqui seria el for -->
+            <tr>
+              <td>
+              </td>
+              <td>
+                <a href="javascript:void(0)">Quiz contenido 1 <span class="new badge  blue-grey lighten-4">20 min.</span></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+              </td>
+              <td>
+                <a href="javascript:void(0)">Actividad</a>
+              </td>
+            </tr>
+             <!-- Aqui termina el for -->
+          </table>
+          <!-- Fin Evaluaciones -->
+      </div>
+    </div>
+  </div>
+<!-- Aqui ira el for, cambiando el id="headingNumero", href="collapseNumero" -->
+  <div class="panel panel-primary">
+    <div class="panel-heading" role="tab" id="leccionesheading2">
+      <a data-toggle="collapse" data-parent="#leccionesaccordion" href="#leccionescollapse2" 
+        aria-expanded="true" aria-controls="leccionescollapse1" class="panel-title">
+        <h4>
+           Lección 2: Distancias Geodésicas 
+        </h4>
+        <span class="porcentaje-completado"> completado 20% </span>
+      </a>
+    </div>
 
+    <div id="leccionescollapse2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="leccionesheading2">
+      <div class="panel-body">
+        <div class="descripcion-leccion pad15">Descripcion del material es la que va en este espacio pero como no la 
+            tengo que solo estoy inventando un poco.</div>
+          <!-- Inicio de Material -->
+          <table class="contenido material">
+            <tr>
+              <th style="width:25px;"><i class="fa fa-graduation-cap" ></i></th>
+              <th>Material</th>
+              <th><span  class="separador"></span></th>
+              <th><a href="javascript:void(0)"><i class="fa fa-download"></i></a></th>
+            </tr>
+            <!-- aqui seria el for -->
+            <tr>
+              <td>
+              </td>
+              <td>
+                <span class="fa-stack ">
+                  <i class="fa fa-circle fa-stack-2x red-text lighten-1"></i>
+                  <i class="fa fa-video-camera fa-stack-1x white-text" ></i>
+                </span>
+                Contenido <span class="new badge  blue-grey lighten-4">15 min.</span>
+                <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+              </td>
+              <td>
+                <span class="fa-stack ">
+                  <i class="fa fa-circle fa-stack-2x red-text lighten-1"></i>
+                  <i class="fa fa-file-zip-o fa-stack-1x white-text" ></i>
+                </span>
+                Archivo zip <span class="new badge  blue-grey lighten-4">37 Mb</span>
+                <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
+              </td>
+            </tr>
+             <!-- Aqui termina el for -->
+          </table>
+          <!-- fin de material -->
 
-                      Descripcion del material es la que va en este espacio pero como no la tengo que solo estoy inventando un poco.
-                      <br><br>
-
-
-
-                      <!-- Inicio de Material -->
-                      <div class="row"> 
-                        <div class="col-md-1">
-
-                        <span class="fa fa-graduation-cap" ></span>
-                            
-                        </div>
-                        <div class="col-md-11">
-                           <h6> Material &nbsp;&nbsp;&nbsp;  <span  style="color:#A4A4A4;"> ___________________ </span> &nbsp;&nbsp;&nbsp; <a class="fa fa-download" href=""> </a>  </h6>
-
-                        </div>
-                      </div>
-                        <!-- aqui seria el for -->
-
-                      <div class="row "> 
-                         <div class="col-md-1 margin-l2cm">
-
-                            <span class="fa-stack ">
-                               <i class="fa fa-circle fa-stack-2x text-danger"></i>
-                               <i class="fa fa-video-camera fa-stack-1x fa-inverse" ></i>
-                            </span>
-                        </div>
-                        <div class="col-md-7">
-                           <h6> Contenido &nbsp;&nbsp;&nbsp; <a class="fa fa-download" href=""> </a>   </h6>
-                        </div> 
-                       
-                      </div>
-
-
-                           <div class="row"> 
-                        <div class="col-md-1 margin-l2cm">
-
-                            <span class="fa-stack ">
-                               <i class="fa fa-circle fa-stack-2x text-danger"></i>
-                               <i class="fa fa-file-zip-o fa-stack-1x fa-inverse" ></i>
-                            </span>
-
-                            
-                              
-                            </span>
-                        </div>
-                        <div class="col-md-7">
-                           <h6> .Zit  &nbsp;&nbsp;&nbsp;<a class="fa fa-download" href=""> </a>  </h6>
-                        </div> 
-                       
-                      </div>
-
-                      <!-- Aqui termina el for -->
-
-                      <!-- fin de material -->
-
-                  <!-- Inicio Evaluaciones  -->
-                    <br><br>
-
-                      <div class="row"> 
-                        <div class="col-md-1">
-                            <span class="fa fa-pencil-square-o"></span>
-                        </div>
-                        <div class="col-md-11">
-                           <h6> Evaluaciones &nbsp;&nbsp;&nbsp;  <span  style="color:#A4A4A4;"> ___________________ </span>   </h6>
-
-                        </div>
-                        
-                    
-                      </div>
-                        <!-- aqui seria el for -->
-
-                      <div class="row"> 
-                  
-                        <div class="col-md-12 margin-l2cm">
-                           <h6 class="text-muted"> Examen  </h6>
-                        </div> 
-                    
-                      </div>
-
-                      <!-- Aqui termina el for -->
-
-                  <!-- Fin Evaluaciones -->
-
-
-
-               </div>
-           </div>
-          </div>
-
-
-            <div class="panel panel-primary">
-              <div class="panel-heading" role="tab" id="leccionesheading2">
-                <div class="row">
-                 <div class="col-md-9">
-                    <h4 class="panel-title">
-                       <a data-toggle="collapse" data-parent="#leccionesaccordion" href="#leccionescollapse2" aria-expanded="true" aria-controls="leccionescollapse2" > Leccion 1: Distancia Euleriana 
-                       </a> 
-                      </h4>
-                  </div>
-                  <div clas="col-md-3">
-                      <span class="porcentaje-completado"> completado 20% </span>
-                </div>
-                </div>
-              </div>
-
-              <div id="leccionescollapse2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="leccionesheading2">
-                 <div class="panel-body">
-
-
-
-                      Descripcion del material es la que va en este espacio pero como no la tengo que solo estoy inventando un poco.
-                      <br><br>
-
-                      <!-- Inicio de Material -->
-                      <div class="row"> 
-                        <div class="col-md-1">
-                           <i class="fa fa-graduation-cap" ></i>
-                        </div>
-                        <div class="col-md-11">
-                           <h6> Material &nbsp;&nbsp;&nbsp;  <span  style="color:#A4A4A4;"> ___________________ </span> &nbsp;&nbsp;&nbsp; <a class="fa fa-download" href=""> </a>  </h6>
-
-                        </div>
-                        
-                      </div>
-                        <!-- aqui seria el for -->
-
-                      <div class="row"> 
-                        <div class="col-md-1 margin-l2cm">
-
-                            <span class="fa-stack ">
-                               <i class="fa fa-circle fa-stack-2x text-danger"></i>
-                               <i class="fa fa-video-camera fa-stack-1x fa-inverse" ></i>
-                            </span>
-
-                            
-                              
-                            </span>
-                        </div>
-                        <div class="col-md-7">
-                           <h6> Contenido &nbsp;&nbsp;&nbsp; <a class="fa fa-download" href=""> </a>   </h6>
-                        </div> 
-                      </div>
-
-
-                           <div class="row"> 
-                        <div class="col-md-1 margin-l2cm">
-
-                            <span class="fa-stack">
-                               <i class="fa fa-circle fa-stack-2x text-danger"></i>
-                               <i class="fa fa-file-zip-o fa-stack-1x fa-inverse" ></i>
-                            </span>
-
-                        </div>
-                        <div class="col-md-7">
-                            <h6> Zit &nbsp;&nbsp;&nbsp; <a class="fa fa-download" href=""> </a>   </h6>
-                        </div> 
-                      </div>
-
-                      <!-- Aqui termina el for -->
-
-                      <!-- fin de material -->
-
-                  <!-- Inicio Evaluaciones  -->
-                    <br><br>
-
-                      <div class="row"> 
-                        <div class="col-md-1">
-                            <span class="fa fa-pencil-square-o"></span>
-                        </div>
-                        <div class="col-md-11">
-                          <h6> Evaluaciones &nbsp;&nbsp;&nbsp;  <span  style="color:#A4A4A4;"> ___________________ </span> </h6>
-
-                        </div>
-                        
-                      </div>
-                        <!-- aqui seria el for -->
-
-                      <div class="row"> 
-                  
-                        <div class="col-md-12 margin-l2cm">
-                           <h6> <a class="text-muted" href=""> Examen </a>  </h6>
-                        </div> 
-                    
-                      </div>
-
-                      <!-- Aqui termina el for -->
-
-                  <!-- Fin Evaluaciones -->
-
-
-               </div>
-           </div>
-          </div>
-
-        </div>
-        <!-- fin del acordion -->
+          <!-- Inicio Evaluaciones  -->
+          <table class="contenido evaluaciones">
+            <tr>
+              <th style="width:25px;"><i class="fa fa-graduation-cap" ></i></th>
+              <th>Evaluaciones</th>
+            </tr>
+            <!-- aqui seria el for -->
+            <tr>
+              <td>
+              </td>
+              <td>
+                <a href="javascript:void(0)">Quiz contenido 1 <span class="new badge  blue-grey lighten-4">20 min.</span></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+              </td>
+              <td>
+                <a href="javascript:void(0)">Actividad</a>
+              </td>
+            </tr>
+             <!-- Aqui termina el for -->
+          </table>
+          <!-- Fin Evaluaciones -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- fin del acordion -->

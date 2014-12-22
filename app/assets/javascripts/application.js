@@ -16,11 +16,14 @@
 //= require react
 //= require bootstrap.min
 //= require materialize.min
-//= require_tree .
+//= require jquery.validate.min
+//= require additional-methods.min
+//= require validaciones
+
 
 
 $(document).ready(function(){
     $('.modal-trigger').leanModal();
     $(".dropdown-toggle").dropdown();
-    $.material.ripples(".btn");
+    // $.material.ripples(".btn");
 });

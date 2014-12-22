@@ -4610,7 +4610,6 @@ a.label:focus {
   white-space: nowrap;
   text-align: center;
   background-color: #777777;
-  border-radius: 10px;
 }
 .badge:empty {
   display: none;

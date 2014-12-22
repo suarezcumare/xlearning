@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   		Apartment::Tenant.switch()
   		return unless request.subdomain.present?
 
-  		o = Organizacion.find_by(subdominio: request.subdomain)
+  		o = BaseDato.find_by(nombre: request.subdomain)
   		if o
   			Apartment::Tenant.switch(request.subdomain)
   		else

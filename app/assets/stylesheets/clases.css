@@ -1,3 +1,55 @@
+/****************************************************************/
+/*                             HEADER                           */
+/****************************************************************/
+
+
+#header-curso .media-body{
+  width: auto;
+  padding-top: 30px;
+}
+
+#header-curso .media-body div{
+  text-transform: uppercase;
+}
+
+#avance-porcentaje{
+  position: relative;
+  display: inline-block;
+  float: right;
+  width: 60px;
+  height: 60px;
+  border: black;
+}
+
+#avance-porcentaje i, #avance-porcentaje span{
+  position: absolute;  
+}
+#avance-porcentaje span{
+  font-size: 20px;
+  top: 15px;
+  left: 13px;
+}
+#avance-porcentaje i{
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  font-size: 59px;
+}
+
+/****************************************************************/
+/*                          INSTRUCTOR                          */
+/****************************************************************/
+
+.img-instructor{
+  width: 100px; 
+  height: 100px; 
+  border: 5px solid #ffffff; 
+}
+
+#info-instructor h1{
+  line-height: 1.2em !important;
+}
+
 .tab-simple{
   position:relative;
   padding:5px 5px 5px;
@@ -10,10 +62,18 @@
   box-shadow:inset 0 3px 6px rgba(0.1,0,0,.05)
 }
 
+#sidebar-recordatorios ul li{
+   /*border-top: 1px solid #eeeeee;*/
+   display: block;
+}
+
+#sidebar-recordatorios ul:first{
+   border-top: none;
+}
 .text-tab-simple {
   margin-left: 0.5cm;
-   font-size: 11px;
-   border-bottom: 1px solid #eeeeee;
+  font-size: 11px;
+  border-bottom: 1px solid #eeeeee;
 }
 
 .border {
@@ -28,16 +88,10 @@
 }
 
 .img-header-clases{
- width: 90px;
- height: 90px;
- border-radius: 15px;
+ width: 130px;
+ height: 130px;
 }
 
-.img-instructor{
-width: 70px; 
-height: 80px; 
-border: 5px solid #ffffff; 
-}
 
 div ul li {
   display: inline;  
@@ -47,8 +101,11 @@ div ul li {
 
 .panel-der {
   margin-left: 0.5cm;
-  font-size: 11px;
-  border-bottom: 1px solid #eeeeee;
+  font-size: 12px;
+}
+
+.panel-der::first{
+  border: 0px;
 }
 
 .subrayado-min {
@@ -57,11 +114,6 @@ div ul li {
   width:1cm;
 }
 
-.porcentaje-completado {
-
-  text-align: right;
-  font-size: 12px;
-}
 
 .margin-l2cm {
   margin-left: 2cm;
@@ -80,4 +132,36 @@ div ul li {
   width: 65px;
   height: 45px;
 
+}
+
+/****************************************************************/
+/*                         LECCIONES                            */
+/****************************************************************/
+
+#leccionesaccordion a.panel-title{
+  color: white;
+  display: block;
+}
+#leccionesaccordion h4{
+  display: inline-block;
+  font-size: 16px;
+}
+
+span.porcentaje-completado{
+  float: right;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding-top: 10px;
+}
+
+table.contenido i, table.contenido a:hover{
+  color: #7a7a7a;
+}
+
+table.contenido tr:first, table.contenido tr:nth-child(4){
+  width: 5%;
+}
+
+table.contenido tr th, table.contenido tr td{
+  padding: 0px;
 }
