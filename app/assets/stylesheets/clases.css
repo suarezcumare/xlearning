@@ -123,16 +123,6 @@ div ul li {
   margin-left: 1cm;
 }
 
-.notificacion-fecha {
-
-    padding-left:  5px;
-    padding-right: 5px;
-     padding-bottom:  5px;
-    padding-top: 5px;
-  width: 65px;
-  height: 45px;
-
-}
 
 /****************************************************************/
 /*                         LECCIONES                            */
@@ -164,4 +154,21 @@ table.contenido tr:first, table.contenido tr:nth-child(4){
 
 table.contenido tr th, table.contenido tr td{
   padding: 0px;
+}
+
+/****************************************************************/
+/*                        NOTIFICACIONES                        */
+/****************************************************************/
+
+.notificacion-fecha{ 
+  padding: 5px;
+  text-align: center;
+  font-size: 15px;
+  text-transform: uppercase;
+  height: 55px;
+  width: 80px;
+}
+
+.notificacion-fecha .anio{
+  font-size: 18px;
 }
