@@ -1,4 +1,4 @@
-class BaseDato < ActiveRecord::Migration
+class CreateBaseDatos < ActiveRecord::Migration
   def change
   	create_table(:base_datos) do |t|
       t.string :nombre, :null => false
