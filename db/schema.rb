@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141220060521) do
+ActiveRecord::Schema.define(version: 20141222162418) do
 
   create_table "archivo_objeto_aprendizajes", force: true do |t|
     t.binary   "archivo"
