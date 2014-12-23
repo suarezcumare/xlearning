@@ -93,11 +93,7 @@
 }
 
 
-div ul li {
-  display: inline;  
-  padding-right: 4px;
 
-}
 
 .panel-der {
   margin-left: 0.5cm;
@@ -171,4 +167,14 @@ table.contenido tr th, table.contenido tr td{
 
 .notificacion-fecha .anio{
   font-size: 18px;
+}
+
+
+/****************************************************************/
+/*                        Bitacora                              */
+/****************************************************************/
+
+.scroll-bitacora {
+  height: 700px; 
+  overflow: auto;
 }
