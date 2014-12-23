@@ -16,40 +16,44 @@
     <!-- Inicio del panel tablasEvaluacionesCurso -->  
     <div class="tab-pane" id="tablasEvaluacionesCurso">
                   
-      <div class="row">
-         <div class="col-md-4" ><b> Evaluación </b> </div>
-          <div class="col-md-2"><b> Calificación </b></div>
-          <div class="col-md-3"><b> Ultimo Intento </b> </div>
-                      
-      </div>
-      <br>
-         <!-- Aqui empezaria el for -->
-
-      <div class="row border">
-       <div class="col-md-4 font12px"> Quiz 1: Distancia Euclidiana </div>
-        <div class="col-md-2 font12px"> 15/20 </div>
-        <div class="col-md-2 font12px"> 12/11/2014 </div>
-         <div class="col-md-4 font12px">
+  
+  <table class="table">
+    <thead>
+          <tr>
+            <th>Evaluación</th>
+            <th>Calificación</th>
+            <th>Ultimo Intento</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Quiz 1: Distancia Euclidiana</th>
+            <td>15/20</td>
+            <td>12/11/2014</td>
+            <td>
               <form>
                 <button type="button" id="presentar(id/curso/examen)" class="btn-group btn-primary btn-group-xs font12px"> PRESENTAR  </button>
                   <button type="button" id="feedback(id/curso/examen)" class="btn-group btn-info btn-group-xs font12px"> FEEDBACK  </button>
-                </form>
-            </div>
-        </div>
-
-                    <!-- Fin for -->
-                    
-     <div class="row border">
-       <div class="col-md-4 font12px"> Quiz 1: Distancia Euclidiana </div>
-        <div class="col-md-2 font12px"> 15/20 </div>
-        <div class="col-md-2 font12px"> 12/11/2014 </div>
-         <div class="col-md-4 font12px">
+                </form> 
+              </td>
+          </tr>
+           <tr>
+            <th scope="row">Quiz 1: Distancia Euclidiana</th>
+            <td>15/20</td>
+            <td>12/11/2014</td>
+            <td>
               <form>
                 <button type="button" id="presentar(id/curso/examen)" class="btn-group btn-primary btn-group-xs font12px"> PRESENTAR  </button>
                   <button type="button" id="feedback(id/curso/examen)" class="btn-group btn-info btn-group-xs font12px"> FEEDBACK  </button>
-                </form>
-            </div>
-       </div>
+                </form> 
+              </td>
+          </tr>
+          
+        </tbody>
+  </table>
+
+
 
 
 

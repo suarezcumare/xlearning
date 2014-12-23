@@ -44,16 +44,15 @@
 
   <script type="text/javascript">
     $(document).ready(function(){
-      $('ul.tabs').tabs();
 
-       $('#calendar').fullCalendar({
+      $('#calendar').fullCalendar({
       header: {
         left: 'prev,next today',
         center: 'title',
         right: 'month,basicWeek'
       },
       defaultDate: '2014-12-01',
-      editable: false,
+      editable: true,
       eventLimit: true, // allow "more" link when too many events
       events: [
         {
@@ -98,6 +97,25 @@
       ]
     });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      $('ul.tabs').tabs();
 
     });
   </script>
