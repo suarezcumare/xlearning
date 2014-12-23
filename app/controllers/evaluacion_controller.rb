@@ -1,5 +1,8 @@
 class EvaluacionController < ApplicationController
-	def index
-		render "clases/evaluaciones/cuestionario_info"
+	def overview
+		render "evaluacion/overview"
+	end
+	def presentar
+		render "evaluacion/presentar"
 	end
 end

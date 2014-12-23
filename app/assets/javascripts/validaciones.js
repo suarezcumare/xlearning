@@ -40,4 +40,15 @@ $(document).ready(function(){
 		},
 		errorClass:"msj-error"
 	});
+
+
+	$("#form-iniciar-sesion").validate({
+		rules:{
+			"usuario[email]":"required",
+			"usuario[password]":"required"
+		},
+		groups:{
+			cuenta: "usuario[email] usuario[password]"
+		}
+	});
 });

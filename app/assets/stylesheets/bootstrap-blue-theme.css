@@ -8,7 +8,13 @@
  * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=dd9976b8d66c8d1a5e31)
  * Config saved to config.json and https://gist.github.com/dd9976b8d66c8d1a5e31
  */
+hr{
+  width: 50%;
+}
 
+/*****************************************************/
+/*                 REGISTRO FORMULARIO               */
+/*****************************************************/
 
 #form-registro-container{
   display: block;
@@ -28,12 +34,23 @@
   padding: 15px 45px;
 }
 
-#form-registro-container > div:nth-child(2){
+#form-registro-container #secciones > div:nth-child(1){
   border-right: 1px solid #ECEBEB;
 }
 
-#form-registro-container > div:nth-child(3) i{
+#form-registro-container #secciones > div:nth-child(2) i{
   font-size: 60px;
+}
+
+/*****************************************************/
+/*                       TIMER                       */
+/*****************************************************/
+
+div.timer{
+  position: fixed;
+  display: block;
+  top:45%;
+  right: 15px;
 }
 
 main{
@@ -52,6 +69,20 @@ main{
   padding: 45px 0px;
 }
 
+.pad15-h{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.pad30-h{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.pad45-h{
+  padding-left: 45px;
+  padding-right: 45px;
+}
 
 .no-padding{
   padding-left: 0px !important;
@@ -298,20 +329,18 @@ a.activar-busqueda{
   font-size: 15px;
   font-style: italic;
 }
-nav ul i{
+nav#menu-header ul i{
   font-size: 20px !important;
 }
-nav ul li:hover{
-  background-color: transparent;
+nav#menu-header  ul > li:hover, nav#menu-header  ul > li:active{
+  background-color: #e3f2fd;
+  color: #42a5f5;
 }
-nav ul > li > a{
-  box-sizing:border-box;
-  -moz-transition: border-top 0.1s;
-  -webkit-transition: border-top 0.1s;
-  transition: border-top 0.1s;
-}
-nav ul > li > a:hover{
-  border-top: 3px solid #03A9F4;
+nav#menu-header  ul > li{
+  box-sizing:background-color;
+  -moz-transition: background-color 0.5s ease-out;
+  -webkit-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
 }
 
 /*****************************************************/
@@ -556,8 +585,8 @@ label{
   width: 32px;
   text-align: center;
   height: 32px;
-  padding-top: 5px;
-  font-size: 26px !important;
+  padding-top: 3px;
+  font-size: 20px !important;
 }
 .fb:hover, .tw:hover, .gp:hover{
   color:white;
