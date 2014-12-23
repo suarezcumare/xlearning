@@ -1,8 +1,10 @@
-<div id="form-registro-container" class="pad45 center-block">
+<div class="pad30"></div>
+<div id="form-registro-container" class="pad15 pad15-h center-block panel">
 	<div id="titulo">
 		<h3>Reg&iacute;strate</h3>
 	</div>
-	<div class="pull-left seccion">
+	<div id="secciones" style="display:inline-block;">
+		<div class="pull-left seccion">
 			<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 			  <%= devise_error_messages! %>
 

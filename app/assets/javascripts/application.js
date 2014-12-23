@@ -26,4 +26,12 @@ $(document).ready(function(){
     $('.modal-trigger').leanModal();
     $(".dropdown-toggle").dropdown();
     // $.material.ripples(".btn");
+ //    $("#form-iniciar-sesion").bind(
+ //    	"ajax:success", (e, data, status, xhr), function(){
+	//     if(data.success){
+	//       alert('success');
+	//     }else{
+	//       alert('failure!')
+	//     }
+	// });
 });

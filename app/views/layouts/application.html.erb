@@ -31,12 +31,9 @@
             <%= yield %>
           </div>
         <% else %>
-            <div class="col-md-3 col-lg-2 no-padding">
-            <%= render "application/menu" %>
-          </div>
-          <div class="col-md-9 col-lg-10">
-            <%= yield %>
-          </div>
+            <div class="col-md-12 col-lg-12 no-padding">
+              <%= yield %>
+            </div>
         <% end %>
       </div>
     </main>

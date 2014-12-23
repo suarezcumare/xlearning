@@ -3,7 +3,10 @@
 		<h3 class="panel-title">Inicia sesi&oacute;n</h3>
 	</div> -->
 	<div class="panel-body">
-		<%= form_for(:usuario, :url => session_path(:usuario)) do |f| %>
+		<%= form_for(:usuario, :url => session_path(:usuario),
+				:html => {:id => "form-iniciar-sesion"},
+                :format => :json,
+                :remote => true) do |f| %>
 		  	<legend class="text-center">Inicia sesi&oacute;n</legend>
 			  <div><%= f.label :email,"Email" %><br />
 			  <%= f.email_field :email, :autofocus => true %></div>
