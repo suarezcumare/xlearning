@@ -5,4 +5,7 @@ $(document).ready(function(){
 	$("#hide-search-bar").click(function(){
 		$("#top-search-bar").css("display","none");
 	});
+	$("main").click(function(){
+		$("#top-search-bar").css("display","none");
+	});
 });

@@ -6,13 +6,17 @@ end
 
 Xlearning::Application.routes.draw do
 
-	match "/usuarios/validar_email" => "usuarios#validaremail", via: :post
+	match "/validar_email" => "usuario#validar_email", via: :post
+	match "/menu" => "menu#show", via: :get
   	constraints(SubdomainPresent) do
   		match "/clases/:id" => "grupos#index", via: :get
   		match "/clases/:id/evaluacion/:id/overview" => "evaluacion#overview", via: :get
   		match "/clases/:id/evaluacion/:id/presentar" => "evaluacion#presentar", via: :get
 	end
 	devise_for :usuarios, via: :post
+	devise_scope :usuario do
+  		get "/entrar" => "sessions#create"
+	end
 	root 'portal#index'
 	resources :organizacions
 end

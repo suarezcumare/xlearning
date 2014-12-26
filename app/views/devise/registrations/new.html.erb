@@ -13,11 +13,11 @@
 			  	<div class="estado input-group-addon"></div></div>
 			  </div>
 			  <div><%= f.label :password, "Contraseña" %><br />
-			  <div class="input-group"><%= f.password_field :password %><div class="estado input-group-addon"></div></div>
+			  <div class="input-group"><%= f.password_field :password, {"maxlength"=>30} %><div class="estado input-group-addon"></div></div>
 			</div>
 
 			  <div><%= f.label :password_confirmation, "Confirmar contraseña" %><br />
-			  <div class="input-group"><%= f.password_field :password_confirmation %><div class="estado input-group-addon"></div></div>
+			  <div class="input-group"><%= f.password_field :password_confirmation, {"maxlength"=>30} %><div class="estado input-group-addon"></div></div>
 			</div>
 			  <div><%= check_box_tag(:terminos) %>
 				   <%= label_tag(:terminos, "Acepto los términos de uso") %></div>

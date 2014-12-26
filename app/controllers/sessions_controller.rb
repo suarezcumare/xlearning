@@ -1,17 +1,13 @@
 # app/controllers/sessions_controller.rb
  
-class SessionsController  resource_name, :recall => "#{controller_path}#failure")
-    sign_in_and_redirect(resource_name, resource)
-  end
- 
-  def sign_in_and_redirect(resource_or_scope, resource=nil)
-    scope = Devise::Mapping.find_scope!(resource_or_scope)
-    resource ||= resource_or_scope
-    sign_in(scope, resource) unless warden.user(scope) == resource
-    return render :json => {:success => true}
-  end
- 
-  def failure
-    return render :json => {:success => false, :errors => ["Login failed."]}
+class SessionsController < Devise::SessionsController
+  def create
+    self.resource = warden.authenticate!(auth_options)
+    sign_in(resource_name, resource)
+    if usuario_signed_in?
+      redirect_to root_url
+    else
+      render json: {"code"=>0, "mensaje"=>"Email o contraseña incorrecta."}
+    end
   end
 end

@@ -1,9 +1,9 @@
 class UsuarioController < ApplicationController
-	def validaremail
-		if Usuario.exists?(email: params[:email])
-			return false
+	def validar_email
+		if Usuario.exists?(email: params[:usuario][:email])
+			render json: false
 		else
-			return true
+			render json: true
 		end
 	end
 end
