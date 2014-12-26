@@ -21,6 +21,7 @@
 //= require validaciones
 //= require fullcalendar.min
 //= require main
+//= require clases
 
 
 $(document).ready(function(){

@@ -29,6 +29,8 @@
     <div class="tab-pane" id="descipcionesCurso">
       <%= render "clases/elementos/descripciones" %>
     </div>
+   <!-- Fin cuadro Generar, llevado por un tabs -->   
+  
   </div>
   <div class="col-md-3 col-lg-3">
       <%= render "clases/application/instructor" %>
@@ -99,23 +101,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-      $('ul.tabs').tabs();
+$('.tooltipped').tooltip({"delay": 50});    
+$('ul.tabs').tabs();
+$('.modal-trigger').leanModal();
 
     });
   </script>
