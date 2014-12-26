@@ -275,6 +275,54 @@ ul.dropdown-menu:before {
   border-color: transparent transparent blue;
 }
 
+header{
+  position: relative;
+}
+
+.search-bar{
+  position: absolute;
+  display: none;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 20;
+}
+.search-bar form{
+  display: table-row;
+}
+.search-bar div{
+  display: table-cell;
+  vertical-align: middle;
+}
+.search-bar .query{
+  width: auto;
+}
+.search-bar .close-search{
+  width: 64px;
+  border-left: 1px solid #E8E8E8;
+}
+.search-bar .close-search a{
+  display: block;
+  width: 70px;
+  height: 64px;
+  line-height: 64px;
+  text-align: center;
+}
+.search-bar .close-search a i{
+  font-size: 30px;
+  color: #929191;
+}
+.search-bar input{
+  margin: 0px;
+  height: 50px;
+  color:#000;
+  font-size: 30px;
+}
+.search-bar input, .search-bar input:focus{
+  border-bottom: none !important;
+  outline: 0 !important;
+}
 #menu-header{
   position: fixed;
   top:0;

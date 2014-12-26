@@ -28,7 +28,7 @@ $(document).ready(function(){
 			"usuario[email]":{
 				email:"Indica un correo electrónico válido",
 				required:"Indica tu correo electrónico",
-				remote:"Ya existe una cuenta asociada a este correo"
+				//remote:"Ya existe una cuenta asociada a este correo"
 			},
 			"usuario[password]":{
 				required:"Indica una contraseña",

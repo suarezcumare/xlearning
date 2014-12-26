@@ -3,7 +3,7 @@
       <a href="javascript:void(0)" class="brand-logo">
       	<img src="/assets/logo-header.png"/>Learning
       </a>
-      <a class="activar-busqueda" href=""><i class="mdi-action-search"></i></a>
+      <a id="busqueda-trigger" class="activar-busqueda" href="javascript:void(0)"><i class="mdi-action-search"></i></a>
       <% if usuario_signed_in? %>
       <ul id="nav-mobile" class="right side-nav">
         <li><a href="sass.html"  class="no-effect"><i class="mdi-social-notifications"></i></a></li>
@@ -12,19 +12,19 @@
         	<a href="javascript.html" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"  class="no-effect">
         		<div class="media logged-in-usuario">
         			<div class="media-left">
-						<img src="/assets/avatar2.jpg" class="img-circle" alt=""/>
-					</div>
-					<div class="media-body">
-						<h6 class="media-heading">Andrea Gomez</h6>
-						<span class="rol">rol</span>
-					</div>
-				</div>
+    						<img src="/assets/avatar2.jpg" class="img-circle" alt=""/>
+    					</div>
+    					<div class="media-body">
+    						<h6 class="media-heading">Andrea Gomez</h6>
+    						<span class="rol">rol</span>
+    					</div>
+				    </div>
         	</a>
         	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-			    <li role="presentation"></li> 
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-			    <li role="presentation"><%= link_to "Salir", destroy_usuario_session_url,method: :delete %></li>
-			</ul>
+  			    <li role="presentation"></li> 
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+  			    <li role="presentation"><%= link_to "Salir", destroy_usuario_session_url,method: :delete %></li>
+			    </ul>
         </li>
       </ul>
       <% else %>
@@ -35,6 +35,16 @@
 	      </ul>
       <% end %>
       <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
+  </div>
+  <div id="top-search-bar" class="search-bar">
+    <form>
+      <div class="query pad15-h">
+        <input type="text" name="q" class="pad15-h" placeholder="Escribe lo que estás buscando y presiona Enter"></input>
+      </div>
+      <div class="close-search">
+        <a id="hide-search-bar"href="javascript:void(0)"><i class="mdi-content-clear"></i></a>
+      </div>
+    </form>
   </div>
 </nav>
 
