@@ -1,0 +1,66 @@
+
+/****************************************************************/
+/*                          Imagen del curso                     */
+/****************************************************************/
+
+.img-curso{
+ width: 300px ; 
+ height: 150px;
+ z-index:1;
+ top:100px;
+ float:left;
+
+
+
+}
+
+.redondo {
+margin: 0;
+padding: 0;
+border-radius: 800px;
+overflow: hidden;
+width:60px;
+z-index:2;
+top: 150px;
+}
+
+.pagination{
+align:center;
+position: inherit;
+
+}
+
+.pager{
+position: inherit;
+float: right;
+
+}
+.etiqueta{
+float: right;
+width: 20px;
+}
+
+
+/****************************************************************/
+/*                         border pull                   */
+/****************************************************************/
+
+.#{$fa-css-prefix}-border {
+  padding: .2em .25em .15em;
+  border: solid .08em $fa-border-color;
+  border-radius: .1em;
+}
+
+.pull-right { float: right;
+visibility:visible;
+top: 230px;
+
+  }
+.pull-left { float: left; 
+visibility:visible;
+ }
+
+.#{$fa-css-prefix} {
+  &.pull-left { margin-right: .3em; }
+  &.pull-right { margin-left: .3em; }
+}

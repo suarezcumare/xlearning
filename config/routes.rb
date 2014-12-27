@@ -5,7 +5,7 @@ class SubdomainPresent
 end
 
 Xlearning::Application.routes.draw do
-
+get 'cursos' => 'curso_xespecializacion#index'
 	match "/validar_email" => "usuario#validar_email", via: :post
 	match "/menu" => "menu#show", via: :get
   	constraints(SubdomainPresent) do

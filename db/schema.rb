@@ -34,8 +34,6 @@ ActiveRecord::Schema.define(version: 20141222162418) do
     t.datetime "fecha_cierre"
     t.integer  "grupo_id"
     t.integer  "asignacion_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   add_index "asignacion_grupos", ["asignacion_id"], name: "index_asignacion_grupos_on_asignacion_id", using: :btree
@@ -51,8 +49,8 @@ ActiveRecord::Schema.define(version: 20141222162418) do
 
   add_index "asignacions", ["curso_id"], name: "index_asignacions_on_curso_id", using: :btree
 
-  create_table "base_datos", id: false, force: true do |t|
-    t.string "nombre", limit: 200, null: false
+  create_table "base_datos", force: true do |t|
+    t.string "nombre", null: false
   end
 
   create_table "categoria", force: true do |t|
@@ -88,20 +86,23 @@ ActiveRecord::Schema.define(version: 20141222162418) do
   add_index "curso_categoria", ["curso_id"], name: "index_curso_categoria_on_curso_id", using: :btree
 
   create_table "cursos", force: true do |t|
-    t.string   "nombre"
-    t.text     "descripcion"
-    t.text     "objetivos"
-    t.text     "prerequisitos"
-    t.text     "perfil_estudiante"
-    t.integer  "pago"
-    t.float    "costo",              limit: 24
-    t.integer  "matricula_maxima"
-    t.float    "puntaje_aprobacion", limit: 24
-    t.integer  "horas_semanales"
-    t.integer  "estatus"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "nombre"
+    t.text    "descripcion"
+    t.text    "objetivos"
+    t.text    "prerequisitos"
+    t.text    "perfil_estudiante"
+    t.boolean "pago"
+    t.float   "costo",              limit: 24
+    t.integer "matricula_maxima"
+    t.float   "puntaje_aprobacion", limit: 24
+    t.integer "horas_semanales"
+    t.boolean "estatus"
+    t.integer "facilitador_id"
+    t.integer "comentario_id"
   end
+
+  add_index "cursos", ["comentario_id"], name: "index_cursos_on_comentario_id", using: :btree
+  add_index "cursos", ["facilitador_id"], name: "index_cursos_on_facilitador_id", using: :btree
 
   create_table "dispositivos", force: true do |t|
     t.string "nombre"
@@ -117,8 +118,6 @@ ActiveRecord::Schema.define(version: 20141222162418) do
     t.integer  "asignaciongrupo_id"
     t.integer  "tipoformato_id"
     t.integer  "usuario_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   add_index "entrega_asignacions", ["asignaciongrupo_id"], name: "index_entrega_asignacions_on_asignaciongrupo_id", using: :btree
@@ -167,7 +166,7 @@ ActiveRecord::Schema.define(version: 20141222162418) do
     t.date    "fecha_inicio"
     t.date    "fecha_fin"
     t.date    "cierre_inscripcion"
-    t.integer "estatus"
+    t.boolean "estatus"
     t.integer "curso_id"
     t.integer "usuario_id"
   end
@@ -186,11 +185,9 @@ ActiveRecord::Schema.define(version: 20141222162418) do
   add_index "historials", ["usuario_id"], name: "index_historials_on_usuario_id", using: :btree
 
   create_table "item_resumen", force: true do |t|
-    t.text     "titulo"
-    t.text     "descripcion"
-    t.integer  "resumen_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text    "titulo"
+    t.text    "descripcion"
+    t.integer "resumen_id"
   end
 
   add_index "item_resumen", ["resumen_id"], name: "index_item_resumen_on_resumen_id", using: :btree
@@ -205,38 +202,30 @@ ActiveRecord::Schema.define(version: 20141222162418) do
     t.integer  "usuario_id"
     t.integer  "grupo_id"
     t.datetime "fecha"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   add_index "matriculas", ["grupo_id"], name: "index_matriculas_on_grupo_id", using: :btree
   add_index "matriculas", ["usuario_id"], name: "index_matriculas_on_usuario_id", using: :btree
 
   create_table "menus", force: true do |t|
-    t.integer  "rol_id"
-    t.integer  "opcionmenu_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "rol_id"
+    t.integer "opcionmenu_id"
   end
 
   add_index "menus", ["opcionmenu_id"], name: "index_menus_on_opcionmenu_id", using: :btree
   add_index "menus", ["rol_id"], name: "index_menus_on_rol_id", using: :btree
 
   create_table "modo_pagos", force: true do |t|
-    t.string   "nombre"
-    t.text     "descripcion"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "nombre"
+    t.text   "descripcion"
   end
 
   create_table "modulos", force: true do |t|
-    t.string   "nombre"
-    t.text     "descripcion"
-    t.integer  "orden"
-    t.integer  "estatus"
-    t.integer  "curso_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "nombre"
+    t.text    "descripcion"
+    t.integer "orden"
+    t.boolean "estatus"
+    t.integer "curso_id"
   end
 
   add_index "modulos", ["curso_id"], name: "index_modulos_on_curso_id", using: :btree
@@ -259,24 +248,21 @@ ActiveRecord::Schema.define(version: 20141222162418) do
   end
 
   create_table "opcion_menus", force: true do |t|
-    t.string   "nombre"
-    t.integer  "estatus"
-    t.string   "url"
-    t.integer  "padre"
-    t.integer  "menu_id"
-    t.string   "icono"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "nombre"
+    t.boolean "estatus"
+    t.string  "url"
+    t.integer "padre_id"
+    t.integer "menu_id"
+    t.string  "icono"
   end
 
   add_index "opcion_menus", ["menu_id"], name: "index_opcion_menus_on_menu_id", using: :btree
+  add_index "opcion_menus", ["padre_id"], name: "index_opcion_menus_on_padre_id", using: :btree
 
   create_table "organizacions", force: true do |t|
-    t.string   "nombre"
-    t.string   "subdominio"
-    t.integer  "estatus"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "nombre"
+    t.string  "subdominio"
+    t.integer "estatus"
   end
 
   create_table "pago_matriculas", force: true do |t|
@@ -285,9 +271,7 @@ ActiveRecord::Schema.define(version: 20141222162418) do
     t.float    "monto",            limit: 24
     t.datetime "fecha"
     t.string   "numero_operacion"
-    t.integer  "estatus"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.boolean  "estatus"
   end
 
   add_index "pago_matriculas", ["matricula_id"], name: "index_pago_matriculas_on_matricula_id", using: :btree
@@ -305,9 +289,7 @@ ActiveRecord::Schema.define(version: 20141222162418) do
   add_index "pago_membresia", ["usuario_id"], name: "index_pago_membresia_on_usuario_id", using: :btree
 
   create_table "pais", force: true do |t|
-    t.string   "nombre"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "nombre"
   end
 
   create_table "perfils", force: true do |t|
@@ -317,10 +299,10 @@ ActiveRecord::Schema.define(version: 20141222162418) do
     t.string  "sexo"
     t.text    "intereses"
     t.string  "ocupacion"
-    t.integer "perfil_id"
+    t.integer "usuario_id"
   end
 
-  add_index "perfils", ["perfil_id"], name: "index_perfils_on_perfil_id", using: :btree
+  add_index "perfils", ["usuario_id"], name: "index_perfils_on_usuario_id", using: :btree
 
   create_table "pregunta", force: true do |t|
     t.text    "enunciado"
@@ -370,18 +352,15 @@ ActiveRecord::Schema.define(version: 20141222162418) do
   add_index "respuesta_evaluacion_presentadas", ["respuesta_id"], name: "index_respuesta_evaluacion_presentadas_on_respuesta_id", using: :btree
 
   create_table "resumen", force: true do |t|
-    t.string   "titulo"
-    t.text     "descripcion"
-    t.integer  "modulo_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "titulo"
+    t.text    "descripcion"
+    t.integer "modulo_id"
   end
 
   add_index "resumen", ["modulo_id"], name: "index_resumen_on_modulo_id", using: :btree
 
   create_table "rols", force: true do |t|
-    t.string  "nombre"
-    t.integer "estatus"
+    t.string "nombre"
   end
 
   create_table "sugerencia", force: true do |t|
@@ -393,9 +372,7 @@ ActiveRecord::Schema.define(version: 20141222162418) do
   add_index "sugerencia", ["usuario_id"], name: "index_sugerencia_on_usuario_id", using: :btree
 
   create_table "tipo_formatos", force: true do |t|
-    t.string   "nombre"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "nombre"
   end
 
   create_table "usuario_notificacions", force: true do |t|
@@ -416,20 +393,18 @@ ActiveRecord::Schema.define(version: 20141222162418) do
   add_index "usuario_rols", ["usuario_id"], name: "index_usuario_rols_on_usuario_id", using: :btree
 
   create_table "usuarios", force: true do |t|
-    t.string   "email",                  limit: 190, null: false
-    t.string   "encrypted_password",                 null: false
-    t.string   "nombre",                             null: false
+    t.string   "email",                  limit: 190,              null: false
+    t.string   "encrypted_password",                              null: false
+    t.string   "nombre",                             default: "", null: false
     t.text     "pregunta_secreta"
     t.text     "respuesta_secreta"
+    t.integer  "pais_id"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "provider"
-    t.string   "uid"
   end
 
   add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true, using: :btree
+  add_index "usuarios", ["pais_id"], name: "index_usuarios_on_pais_id", using: :btree
 
 end
