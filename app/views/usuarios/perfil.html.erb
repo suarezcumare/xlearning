@@ -1,0 +1,69 @@
+
+<% content_for :css_personalizado do %>
+ <%= stylesheet_link_tag    "usuarios" %>
+ 
+<% end %>
+<div class="row pad30">
+  <div class="col-md-3 col-lg-3">
+    <%= render "usuarios/application/panelPersonal" %>
+    
+  </div>
+  <div class="col-md-8 col-lg-8 no-padding">
+        <div class="tab-simple">
+          <div class="row">
+             <div class="col-md-12 border">
+                 <h4 class="blue-text accent-1 text-uppercase"> Acerca de mi</h4>
+             </div>
+              
+             <div class="col-md-12">
+              <br> 
+                <i class="fa fa-tag font21px"> Barquisimeto, Venezuela</i>
+
+              <p class="text-muted margen">
+                    <br>
+                   Is an Associate Professor of Biostatistics at the Johns Hopkins Bloomberg School of Public Health and a Co-Editor of the Simply Statistics blog. He received his Ph.D. in Statistics from the University of California, Los Angeles and is a prominent researcher in the areas of air pollution and health risk assessment and statistical methods for environmental data. He created the course Statistical Programming at Johns Hopkins as a way to introduce students to the computational tools for data analysis. Dr. Peng is also a national leader in the area of methods and standards for reproducible research and is the Reproducible Research editor for the journal Biostatistics.
+                </p>
+                <br>
+                <p class="text-muted margen">
+                  
+                   His research is highly interdisciplinary and his work has been published in major substantive and statistical journals, including the Journal of the American Medical Association and the Journal of the Royal Statistical Society. Dr. Peng is the author of more than a dozen software packages implementing statistical methods for environmental studies, methods for reproducible research, and data distribution tools. He has also given workshops, tutorials, and short courses in statistical computing and data analysis.
+
+                </p>
+             </div>
+
+
+             <div class="col-md-12">
+              <br>
+                <i class="fa fa-pencil font21px"> Intereses</i>
+
+                <p class="text-muted margen">
+                   <br>
+                   Is an Associate Professor of Biostatistics at the Johns Hopkins Bloomberg School of Public Health and a Co-Editor of the Simply Statistics blog. He received his Ph.D. in Statistics from the University of California, Los Angeles and is a prominent researcher in the areas of air pollution and health risk assessment and statistical methods for environmental data. He created the course Statistical Programming at Johns Hopkins as a way to introduce students to the computational tools for data analysis. Dr. Peng is also a national leader in the area of methods and standards for reproducible research and is the Reproducible Research editor for the journal Biostatistics.
+                </p>
+             </div>
+
+           </div> 
+        </div>
+
+  </div>
+
+  <div class="col-md-12 col-lg-12">
+       <%= render "usuarios/application/panelCurso" %>
+  </div>
+
+
+</div>
+
+<% content_for :js_personalizado do %>
+
+ 
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+
+    });
+  </script>
+
+<% end %>
+

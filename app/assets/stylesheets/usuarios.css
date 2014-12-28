@@ -1,0 +1,176 @@
+/****************************************************************/
+/*                     Panel_Usuario                            */
+/****************************************************************/
+.text_usuario {
+  display: block;
+  text-align: center;
+}
+.row-padding{
+  width: auto;
+  padding-top: 20px;
+}
+
+.tab-simple{
+  position:relative;
+  padding:5px 5px 5px;
+  margin:5px 5px 5px;
+  border-color:#e5e5e5 #eee #eee;
+  border-style:solid;
+  border-width:1px 0;
+  -webkit-box-shadow:
+  inset 0 3px 6px rgba(0,0,0,.05);
+  box-shadow:inset 0 3px 6px rgba(0.1,0,0,.05)
+}
+
+.social_usuario{
+  padding-left: 40px;
+  font-size: 20px;
+   line-height: 2;
+}
+
+.btn-rounded {
+  border-radius: 25px;
+}
+
+
+
+
+/****************************************************************/
+/*                         Panel_cursos                         */
+/****************************************************************/
+
+.panel-cursos{
+  color: white;
+  display: inline-block;
+}
+
+.curso-cuadro {
+width: 250px;
+height: 200px;
+padding: 3px;
+border-radius: 5%;
+
+
+text­align: justify;
+word-wrap: break-word
+}
+
+.curso-cuadro-header{
+  width: 250px;
+  height: 130px;
+}
+
+.curso-cuadro-content{
+  width: 150px;
+  height: 70px;
+}
+
+
+
+.scroll-curso {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 240px;
+    width: 100%;
+    white-space:nowrap
+}
+
+.img-cuadro-curso{
+  padding-top: 6px;
+  padding-left: 4px;
+  width: 120px;
+  height: 120px;
+  border-radius: 25%;
+
+}
+
+#avance-porcentaje{
+  position: relative;
+  display: inline-block;
+  float: right;
+  width: 60px;
+  height: 60px;
+  border: black;
+}
+
+
+#avance-porcentaje i, #avance-porcentaje span{
+  position: absolute;  
+}
+#avance-porcentaje span{
+
+  font-size: 17px;
+  top: 10px;
+  left: 10px;
+}
+#avance-porcentaje i{
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  font-size: 50px;
+}
+
+.img-instructor{
+
+  padding-top: 6px;
+  padding-left: 4px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25%;
+
+}
+
+
+.subrayado-min {
+  border-bottom:solid; 
+  border-width: 2px; 
+  width:1cm;
+}
+
+
+/****************************************************************/
+/*                         ACERCA DE MI                         */
+/****************************************************************/
+
+
+.border {
+   border-bottom: 1px solid #2196F3; 
+}
+
+.margen {
+  margin-left: 0.5cm;
+ 
+}
+
+.font21px {
+  font-size: 21px;
+}
+
+
+
+/****************************************************************/
+/*                       input file                             */
+/****************************************************************/
+
+.clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0;}
+.clearfix:after{clear:both;}
+.hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}
+.input-block-level{display:block;width:100%;min-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+.btn-file{overflow:hidden;position:relative;vertical-align:middle;}.btn-file>input{position:absolute;top:0;right:0;margin:0;opacity:0;filter:alpha(opacity=0);transform:translate(-300px, 0) scale(4);font-size:23px;direction:ltr;cursor:pointer;}
+.fileupload{margin-bottom:9px;}.fileupload .uneditable-input{display:inline-block;margin-bottom:0px;vertical-align:middle;cursor:text;}
+.fileupload .thumbnail{overflow:hidden;display:inline-block;margin-bottom:5px;vertical-align:middle;text-align:center;}.fileupload .thumbnail>img{display:inline-block;vertical-align:middle;max-height:100%;}
+.fileupload .btn{vertical-align:middle;}
+.fileupload-exists .fileupload-new,.fileupload-new .fileupload-exists{display:none;}
+.fileupload-inline .fileupload-controls{display:inline;}
+.fileupload-new .input-append .btn-file{-webkit-border-radius:0 3px 3px 0;-moz-border-radius:0 3px 3px 0;border-radius:0 3px 3px 0;}
+.thumbnail-borderless .thumbnail{border:none;padding:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;}
+.fileupload-new.thumbnail-borderless .thumbnail{border:1px solid #ddd;}
+.control-group.warning .fileupload .uneditable-input{color:#a47e3c;border-color:#a47e3c;}
+.control-group.warning .fileupload .fileupload-preview{color:#a47e3c;}
+.control-group.warning .fileupload .thumbnail{border-color:#a47e3c;}
+.control-group.error .fileupload .uneditable-input{color:#b94a48;border-color:#b94a48;}
+.control-group.error .fileupload .fileupload-preview{color:#b94a48;}
+.control-group.error .fileupload .thumbnail{border-color:#b94a48;}
+.control-group.success .fileupload .uneditable-input{color:#468847;border-color:#468847;}
+.control-group.success .fileupload .fileupload-preview{color:#468847;}
+.control-group.success .fileupload .thumbnail{border-color:#468847;}
