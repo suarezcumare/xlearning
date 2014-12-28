@@ -1,0 +1,1059 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"borde",
+				"border"
+			],
+			[
+				"padre",
+				"padre_id"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"tabl",
+				"table-cell"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"i",
+				"i	Tag"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"menu",
+				"menuitem"
+			],
+			[
+				"re",
+				"repetir_funcion"
+			],
+			[
+				"var",
+				"var_actualizar_timer"
+			],
+			[
+				"fu",
+				"funcion_timer"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"a",
+				"a	Tag"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"paddi",
+				"padding"
+			],
+			[
+				"li",
+				"li	Tag"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"pad",
+				"padding-right"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"rem",
+				"remember_me"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"border",
+				"border-top"
+			],
+			[
+				"border-",
+				"border-bottom"
+			],
+			[
+				"bord",
+				"border-left"
+			],
+			[
+				"curso",
+				"curso_categoria"
+			],
+			[
+				"eva",
+				"evaluacion_presentadas"
+			],
+			[
+				"def",
+				"default"
+			],
+			[
+				"asigna",
+				"asignacion_grupos"
+			],
+			[
+				"sub",
+				"subdomain"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"or",
+				"organizacion"
+			],
+			[
+				"c",
+				"cla	class .. < ParentClass .. initialize .. end"
+			],
+			[
+				"res",
+				"RESTRICTED_SUBDOMAINS"
+			],
+			[
+				"best",
+				"bestIdx"
+			],
+			[
+				"out",
+				"outcome_data"
+			],
+			[
+				"ta",
+				"tamano"
+			],
+			[
+				"par",
+				"params"
+			],
+			[
+				"estu",
+				"estudiante"
+			],
+			[
+				"fin",
+				"find_by"
+			],
+			[
+				"Base",
+				"Base64"
+			],
+			[
+				"estudi",
+				"estudiantes"
+			],
+			[
+				"table-",
+				"table-row"
+			],
+			[
+				"border-r",
+				"border-right"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"d",
+				"display"
+			],
+			[
+				"tet",
+				"text-transform"
+			],
+			[
+				"aS",
+				"Asignacion"
+			],
+			[
+				"TIPO",
+				"tipo_archivo"
+			],
+			[
+				"mater",
+				"materia_prelada"
+			],
+			[
+				"us",
+				"usuarioID"
+			],
+			[
+				"pER",
+				"Perfil"
+			],
+			[
+				"mod",
+				"modoPagoID"
+			],
+			[
+				"M",
+				"ModoPago"
+			],
+			[
+				"mo",
+				"modopagoID"
+			],
+			[
+				"A",
+				"AreaDeConocimiento"
+			],
+			[
+				"INE",
+				"inline-block"
+			],
+			[
+				"p",
+				"points"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"background",
+				"background-size"
+			],
+			[
+				"u",
+				"ul	Tag"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"fnt",
+				"font-size"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"len",
+				"len-c"
+			],
+			[
+				"v",
+				"vector	std::vector"
+			],
+			[
+				"I",
+				"INT_MAX"
+			],
+			[
+				"S",
+				"SHRT_MAX"
+			],
+			[
+				"CAPT",
+				"captcha_challenge"
+			],
+			[
+				"form",
+				"formData"
+			],
+			[
+				"cu",
+				"currentidx"
+			],
+			[
+				"maxa",
+				"maxarealocal"
+			],
+			[
+				"maxar",
+				"maxarealocal"
+			],
+			[
+				"curr",
+				"currentidx"
+			],
+			[
+				"current",
+				"current"
+			],
+			[
+				"max",
+				"maximize"
+			],
+			[
+				"nro",
+				"nrostarboard"
+			],
+			[
+				"ingredien",
+				"ingredientes"
+			],
+			[
+				"datos",
+				"datosFumador"
+			],
+			[
+				"ingredi",
+				"ingredientes"
+			],
+			[
+				"fum",
+				"fumador"
+			],
+			[
+				"get",
+				"getMatrix"
+			],
+			[
+				"sem",
+				"sem_post"
+			],
+			[
+				"desp",
+				"despachar"
+			],
+			[
+				"fUMADOR",
+				"Fumador"
+			],
+			[
+				"pthread",
+				"pthread_t"
+			],
+			[
+				"sema",
+				"semaforo"
+			],
+			[
+				"con",
+				"contador"
+			],
+			[
+				"idhi",
+				"idhilo2"
+			],
+			[
+				"n",
+				"num"
+			],
+			[
+				"lam",
+				"lambda_vec"
+			],
+			[
+				"line",
+				"linear"
+			],
+			[
+				"la",
+				"lambda_vec"
+			],
+			[
+				"X",
+				"X_poly"
+			],
+			[
+				"thet",
+				"theta-y"
+			],
+			[
+				"error",
+				"error_val"
+			],
+			[
+				"the",
+				"theta"
+			],
+			[
+				"Th",
+				"theta"
+			],
+			[
+				"aux",
+				"aux_theta1"
+			],
+			[
+				"del",
+				"delta1"
+			],
+			[
+				"T",
+				"Theta1"
+			],
+			[
+				"theta",
+				"Theta2_grad"
+			],
+			[
+				"The",
+				"Theta2"
+			],
+			[
+				"sueldo",
+				"sueldo"
+			],
+			[
+				"cedula",
+				"cedula"
+			],
+			[
+				"L",
+				"L_in"
+			],
+			[
+				"Thet",
+				"Theta2"
+			],
+			[
+				"Theta",
+				"Theta1"
+			],
+			[
+				"one",
+				"onesv"
+			],
+			[
+				"opti",
+				"optimset"
+			],
+			[
+				"num",
+				"num_labels"
+			],
+			[
+				"e",
+				"eliminado"
+			],
+			[
+				"J",
+				"J_history"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/controllers/menu_controller.rb",
+			"settings":
+			{
+				"buffer_size": 215,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/models/opcion_menu.rb",
+			"settings":
+			{
+				"buffer_size": 358,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/helpers/application_helper.rb",
+			"settings":
+			{
+				"buffer_size": 198,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/application/_menu.html.erb",
+			"settings":
+			{
+				"buffer_size": 1168,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/assets/javascripts/main.js",
+			"settings":
+			{
+				"buffer_size": 336,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/bootstrap-blue-theme.css",
+			"settings":
+			{
+				"buffer_size": 14008,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/C++/C++.sublime-build",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Valentina/Documents/GitHub/xlearning/config/routes.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/config/initializers/assets.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/layouts/application.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/cursos_controller.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/cursos/index.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/javascripts/validaciones.js",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/javascripts/main.js",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/evaluacion/presentar.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/menu.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/sessions_controller.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/usuario_controller.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/opcion_menu.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141216011935_create_opcion_menus.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141216012140_create_menus.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/config/initializers/apartment.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/organizacions_controller.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/devise/sessions/_new.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/javascripts/application.js",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/bootstrap-blue-theme.css",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/devise/registrations/new.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/evaluacion/overview.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/helpers/application_helper.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/evaluacion_controller.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/usuario.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/log/development.log",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/application/_header.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/devise/shared/_links.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/timeline.css",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/elementos/_calendario.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/elementos/_bitacora.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/seeds.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/config/initializers/devise.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/javascripts/jquery.countdown360.js",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/index.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/bootstrap-blue.css",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141222162418_create_base_datos.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141222162418_create_base_dato.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/grupo.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/evaluacion.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/evaluacion_presentada.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/evaluacion_grupo.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/elementos/_notificaciones.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/curso.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/modulo.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/grupos_controller.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/evaluacion/cuestionario/overview.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/application_controller.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141214022641_devise_create_usuarios.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141222162418_base_dato.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/clases.css",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/application/_panelDerecha.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/application/_instructor.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141214012543_create_organizacions.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/elementos/_lista.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/application/_header.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/layouts/clases.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/materialize.css",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/registro.css",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/application/_footer.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/application/_menu.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/portal_controller.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/Gemfile",
+		"/C/Users/Valentina/Documents/xampp/htdocs/canvas/plantilla.html",
+		"/C/Users/Valentina/Desktop/timeline.html",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/devise/sessions/new.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/application/_login_form.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141218034526_create_pregunta_evaluacion_presentadas.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/compartido/header.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/compartido/menu.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/bienvenido_controller.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/application.css",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/critica_curso.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/pregunta_evaluacion_presentada.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141218024838_create_evaluacions.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141218043330_create_critica_cursos.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141216020116_create_cursos.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141217003223_create_grupos.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/notificacion.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/usuario_notificacion.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/sugerencia.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/rating.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/categoria.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/pregunta.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/historial.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/pago_membresia.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/curso_categoria.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/respuesta_evaluacion_presentada.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/respuesta.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141218025513_create_pregunta.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141218030133_create_evaluacion_grupos.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/matricula.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/organizacion.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/asignacion_grupo.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/entrega_asignacion.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/tipo_formato.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/asignacion.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141217003652_create_asignacions.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/base_dato.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141216153040_create_archivo_objeto_aprendizajes.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141216153324_create_objeto_aprendizajes.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141216005902_create_rols.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141216010517_create_usuario_rols.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141216013812_create_pais.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141216015404_create_perfils.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141216150942_create_modulos.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141216152137_create_tipo_formatos.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141216152258_create_dispositivos.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141216152232_create_licencia.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141216154316_create_contenidos.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/prelacion.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141216153517_create_prelacions.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/contenido.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/objeto_aprendizaje.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/archivo_objeto_aprendizaje.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/rol.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/public/404.html",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/db/schema.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/config/application.rb",
+		"/C/Users/Valentina/AppData/Local/Temp/Rar$DIa0.377/LEEME",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/config/initializers/aparment.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/config/initializers/apartment/subdomain_exclusions.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/organizacions/index.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/organizacions/new.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/config/database.yml",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/config/environments/development.rb",
+		"/C/Users/Valentina/Documents/GitHub/blog/app/views/blogms/index.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/blog/app/controllers/application_controller.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/bienvenido/index.html.erb"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"post",
+			"body",
+			"tooltop-test",
+			"has-error",
+			"error",
+			"inputError",
+			"%;\n",
+			">\n",
+			"lean_overlay",
+			".btn,.btn-large",
+			".btn, .btn-large",
+			"return",
+			"3b3c3c",
+			"00ACC1",
+			"00BCD4",
+			"843534",
+			"a94442",
+			"245269",
+			"31708f",
+			"2b542c",
+			"3c763d",
+			"148f77",
+			"1abc9c",
+			"03A9F4",
+			"843534",
+			"a94442",
+			"66512c",
+			"8a6d3b",
+			"245269",
+			"31708f",
+			"2b542c",
+			"3c763d",
+			"148f77",
+			"1abc9c",
+			"#1abc9c",
+			"navbar-collapse",
+			"navbar",
+			"form",
+			"navbar-form",
+			"navbar-default",
+			"navbar",
+			"navbar-header",
+			".navbar-header",
+			"navbar-header",
+			".btn",
+			"btn",
+			"#",
+			"raleway",
+			"dropdown-menu",
+			"dropdown-meu",
+			"dropdown-menu",
+			"dropdown-meu",
+			"disabled",
+			"nav-tabs",
+			"nav-pills",
+			"form-control",
+			".brand",
+			"dropdown-menu",
+			"int",
+			"FotoNombre",
+			"}}\n",
+			"c",
+			"lead-title",
+			"lead",
+			"btn-primary",
+			"page",
+			"page-title",
+			"thumb_slider_img",
+			"Hola",
+			"offcanvas-menu",
+			"style.cs",
+			"style.css",
+			"158899402",
+			"y",
+			");\n",
+			"f ",
+			"f(",
+			"b("
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"tab col s2",
+			"3b3c3c",
+			"039BE5",
+			"03A9F4",
+			"2d2e2e",
+			"3b3c3c",
+			"00ACC1",
+			"00BCD4",
+			"14a78a",
+			"1abc9c",
+			"db2336",
+			"f32a3e",
+			"E53935",
+			"F44336",
+			"FFCA28",
+			"FFD54F",
+			"037ABA",
+			"0288D1",
+			"1ACEA1",
+			"1DE9B6",
+			"068ECE",
+			"03A9F4",
+			"#03A9F4",
+			"javascript:void(0)",
+			"INTEGER",
+			"tarjeta"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/controllers/menu_controller.rb",
+					"settings":
+					{
+						"buffer_size": 215,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								127,
+								127
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/models/opcion_menu.rb",
+					"settings":
+					{
+						"buffer_size": 358,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								213,
+								213
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/helpers/application_helper.rb",
+					"settings":
+					{
+						"buffer_size": 198,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								198,
+								198
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/application/_menu.html.erb",
+					"settings":
+					{
+						"buffer_size": 1168,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								498,
+								498
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/assets/javascripts/main.js",
+					"settings":
+					{
+						"buffer_size": 336,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								295,
+								295
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/assets/stylesheets/bootstrap-blue-theme.css",
+					"settings":
+					{
+						"buffer_size": 14008,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9250,
+								9250
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5295.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 94.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 367.0,
+	"status_bar_visible": true
+}

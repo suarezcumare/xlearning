@@ -7,15 +7,27 @@ class Usuario < ActiveRecord::Base
   has_many :comentarios, class_name: "CriticaCurso",
              foreign_key: "comentario_id"
   has_many :usuario_rols
+  has_many :rols, :through => :usuario_rols
   has_many :sugerencia
   has_many :entrega_asignacions
   has_many :matriculas
   has_many :historials
   has_many :usuario_notificacions
   has_many :pago_membresia
-  has_many :rols, :through => :usuario_rols
   has_many :evaluacion_presentadas
   has_many :evaluacion_grupos, :through => :evaluacion_presentadas
   has_one :pais
   has_one :perfil
+
+  attr_accessor :rol_actual
+  @rol_actual
+
+  after_initialize :set_rol_actual
+
+  private
+    def set_rol_actual
+      #self.rol_actual = self.usuario_rols[]
+    end
+
+
 end

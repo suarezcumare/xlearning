@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require showdown
 //= require react
+//= require react_ujs
 //= require bootstrap.min
 //= require materialize.min
 //= require jquery.validate.min

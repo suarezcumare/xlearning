@@ -2,7 +2,7 @@ class CreateOpcionMenus < ActiveRecord::Migration
   def change
     create_table :opcion_menus do |t|
       t.string :nombre
-      t.boolean :estatus
+      t.raiz :estatus
       t.string :url
       t.references :padre, index: true
       t.references :menu, index: true

@@ -8,4 +8,15 @@ $(document).ready(function(){
 	$("main").click(function(){
 		$("#top-search-bar").css("display","none");
 	});
+    //$('.collapsible').collapsible();
+
+    $('.submenu-trigger').click(function () {
+  		if($(this).hasClass("open"))
+  			$(this).removeClass("menu-open").addClass("menu-close");
+  		else
+  			$(this).removeClass("menu-close").addClass("menu-open");
+  		console.log($(this));
+	});
 });
+
+
