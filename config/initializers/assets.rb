@@ -8,4 +8,10 @@ Rails.application.config.assets.precompile += %w( jquery.countdown360.js )
 Rails.application.config.assets.precompile += %w( fullcalendar.css )
 Rails.application.config.assets.precompile += %w( timeline.css )
 Rails.application.config.assets.precompile += %w( main.js )
+<<<<<<< HEAD
 Rails.application.config.assets.precompile += %w( cursos.css )
+=======
+Rails.application.config.assets.precompile += %w( usuarios.css )
+Rails.application.config.assets.precompile += %w( clases.js )
+Rails.application.config.assets.precompile += %w( usuarios.js )
+>>>>>>> origin/master
