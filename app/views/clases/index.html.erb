@@ -41,7 +41,8 @@
 
 <% content_for :js_personalizado do %>
 
- 
+  <%= javascript_include_tag 'fullcalendar.min' %>
+  <%= javascript_include_tag 'clases' %>
 
   <script type="text/javascript">
     $(document).ready(function(){

@@ -1,0 +1,293 @@
+
+<% content_for :css_personalizado do %>
+  <%= stylesheet_link_tag    "estadisticos" %>
+<% end %>
+<div class="row pad30">
+  <div class="col-md-3 col-lg-3">
+    <%= render "estadisticos/application/menu" %>
+    
+  </div>
+  <div class="col-md-8 col-lg-8 no-padding">
+        <div class="tab-simple">
+          <div class="row">
+            <br>
+             <div class="col-md-12 border">
+                 <h4 class="blue-text accent-1 text-uppercase text-center"> Reportes Estadisticos Xlearning</h4>
+             </div>
+
+             <div class="col-md-12">
+              <br>
+                 <h4 class=" accent-1 "> Nombre Reportes Estadisticos Xlearning </h4>
+                 <small class="font15px margen">  comentario corto sobre el reporte estadistico que se realiza, comentario corto sobre el reporte estadistico que se realiza, comentario corto sobre el reporte estadistico que se realiza.  </small>
+              
+            </div>
+
+
+              <div class="col-md-12">
+                    <table>
+                          <tr>
+                            <th> </th>
+                            <th></th>
+                            <th> </th>
+                           
+                          </tr>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div>
+                                 <canvas id="circularchar" width="400" height="250">[No canvas support]</canvas>
+                              </div>
+                               
+                                <div class="text-center text-primary">
+                                  <span class="text-center text-primary">Grafico Circular</span>
+                                </div>
+
+                             </td>
+                            <td><canvas id="Pie" width="350" height="250">[No canvas support]</canvas></td>
+                          </tr>
+                          <tr>
+                            <td> <canvas id="line" width="600" height="250">[No canvas support]</canvas> </td>
+                            <td>  <canvas id="Bar" width="400" height="250">[No canvas support]</canvas> </td>
+                          </tr>
+                        </tbody>
+                  </table>
+
+
+             </div>
+
+             
+             
+        </div>
+
+      </div>
+
+  </div>
+
+
+
+</div>
+
+<% content_for :js_personalizado do %>
+
+<%= javascript_include_tag 'graficos/RGraph.bar' %>
+ <%= javascript_include_tag 'graficos/RGraph.common.core' %>
+ <%= javascript_include_tag 'graficos/RGraph.gauge' %>
+<%= javascript_include_tag 'graficos/RGraph.line' %>
+ <%= javascript_include_tag 'graficos/RGraph.meter' %>
+ <%= javascript_include_tag 'graficos/RGraph.pie' %>
+ <%= javascript_include_tag 'graficos/RGraph.thermometer' %>
+
+
+  <script type="text/javascript">
+   
+      $(document).ready(function ()
+        {
+
+
+/****************************************************************************/
+/**                Grafico circular                                    */
+/***************************************************************************/
+         var meter = new RGraph.Meter({
+                id: 'circularchar',
+                min: -100,
+                max: 100,
+                value: 0,
+                options: {
+                    angles: {
+                        start: RGraph.PI - 0.5,
+                        end: RGraph.TWOPI + 0.5
+                    },
+                    linewidth: {
+                        segments: 15
+                    },
+                    text: {
+                        size: 16
+                    },
+                    strokestyle: 'white',
+                    segment: {
+                        radius: {
+                            start: 95
+                        }
+                    },
+                    needle: {
+                        radius: 75
+                    },
+                    border: 0,
+                    tickmarks: {
+                        small: {
+                            num: 0
+                        },
+                        big: {
+                            num: 0
+                        }
+                    },
+                    colors: {
+                        ranges: [[-100,-6, 'red'],[-5,5, 'yellow'],[6,70, 'black'],[70,100, 'green']]
+                    },
+                    centery: 155,
+                    radius: 125,
+                    adjustable: false
+            }
+        }).draw()
+           
+/****************************************************************************/
+/**                Grafico line                                    */
+/***************************************************************************/
+
+            var data = [14,16,18,19,29,28,29];
+            var threshold = 20;
+            var color1 = 'green';
+            var color2 = 'red'
+
+            /**
+            * First draw a chart that will enable us to get the Y coordinate. This chart is not shown
+            */
+            var line = new RGraph.Line({
+                id: 'line',
+                data: data,
+                options: {
+                    gutter: {
+                        top: 5,
+                        bottom: 45
+                    },
+                    linewidth: 3,
+                    tickmarks: 'endcircle',
+                    hmargin: 10,
+                    colors: [color1]
+                }
+            }).draw()
+
+            /**
+            * Now get the Y coord
+            */
+            var y = line.getYCoord(threshold);
+
+
+            /**
+            * Clear the canvas
+            */
+            RGraph.Clear(line.canvas);
+
+            /**
+            * Now draw the chart that will become the red half
+            */
+            line.context.save();
+                line.context.beginPath();
+                line.context.rect(0,0,line.canvas.width, y);
+                line.context.clip();
+
+                // Draw the line again
+                line.Draw();
+
+            line.context.restore();
+
+            /**
+            * Now draw the chart that will become the green half
+            */
+            line.context.save();
+                line.context.beginPath();
+                line.context.rect(0,y,line.canvas.width, line.canvas.height);
+                line.context.clip();
+
+                var line = new RGraph.Line({
+                    id: 'line',
+                    data: data,
+                    options: {
+                        gutter: {
+                            top: 5,
+                            bottom: 45
+                        },
+                        colors: [color2],
+                        linewidth: 3,
+                        tickmarks: 'endcircle',
+                        hmargin: 10,
+                        labels: ['Lun','Mar','Mie','Jue','Vie','Sab','Dom']
+                    }
+                }).draw()
+                
+
+            line.context.restore();
+
+
+
+
+ /****************************************************************************/
+/**                Grafico pie                                    */
+/***************************************************************************/
+            var pie = new RGraph.Pie({
+                id: 'Pie',
+                data: [9,5,12,8,4,9,2],
+                options: {
+                    strokestyle: '#e8e8e8',
+                    linewidth: 2,
+                    shadow: {
+                        self: true,
+                        blur: 5,
+                        offsetx: 5,
+                        offsety: 5,
+                        color: '#fff'
+                    },
+                    exploded: 10,
+                    radius: 80,
+                    labels: {
+                        self: ['Lunes','Martes','Miercoles','jueves','Viernes','Sabado','Domingo'],
+                        sticks:true,
+                        length: 15
+                    }
+                }
+            })
+
+            
+            !RGraph.ISIE || RGraph.ISIE9UP ? pie.roundRobin({frames:30}) : pie.draw();
+          
+
+ /****************************************************************************/
+/**                     Grafico bar                                    */
+/***************************************************************************/
+
+            var data = [4,8,6,3,5,2,6,8,4,5,7,8];
+
+            var bar = new RGraph.Bar({
+                id: 'Bar',
+                data: data,
+                options: {
+                    background: {
+                        grid: {
+                            autofit: {
+                                numvlines: data.length
+                            }
+                        }
+                    },
+                    linewidth: 3,
+                    shadow: {
+                        offsetx: 3,
+                        offsety: -3,
+                        blur: 3,
+                        color: '#999'
+                    },
+                    hmargin: 5,
+                    colors: ['#2FE99F'],
+                    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+                    clearto: 'white'
+                }
+            })
+                
+            RGraph.ISOLD ? bar.draw() : bar.wave({frames: 0})
+
+
+
+
+
+
+
+
+
+        })
+      
+   
+  </script>
+
+
+
+<% end %>
+

@@ -20,9 +20,7 @@
 //= require jquery.validate.min
 //= require additional-methods.min
 //= require validaciones
-//= require fullcalendar.min
 //= require main
-//= require clases
 
 
 $(document).ready(function(){
