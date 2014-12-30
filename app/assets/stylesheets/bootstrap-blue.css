@@ -5067,7 +5067,6 @@ a.list-group-item-danger.active:focus {
 .panel {
   margin-bottom: 20px;
   background-color: #ffffff;
-  border: 1px solid transparent;
   border-radius: 2.5px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -5095,10 +5094,10 @@ a.list-group-item-danger.active:focus {
 }
 .panel-footer {
   padding: 10px 15px;
-  background-color: #f5f5f5;
+  background-color: #ddd;
   border-top: 1px solid #dddddd;
-  border-bottom-right-radius: 1.5px;
-  border-bottom-left-radius: 1.5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 .panel > .list-group,
 .panel > .panel-collapse > .list-group {

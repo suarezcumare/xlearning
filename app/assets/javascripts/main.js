@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	$('select').not('.disabled').material_select();
+	$('.datepicker').pickadate();
 	$("#busqueda-trigger").click(function(){
 		$("#top-search-bar").css("display","table");
 	});
