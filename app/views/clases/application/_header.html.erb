@@ -6,10 +6,9 @@
     </div>
     <div class="media-body">
       <div id="avance-porcentaje">
-        <i class="fa fa-circle-o-notch text-primary fa-2x" ></i>
-        <span>63%</span>
+        <input type="text" value="63" class="curso_progreso" readonly="readonly">
       </div>
-      <h3 class="media-heading">Api de Google Maps</h3>
+      <h4 class="media-heading">Api de Google Maps</h4>
       <div>
         Finaliza el 12 de Diciembre de 2015
       </div>
@@ -19,12 +18,27 @@
   <div>
     <ul class="tabs">
       <li class="tab col s2" title="Lecciones del Curso"><a href="#leccionesCurso"> <i class="fa fa-list fa-2x" ></i></a></li>
-      <li class="tab col s2" title="Bitacora del Curso"><a href="#bitacoraCurso"><i class="fa fa-comments-o fa-2x"> </i></a></li>
-      <li class="tab col s2" title="Evaluaciones detallada del Curso"> <a href="#evaluacionesCurso"><i class="fa fa-book fa-2x"> </i></a></li>
+      <li class="tab col s2" title="Bitacora del Curso"><a href="#notificacionesEvaluacionesCurso"><i class="fa fa-comments-o fa-2x"> </i></a></li>
+      <li class="tab col s2" title="Evaluaciones detallada del Curso"> <a href="#bitacoraCurso"><i class="fa fa-book fa-2x"> </i></a></li>
       <li class="tab col s2" title="Calendario del Curso"> <a href="#calendarioCurso"><i class="fa fa-calendar fa-2x"> </i></a></li>
-      <li class="tab col s2" title="Notificaciones del curso"> <a href="#notificacionesEvaluacionesCurso"><i class="fa fa-bar-chart-o fa-2x"> </i></a></li>
+      <li class="tab col s2" title="Notificaciones del curso"> <a href="#evaluacionesCurso"><i class="fa fa-bar-chart-o fa-2x"> </i></a></li>
       <li class="tab col s2" title="Descripciones del curso"> <a href="#descipcionesCurso"><i class="fa fa-info fa-2x"> </i></a></li>   
     </ul>
   </div>
   <!-- Fin Cuadro header -->
 </div>
+
+<% content_for :js_personalizado do%>
+  <%= javascript_include_tag 'jquery.knob.min' %>
+  <script>
+    $(function() {
+        $(".curso_progreso").knob({
+          'min':0,
+          'max':100,
+          'readOnly':true,
+          'width':60,
+          'thickness':0.3
+        });
+    });
+  </script>
+<% end %>

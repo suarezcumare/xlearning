@@ -2,10 +2,9 @@
 /*                             HEADER                           */
 /****************************************************************/
 
-
 #header-curso .media-body{
-  width: auto;
-  padding-top: 30px;
+  width: 430px;
+  vertical-align: middle;
 }
 
 #header-curso .media-body div{
@@ -18,22 +17,10 @@
   float: right;
   width: 60px;
   height: 60px;
-  border: black;
 }
 
-#avance-porcentaje i, #avance-porcentaje span{
-  position: absolute;  
-}
-#avance-porcentaje span{
-  font-size: 20px;
-  top: 15px;
-  left: 13px;
-}
-#avance-porcentaje i{
-  -ms-transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
-  font-size: 59px;
+#avance-porcentaje input, #avance-porcentaje input:focus{
+  border: none;
 }
 
 /****************************************************************/
@@ -46,8 +33,23 @@
   border: 5px solid #ffffff; 
 }
 
-#info-instructor h1{
-  line-height: 1.2em !important;
+#info-instructor .card-image{
+  background: linear-gradient(rgb(27, 117, 181), rgb(71, 181, 218));
+  height: 150px;
+  overflow: visible;
+}
+
+#info-instructor .card-image img{  
+  display: block;
+  border-radius: 100%;      
+  width: 180px;
+  margin: 20px auto;
+  position: absolute;
+  z-index: 1;
+}
+
+#info-instructor .card-content{
+  margin-top: 30px;
 }
 
 .tab-simple{
@@ -124,13 +126,34 @@
 /*                         LECCIONES                            */
 /****************************************************************/
 
-#leccionesaccordion a.panel-title{
+a.titulo-leccion{
   color: white;
   display: block;
 }
-#leccionesaccordion h4{
+.titulo-leccion h4{
   display: inline-block;
   font-size: 16px;
+  font-weight: 300;
+  margin: 0px
+}
+
+.leccion .panel-body{
+  padding: 0;
+  font-weight: 400;
+}
+
+.leccion table.bordered tr{
+  border-top: 1px solid #e0e0e0;
+  border-bottom: none;
+}
+
+.leccion table.bordered tr.header{
+  padding-left: 30px;
+  background: #f2f2f2;
+}
+
+.leccion table.bordered td, .leccion table.bordered th {
+  padding: 10px 5px;
 }
 
 span.porcentaje-completado{
@@ -140,7 +163,7 @@ span.porcentaje-completado{
   padding-top: 10px;
 }
 
-table.contenido i, table.contenido a:hover{
+table.contenido i, table.contenido a, table.contenido a:hover{
   color: #7a7a7a;
 }
 
@@ -148,9 +171,9 @@ table.contenido tr:first, table.contenido tr:nth-child(4){
   width: 5%;
 }
 
-table.contenido tr th, table.contenido tr td{
+/*table.contenido tr th, table.contenido tr td{
   padding: 0px;
-}
+}*/
 
 /****************************************************************/
 /*                        NOTIFICACIONES                        */
@@ -208,3 +231,130 @@ table.contenido tr th, table.contenido tr td{
 .control-group.success .fileupload .uneditable-input{color:#468847;border-color:#468847;}
 .control-group.success .fileupload .fileupload-preview{color:#468847;}
 .control-group.success .fileupload .thumbnail{border-color:#468847;}
+
+
+/*******************************************************************/
+/*                           CARGA ACADEMICA                       */
+/*******************************************************************/
+
+.recomendaciones .card{
+  background-color: #fff;
+}
+
+.curso-actual img{
+  height: 150px;
+  width: 150px;
+}
+
+.curso-actual .media-body{
+  padding-top: 20px;
+  vertical-align: middle;
+  width: 380px;
+}
+
+.curso-actual .progress{
+  margin-bottom: 0;
+}
+
+.curso-actual .fecha-fin, .curso-actual .btn.ingresar{
+  float: right;
+}
+
+.recomendaciones .card-image{
+  position: relative;
+  z-index: 99;
+}
+
+.recomendaciones i{
+  font-size: 20px;
+  position: absolute;
+  top:10px;
+  right:10px;
+  z-index: 100;
+}
+
+.recomendaciones span{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 20px;
+  color:#fff;
+  z-index: 101;
+}
+.recomendaciones .card-content{
+  padding: 1rem 1rem 0.5rem;
+}
+
+.recomendaciones .card-content p{
+  color:rgb(67, 71, 75);
+  font-size: 14px;
+}
+.recomendaciones .card-image:before {
+  content: "";
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(transparent, rgb(67, 71, 75));
+}
+
+.inline li{
+  float: left;
+  margin-left: 10px;
+}
+
+.deseos li{
+  width: 48%;
+}
+
+/*******************************************************************/
+/*                           VISUALIZADOR                          */
+/*******************************************************************/
+
+#visualizador.modal{
+  max-width: 95%;
+  max-height: 90%;
+}
+
+#visualizador.modal .controles{
+  background-color: rgba(109, 172, 231, 0.5);
+  padding: 15px;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+#visualizador.modal img{
+  position: relative;
+  left: 0;
+  right: 0;
+  display: block;
+  margin: 0 auto;
+}
+#visualizador.modal .modal-close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1001;
+}
+#visualizador.modal .controles a{
+  margin: 0px 25px;
+}
+
+#visualizador.modal .controles i{
+  color: white;
+  font-size: 25px;
+}
+
+.tabs.mod-evaluaciones{
+  border-bottom: none;
+}

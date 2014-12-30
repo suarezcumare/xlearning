@@ -898,8 +898,9 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
+  font-weight: 300;
   line-height: 1.42857143;
-  color: #333333;
+  color: #6D6D6D;
   background-color: #fbfbfb;
 }
 input,
@@ -916,7 +917,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #117964;
+  color: #138BC1;
   text-decoration: none;
 }
 a:focus {
@@ -3046,7 +3047,7 @@ fieldset[disabled] .btn-warning.active {
 }
 .btn-danger {
   color: #ffffff;
-  background-color: #f32a3e;
+  background-color: #f32a3e !important;
   border-color: transparent;
 }
 .btn-danger:hover,
@@ -3056,7 +3057,7 @@ fieldset[disabled] .btn-warning.active {
 .btn-danger.active,
 .open > .dropdown-toggle.btn-danger {
   color: #ffffff;
-  background-color: #de0c21;
+  background-color: #de0c21 !important;
   border-color: rgba(0, 0, 0, 0);
 }
 .btn-danger:active,
@@ -5456,10 +5457,10 @@ button.close {
   border: 0;
   -webkit-appearance: none;
 }
-.modal-open {
+/*.modal-open {
   overflow: hidden;
 }
-/*.modal {
+.modal {
   display: none;
   overflow: hidden;
   position: fixed;
@@ -5470,7 +5471,7 @@ button.close {
   z-index: 1040;
   -webkit-overflow-scrolling: touch;
   outline: 0;
-}*/
+}
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
   -ms-transform: translate(0, -25%);
@@ -5574,6 +5575,7 @@ button.close {
     width: 300px;
   }
 }
+*/
 @media (min-width: 992px) {
   .modal-lg {
     width: 900px;

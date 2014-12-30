@@ -6,7 +6,7 @@ class Usuario < ActiveRecord::Base
   #validates :nombre, presence: true
   has_many :comentarios, class_name: "CriticaCurso",
              foreign_key: "comentario_id"
-  has_many :usuario_rols
+  has_many :usuario_rols, class_name: "UsuarioRol", foreign_key: "usuario_id"
   has_many :rols, :through => :usuario_rols
   has_many :sugerencia
   has_many :entrega_asignacions
@@ -26,7 +26,7 @@ class Usuario < ActiveRecord::Base
 
   private
     def set_rol_actual
-      #self.rol_actual = self.usuario_rols[]
+      self.rol_actual = self.rols[0]
     end
 
 

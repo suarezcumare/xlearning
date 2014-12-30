@@ -6923,7 +6923,7 @@ ul.tabs li.tab {
   margin-top: 0;
 }
 
-#lean_overlay {
+#lean-overlay {
   position: fixed;
   z-index: 999;
   top: 0px;

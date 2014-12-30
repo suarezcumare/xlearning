@@ -1,22 +1,22 @@
 <nav id="menu-header">
-    <div class="nav-wrapper">
+    <div class="nav-wrapper inverse">
       <a href="javascript:void(0)" class="brand-logo">
       	<img src="/assets/logo-header.png"/>Learning
       </a>
       <a id="busqueda-trigger" class="activar-busqueda" href="javascript:void(0)"><i class="mdi-action-search"></i></a>
       <% if usuario_signed_in? %>
       <ul id="nav-mobile" class="right side-nav">
-        <li><a href="javascript:void(0)"><i class="mdi-social-notifications"></i></a></li>
+        <li><a href="javascript:void(0)"><i class="mdi-social-notifications-none"></i></a></li>
         <li><a href="javascript:void(0)"><i class="mdi-communication-email"></i></a></li>
         <li class="dropdown">
         	<a href="javascript.html" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"  class="no-effect">
         		<div class="media logged-in-usuario">
         			<div class="media-left">
-    						<img src="/assets/avatar2.jpg" class="img-circle" alt=""/>
+    						<img src="/assets/avatar/usuario-<%= current_usuario.id%>.jpg" class="img-circle" alt=""/>
     					</div>
     					<div class="media-body">
-    						<h6 class="media-heading">Andrea Gomez</h6>
-    						<span class="rol">rol</span>
+    						<h6 class="media-heading"><%= current_usuario.nombre%></h6>
+    						<span class="rol"><%= current_usuario.rol_actual.nombre %></span>
     					</div>
 				    </div>
         	</a>
@@ -29,8 +29,8 @@
       </ul>
       <% else %>
       	<ul id="nav-mobile" class="right side-nav">
-	        <li><a href="javascript:void(0)"  class="no-effect">Ofertas de estudio</a></li>
-	        <li><a href="<%= new_registration_path(resource_name)%>">Registrarse</a></li>
+	        <li><a href="javascript:void(0)">Ofertas de estudio</a></li>
+	        <li><a href="<%= registro_path %>">Registrarse</a></li>
 	        <li><a href="#login-form" class="modal-trigger">Iniciar sesi&oacute;n</a></li>
 	      </ul>
       <% end %>

@@ -1,0 +1,177 @@
+<% content_for :css_personalizado do%>
+	<%= stylesheet_link_tag    "clases" %>
+<% end %>
+
+<div class="text-right">
+	<ol class="breadcrumb">
+	  <li><%= link_to "Home", root_path %></li>
+	  <li class="active">Carga académica</li>
+	</ol>
+</div>
+
+<div class="row pad30-h">
+	<div class="col-lg-6">
+		<h5 class="text-uppercase">Tus cursos</h5>
+	</div>
+	<div class="col-lg-6">
+
+		<ul class="nav nav-pills pull-right">
+		  <li role="presentation" class="active"><%= link_to "Actual", clases_path %></li>
+		  <li role="presentation"><%= link_to "Pasados", clases_path %></li>
+		  <li role="presentation"><%= link_to "Futuros", clases_path %></li>
+		</ul>
+	</div>
+</div>
+<!-- <div class="pad15"></div> -->
+<div class="row">
+	<div class="col-lg-7 pad45-h">
+		<div class="panel curso-actual">
+			<div class="media">
+			  <a class="media-left" href="#">
+			    <img src="/assets/clases-imagen.jpg" alt="">
+			  </a>
+			  <div class="media-body">
+			    <h5 class="media-heading">API de Google Maps</h5>
+			    <div>
+				    <div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="	width: 60%;">
+					    <span class="sr-only">60% Completado</span>
+					  </div>
+					</div>
+					<span class="fecha-inicio"> Nov, 12 de 2014</span>
+					<span class="fecha-fin">Feb, 13 de 2015</span>
+				</div>
+				<br/>
+				<%= link_to "Información", "/clases/1", {class: "text-uppercase" }%>
+				<%= link_to "Ir a clases", "clases/1", {class: "btn btn-danger ingresar"}%>
+			  </div>
+			</div>
+		</div>
+
+		<div class="panel curso-actual">
+			<div class="media">
+			  <a class="media-left" href="#">
+			    <img src="/assets/clases-imagen.jpg" alt="">
+			  </a>
+			  <div class="media-body">
+			    <h5 class="media-heading">API de Google Maps</h5>
+			    <div>
+				    <div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="	width: 60%;">
+					    <span class="sr-only">60% Completado</span>
+					  </div>
+					</div>
+					<span class="fecha-inicio"> Nov, 12 de 2014</span>
+					<span class="fecha-fin">Feb, 13 de 2015</span>
+				</div>
+				<%= link_to "Información", clases_path(1), {class: "text-uppercase"}%>
+				<%= link_to "Ir a clases", clases_path(1), {class: "btn btn-danger ingresar"}%>
+			  </div>
+			</div>
+		</div>
+
+		<div class="panel curso-actual">
+			<div class="media">
+			  <a class="media-left" href="#">
+			    <img src="/assets/clases-imagen.jpg" alt="">
+			  </a>
+			  <div class="media-body">
+			    <h5 class="media-heading">API de Google Maps</h5>
+			    <div>
+				    <div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="	width: 60%;">
+					    <span class="sr-only">60% Completado</span>
+					  </div>
+					</div>
+					<span class="fecha-inicio"> Nov, 12 de 2014</span>
+					<span class="fecha-fin">Feb, 13 de 2015</span>
+				</div>
+				<%= link_to "Información", clases_path(1), {class: "text-uppercase"}%>
+				<%= link_to "Ir a clases", clases_path(1), {class: "btn btn-danger ingresar"}%>
+			  </div>
+			</div>
+		</div>
+		<div class="pad15"></div>
+		<hr/>
+		<div class="pad15"></div>
+		<div>
+			<h5 class="text-uppercase">Tu lista de deseos</h5>
+			<ul class="deseos recomendaciones inline">
+				<li>
+					<div class="card">
+				        <div class="card-image">
+				        	<div class="hacer-favorito">
+						        <i class="fa fa-heart-o"></i>
+						        <!-- <i class="fa fa-heart"></i> -->
+						    </div>
+					        <img src="assets/curso1.jpg" class="img-responsive">
+					        <span class="card-title">Seguridad Web</span>
+				        </div>  
+				        <div class="card-content">
+				          <p>Aprende las técnicas básicas para proteger tus sitios web de los ataques más comunes.</p>
+				        </div>
+				        <div class="card-action">
+				          <a href="javascript:void(0)">Más información</a>
+				        </div>
+				    </div>
+				</li>
+				<li>
+					<div class="card">
+				        <div class="card-image">
+				        	<div class="hacer-favorito">
+						        <i class="fa fa-heart-o"></i>
+						        <i class="fa fa-heart red-text lighten-1"></i>
+						    </div>
+					        <img src="/assets/curso4.jpeg" class="img-responsive">
+					        <span class="card-title">Seguridad Web</span>
+				        </div>  
+				        <div class="card-content">
+				          <p>Aprende las técnicas básicas para proteger tus sitios web de los ataques más comunes.</p>
+				        </div>
+				        <div class="card-action">
+				          <a href="javascript:void(0)">Más información</a>
+				        </div>
+				    </div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="col-lg-4 recomendaciones">
+		<h5 class="text-uppercase">Recomendaciones para ti</h5>
+		<div class="card">
+	        <div class="card-image">
+	        	<div class="hacer-favorito">
+			        <i class="fa fa-heart-o"></i>
+			        <!-- <i class="fa fa-heart"></i> -->
+			    </div>
+		        <img src="assets/curso1.jpg" class="img-responsive">
+		        <span class="card-title">Seguridad Web</span>
+	        </div>  
+	        <div class="card-content">
+	          <p>Aprende las técnicas básicas para proteger tus sitios web de los ataques más comunes.</p>
+	        </div>
+	        <div class="card-action">
+	          <a href="javascript:void(0)">Más información</a>
+	        </div>
+	    </div>
+
+	    <div class="card">
+	        <div class="card-image">
+	        	<div class="hacer-favorito">
+			        <i class="fa fa-heart-o"></i>
+			        <i class="fa fa-heart red-text lighten-1"></i>
+			    </div>
+		        <img src="/assets/curso4.jpeg" class="img-responsive">
+		        <span class="card-title">Seguridad Web</span>
+	        </div>  
+	        <div class="card-content">
+	          <p>Aprende las técnicas básicas para proteger tus sitios web de los ataques más comunes.</p>
+	        </div>
+	        <div class="card-action">
+	          <a href="javascript:void(0)">Más información</a>
+	        </div>
+	    </div>
+
+	</div>
+</div>
+<div class="pad30"></div>

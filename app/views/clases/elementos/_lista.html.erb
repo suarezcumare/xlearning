@@ -1,399 +1,169 @@
 <!--Inicio del acordion -->
-<div class="panel-group" id="leccionesaccordion" role="tablist" aria-multiselectable="true">
-
+<!-- <div class="panel-group" id="leccionesaccordion" role="tablist" aria-multiselectable="true"> -->
   <!-- Aqui ira el for, cambiando el id="headingNumero", href="collapseNumero" -->
-  <div class="panel panel-primary">
+  <div class="panel panel-primary leccion">
     <div class="panel-heading" role="tab" id="leccionesheading1">
-      <a data-toggle="collapse" data-parent="#leccionesaccordion" href="#leccionescollapse1" 
-        aria-expanded="true" aria-controls="leccionescollapse1" class="panel-title">
+      <a data-toggle="collapse" href="#leccionescollapse1" 
+        aria-expanded="true" aria-controls="leccionescollapse1" class="titulo-leccion panel-title">
         <h4>
            Lección 1: Distancias Euleriana 
         </h4>
-
-
         <span class="porcentaje-completado">
-          
-
-
+          Completado 100%
+        </span>
+      </a>
+    </div>
+    <div id="leccionescollapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="leccionesheading1">
+      <div class="panel-body">
+        <div class="descripcion-leccion pad15 pad30-h">Descripcion del material es la que va en este espacio pero como no la 
+            tengo que solo estoy inventando un poco.</div>
+          <!-- Inicio de Material -->
+          <table class="bordered contenido material">
+            <tr  class="header">
+              <th style="width:25px;"></th>
+              <th><i class="fa fa-graduation-cap"></i> Material </th>
+              <th>
+                <a href="javascript:void(0)"><i class="fa fa-download"></i></a>  
+              </th>
+            </tr>
+            <!-- aqui seria el for -->
+            <tr>
+              <td></td>
+              <td colspan="2">
+                <a href="javascript:void(0)" class="visualizador-contenido" data-contenido="imagen"
+                  data-url="/assets/curso1.jpg">
+                  <i class="mdi-image-slideshow"></i>
+                <!-- <span class="fa-stack ">
+                  <i class="fa fa-circle fa-stack-2x red-text lighten-1"></i>
+                  <i class="fa fa-video-camera fa-stack-1x white-text" ></i>
+                </span> -->
+                Imagen</a> <span class="badge  grey lighten-2">15 min.</span>
+                <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td  colspan="2">
+                <i class="fa fa-file-archive-o"></i>
+                <!-- <span class="fa-stack ">
+                  <i class="fa fa-circle fa-stack-2x red-text lighten-1"></i>
+                  <i class="fa fa-file-zip-o fa-stack-1x white-text" ></i>
+                </span> -->
+                Archivo zip <span class="badge grey lighten-2">37 Mb</span>
+                <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
+              </td>
+            </tr>   
+             <!-- Aqui termina el for -->
+          </table>
+          <!-- fin de material -->
+          <!-- Inicio Evaluaciones  -->
+          <table class="bordered contenido evaluaciones">
+            <tr class="header">
+              <th style="width:25px;"></th>
+              <th><i class="fa fa-graduation-cap"></i> Evaluaciones</th>
+            </tr>
+            <!-- aqui seria el for -->
+            <tr>
+              <td></td>
+              <td>
+                <a href="/clases/1/evaluacion/1/overview">
+                  <i class="mdi-social-whatshot orange-text accent-4"></i>Quiz contenido 1 <span class="badge grey lighten-2">20 min.</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <a href="/clases/:id/actividad/:id/overview">Actividad</a>
+              </td>
+            </tr>
+             <!-- Aqui termina el for -->
+          </table>                 
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-primary leccion">
+    <div class="panel-heading" role="tab" id="leccionesheading2">
+      <a data-toggle="collapse" href="#leccionescollapse2" 
+        aria-expanded="true" aria-controls="leccionescollapse2" class="titulo-leccion panel-title">
+        <h4>
+           Lección 2: Distancias geodésicas 
+        </h4>
+        <span class="porcentaje-completado">
+          Completado 20%
        </span>
       </a>
     </div>
-
-    <div id="leccionescollapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="leccionesheading1">
-      <div class="panel-body">
-        <div class="descripcion-leccion pad15">Descripcion del material es la que va en este espacio pero como no la 
-            tengo que solo estoy inventando un poco.</div>
-          <!-- Inicio de Material -->
-        <form id="accion-contenido" name="conteido" method="post" action="">
-          <table class="contenido material">
-           
-            <tr>
-              <th style="width:25px;"><i class="fa fa-graduation-cap" ></i></th>
-              <th>Material </th>
-              <th><span  class="separador"></span></th>
-              <th>
-                
-                <div class="dropdown">
-                      <i class="fa fa-list" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" title="Acciones sobre el contenido"> </i>
-
-                      <ul class="dropdown-menu" role="menuitem" aria-labelledby="dropdownMenu1">
-                        <li role="presentation" >
-                          <a class="fa fa-plus fa-inverse modal-trigger" role="menuitem" tabindex="-1" href="#modal1"> Agregar</a><li>
-
-                        <li role="presentation" ><a role="menuitem" tabindex="-1" href="javascript:void(0)" class="fa fa-minus" > Eliminar </a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" class="fa fa-eye"> Habilitar </a></li>
-                         <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" class="fa fa-eye-slash"> Deshabilitar </a></li>
-                      </ul>
-                       <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
-                  </div>
-                  
-              </th>
-            </tr>
-            <!-- aqui seria el for -->
-
-          
-            <tr>
-              <td>
-                <div class="form-control">
-                    <%= check_box_tag(:opcion1) %>
-                    <%= label_tag(:opcion1, "") %>
-                </div>
-              </td>
-              <td>
-                <span class="fa-stack ">
-                  <i class="fa fa-circle fa-stack-2x red-text lighten-1"></i>
-                  <i class="fa fa-video-camera fa-stack-1x white-text" ></i>
-                </span>
-                Contenido <span class="new badge  blue-grey lighten-4">15 min.</span>
-                <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
-
-                 <i class="fa fa-eye" title="Habilitado"> </i>
-
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="form-control">
-                    <%= check_box_tag(:opcion2) %>
-                    <%= label_tag(:opcion2, "") %>
-                </div>
-              </td>
-              <td>
-                <span class="fa-stack ">
-                  <i class="fa fa-circle fa-stack-2x red-text lighten-1"></i>
-                  <i class="fa fa-file-zip-o fa-stack-1x white-text" ></i>
-                </span>
-                Archivo zip <span class="new badge  blue-grey lighten-4">37 Mb</span>
-                <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
-                
-      
-                <i class="fa fa-eye-slash" title="No Habilitado"> </i>
-
-              </td>
-            </tr>
-         
-             <!-- Aqui termina el for -->
-          </table>
-        
-
-          <!-- fin de material -->
-
-          <!-- Inicio Evaluaciones  -->
-          <table class="contenido evaluaciones">
-            <tr>
-              <th style="width:25px;"><i class="fa fa-graduation-cap" ></i></th>
-              <th>Evaluaciones </th>
-            </tr>
-            <!-- aqui seria el for -->
-            <tr>
-              <td>
-                <div class="form-control">
-                    <%= check_box_tag(:opcion3) %>
-                    <%= label_tag(:opcion3, "") %>
-                </div>
-              </td>
-              <td>
-                <a href="javascript:void(0)">Quiz contenido 1 <span class="new badge  blue-grey lighten-4">20 min.</span></a>
-                 <i class="fa fa-eye" title="No Habilitado"> </i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="form-control">
-                    <%= check_box_tag(:opcion4) %>
-                    <%= label_tag(:opcion4, "") %>
-                </div>
-              </td>
-              <td>
-                <a href="javascript:void(0)">Actividad</a>
-
-                 <i class="fa fa-eye-slash" title="No Habilitado"> </i>
-              </td>
-            </tr>
-             <!-- Aqui termina el for -->
-          </table>
-          </form>                 
-
-
- <!-- Modal -->
-                   
-
-                    <div id="modal1" class="modal">
-                      <div class="modal-content" >
-                         <div class="modal-header">
-                
-                          <h4 class="modal-title" id="myModalLabel"> <b> Agregar un nuevo Contenido o Evaluación </b> </h4>
-                        </div>
-                       <div class="modal-body">
-                           <form name="nuevo_material" method="post" multipart="true" action="">
-                             <div class="input-field col s5">
-                                 <input id="nombre_material" type="text" required>
-                                  <label for="nombre_material">Nombre: </label>
-                                  </div>
-                      <div class="row">
-                        <div class="col s5">
-                          <select class="form-control" required>
-                            <option value="" disabled selected>Tipo de Material</option>
-                              <option value="contenido">Contenido</option>
-                              <option value="evaluación">Evaluación</option>
-                            </select>
-                          </div> 
-                        </div>
-                                                        
-                                                              
-                        <div class="row">
-                          <div class="col s2">
-                             Dispositivo 1:
-                          </div>
-                          <div class="col s7">
-                              <div class="fileupload fileupload-new" data-provides="fileupload">
-                                    <span class="btn btn-primary btn-file"><span class="fileupload-new">Seleccionar Archivo</span>
-                                     <span class="fileupload-exists">Cambiar</span>         <input type="file" name="material" accept="*"  /></span>
-                                    <span class="fileupload-preview"></span>
-                                     <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
-                                </div> 
-                          </div>
-                        </div> 
-
-                      <div class="row">
-                        <div class="col s2">
-                           Dispositivo 2:
-                        </div>
-                        <div class="col s7">
-                            <div class="fileupload fileupload-new" data-provides="fileupload">
-                                  <span class="btn btn-primary btn-file"><span class="fileupload-new">Seleccionar Archivo</span>
-                                   <span class="fileupload-exists">Cambiar</span>         <input type="file" name="material-2" accept="*"  /></span>
-                                  <span class="fileupload-preview"></span>
-                                   <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
-                              </div> 
-                        </div>
-                      </div> 
-
-
-                           <div class="form-control" required>
-                             <%= check_box_tag(:copyright) %>
-                              <%= label_tag(:copyright, "Derechos Reservados del Material") %>
-                          </div>
-
-                           <div class="form-control block-center">
-                                    <a href="" class="btn btn-success">Agregar</a>
-                                    <a href="" class="btn btn-info Closed" data-dismiss="modal">Cancelar</a> 
-                          </div>
-
-                     </form>
-
-                    </div>
-
-                    </div>
-
-                     
-                    </div>
-
-
-                              
-        <!-- fin ventana modal -->
-
-
-          <!-- Fin Evaluaciones -->
-      </div>
-    </div>
-  </div>
-<!-- Aqui ira el for, cambiando el id="headingNumero", href="collapseNumero" -->
-  <div class="panel panel-primary">
-    <div class="panel-heading" role="tab" id="leccionesheading2">
-      <a data-toggle="collapse" data-parent="#leccionesaccordion" href="#leccionescollapse2" 
-        aria-expanded="true" aria-controls="leccionescollapse1" class="panel-title">
-        <h4>
-           Lección 2: Distancias Geodésicas 
-        </h4>
-        <span class="porcentaje-completado"> completado 20% </span>
-      </a>
-    </div>
-
     <div id="leccionescollapse2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="leccionesheading2">
       <div class="panel-body">
-        <div class="descripcion-leccion pad15">Descripcion del material es la que va en este espacio pero como no la 
+        <div class="descripcion-leccion pad15 pad30-h">Descripcion del material es la que va en este espacio pero como no la 
             tengo que solo estoy inventando un poco.</div>
-              <!-- Inicio de Material -->
-        <form id="accion-contenido" name="conteido" method="post" action="">
-          <table class="contenido material">
-           
-            <tr>
-              <th style="width:25px;"><i class="fa fa-graduation-cap" ></i></th>
-              <th>Material </th>
-              <th><span  class="separador"></span></th>
+          <!-- Inicio de Material -->
+          <table class="bordered contenido material">
+            <tr  class="header">
+              <th style="width:25px;"></th>
+              <th><i class="fa fa-graduation-cap"></i> Material </th>
               <th>
-                 <% if usuario_signed_in? %>
-                <div class="dropdown">
-                      <i class="fa fa-list" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" title="Acciones sobre el contenido"> </i>
-                      <ul class="dropdown-menu" role="menuitem" aria-labelledby="dropdownMenu1">
-                        <li role="presentation">
-                          <a data-toggle="modal" title="Agregar un nuevo contenido" data-target="#idcurso-idleccion-1" class="fa fa-plus"> 
-                             Agregar 
-                          </a>
-                        </li>
-
-                        <li role="presentation" ><a role="menuitem" tabindex="-1" href="javascript:void(0)" class="fa fa-minus" > Eliminar </a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" class="fa fa-eye"> Habilitar </a></li>
-                         <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" class="fa fa-eye-slash"> Deshabilitar </a></li>
-                      </ul>
-                      <% end %>
-                       <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
-                  </div>
+                <a href="javascript:void(0)"><i class="fa fa-download"></i></a>  
               </th>
             </tr>
             <!-- aqui seria el for -->
-
-          
             <tr>
-              <td>
-                 <% if usuario_signed_in? %>
-                <div class="form-control">
-                    <%= check_box_tag(:opcion1) %>
-                    <%= label_tag(:opcion1, "") %>
-                </div>
-                 <% end %>
-              </td>
-              <td>
-                <span class="fa-stack ">
+              <td></td>
+              <td colspan="2">
+                <a href="javascript:void(0)" data-contenido="video" class="visualizador-contenido"><i class="mdi-image-slideshow"></i>
+                <!-- <span class="fa-stack ">
                   <i class="fa fa-circle fa-stack-2x red-text lighten-1"></i>
                   <i class="fa fa-video-camera fa-stack-1x white-text" ></i>
-                </span>
-                Contenido <span class="new badge  blue-grey lighten-4">15 min.</span>
+                </span> -->
+                Contenido</a> <span class="badge grey lighten-2">15 min.</span>
                 <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
-
-                 <% if usuario_signed_in? %>
-                 <i class="fa fa-eye" title="Habilitado"> </i>
-                  <% end %>
-
               </td>
             </tr>
             <tr>
-              <td>
-                 <% if usuario_signed_in? %>
-                <div class="form-control">
-                    <%= check_box_tag(:opcion2) %>
-                    <%= label_tag(:opcion2, "") %>
-                </div>
-                 <% end %>
-              </td>
-              <td>
-                <span class="fa-stack ">
+              <td></td>
+              <td  colspan="2">
+                <i class="fa fa-file-archive-o"></i>
+                <!-- <span class="fa-stack ">
                   <i class="fa fa-circle fa-stack-2x red-text lighten-1"></i>
                   <i class="fa fa-file-zip-o fa-stack-1x white-text" ></i>
-                </span>
-                Archivo zip <span class="new badge  blue-grey lighten-4">37 Mb</span>
+                </span> -->
+                Archivo zip <span class="badge grey lighten-2">37 Mb</span>
                 <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
-                
-                 <% if usuario_signed_in? %>
-                    <i class="fa fa-eye-slash" title="No Habilitado"> </i>
-                 <% end %>
-
               </td>
-            </tr>
-         
+            </tr>   
              <!-- Aqui termina el for -->
           </table>
-        
-
           <!-- fin de material -->
-
           <!-- Inicio Evaluaciones  -->
-          <table class="contenido evaluaciones">
-            <tr>
-              <th style="width:25px;"><i class="fa fa-graduation-cap" ></i></th>
-              <th>Evaluaciones </th>
+          <table class="bordered contenido evaluaciones">
+            <tr class="header">
+              <th style="width:25px;"></th>
+              <th><i class="fa fa-graduation-cap"></i> Evaluaciones</th>
             </tr>
             <!-- aqui seria el for -->
             <tr>
+              <td></td>
               <td>
-                 <% if usuario_signed_in? %>
-                <div class="form-control">
-                    <%= check_box_tag(:opcion3) %>
-                    <%= label_tag(:opcion3, "") %>
-                </div>
-                 <% end %>
-              </td>
-              <td>
-                <a href="javascript:void(0)">Quiz contenido 1 <span class="new badge  blue-grey lighten-4">20 min.</span></a>
-                 <% if usuario_signed_in? %>
-                  <i class="fa fa-eye" title="No Habilitado"> </i>
-                 <% end %>
+                <a href="/clases/1/evaluacion/1/overview">
+                  <i class="mdi-social-whatshot orange-text accent-4"></i>Quiz contenido 1 <span class="badge blue-grey lighten-4">20 min.</span>
+                </a>
               </td>
             </tr>
             <tr>
+              <td></td>
               <td>
-                 <% if usuario_signed_in? %>
-                   <div class="form-control">
-                    <%= check_box_tag(:opcion4) %>
-                    <%= label_tag(:opcion4, "") %>
-                  </div>
-                <% end %>
-              </td>
-              <td>
-                <a href="javascript:void(0)">Actividad</a>
-                 <% if usuario_signed_in? %>
-                 <i class="fa fa-eye-slash" title="No Habilitado"> </i>
-                  <% end %>
+                <a href="/clases/:id/actividad/:id/overview">Actividad</a>
               </td>
             </tr>
              <!-- Aqui termina el for -->
-          </table>
-          </form>                 
-
-                      <% if usuario_signed_in? %>
-                        <!-- Modal -->
-                                <div class="modal" style="width: 100%"  id="idcurso-idleccion-1" aria-hidden="true">
-                                 
-                                    <div class="modal-content" >
-                                      <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                        <h4 class="modal-title" id="myModalLabel"> <b> Distancia Euclediana </b> </h4>
-                                      </div>
-                                      <div class="modal-body">
-                                        Breve informacion de las instrucciones del parcial
-                                      </div>
-                                  
-                                    </div>
-                                  
-                                </div>
-                  <!-- fin ventana modal -->
-                   <% end %>
-
-
-          <!-- Fin Evaluaciones -->
+          </table>                 
       </div>
     </div>
   </div>
-</div>
+<!-- </div> -->
 <!-- fin del acordion -->
 
-
-
-<div class="panel">
-
-<a href=""><span class="fa-stack ">
-    <i class="fa fa-circle fa-stack-2x blue-text lighten-1"></i>
-    <i class="fa fa-plus fa-stack-1x white-text" ></i>
-</span>  AGREGAR MODULO </a>
+<div class="modal" id="visualizador">
+  
 </div>

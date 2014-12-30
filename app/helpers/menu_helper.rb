@@ -8,11 +8,11 @@ module MenuHelper
 				codigo << "<div id='submenu-#{item.id}' class='collapsible collapse'>"
 				codigo << "<ul class='submenu'>"
 				item.hijos.each do |hijo|
-					codigo << "<li><a href='javascript:void(0)'><i class='#{hijo.icono.to_s}'></i> #{hijo.nombre}</a></li>"
+					codigo << "<li><a href='#{hijo.url}'><i class='#{hijo.icono.to_s}'></i> #{hijo.nombre}</a></li>"
 				end
 				codigo << "</ul></div></li>"
 			else
-				codigo << "<li><a href='javascript:void(0)'><i class='#{item.icono.to_s}'></i>#{item.nombre}</a></li>"
+				codigo << "<li><a href='#{item.url}'><i class='#{item.icono.to_s}'></i>#{item.nombre}</a></li>"
 			end
 		end
 		codigo << "</ul>"

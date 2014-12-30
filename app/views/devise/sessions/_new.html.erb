@@ -4,9 +4,7 @@
 	</div> -->
 	<div class="panel-body">
 		<%= form_for(:usuario, :url => entrar_url,
-				:html => {:id => "form-iniciar-sesion"},
-                :format => :json,
-                :remote => true) do |f| %>
+				:html => {:id => "form-iniciar-sesion"}) do |f| %>
 		  	<legend class="text-center">Inicia sesi&oacute;n</legend>
 			  <div><%= f.label :email,"Email" %><br />
 			  <%= f.email_field :email, :autofocus => true %></div>

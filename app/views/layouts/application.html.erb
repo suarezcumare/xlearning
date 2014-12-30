@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <%= stylesheet_link_tag    "bootstrap-blue" %>
-    <%= stylesheet_link_tag    "materialize" %>
+    <%= stylesheet_link_tag    "materialize.min" %>
     <%= stylesheet_link_tag    "bootstrap-blue-theme" %>
     <%= stylesheet_link_tag    "font-awesome.min" %>
     <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Roboto" %>
@@ -27,20 +27,27 @@
           <div class="col-md-3 col-lg-2 no-padding">
             <%= render "application/menu" %>
           </div>
-          <div class="col-md-9 col-lg-10">
+          <div class="col-md-9 col-lg-10  no-padding">
             <%= yield %>
+            <footer>
+              <%= render "application/footer" %>
+            </footer>
           </div>
         <% else %>
             <div class="col-md-12 col-lg-12 no-padding">
               <%= yield %>
+              <footer>
+                <%= render "application/footer" %>
+              </footer>
             </div>
         <% end %>
       </div>
+      <div class="scroll-to-top">
+        <a href="javascript:void(0)"><i class="fa fa-arrow-circle-o-up"></i></a>
+      </div>
     </main>
-    <footer>
-      <%= render "application/footer" %>
-      <%= javascript_include_tag 'application' %>
-      <%= yield :js_personalizado %>
-    </footer>
+    <%= javascript_include_tag 'https://code.jquery.com/jquery-2.1.1.min.js' %>
+    <%= javascript_include_tag 'application' %>
+    <%= yield :js_personalizado %>
   </body>
 </html>

@@ -20,7 +20,8 @@ class ApplicationController < ActionController::Base
   	end
 
     def load_menu
-      #id = current_user.
-      @menu = Menu.includes(:opcionmenu).where(opcion_menus: {raiz: true}).find(1)
+      if usuario_signed_in?
+        @menu = Menu.includes(:opcionmenu).where(opcion_menus: {raiz: true}).where(rol_id: current_usuario.rol_actual.id).first
+      end
     end
 end
