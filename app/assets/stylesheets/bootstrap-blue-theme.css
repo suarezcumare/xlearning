@@ -68,6 +68,9 @@ main{
   padding: 45px 0px;
 }
 
+.pad60{
+  padding: 60px 0px; 
+}
 .pad15-h{
   padding-left: 15px;
   padding-right: 15px;
@@ -91,6 +94,11 @@ main{
 .no-margin{
   margin-left: 0px !important;
   margin-right: 0px !important; 
+}
+
+.no-margin-v{
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;  
 }
 
 .thumbnail,
