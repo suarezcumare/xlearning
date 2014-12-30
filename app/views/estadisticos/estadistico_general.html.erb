@@ -7,7 +7,7 @@
     <%= render "estadisticos/application/menu" %>
     
   </div>
-  <div class="col-md-8 col-lg-8 no-padding">
+  <div class="col-md-9 col-lg-9 no-padding">
         <div class="tab-simple">
           <div class="row">
             <br>
@@ -25,29 +25,62 @@
 
               <div class="col-md-12">
                     <table>
-                          <tr>
-                            <th> </th>
-                            <th></th>
-                            <th> </th>
-                           
-                          </tr>
                         <tbody>
                           <tr>
-                            <td>
-                              <div>
-                                 <canvas id="circularchar" width="400" height="250">[No canvas support]</canvas>
-                              </div>
-                               
-                                <div class="text-center text-primary">
-                                  <span class="text-center text-primary">Grafico Circular</span>
+                            <td rowspan="2" class="text-center text-primary">
+                                   <div>
+                                         <span >Temperatura</span>  
+                                   </div>
+                                   <canvas id="thermometer" width="100" height="500"></canvas>
+                                 <div>
+                                      <a class="btn modal-trigger btn-primary btn-ls" href="#modal1"> Explicación</a>
                                 </div>
 
                              </td>
-                            <td><canvas id="Pie" width="350" height="250">[No canvas support]</canvas></td>
+                              <td class="text-center text-primary">
+                                 <div>
+                                         <span >Grafico Circular</span>  
+                                   </div>
+                                
+                                    <canvas id="circularchar" width="300" height="250">[No canvas support]</canvas>
+                                 <div>
+                                      <a class="btn modal-trigger btn-primary btn-ls" href="#modal1"> Explicación</a>
+                                </div>
+
+                            </td>
+                            <td class="text-center text-primary">
+                                <div>
+                                         <span>Grafico de Torta Semanal</span>  
+                                   </div>
+                                  
+                                <canvas id="Pie" width="310" height="250">[No canvas support]</canvas>
+                                 <div>
+                                      <a class="btn modal-trigger btn-primary btn-ls" href="#modal1"> Explicación</a>
+                                </div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td> <canvas id="line" width="600" height="250">[No canvas support]</canvas> </td>
-                            <td>  <canvas id="Bar" width="400" height="250">[No canvas support]</canvas> </td>
+                          <tr>                 
+                            <td class="text-center text-primary"> 
+                                <div>
+                                        <span>Grafico de Lineal Semanal</span>  
+                                   </div>
+                               
+                                 <canvas id="line" width="300" height="250">[No canvas support]</canvas> 
+                               <div>
+                                      <a class="btn modal-trigger btn-primary btn-ls" href="#modal1"> Explicación</a>
+                                </div>
+                            </td>
+                            <td class="text-center text-primary"> 
+                                 <div>
+                                       <span>Grafico de Barra Anual</span>
+                                   </div>
+                                
+                                <canvas id="Bar" width="400" height="250">[No canvas support]</canvas> 
+                                <div>
+                                      <a class="btn modal-trigger btn-primary btn-ls" href="#modal1"> Explicación</a>
+                                </div>
+                               
+                            </td>
                           </tr>
                         </tbody>
                   </table>
@@ -67,6 +100,19 @@
 
 </div>
 
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <a href="#" style="float:right;" class="waves-effect btn-flat modal-close"><i class="mdi-content-clear"></i></a>
+    <h4>Nombre del Grafico</h4>
+    <br/>
+    <p>Breve información de  las graficas</p>
+  </div>
+</div>          
+
+
+
+
 <% content_for :js_personalizado do %>
 
 <%= javascript_include_tag 'graficos/RGraph.bar' %>
@@ -85,9 +131,28 @@
 
 
 /****************************************************************************/
-/**                Grafico circular                                    */
+/**                Grafico thermometer                                     */
 /***************************************************************************/
-         var meter = new RGraph.Meter({
+           var thermometer = new RGraph.Thermometer({
+                id: 'thermometer',
+                min: 0,
+                max: 100,
+                value: 33,
+                options: {
+                    scale: {
+                        visible: true
+                    },
+                    gutter: {
+                        left: 50
+                    }
+                }
+            }).grow()
+
+
+/****************************************************************************/
+/**                Grafico circularchar                                    */
+/***************************************************************************/
+           var meter = new RGraph.Meter({
                 id: 'circularchar',
                 min: -100,
                 max: 100,
@@ -98,15 +163,15 @@
                         end: RGraph.TWOPI + 0.5
                     },
                     linewidth: {
-                        segments: 15
+                        segments: 12
                     },
                     text: {
-                        size: 16
+                        size: 12
                     },
                     strokestyle: 'white',
                     segment: {
                         radius: {
-                            start: 95
+                            start: 99
                         }
                     },
                     needle: {
@@ -122,10 +187,10 @@
                         }
                     },
                     colors: {
-                        ranges: [[-100,-6, 'red'],[-5,5, 'yellow'],[6,70, 'black'],[70,100, 'green']]
+                        ranges: [[-100,-4, '#F44049'],[-4,50, '#EBFA63'],[50,100, '#2FE99F']]
                     },
                     centery: 155,
-                    radius: 125,
+                    radius: 120,
                     adjustable: false
             }
         }).draw()
@@ -232,7 +297,7 @@
                     labels: {
                         self: ['Lunes','Martes','Miercoles','jueves','Viernes','Sabado','Domingo'],
                         sticks:true,
-                        length: 15
+                        length: 12
                     }
                 }
             })
