@@ -1,14 +1,6 @@
 /****************************************************************/
-/*                     Panel_Usuario                            */
+/*                                               */
 /****************************************************************/
-.text_usuario {
-  display: block;
-  text-align: center;
-}
-.row-padding{
-  width: auto;
-  padding-top: 20px;
-}
 
 .tab-simple{
   position:relative;
@@ -22,21 +14,9 @@
   box-shadow:inset 0 3px 6px rgba(0.1,0,0,.05)
 }
 
-.social_usuario{
-  padding-left: 40px;
-  font-size: 20px;
-   line-height: 2;
-}
-
-.btn-rounded {
-  border-radius: 25px;
-}
 .text-justify{
   text-align : justify;
 }
-
-
-
 
 .border {
    border-bottom: 1px solid #2196F3; 
@@ -46,11 +26,391 @@
   margin-left: 0.5cm;
  
 }
-
 .font15px {
   font-size: 15px;
 }
 
 .text-center{
   text-align: center;
+}
+
+
+.recomendaciones .card-image{
+  position: relative;
+  z-index: 99;
+}
+
+.recomendaciones i{
+  font-size: 20px;
+  position: absolute;
+  top:10px;
+  right:10px;
+  z-index: 100;
+}
+
+.recomendaciones span{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 20px;
+  color:#fff;
+  z-index: 101;
+}
+.recomendaciones .card-content{
+  padding: 1rem 1rem 0.5rem;
+}
+
+.recomendaciones .card-content p{
+  color:rgb(67, 71, 75);
+  font-size: 14px;
+}
+.recomendaciones .card-image:before {
+  content: "";
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(transparent, rgb(67, 71, 75));
+}
+
+.inline li{
+  float: left;
+  margin-left: 10px;
+}
+
+.deseos li{
+  width: 48%;
+}
+
+#avance-porcentaje{
+  position: relative;
+  display: inline-block;
+  float: right;
+  width: 60px;
+  height: 60px;
+}
+
+#avance-porcentaje input, #avance-porcentaje input:focus{
+  border: none;
+}
+
+
+/****************************************************************/
+/*                     Semaforo y menu                            */
+/****************************************************************/
+
+/***
+Timeline UI Base
+***/
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+
+/* The line */
+.timeline:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  background: #ccc;
+  left: 20%;
+  margin-left: -10px;
+}
+
+.timeline > li {
+  position: relative;
+}
+
+/*Remove timeline line for last entry*/
+.timeline > li.timeline-noline:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  background: #fff;
+  left: 20%;
+  margin-left: -10px;
+}
+
+/* The date/time */
+.timeline > li .timeline-time {
+  display: block;
+  width: 15%;
+  text-align: right;
+  position: absolute;
+}
+
+.timeline > li .timeline-time span {
+  display: block;
+  text-align: right;
+}
+
+.timeline > li .timeline-time span.date {
+  font-size: 12px;
+  color: #aaa;
+  display: block;
+  font-weight: 300;
+}
+
+.timeline > li .timeline-time span.time {
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 25px;
+}
+
+/* Right content */
+.timeline > li .timeline-body {
+  margin: 0 0 15px 25%;
+  color: #fff;
+  padding: 10px;
+  font-weight: 300;
+  position: relative;
+  border-radius: 5px;
+}
+
+.timeline > li .timeline-body h2 {
+  margin-top: 20px;
+  padding: 0 0 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 16px;
+}
+
+.timeline > li .timeline-content {
+  font-size: 14px;
+}
+
+.ie8 .timeline > li .timeline-body h2 {
+  border-bottom: 1px solid #eee;
+}
+
+.timeline > li .timeline-body img.timeline-img {
+  width: 50px;
+  height: 75px;
+  margin: 5px 10px 0 0px;
+}
+
+.timeline > li .timeline-body img.pull-right {
+  margin-left: 10px;
+}
+
+.timeline > li .timeline-body a.nav-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 14px;
+  padding: 0px;
+  text-align: left;
+  text-decoration: none;
+}
+
+.timeline > li .timeline-body a.nav-link:hover {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.timeline > li .timeline-body .btn {
+  margin-top: 10px;
+}
+
+/* The triangle */
+.timeline > li .timeline-body:after {
+  right: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-right-color: #3594cb;
+  border-width: 10px;
+  top: 19px;
+}
+
+.timeline > li .timeline-content:after,
+.timeline > li .timeline-content:before {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.timeline > li .timeline-content:after {
+  clear: both;
+}
+
+.timeline > li .timeline-footer:after,
+.timeline > li .timeline-footer:before {
+  content: "";
+  display: table;
+  line-height: 0;
+}
+
+.timeline > li .timeline-footer:after {
+  clear: both;
+}
+
+/* The icons */
+.timeline > li .timeline-icon {
+  width: 40px;
+  height: 40px;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  font-size: 1.4em;
+  line-height: 40px;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  color: #fff;
+  background: #fff;
+  border-radius: 50%;
+
+  text-align: center;
+  left: 20%;
+  top: 0;
+  margin: 5px 0 0 -25px;
+  padding-bottom: 3px;
+  padding-right: 1px;
+  padding-left: 2px;
+  -webkit-border-radius: 30px !important;
+  -moz-border-radius: 30px !important;
+  border-radius: 30px !important;
+}
+
+.timeline > li .timeline-icon > i {
+  font-size: 18px;
+}
+
+/* Red */
+
+.box-red{
+   box-shadow: 0 0 0 4px #e02222;
+   background: #e02222;
+}
+
+.timeline li.timeline-red .timeline-body:after {
+  border-right-color: #e02222;
+}
+
+.timeline li.timeline-red .timeline-body {
+  background: #e02222;
+}
+
+.timeline li.timeline-red .timeline-time span.time {
+  color: #e02222;
+}
+
+/* Yellow */
+
+.box-yellow{
+   box-shadow: 0 0 0 4px #ffb848;
+   background: #ffb848;
+}
+
+.timeline li.timeline-yellow .timeline-body:after {
+  border-right-color: #ffb848;
+}
+
+.timeline li.timeline-yellow .timeline-body {
+  background: #ffb848;
+}
+
+.timeline li.timeline-yellow .timeline-time span.time {
+  color: #ffb848;
+}
+
+/* Green */
+
+.box-green{
+   box-shadow: 0 0 0 4px #35aa47;
+   background: #35aa47;
+}
+
+.timeline li.timeline-green .timeline-body:after {
+  border-right-color: #35aa47;
+}
+
+.timeline li.timeline-green .timeline-body {
+  background: #35aa47;
+}
+
+.timeline li.timeline-green .timeline-time span.time {
+  color: #35aa47;
+}
+
+
+@media (max-width: 767px) {
+  timeline > li .timeline-time span.time {
+    font-size: 18px;
+  }
+
+  .timeline:before {
+    display: none;
+  }
+
+  .timeline > li .timeline-time {
+    width: 100%;
+    position: relative;
+    padding: 0 0 20px 0;
+  }
+
+  .timeline > li .timeline-time span {
+    text-align: left;
+  }
+
+  .timeline > li .timeline-body {
+    margin: 0 0 30px 0;
+    padding: 1em;
+  }
+
+  .timeline > li .timeline-body:after {
+    right: auto;
+    left: 20px;
+    top: -20px;
+  }
+
+  .timeline > li .timeline-icon {
+    position: relative;
+    float: right;
+    left: auto;
+    margin: -55px 5px 0 0px;
+  }
+
+  /*colors*/
+  .timeline li.timeline-red .timeline-body:after {
+    border-right-color: transparent;
+    border-bottom-color: #e02222;
+  }
+
+  .timeline li.timeline-blue .timeline-body:after {
+    border-right-color: transparent;
+    border-bottom-color: #4b8df8;
+  }
+
+  .timeline li.timeline-green .timeline-body:after {
+    border-right-color: transparent;
+    border-bottom-color: #35aa47;
+  }
+
+  .timeline li.timeline-yellow .timeline-body:after {
+    border-right-color: transparent;
+    border-bottom-color: #ffb848;
+  }
+
+  .timeline li.timeline-purple .timeline-body:after {
+    border-right-color: transparent;
+    border-bottom-color: #852b99;
+  }
+
+  .timeline li.timeline-grey .timeline-body:after {
+    border-right-color: transparent;
+    border-bottom-color: #555555;
+  }
 }

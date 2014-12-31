@@ -8,4 +8,8 @@ class EstadisticosController < ApplicationController
 
 	end
 
+
+	def estadistico_personalizado
+
+	end
 end

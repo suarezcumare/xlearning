@@ -7,133 +7,83 @@
     <%= render "estadisticos/application/menu" %>
     
   </div>
-  <div class="col-md-8 col-lg-8 no-padding">
-        <div class="tab-simple">
-          <div class="row">
-            <br>
-             <div class="col-md-12 border">
-                 <h4 class="blue-text accent-1 text-uppercase text-center"> Reportes Estadisticos Xlearning</h4>
-             </div>
-
-              <div class="col-md-12">
-                  <div class="col-md-4">
-                      <%= render "estadisticos/graficos/circularchart" %>
-                  </div>
-                  <div class="col-md-4">
-                      <%= render "estadisticos/graficos/thermometer" %>
-                  </div>
-                  <div class="col-md-4">
-                      <%= render "estadisticos/graficos/skeletongauge" %>
-                  </div>
-
-             </div>
-
-              
-             
-        </div>
-
-      </div>
+  <div class="row pad30-h">
+  <div class="col-lg-8 tabs">
+     
+    <h5 class="text-uppercase">Estadisticos</h5>
+    <ul class="nav nav-pills pull-right">
+      <li role="presentation" title="Estadisticas en lo Económico" > <a href="#economico" class="black-text"> <b> Económico </b> </a> </li>
+      <li role="presentation" title="Estadisticas del sistema" > <a href="#sistema" class="black-text"> <b>Sistema </b> </a> </li>
+      <li role="presentation" title="Estadisticas Sociales" > <a href="#social" class="black-text"> <b>Social </b> </a> </li>
+      
+    </ul>
 
   </div>
+  
+  <div class="col-lg-8">    
+      <div class="tab-pane" id="economico">
+        <div>
+          <h5 class="text-uppercase"> Económico</h5>
+          <%= render "estadisticos/elementos/economico" %>
+        </div>
+    </div>
+    <div class="tab-pane" id="social">
+        <div>
+           <h5 class="text-uppercase">Sistema </h5>
+           <%= render "estadisticos/elementos/sistema" %>
+        </div>
+    <div class="tab-pane" id="sistema">   
+        <div>
+          <h5 class="text-uppercase"> Social</h5>
+          <%= render "estadisticos/elementos/social" %>
+        </div>  
+    </div>
+
+    <div>
+     
+    </div>
+
+  </div>
+</div>
 
 
 
 </div>
+  
+
 
 <% content_for :js_personalizado do %>
 
- <%= javascript_include_tag 'estadisticos' %>
-<%= javascript_include_tag 'graficos/RGraph.bar' %>
- <%= javascript_include_tag 'graficos/RGraph.common.core' %>
+<%= javascript_include_tag 'estadisticos' %>
+<%= javascript_include_tag 'jquery.knob.min' %>
+<%= javascript_include_tag 'graficos/RGraph.common.core' %>
  <%= javascript_include_tag 'graficos/RGraph.gauge' %>
-<%= javascript_include_tag 'graficos/RGraph.line' %>
- <%= javascript_include_tag 'graficos/RGraph.meter' %>
- <%= javascript_include_tag 'graficos/RGraph.pie' %>
- <%= javascript_include_tag 'graficos/RGraph.thermometer' %>
 
 
   <script type="text/javascript">
-   
-
-
-//funciones estadisticas
+     
  $(document).ready(function(){
 
-   
-/****************************************************************************/
-/**                Grafico thermometer                                     */
-/***************************************************************************/
-           var thermometer = new RGraph.Thermometer({
-                id: 'thermometer',
-                min: 0,
-                max: 100,
-                value: 33,
-                options: {
-                    scale: {
-                        visible: true
-                    },
-                    gutter: {
-                        left: 50
-                    }
-                }
-            }).grow()
+   $(".curso_progreso").knob({
+          'min':0,
+          'max':100,
+          'readOnly':true,
+          'width':100,
+          'thickness':0.3
+        });
+    });
+      
+     $('ul.tabs').tabs();
 
 
- 
 /****************************************************************************/
-/**                Grafico circularchar                                    */
+/**                Grafico Skeleton                                    */
 /***************************************************************************/
-           var meter = new RGraph.Meter({
-                id: 'circularchar',
-                min: -100,
-                max: 100,
-                value: 0,
-                options: {
-                    angles: {
-                        start: RGraph.PI - 0.5,
-                        end: RGraph.TWOPI + 0.5
-                    },
-                    linewidth: {
-                        segments: 12
-                    },
-                    text: {
-                        size: 12
-                    },
-                    strokestyle: 'white',
-                    segment: {
-                        radius: {
-                            start: 99
-                        }
-                    },
-                    needle: {
-                        radius: 75
-                    },
-                    border: 0,
-                    tickmarks: {
-                        small: {
-                            num: 0
-                        },
-                        big: {
-                            num: 0
-                        }
-                    },
-                    colors: {
-                        ranges: [[-100,-4, '#F44049'],[-4,50, '#EBFA63'],[50,100, '#2FE99F']]
-                    },
-                    centery: 155,
-                    radius: 120,
-                    adjustable: false
-            }
-        }).draw()
-
-/****************************************************************************/
-/**                Grafico skeleton                                        */
-/***************************************************************************/
-   var gauge = new RGraph.Gauge({
+      var gauge = new RGraph.Gauge({
                 id: 'skeleton',
                 min: 0,
                 max: 100,
-                value: 46,
+                value: 95,
                 options: {
                     'centery': 120,
                     'radius': 130,
@@ -143,7 +93,7 @@
                     'border.width': 0,
                     shadow: false,
                     
-                    'colors.ranges': [[0,33,'#2FE99F'], [33,66,'#EBFA63'],[67,100,'#F44049']],
+                    'colors.ranges': [[0,33,'#4CAF50'], [33,66,'#ffeb3b'],[67,100,'#e02222']],
                     'border.inner': 'rgba(0,0,0,0)',
                     'border.outer': 'rgba(0,0,0,0)',
                     'border.outline': 'rgba(0,0,0,0)',
@@ -151,10 +101,6 @@
                     'centerpin.radius': 0
                 }
             }).grow()
-
-    });
-      
-      
    
   </script>
 

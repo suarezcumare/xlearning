@@ -4,98 +4,49 @@
 <% end %>
 <div class="row pad30">
   <div class="col-md-3 col-lg-3">
-    <%= render "estadisticos/application/menu" %>
-    
+    <%= render "estadisticos/application/menu" %>   
   </div>
-  <div class="col-md-9 col-lg-9 no-padding">
-        <div class="tab-simple">
-          <div class="row">
-            <br>
-             <div class="col-md-12 border">
-                 <h4 class="blue-text accent-1 text-uppercase text-center"> Reportes Estadisticos Xlearning</h4>
-             </div>
 
-             <div class="col-md-12">
-              <br>
-                 <h4 class=" accent-1 "> Nombre Reportes Estadisticos Xlearning </h4>
-                 <small class="font15px margen">  comentario corto sobre el reporte estadistico que se realiza, comentario corto sobre el reporte estadistico que se realiza, comentario corto sobre el reporte estadistico que se realiza.  </small>
-              
-            </div>
-
-
-              <div class="col-md-12">
-                    <table>
-                        <tbody>
-                          <tr>
-                            <td rowspan="2" class="text-center text-primary">
-                                   <div>
-                                         <span >Temperatura</span>  
-                                   </div>
-                                   <canvas id="thermometer" width="100" height="500"></canvas>
-                                 <div>
-                                      <a class="btn modal-trigger btn-primary btn-ls" href="#modal1"> Explicación</a>
-                                </div>
-
-                             </td>
-                              <td class="text-center text-primary">
-                                 <div>
-                                         <span >Grafico Circular</span>  
-                                   </div>
-                                
-                                    <canvas id="circularchar" width="300" height="250">[No canvas support]</canvas>
-                                 <div>
-                                      <a class="btn modal-trigger btn-primary btn-ls" href="#modal1"> Explicación</a>
-                                </div>
-
-                            </td>
-                            <td class="text-center text-primary">
-                                <div>
-                                         <span>Grafico de Torta Semanal</span>  
-                                   </div>
-                                  
-                                <canvas id="Pie" width="310" height="250">[No canvas support]</canvas>
-                                 <div>
-                                      <a class="btn modal-trigger btn-primary btn-ls" href="#modal1"> Explicación</a>
-                                </div>
-                            </td>
-                          </tr>
-                          <tr>                 
-                            <td class="text-center text-primary"> 
-                                <div>
-                                        <span>Grafico de Lineal Semanal</span>  
-                                   </div>
-                               
-                                 <canvas id="line" width="300" height="250">[No canvas support]</canvas> 
-                               <div>
-                                      <a class="btn modal-trigger btn-primary btn-ls" href="#modal1"> Explicación</a>
-                                </div>
-                            </td>
-                            <td class="text-center text-primary"> 
-                                 <div>
-                                       <span>Grafico de Barra Anual</span>
-                                   </div>
-                                
-                                <canvas id="Bar" width="400" height="250">[No canvas support]</canvas> 
-                                <div>
-                                      <a class="btn modal-trigger btn-primary btn-ls" href="#modal1"> Explicación</a>
-                                </div>
-                               
-                            </td>
-                          </tr>
-                        </tbody>
-                  </table>
-
-
-             </div>
-
-             
-             
-        </div>
+    <div class="col-lg-8">
+      <div class="row">
+          <div class="col-md-4 col-xs-4">
+                <h5 class="text-uppercase">Estadisticos</h5>
+          </div>
+          <div class="col-md-4 col-xs-0"></div>
+          <div class="col-md-4 col-xs-8"> 
+               <ul class="nav nav-pills pull-right tabs">
+                  <li class="tab" role="presentation" title="Estadisticas en lo Económico" > <a href="#semaforo" class="black-text"> <b>General </b> </a> </li>
+                  <li class="tab" role="presentation" title="Estadisticas del sistema" > <a href="#bar" class="black-text"> <b> Básicos </b> </a> </li>
+                </ul>
+          </div>
 
       </div>
-
   </div>
 
+
+  <div class="col-lg-8">
+
+          <div class="tab-panel" id="semaforo" class="col s12">
+              <div>
+                <br><br><br>
+                  <%= render "estadisticos/graficos/semaforo" %>
+                 <br><br><br>
+                  <%= render "estadisticos/graficos/skeletongauge" %>
+                  <br><br><br>
+                  <%= render "estadisticos/graficos/circular" %>
+             </div>
+          </div>
+
+          <div class="tab-panel" id="bar" class="col s12">
+              <div>
+                <br><br><br>
+                  <%= render "estadisticos/graficos/bar" %>
+                   <br><br><br>
+                  <%= render "estadisticos/graficos/pie" %>
+             </div>
+          </div>
+  </div>
+ 
 
 
 </div>
@@ -111,247 +62,35 @@
 </div>          
 
 
-
-
 <% content_for :js_personalizado do %>
 
-<%= javascript_include_tag 'graficos/RGraph.bar' %>
- <%= javascript_include_tag 'graficos/RGraph.common.core' %>
+  <%= javascript_include_tag 'graficos/RGraph.common.core' %>
+ <%= javascript_include_tag 'jquery.knob.min' %>
+ <%= javascript_include_tag 'graficos/RGraph.bar' %>
  <%= javascript_include_tag 'graficos/RGraph.gauge' %>
-<%= javascript_include_tag 'graficos/RGraph.line' %>
  <%= javascript_include_tag 'graficos/RGraph.meter' %>
  <%= javascript_include_tag 'graficos/RGraph.pie' %>
  <%= javascript_include_tag 'graficos/RGraph.thermometer' %>
 
 
   <script type="text/javascript">
-   
+    $('ul.tabs').tabs();
+      
       $(document).ready(function ()
         {
-
-
-/****************************************************************************/
-/**                Grafico thermometer                                     */
-/***************************************************************************/
-           var thermometer = new RGraph.Thermometer({
-                id: 'thermometer',
-                min: 0,
-                max: 100,
-                value: 33,
-                options: {
-                    scale: {
-                        visible: true
-                    },
-                    gutter: {
-                        left: 50
-                    }
-                }
-            }).grow()
-
-
-/****************************************************************************/
-/**                Grafico circularchar                                    */
-/***************************************************************************/
-           var meter = new RGraph.Meter({
-                id: 'circularchar',
-                min: -100,
-                max: 100,
-                value: 0,
-                options: {
-                    angles: {
-                        start: RGraph.PI - 0.5,
-                        end: RGraph.TWOPI + 0.5
-                    },
-                    linewidth: {
-                        segments: 12
-                    },
-                    text: {
-                        size: 12
-                    },
-                    strokestyle: 'white',
-                    segment: {
-                        radius: {
-                            start: 99
-                        }
-                    },
-                    needle: {
-                        radius: 75
-                    },
-                    border: 0,
-                    tickmarks: {
-                        small: {
-                            num: 0
-                        },
-                        big: {
-                            num: 0
-                        }
-                    },
-                    colors: {
-                        ranges: [[-100,-4, '#F44049'],[-4,50, '#EBFA63'],[50,100, '#2FE99F']]
-                    },
-                    centery: 155,
-                    radius: 120,
-                    adjustable: false
-            }
-        }).draw()
-           
-/****************************************************************************/
-/**                Grafico line                                    */
-/***************************************************************************/
-
-            var data = [14,16,18,19,29,28,29];
-            var threshold = 20;
-            var color1 = 'green';
-            var color2 = 'red'
-
-            /**
-            * First draw a chart that will enable us to get the Y coordinate. This chart is not shown
-            */
-            var line = new RGraph.Line({
-                id: 'line',
-                data: data,
-                options: {
-                    gutter: {
-                        top: 5,
-                        bottom: 45
-                    },
-                    linewidth: 3,
-                    tickmarks: 'endcircle',
-                    hmargin: 10,
-                    colors: [color1]
-                }
-            }).draw()
-
-            /**
-            * Now get the Y coord
-            */
-            var y = line.getYCoord(threshold);
-
-
-            /**
-            * Clear the canvas
-            */
-            RGraph.Clear(line.canvas);
-
-            /**
-            * Now draw the chart that will become the red half
-            */
-            line.context.save();
-                line.context.beginPath();
-                line.context.rect(0,0,line.canvas.width, y);
-                line.context.clip();
-
-                // Draw the line again
-                line.Draw();
-
-            line.context.restore();
-
-            /**
-            * Now draw the chart that will become the green half
-            */
-            line.context.save();
-                line.context.beginPath();
-                line.context.rect(0,y,line.canvas.width, line.canvas.height);
-                line.context.clip();
-
-                var line = new RGraph.Line({
-                    id: 'line',
-                    data: data,
-                    options: {
-                        gutter: {
-                            top: 5,
-                            bottom: 45
-                        },
-                        colors: [color2],
-                        linewidth: 3,
-                        tickmarks: 'endcircle',
-                        hmargin: 10,
-                        labels: ['Lun','Mar','Mie','Jue','Vie','Sab','Dom']
-                    }
-                }).draw()
-                
-
-            line.context.restore();
-
-
-
-
- /****************************************************************************/
-/**                Grafico pie                                    */
-/***************************************************************************/
-            var pie = new RGraph.Pie({
-                id: 'Pie',
-                data: [9,5,12,8,4,9,2],
-                options: {
-                    strokestyle: '#e8e8e8',
-                    linewidth: 2,
-                    shadow: {
-                        self: true,
-                        blur: 5,
-                        offsetx: 5,
-                        offsety: 5,
-                        color: '#fff'
-                    },
-                    exploded: 10,
-                    radius: 80,
-                    labels: {
-                        self: ['Lunes','Martes','Miercoles','jueves','Viernes','Sabado','Domingo'],
-                        sticks:true,
-                        length: 12
-                    }
-                }
-            })
-
-            
-            !RGraph.ISIE || RGraph.ISIE9UP ? pie.roundRobin({frames:30}) : pie.draw();
-          
-
- /****************************************************************************/
-/**                     Grafico bar                                    */
-/***************************************************************************/
-
-            var data = [4,8,6,3,5,2,6,8,4,5,7,8];
-
-            var bar = new RGraph.Bar({
-                id: 'Bar',
-                data: data,
-                options: {
-                    background: {
-                        grid: {
-                            autofit: {
-                                numvlines: data.length
-                            }
-                        }
-                    },
-                    linewidth: 3,
-                    shadow: {
-                        offsetx: 3,
-                        offsety: -3,
-                        blur: 3,
-                        color: '#999'
-                    },
-                    hmargin: 5,
-                    colors: ['#2FE99F'],
-                    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-                    clearto: 'white'
-                }
-            })
-                
-            RGraph.ISOLD ? bar.draw() : bar.wave({frames: 0})
-
-
-
-
-
-
-
-
+            $(".curso_progreso").knob({
+          'min':0,
+          'max':100,
+          'readOnly':true,
+          'width':100,
+          'thickness':0.3
+        });
 
         })
-      
+
+
    
   </script>
-
 
 
 <% end %>

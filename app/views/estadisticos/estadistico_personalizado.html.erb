@@ -1,0 +1,53 @@
+
+<% content_for :css_personalizado do %>
+  <%= stylesheet_link_tag    "estadisticos" %>
+<% end %>
+<div class="row pad30">
+  <div class="col-md-3 col-lg-3">
+    <%= render "estadisticos/application/menu" %>   
+  </div>
+
+  <div class="col-lg-8">
+
+         En proceso :D
+  </div>
+ 
+
+
+</div>
+    
+
+
+<% content_for :js_personalizado do %>
+
+  <%= javascript_include_tag 'graficos/RGraph.common.core' %>
+ <%= javascript_include_tag 'jquery.knob.min' %>
+ <%= javascript_include_tag 'graficos/RGraph.bar' %>
+ <%= javascript_include_tag 'graficos/RGraph.gauge' %>
+ <%= javascript_include_tag 'graficos/RGraph.meter' %>
+ <%= javascript_include_tag 'graficos/RGraph.pie' %>
+ <%= javascript_include_tag 'graficos/RGraph.thermometer' %>
+
+
+  <script type="text/javascript">
+    $('ul.tabs').tabs();
+      
+      $(document).ready(function ()
+        {
+            $(".curso_progreso").knob({
+          'min':0,
+          'max':100,
+          'readOnly':true,
+          'width':100,
+          'thickness':0.3
+        });
+
+        })
+
+
+   
+  </script>
+
+
+<% end %>
+

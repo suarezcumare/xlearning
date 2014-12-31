@@ -13,7 +13,7 @@
                     <h5 class="media-heading">Nombre del items</h5>
                     <div>
                       <div class="progress">
-                     	 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style=" width: 60%;">
+                       <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style=" width: 60%;">
                         <span class="sr-only">60% Completado</span>
                       </div>
                     </div>
@@ -29,7 +29,7 @@
             <div class="col-lg-7">
               <br>
                <div class="col-lg-3"></div>
-                <canvas id="skeleton" title="Progreso por clientes en la Organización" width="300" height="150" style="box-shadow: "></canvas>
+                 <canvas id="Pie" width="350" height="250">[No canvas support]</canvas>
                          
             </div>
          </div>
@@ -53,33 +53,36 @@
       
       $(document).ready(function ()
         {
-           
-
+          
 /****************************************************************************/
-/**                Grafico skeleton                                        */
+/**                Grafico pie                                        */
 /***************************************************************************/
-   var gauge = new RGraph.Gauge({
-                id: 'skeleton',
-                min: 0,
-                max: 100,
-                value: 46,
+      var pie = new RGraph.Pie({
+                id: 'Pie',
+                data: [9,5,12,8,4,9,2],
                 options: {
-                    'centery': 120,
-                    'radius': 130,
-                    'angles.start': RGraph.PI,
-                    'angles.end': RGraph.TWOPI,
-                    'needle.size': 100,
-                    'border.width': 0,
-                    shadow: false,
-                    
-                    'colors.ranges': [[0,33,'#2FE99F'], [33,66,'#EBFA63'],[67,100,'#F44049']],
-                    'border.inner': 'rgba(0,0,0,0)',
-                    'border.outer': 'rgba(0,0,0,0)',
-                    'border.outline': 'rgba(0,0,0,0)',
-                    
-                    'centerpin.radius': 0
+                    strokestyle: '#fff',
+                    linewidth: 2,
+                    shadow: {
+                        self: true,
+                        blur: 5,
+                        offsetx: 5,
+                        offsety: 5,
+                        color: '#fff'
+                    },
+                    exploded: 10,
+                    radius: 80,
+                    labels: {
+                        self: ['Lunes','Martes','Miercoles','jueves','Viernes','Sabado','Domingo'],
+                        sticks:true,
+                        length: 15
+                    }
                 }
-            }).grow()
+            })
+
+            
+            !RGraph.ISIE || RGraph.ISIE9UP ? pie.roundRobin({frames:30}) : pie.draw();
+          
 
 
         })

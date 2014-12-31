@@ -1,0 +1,114 @@
+
+
+
+
+<div class="panel curso-actual"> 
+          <div class="row">
+           <div class="col-lg-5">
+            <br>
+                <div class="media">
+                  <a class="media-left" href="#">
+                       <input type="text" value="60" class="curso_progreso" readonly="readonly">
+                  </a>
+                  <div class="media-body">
+                    <h5 class="media-heading">Nombre del items</h5>
+                    <div>
+                      <div class="progress">
+                       <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style=" width: 60%;">
+                        <span class="sr-only">60% Completado</span>
+                      </div>
+                    </div>
+                    <span class="fecha-inicio"> Dic, 31 de 2014</span>
+                   
+                  </div>
+                  <br/>
+                     <a class=" modal-trigger text-uppercase" href="#modalskeleton"> Información</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <%= link_to "Ampliar", "/estadisticos/1/1", {class: "btn btn-danger ingresar"}%>
+                  </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+              <br>
+               <div class="col-lg-3"></div>
+                  <canvas id="circularchar" width="400" height="250">[No canvas support]</canvas>
+                         
+            </div>
+         </div>
+        </div>
+
+<!-- Modal Structure -->
+<div id="modalskeleton" class="modal">
+  <div class="modal-content">
+    <a href="#" style="float:right;" class="waves-effect btn-flat modal-close"><i class="mdi-content-clear"></i></a>
+    <h4>Progreso de  clientes en la Organización</h4>
+    <br/>
+    <p>Breve información de  las graficas</p>
+  </div>
+</div>   
+
+
+<% content_for :js_personalizado do %>
+
+  <script type="text/javascript">
+    
+      
+      $(document).ready(function ()
+        {
+          
+/****************************************************************************/
+/**                Grafico circular                                        */
+/***************************************************************************/
+   var meter = new RGraph.Meter({
+                id: 'circularchar',
+                min: -100,
+                max: 100,
+                value: 0,
+                options: {
+                    angles: {
+                        start: RGraph.PI - 0.5,
+                        end: RGraph.TWOPI + 0.5
+                    },
+                    linewidth: {
+                        segments: 15
+                    },
+                    text: {
+                        size: 16
+                    },
+                    strokestyle: 'white',
+                    segment: {
+                        radius: {
+                            start: 95
+                        }
+                    },
+                    needle: {
+                        radius: 75
+                    },
+                    border: 0,
+                    tickmarks: {
+                        small: {
+                            num: 0
+                        },
+                        big: {
+                            num: 0
+                        }
+                    },
+                    colors: {
+                        ranges: [[-100,-6, '#F44049'],[-5,5, '#EBFA63'],[6,70, '#2FE99F'],[70,100, '#2FE99F']]
+                    },
+                    centery: 155,
+                    radius: 125,
+                    adjustable: false
+            }
+        }).draw()
+          
+
+
+        })
+
+
+   
+  </script>
+
+
+<% end %>
+
