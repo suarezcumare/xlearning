@@ -1,6 +1,8 @@
 $(document).ready(function(){
 	$('select').not('.disabled').material_select();
 	$('.datepicker').pickadate();
+	$('.modal-trigger').leanModal();
+    $(".dropdown-toggle").dropdown();
 	$("#busqueda-trigger").click(function(){
 		$("#top-search-bar").css("display","table");
 	});
@@ -33,15 +35,6 @@ $(document).ready(function(){
           scrollTop: 0
         }, 1000);
 	});
-
-	// $(".visualizador-contenido").leanModal({
-	// 		ready: function() { 
-	// 			alert('Ready'); 
-	// 		}, // Callback for Modal open
-	//         complete: function() { 
-	//         	alert('Closed'); 
-	//         } // Callback for Modal close}
-	// });
 
 	$(".visualizador-contenido").click(function(){
 		var c = "<a href='javascript:void(0)' class='modal-close'><i class='mdi-content-clear'></i></a>";

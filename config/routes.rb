@@ -15,6 +15,7 @@ Xlearning::Application.routes.draw do
   		match "/clases/" => "grupos#index", via: :get
   		match "/historial/pagos/" => "pagos#index", via: :get
   		match "/historial/certificados/" => "certificados#index", via: :get
+  		match "/evaluacion/corregir/" => "evaluacion_grupos#create", via: :post
  		
   		match "/usuarios/:id" => "usuario#perfil_index", via: :get
   		match "/usuarios/editar/:id" => "usuario#perfil_editar", via: :get

@@ -5,7 +5,7 @@
 			<%= Time.now.strftime("%b, %d de %Y") %>
 		</span>
 		<hr>
-		<form id="presentar-examen" name="evaluacion" method="post" action="">
+		<form id="presentar-examen" name="evaluacion" method="post" action="<%= evaluacion_corregir_path %>">
 			<div class="badge new cyan lighten-3"><strong>Pregunta #1</strong></div>
 			<div class="panel">
 				<div class="panel-body">
@@ -96,7 +96,7 @@
 			</div>
 			<div class="pad45">
 				<div class="form-control block-center">
-					<a href="" class="btn btn-success">Enviar</a>
+					<button type="submit" href="" class="btn btn-success">Enviar</button>
 					<a href="" class="btn btn-primary">guardar</a>
 				</div>
 			</div>
@@ -109,24 +109,5 @@
 <% content_for :js_personalizado do %>
   <%= javascript_include_tag "jquery.scrolline" %>
   <%= javascript_include_tag "jquery.countdown360" %>
-  <script type="text/javascript">
-  	$(document).ready(function(){
-      	$.scrolline({
-        	position:'bottom'
-      	});
-	  	$("#countdown").countdown360({
-		  radius      : 50,
-		  seconds     : 180,
-		  strokeWidth : 12,
-		  fillStyle   : '#fbfbfb',
-		  strokeStyle : '#44C2D2',
-		  fontSize    : 40,
-		  unit        : "minutes",
-		  label       : ["minuto", "minutos"],
-		  fontColor   : '#5D5D5D',
-		  autostart: false,
-		  onComplete  : function () { console.log('completed') }
-		}).start()
-	});
-  </script>
+  <%= javascript_include_tag "evaluacion" %>
 <% end %>
