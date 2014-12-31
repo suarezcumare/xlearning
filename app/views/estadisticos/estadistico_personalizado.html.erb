@@ -3,15 +3,199 @@
   <%= stylesheet_link_tag    "estadisticos" %>
 <% end %>
 <div class="row pad30">
-  <div class="col-md-3 col-lg-3">
+ <div class="col-md-3 col-lg-3">
     <%= render "estadisticos/application/menu" %>   
   </div>
 
-  <div class="col-lg-8">
+   <% if params[:grafico] == '4' %>
 
-         En proceso :D
-  </div>
- 
+      <div class="col-lg-8">
+               <h5 class="text-uppercase"> Nombre del Estadisticos</h5>
+      </div>
+
+      <div class="col-lg-8">
+          <br> <br> <br>
+        <div class="tab-simple"> 
+            <h6 class="text-uppercase blue-text margen"> Genera tus Estadisticos</h6>
+            <br><br>
+            <div class="row">
+               <div class="col-lg-3">
+                   Fecha: <input id="fecha1" type="date" class="datepicker">
+               </div>
+                <div class="col-lg-3">
+                   Fehca: <input id="fecha2" type="date" class="datepicker">
+               </div>
+              <div class="col-lg-2 col-xs-0"></div>
+              <div class="col-lg-3">
+              <br> <a class="btn btn-danger ingresar" onclick="estadisticosBar()">Generar</a>
+              </div>
+          </div> 
+        </div>  
+        <br> <br> <br>
+      </div>
+
+  <div class="col-lg-8">
+    <div class="col-md-2 col-xs-0"></div>
+         <canvas id="bar" width="600" height="400">[No canvas support]</canvas>
+   </div>       
+        
+  <% elsif params[:grafico]=='3'    %>
+        <div class="col-lg-8">
+               <h5 class="text-uppercase"> Nombre del Estadisticos</h5>
+      </div>
+
+      <div class="col-lg-8">
+          <br> <br> <br>
+        <div class="tab-simple"> 
+            <h6 class="text-uppercase blue-text margen"> Genera tus Estadisticos</h6>
+            <br><br>
+            <div class="row">
+               <div class="col-lg-3">
+                   Fecha: <input id="fecha1" type="date" class="datepicker">
+               </div>
+                <div class="col-lg-3">
+                   Fehca: <input id="fecha2" type="date" class="datepicker">
+               </div>
+              <div class="col-lg-2 col-xs-0"></div>
+              <div class="col-lg-3">
+              <br> <a class="btn btn-danger ingresar" onclick="estadisticoscircularchar()">Generar</a>
+              </div>
+          </div> 
+        </div>  
+        <br> <br> <br>
+      </div>
+
+  <div class="col-lg-8">
+     <div class="col-md-2 col-xs-0"></div>
+         <canvas id="circularchar" width="600" height="500">[No canvas support]</canvas>
+   </div>  
+
+  <% elsif params[:grafico]=='5'    %>
+      <div class="col-lg-8">
+        <h5 class="text-uppercase"> Nombre del Estadisticos</h5>
+      </div>
+
+        <div class="col-lg-8">
+            <br> <br> <br>
+          <div class="tab-simple"> 
+              <h6 class="text-uppercase blue-text margen"> Genera tus Estadisticos</h6>
+              <br><br>
+              <div class="row">
+                 <div class="col-lg-3">
+                     Fecha: <input id="fecha1" type="date" class="datepicker">
+                 </div>
+                  <div class="col-lg-3">
+                     Fehca: <input id="fecha2" type="date" class="datepicker">
+                 </div>
+                <div class="col-lg-2 col-xs-0"></div>
+                <div class="col-lg-3">
+                <br> <a class="btn btn-danger ingresar" onclick="estadisticosPie()">Generar</a>
+                </div>
+            </div> 
+          </div>  
+          <br> <br> <br>
+        </div>
+
+        <div class="col-lg-8">
+           <div class="col-md-2 col-xs-0"></div>
+                <canvas id="Pie" width="600" height="250">[No canvas support]</canvas>
+
+         </div>  
+
+  <% elsif  params[:grafico]== '2'    %>
+
+      <div class="col-lg-8">
+        <h5 class="text-uppercase"> Nombre del Estadisticos</h5>
+      </div>
+
+        <div class="col-lg-8">
+            <br> <br> <br>
+          <div class="tab-simple"> 
+              <h6 class="text-uppercase blue-text margen"> Genera tus Estadisticos</h6>
+              <br><br>
+              <div class="row">
+                 <div class="col-lg-3">
+                     Fecha: <input id="fecha1" type="date" class="datepicker">
+                 </div>
+                  <div class="col-lg-3">
+                     Fehca: <input id="fecha2" type="date" class="datepicker">
+                 </div>
+                <div class="col-lg-2 col-xs-0"></div>
+                <div class="col-lg-3">
+                <br> <a class="btn btn-danger ingresar" onclick="estadisticosSkeleton()">Generar</a>
+                </div>
+            </div> 
+          </div>  
+          <br> <br> <br>
+        </div>
+
+        <div class="col-lg-8">
+           <div class="col-md-2 col-xs-0"></div>
+                <canvas id="skeleton" title="Progreso por clientes en la Organización" width="500" height="300" style="box-shadow: "></canvas>
+
+         </div> 
+   
+   <% elsif params[:grafico] == '1'    %>
+
+
+          <div class="col-lg-8">
+        <h5 class="text-uppercase"> Nombre del Estadisticos</h5>
+      </div>
+
+        <div class="col-lg-8">
+            <br> <br> <br>
+          <div class="tab-simple"> 
+              <h6 class="text-uppercase blue-text margen"> Genera tus Estadisticos</h6>
+              <br><br>
+              <div class="row">
+                 <div class="col-lg-3">
+                     Fecha: <input id="fecha1" type="date" class="datepicker">
+                 </div>
+                  <div class="col-lg-3">
+                     Fehca: <input id="fecha2" type="date" class="datepicker">
+                 </div>
+                <div class="col-lg-2 col-xs-0"></div>
+                <div class="col-lg-3">
+                <br> <a class="btn btn-danger ingresar">Generar</a>
+
+
+                </div>
+            </div> 
+          </div>  
+          <br> <br> <br>
+        </div>
+
+        <div class="col-lg-8">
+
+                <ul class="timeline">
+                  <li class="timeline-yellow">
+                        <div class="timeline-icon box-yellow">
+                        </div>
+                        <div class="timeline-body">
+                          <h6>Nivel Bajo</h6>
+                        </div>
+                  </li>
+                  <li class="timeline-green">
+                  <div class="timeline-icon box-green green "> 
+                  </div>
+                  <div class="timeline-body">
+                    <h6>Ideas en Acciones</h6>
+                  </div>
+                </li>
+                  <li class="timeline-red timeline-noline">
+                     
+                        <div class="timeline-icon box-red">
+                         
+                        </div>
+                        <div class="timeline-body">
+                          <h6>Aplicar Acciones</h6>
+                        </div>
+                  </li>
+              </ul>
+
+         </div> 
+
+         <% end   %>
 
 
 </div>
@@ -20,27 +204,21 @@
 
 <% content_for :js_personalizado do %>
 
-  <%= javascript_include_tag 'graficos/RGraph.common.core' %>
- <%= javascript_include_tag 'jquery.knob.min' %>
+
+ <%= javascript_include_tag 'graficos/RGraph.common.core' %>
  <%= javascript_include_tag 'graficos/RGraph.bar' %>
- <%= javascript_include_tag 'graficos/RGraph.gauge' %>
  <%= javascript_include_tag 'graficos/RGraph.meter' %>
  <%= javascript_include_tag 'graficos/RGraph.pie' %>
- <%= javascript_include_tag 'graficos/RGraph.thermometer' %>
-
+ <%= javascript_include_tag 'graficos/RGraph.gauge' %>
+ <%= javascript_include_tag 'estadisticos' %>
 
   <script type="text/javascript">
     $('ul.tabs').tabs();
-      
+     $('.datepicker').pickadate();
       $(document).ready(function ()
         {
-            $(".curso_progreso").knob({
-          'min':0,
-          'max':100,
-          'readOnly':true,
-          'width':100,
-          'thickness':0.3
-        });
+            
+    
 
         })
 
