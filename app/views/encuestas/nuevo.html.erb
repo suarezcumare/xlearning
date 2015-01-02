@@ -1,0 +1,432 @@
+<% content_for :css_personalizado do%>
+	<%= stylesheet_link_tag    "encuestas" %>
+<% end %>
+
+<div class="text-right">
+	<ol class="breadcrumb">
+	  <li><%= link_to "Home", root_path %></li>
+	  <li><%= link_to "Encuestas", encuestas_path %> </li> 
+	  <li class="active">Nuevo</li>
+	</ol>
+</div>
+
+<div class="col-md-10">
+	<%= render "encuestas/application/cuadrosencuestas" %>
+</div>
+
+<div class="row pad30-h">
+	<div class="col-lg-6">
+		<h5 class="text-uppercase"> Generando nueva encuesta</h5>
+	</div>
+	
+</div>
+
+<div class="row">
+	<div class="col-lg-6 pad45-h">
+		<div class="panel curso-actual">
+			<div class="col-md-12">
+				<div class="col-md-7">
+				 <br>
+					<%= label_tag :titulo %>
+					<%= text_field(:encuesta, :titulo) %>
+				</div>	
+
+			</div>
+
+			<div class="col-md-12">
+				<div class="col-md-9">
+				<%= label_tag :descripción_de_la_encuesta %>
+				<%= text_area_tag(:descripción, "Escribe aqui") %>
+			</div>
+
+			</div>
+
+			<div class="col-md-12">
+				<br>
+				<h6 class="text-uppercase"> Tipo de Preguntas</h6>
+				<br>
+			</div>
+
+			
+			<div class="col-md-12">
+				
+				<div class="col-md-4 col-xs-3">
+					<span class="black-text"> <b> Pregunta Si o No: </b> </span>
+				</div>	
+				<div class="col-md-3 col-xs-2">
+					<a class="modal-trigger text-uppercase" href="#modalsino"> Información</a>
+				</div>	
+				<div class="col-md-2 col-xs-2">
+					<a class="btn btn-danger" data-toggle="collapse" href="#collapsesino" aria-expanded="false" >Añedir</a>
+				</div>	
+	
+			</div>
+
+			<div class="col-md-12">
+				
+				<div class="col-md-4 col-xs-3">
+					<span class="black-text"> <b> Selección Simple: </b> </span>
+				</div>	
+				<div class="col-md-3 col-xs-2">
+					<a class=" modal-trigger text-uppercase" href="#modalsimple"> Información</a>
+				</div>	
+				<div class="col-md-2 col-xs-2">
+					<a class="btn btn-danger" data-toggle="collapse" href="#collapsesimple" aria-expanded="false" >Añedir</a>
+				</div>	
+	
+			</div>
+
+			<div class="col-md-12">
+				
+				<div class="col-md-4 col-xs-3">
+					<span class="black-text"> <b> Selección Multiple: </b> </span>
+				</div>	
+				<div class="col-md-3 col-xs-2">
+					<a class=" modal-trigger text-uppercase" href="#modalmultiple"> Información</a>
+				</div>	
+				<div class="col-md-2 col-xs-2">
+					<a class="btn btn-danger" data-toggle="collapse" href="#collapsemultiple" aria-expanded="false" >Añedir</a>
+				</div>	
+	
+			</div>
+
+			<div class="col-md-12">
+				
+				<div class="col-md-4 col-xs-3">
+					<span class="black-text"> <b> Pregunta Abierta: </b> </span>
+				</div>	
+				<div class="col-md-3 col-xs-2">
+					<a class=" modal-trigger text-uppercase" href="#modalabierta"> Información</a>
+				</div>	
+				<div class="col-md-2 col-xs-2">
+					<a class="btn btn-danger" data-toggle="collapse" href="#collapseabierta" aria-expanded="false" >Añedir</a>
+				</div>	
+	
+			</div>
+
+	
+		</div>
+	</div>
+	<div class="col-lg-5">
+		<div class="col-lg-12">
+			<h6 class="text-uppercase"> Preguntas de tu encuesta</h6>
+		</div>
+
+
+		<div class="col-lg-12">
+
+			<div class="collapse" id="collapsesino">
+				
+				<div class="panel">
+				  <div class="well">
+				  	<div class="row">
+				  		<div class="col-lg-12">
+				  			<b class="text-primary"> Agregando una pregunta de Si o No en tu encuesta <b>
+				  				<br><br>
+				  		</div>
+
+				  		<div class="col-lg-12 pad45-h">
+
+								<%= label_tag :titulo %>
+								<%= text_field(:sino, :titulo) %>
+				  		</div>
+
+				  	</div>
+
+				  		
+				  </div>
+				</div>
+
+			</div>
+
+
+				<div class="collapse" id="collapsesimple">
+				  	
+					  	<div class="panel">
+						  <div class="well">
+						  	<div class="row">
+						  		<div class="col-lg-12">
+						  			<b class="text-primary"> Agregando una pregunta de selección simple en tu encuesta <b>
+						  				<br><br>
+						  		</div>
+
+						  		<div class="col-lg-12 pad15-h">
+
+										<%= label_tag :titulo %>
+										<%= text_field(:simple, :titulo) %>
+						  		</div>
+
+						  		<div class="col-md-12 pad45-h">
+						  			<div class="col-lg-12">
+						  			<div class="col-md-9 pad15-h">
+										<%= label_tag :opcion1 %>
+										<%= text_field(:simple, :opcion1) %>
+									</div>
+						  		</div>
+						  		<div class="col-lg-12">
+						  			<div class="col-md-9 pad15-h">
+										<%= label_tag :opcion2 %>
+										<%= text_field(:simple, :opcion2) %>
+									</div>
+						  		</div>
+						  		<div class="col-lg-12">
+						  			<div class="col-md-9 pad15-h">
+										<%= label_tag :opcion3 %>
+										<%= text_field(:simple, :opcion3) %>
+									</div>
+						  		</div>
+						  		<div class="col-lg-12">
+						  			<div class="col-md-9 pad15-h">
+										<%= label_tag :opcion4 %>
+										<%= text_field(:simple, :opcion4) %>
+									</div>
+						  		</div>
+
+
+					  		</div>
+
+					  	</div>
+
+					  		
+					  </div>
+					</div>
+
+				</div>
+
+				<div class="collapse" id="collapsemultiple">
+					 
+						
+					 	<div class="panel">
+						  <div class="well">
+						  	<div class="row">
+						  		<div class="col-lg-12">
+						  			<b class="text-primary"> Agregando una pregunta de selección multiple en tu encuesta <b>
+						  				<br><br>
+						  		</div>
+
+						  		<div class="col-lg-12 pad15-h">
+
+										<%= label_tag :titulo %>
+										<%= text_field(:multiple, :titulo) %>
+						  		</div>
+
+						  		<div class="col-md-12 pad15-h">
+						  			<div class="col-lg-12">
+						  			<div class="col-md-9 pad15-h">
+										<%= label_tag :opcion1 %>
+										<%= text_field(:multiple, :opcion1) %>
+									</div>
+						  		</div>
+						  		<div class="col-lg-12">
+						  			<div class="col-md-9 pad15-h">
+										<%= label_tag :opcion2 %>
+										<%= text_field(:multiple, :opcion2) %>
+									</div>
+						  		</div>
+						  		<div class="col-lg-12">
+						  			<div class="col-md-9 pad15-h">
+										<%= label_tag :opcion3 %>
+										<%= text_field(:multiple, :opcion3) %>
+									</div>
+						  		</div>
+						  		<div class="col-lg-12">
+						  			<div class="col-md-9 pad15-h">
+										<%= label_tag :opcion4 %>
+										<%= text_field(:multiple, :opcion4) %>
+									</div>
+						  		</div>
+
+
+					  		</div>
+
+					  	</div>
+
+					  		
+					  </div>
+					</div>
+
+				</div>
+
+				<div class="collapse" id="collapseabierta">
+						  <div class="panel">
+						  <div class="well">
+						  	<div class="row">
+						  		<div class="col-lg-12">
+						  			<b class="text-primary"> Agregando una pregunta de Si o No en tu encuesta <b>
+						  				<br><br>
+						  		</div>
+
+						  		<div class="col-lg-12 pad15-h">
+
+										<%= label_tag :titulo %>
+										<%= text_field(:abierta, :titulo) %>
+						  		</div>
+
+						  	</div>
+
+						  		
+						  </div>
+						</div>
+				</div>
+
+		</div>
+
+
+	</div>
+
+
+</div>
+
+
+<!-- Modal Structure -->
+<div id="modalsino" class="modal">
+  <div class="modal-content">
+    <a href="#" style="float:right;" class="waves-effect btn-flat modal-close"><i class="mdi-content-clear"></i></a>
+    <div class="pad30-h">
+	    <h6 class="text-uppercase"> Pregunta Si o No</h6>
+	    <br/>
+	   <div class="col-md-6"> 
+	   	<br> 
+	  	<p class="black-text">Pregunta concreta, que solo necesita cuenta con dos (2) opciones de respuesta, Si o No</p>
+	  </div>
+
+	  <div class="col-md-6">
+	  	  <h6 class="text-primary"> Ejemplo de Pregunta de Si o No</h6>
+  	<div class="pad30-h">
+  		<b> Nombre de la pregunta: <b>
+  	
+			<div>
+				<%= radio_button_tag(:ejemplo, "falso") %>
+				<%= label_tag(:ejemplo_falso, "Falso") %>
+			</div>
+			<div>
+				<%= radio_button_tag(:ejemplo, "verdadero") %>
+				<%= label_tag(:ejemplo_verdadero, "Verdadero") %>
+			</div>	
+	 </div>
+	  </div>
+
+ 
+  	
+	</div>
+
+  </div>
+</div> 
+
+
+<!-- Modal Structure -->
+<div id="modalsimple" class="modal">
+  <div class="modal-content">
+    <a href="#" style="float:right;" class="waves-effect btn-flat modal-close"><i class="mdi-content-clear"></i></a>
+    <div class="pad30-h">
+   <h6 class="text-uppercase"> Pregunta seleccón simple</h6>
+    <br/>
+  	<div class="col-md-6">
+  		<br> 
+  		<p class="black-text">Pregunta concreta, solo es necesario una selección a las multiples opciones que se le presente al usuario</p>
+  	</div>
+
+ 	
+	  	<div class="col-md-6">
+	  		<h6 class="text-primary"> Ejemplo de Pregunta Simple</h6>
+			  		<div class="pad30-h">
+			  		<b> Nombre de la pregunta: <b>
+					<div>
+						 <div class="form-control">
+								<%= radio_button_tag(:ejemplo, "ejemplo1") %>
+								<%= label_tag(:ejemplo_ejemplo1, "Ejemplo 1") %>
+							</div>
+							<div class="form-control">
+								<%= radio_button_tag(:ejemplo, "ejemplo2") %>
+								<%= label_tag(:ejemplo_ejemplo2, "Ejemplo 2") %>
+							</div>
+							<div class="form-control">
+								<%= radio_button_tag(:ejemplo, "ejemplo3") %>
+								<%= label_tag(:ejemplo_ejemplo3, "Ejemplo 3") %>
+							</div>
+							<div class="form-control">
+								<%= radio_button_tag(:ejemplo, "ejemplo4") %>
+								<%= label_tag(:ejemplo_ejemplo4, "Ejemplo 4") %>
+							</div>
+						</div>		
+				 	</div>
+	  		</div>
+	</div>
+
+  </div>
+</div>   
+
+ 
+ <!-- Modal Structure -->
+<div id="modalmultiple" class="modal">
+  <div class="modal-content">
+    <a href="#" style="float:right;" class="waves-effect btn-flat modal-close"><i class="mdi-content-clear"></i></a>
+    <div class="pad30-h">
+    <h4>  Pregunta Selección Multiple</h4>
+    <br/>
+  	 <div class="col-md-6">
+  	 	<br> 
+  	 	<p class="black-text">Pregunta multiple, El usuario puede presentar una (1) o mas respuesta a la pregunta planteada</p>
+  	 </div>
+
+ 	
+  		<div class="col-md-6">
+  			<h6 class="text-primary"> Ejemplo de Pregunta Selección Multiple</h6>
+  			<div class="pad30-h">
+  				<b> Nombre de la Pregunta </b>
+				<div class="form-control">
+					<%= check_box_tag(:ejemplo1) %>
+					<%= label_tag(:ejemplo1, "Opción A") %>
+				</div>
+				<div class="form-control">
+					<%= check_box_tag(:ejemplo2) %>
+					<%= label_tag(:ejemplo2, "Opción B") %>
+				</div>
+				<div class="form-control">
+					<%= check_box_tag(:ejemplo3) %>
+					<%= label_tag(:ejemplo3, "Opción C") %>
+				</div>
+				<div class="form-control">
+					<%= check_box_tag(:ejemplo4) %>
+					<%= label_tag(:ejemplo4, "Opción D") %>
+				</div>
+			</div>
+  		</div>
+	
+	</div>
+
+  </div>
+</div>    
+ 
+<!-- Modal Structure -->
+<div id="modalabierta" class="modal">
+  <div class="modal-content">
+    <a href="#" style="float:right;" class="waves-effect btn-flat modal-close"><i class="mdi-content-clear"></i></a>
+    <div class="pad30-h">
+    <h4>  Pregunta Abierta</h4>
+    <br/>
+ 	 <div class="col-md-6">
+ 	 	<br> 
+ 	 	<p class="black-text">Pregunta abierta, El usuario dara respuesta a la pregunta con sus palabras.</p>
+ 	 </div>
+
+ 	
+  			<div class="col-md-6">
+  				<h6 class="text-primary"> Ejemplo de Pregunta Simple</h6>
+			  	<div class="pad30-h">
+			  		<b> Nombre de la pregunta: <b>
+						<div>
+							<br>
+						  <%= label_tag :ejemplo %>
+						  <%= text_field(:ejemplo, :ejemplo) %>
+						</div>		
+				 </div>
+
+  			</div>	
+
+
+	</div>
+
+  </div>
+</div>
+

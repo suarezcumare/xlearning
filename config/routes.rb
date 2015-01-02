@@ -20,8 +20,13 @@ Xlearning::Application.routes.draw do
   		match "/usuarios/:id" => "usuario#perfil_index", via: :get
   		match "/usuarios/editar/:id" => "usuario#perfil_editar", via: :get
   		match "/estadisticos" => "estadisticos#index_organizacion", via: :get
-  		match "/estadisticos/:id" => "estadisticos#estadistico_general", via: :get
+  		match "/estadisticos/:id/" => "estadisticos#estadistico_general", via: :get
       match "/estadisticos/:id/:grafico" => "estadisticos#estadistico_personalizado", via: :get
+      match "/encuestas/" => "encuestas#index", via: :get
+      match "/encuestas/nuevo" => "encuestas#nuevo", via: :get
+      match "/encuestas/:id/" => "encuestas#show", via: :get
+      
+      
 	end
 	devise_for :usuarios, via: :post
 	devise_scope :usuario do
