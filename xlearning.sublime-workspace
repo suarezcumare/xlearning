@@ -4,16 +4,48 @@
 		"selected_items":
 		[
 			[
+				"descri",
+				"descripcion"
+			],
+			[
+				"p",
+				"padding-right"
+			],
+			[
+				"ali",
+				"vertical-align"
+			],
+			[
+				"a",
+				"text-align"
+			],
+			[
+				"b",
+				"background-color"
+			],
+			[
+				"img",
+				"img-curso"
+			],
+			[
+				"text",
+				"text-center"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
 				"sub",
 				"submit_handler"
 			],
 			[
 				"presen",
 				"presentar-examen"
-			],
-			[
-				"text",
-				"text-uppercase"
 			],
 			[
 				"op",
@@ -92,16 +124,8 @@
 				"codigo"
 			],
 			[
-				"back",
-				"background-color"
-			],
-			[
 				"mari",
 				"margin-top"
-			],
-			[
-				"a",
-				"background-attachment"
 			],
 			[
 				"margi",
@@ -316,14 +340,6 @@
 				"inline-block"
 			],
 			[
-				"p",
-				"points"
-			],
-			[
-				"ba",
-				"background-color"
-			],
-			[
 				"background",
 				"background-size"
 			],
@@ -498,48 +514,24 @@
 			[
 				"sueldo",
 				"sueldo"
-			],
-			[
-				"cedula",
-				"cedula"
-			],
-			[
-				"L",
-				"L_in"
-			],
-			[
-				"Thet",
-				"Theta2"
-			],
-			[
-				"Theta",
-				"Theta1"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "config/routes.rb",
+			"file": "app/assets/stylesheets/cursos.css",
 			"settings":
 			{
-				"buffer_size": 1330,
+				"buffer_size": 3820,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/assets/stylesheets/bootstrap-blue.css",
+			"file": "app/views/cursos/show.html.erb",
 			"settings":
 			{
-				"buffer_size": 136072,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/assets/stylesheets/materialize.min.css",
-			"settings":
-			{
-				"buffer_size": 156059,
+				"buffer_size": 8438,
 				"line_ending": "Unix"
 			}
 		},
@@ -547,31 +539,39 @@
 			"file": "app/assets/javascripts/main.js",
 			"settings":
 			{
-				"buffer_size": 2014,
+				"buffer_size": 2269,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/views/evaluacion/presentar.html.erb",
+			"file": "app/controllers/cursos_controller.rb",
 			"settings":
 			{
-				"buffer_size": 4073,
+				"buffer_size": 126,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/assets/javascripts/evaluacion.js",
+			"file": "config/routes.rb",
 			"settings":
 			{
-				"buffer_size": 1163,
+				"buffer_size": 1584,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/views/layouts/application.html.erb",
+			"file": "app/views/cursos/index.html.erb",
 			"settings":
 			{
-				"buffer_size": 1610,
+				"buffer_size": 4225,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/bootstrap-blue-theme.css",
+			"settings":
+			{
+				"buffer_size": 15780,
 				"line_ending": "Windows"
 			}
 		}
@@ -600,10 +600,36 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/clases.css",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/certificados/index.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/index.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/cursos/index.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/cursos_controller.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/config/routes.rb",
+		"/C/Users/Valentina/Documents/laboratorio/routes.rb",
+		"/C/Users/Valentina/Documents/laboratorio/stylesheets/cursos.css",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/cursos.css",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/bootstrap-blue.css",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/materialize.min.css",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/javascripts/main.js",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/bootstrap-blue-theme.css",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/usuarios/editar.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/devise/registrations/edit.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/cursos/edit.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/grupos/index.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/usuarios/perfil.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/usuario_controller.rb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/javascripts/clases.js",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/application/_panelDerecha.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/application/_instructor.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/application/_header.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/usuarios/application/_panelPersonal.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/usuarios/application/_panelCurso.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/javascripts/evaluacion.js",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/evaluacion/presentar.html.erb",
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/layouts/application.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/evaluacion_grupos_controller.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/javascripts/application.js",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/certificados/index.html.erb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/bootstrap-blue-theme.css",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/javascripts/components.js",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/javascripts/componentes/_componente.js.jsx",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/config/initializers/assets.rb",
@@ -613,37 +639,27 @@
 		"/C/Users/Valentina/Documents/GitHub/xlearning/Gemfile.lock",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/javascripts/componentes/componente.js.jsx",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/javascripts/components/menu.js.jsx",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/cursos_controller.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/devise/registrations/new.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/pagos/index.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/certificados_controller.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/pagos_controller.rb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/application/_header.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/application/_header.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/helpers/menu_helper.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141217010745_create_pago_matriculas.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141216011935_create_opcion_menus.rb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/grupos/index.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/contenido_controller.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/elementos/_descripciones.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/elementos/_calendario.html.erb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/clases.css",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/index.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/elementos/_lista.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/elementos/_evaluaciones.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/elementos/_notificaciones.html.erb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/application/_instructor.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/portal_controller.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/application_controller.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/grupos_controller.rb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/layouts/application.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/materialize.css",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/javascripts/materialize.min.js",
 		"/C/Users/Valentina/Documents/xampp/htdocs/materialize/index.html",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/cursos.css",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/javascripts/main.js",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/application/_menu.html.erb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/bootstrap-blue.css",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/devise/shared/_links.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/usuario.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/menu_controller.rb",
@@ -663,11 +679,7 @@
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/helpers/application_helper.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/helpers/organizacions_helper.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/javascripts/bootstrap.min.js",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/config/routes.rb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/cursos/index.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/javascripts/validaciones.js",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/evaluacion/presentar.html.erb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/usuario_controller.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141216012140_create_menus.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/organizacions_controller.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/evaluacion/overview.html.erb",
@@ -688,7 +700,6 @@
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/evaluacion/cuestionario/overview.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141214022641_devise_create_usuarios.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141222162418_base_dato.rb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/clases/application/_panelDerecha.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141214012543_create_organizacions.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/layouts/clases.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/registro.css",
@@ -716,18 +727,7 @@
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/historial.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/pago_membresia.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/curso_categoria.rb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/respuesta_evaluacion_presentada.rb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/respuesta.rb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141218025513_create_pregunta.rb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141218030133_create_evaluacion_grupos.rb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/matricula.rb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/organizacion.rb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/asignacion_grupo.rb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/entrega_asignacion.rb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/tipo_formato.rb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/asignacion.rb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/db/migrate/20141217003652_create_asignacions.rb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/base_dato.rb"
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/models/respuesta_evaluacion_presentada.rb"
 	],
 	"find":
 	{
@@ -746,6 +746,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"2",
 			"modal",
 			"lean-overlay",
 			"modal",
@@ -871,23 +872,106 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "config/routes.rb",
+					"file": "app/assets/stylesheets/cursos.css",
 					"settings":
 					{
-						"buffer_size": 1330,
+						"buffer_size": 3820,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								148,
-								148
+								251,
+								251
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/cursos/show.html.erb",
+					"settings":
+					{
+						"buffer_size": 8438,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								240,
+								240
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/assets/javascripts/main.js",
+					"settings":
+					{
+						"buffer_size": 2269,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								866,
+								866
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 41.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/controllers/cursos_controller.rb",
+					"settings":
+					{
+						"buffer_size": 126,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								83,
+								83
 							]
 						],
 						"settings":
@@ -901,155 +985,47 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "app/assets/stylesheets/bootstrap-blue.css",
-					"settings":
-					{
-						"buffer_size": 136072,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								106275,
-								106275
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 71025.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/assets/stylesheets/materialize.min.css",
-					"settings":
-					{
-						"buffer_size": 156059,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								90246,
-								90246
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 62191.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/assets/javascripts/main.js",
-					"settings":
-					{
-						"buffer_size": 2014,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								999,
-								999
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 301.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
 					"buffer": 4,
-					"file": "app/views/evaluacion/presentar.html.erb",
+					"file": "config/routes.rb",
 					"settings":
 					{
-						"buffer_size": 4073,
+						"buffer_size": 1584,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3600,
-								3600
+								169,
+								169
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1008.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "app/assets/javascripts/evaluacion.js",
+					"file": "app/views/cursos/index.html.erb",
 					"settings":
 					{
-						"buffer_size": 1163,
+						"buffer_size": 4225,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1062,
-								1062
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 21.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/views/layouts/application.html.erb",
-					"settings":
-					{
-						"buffer_size": 1610,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1508,
-								1508
+								3464,
+								3129
 							]
 						],
 						"settings":
@@ -1059,7 +1035,35 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 147.0,
+						"translation.y": 284.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/assets/stylesheets/bootstrap-blue-theme.css",
+					"settings":
+					{
+						"buffer_size": 15780,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								838,
+								838
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

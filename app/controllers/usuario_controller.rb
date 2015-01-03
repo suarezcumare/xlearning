@@ -9,10 +9,14 @@ class UsuarioController < ApplicationController
 
 
 	def perfil_index
+		@usuario = Usuario.new
+		@usuario.id = current_usuario.id
 		render "usuarios/perfil"
-
 	end
-	def perfil_editar
+
+	def edit
+		@usuario = current_usuario
+		# render plain: "renderizando usuarios/editar"
 		render "usuarios/editar"
 	end
 end

@@ -13,6 +13,28 @@ hr{
 }
 
 /*****************************************************/
+/*                      FAVORITOS                    */
+/*****************************************************/
+
+.favoritear i{
+  font-size: 20px;
+  position: absolute;
+  top:10px;
+  right:10px;
+  z-index: 100;
+}
+
+.favoritear i.fondo{
+  opacity: 0;
+     -moz-transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+          transition: opacity 0.5s;
+}
+
+.favoritear.fav i.fondo{
+  opacity: 1;
+}
+/*****************************************************/
 /*                 REGISTRO FORMULARIO               */
 /*****************************************************/
 
@@ -56,6 +78,10 @@ main{
   margin-top: 65px;
 }
 
+/*****************************************************/
+/*                      UTILERIA                     */
+/*****************************************************/
+
 .pad15{
   padding: 15px 0px;
 }
@@ -90,7 +116,10 @@ main{
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
-
+.no-padding-v{
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;  
+}
 .no-margin{
   margin-left: 0px !important;
   margin-right: 0px !important; 
@@ -100,6 +129,25 @@ main{
   margin-top: 0px !important;
   margin-bottom: 0px !important;  
 }
+
+.bordered li{
+  padding: 10px 20px;
+  border-bottom: 1px solid #efefef;
+}
+
+.bordered li:last-child{
+  border-bottom: none;
+}
+
+.hoverable li{
+  -moz-transition: background 0.5s;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s; 
+}
+.hoverable li:hover{
+  background: #efefef;
+}
+
 
 .thumbnail,
 .img-thumbnail {

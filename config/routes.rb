@@ -5,9 +5,11 @@ class SubdomainPresent
 end
 
 Xlearning::Application.routes.draw do
-	get 'cursos' => 'cursos#index'
-	match "/validar_email" => "usuario#validar_email", via: :post
-	match "/menu" => "menu#find", via: :get
+
+    get 'cursos/:id/ver' => 'cursos#show'
+	  get 'cursos' => 'cursos#index'
+	  match "/validar_email" => "usuario#validar_email", via: :post
+	  match "/menu" => "menu#find", via: :get
   	constraints(SubdomainPresent) do
   		match "/clases/:id" => "grupos#show", via: :get
   		match "/clases/:id/evaluacion/:id/overview" => "evaluacion#overview", via: :get
@@ -17,8 +19,11 @@ Xlearning::Application.routes.draw do
   		match "/historial/certificados/" => "certificados#index", via: :get
   		match "/evaluacion/corregir/" => "evaluacion_grupos#create", via: :post
  		
-  		match "/usuarios/:id" => "usuario#perfil_index", via: :get
-  		match "/usuarios/editar/:id" => "usuario#perfil_editar", via: :get
+      match "/usuarios/editar" => "usuario#edit", via: :get
+  		match "/usuarios/editar" => "usuario#save", via: :post
+      match "/usuarios/:id" => "usuario#perfil_index", via: :get
+  		match "/preferencias" => "usuario#preferencias", via: :get
+
   		match "/estadisticos" => "estadisticos#index_organizacion", via: :get
   		match "/estadisticos/:id" => "estadisticos#estadistico_general", via: :get
       match "/estadisticos/:id/:id" => "estadisticos#estadistico_personalizado", via: :get

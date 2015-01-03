@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$('ul.tabs').tabs();
 	$('select').not('.disabled').material_select();
 	$('.datepicker').pickadate();
 	$('.modal-trigger').leanModal();
@@ -21,6 +22,17 @@ $(document).ready(function(){
   			$(this).removeClass("menu-close").addClass("menu-open");
 	});
 
+    $(".favoritear").click(function(){
+    	if($(this).hasClass("fav"))
+    		$(this).removeClass("fav");
+    	else
+    		$(this).addClass("fav");
+    	
+    });
+
+    $('.collapsible').collapsible({ "accordion" : false });
+
+      
 	$(document).scroll(function() {
 	  var y = $(this).scrollTop();
 	  if (y > 100) {
@@ -29,6 +41,9 @@ $(document).ready(function(){
 	    $('.scroll-to-top').fadeOut();
 	  }
 	});
+
+
+
 
 	$(".scroll-to-top").click(function(){
 		$('html,body').animate({

@@ -1,3 +1,170 @@
+/****************************************************************/
+/*                        Descripcion del curso            */
+/****************************************************************/
+
+#baner{
+  height: 200px;
+  background-size: 100% auto;
+}
+.circulo{
+  
+ 
+border-radius: 300px;
+width:180px;
+ height: 180px;
+ 
+ top: 135px;
+ left: 110px;
+z-index:2;
+margin:1em auto;
+position:absolute;
+
+
+
+}
+
+.botn{
+
+ 
+
+  top: 100px;
+ left: 150px;
+  
+  }
+
+.botones{
+
+ text-transform: uppercase;
+ width:250px;
+ height: 60px;
+ bottom: 50px;
+  top: 1px;
+ left: 100px;
+ color: black;
+
+ position: relative;
+
+  
+  }
+
+
+
+.titulo{
+
+ position: absolute; 
+ right:285px; 
+ bottom: 20px;
+ width:350px;
+ height: 80px;
+ 
+ color: yellow;
+
+background-color: black;
+
+  }
+
+.nombre{
+  margin-left: 120px; 
+  margin-top:130px;
+  
+ 
+}
+.descripcion{
+  margin-top:25px;
+margin-left:20px;
+ text-indent: 2em;
+ 
+
+}
+.descripciondos{
+  margin-top:25px;
+margin-left:20px;
+text-align:justify;
+ 
+
+}
+
+.descripcionuno{
+
+
+}
+
+
+.coUl{
+ overflow: hidden;
+
+}
+
+.coLi {
+
+   float: left;
+  width: 20%;
+  margin-left:20px;
+}
+
+.deseo{
+   float: left;
+
+    text-indent: 2em;
+ }
+ .compartir
+ {margin-top:100px;
+  
+   text-indent: 2em;
+ }
+ .rosa{
+  
+ 
+border-radius: 300px;
+width:75px;
+ height: 75px;
+ text-indent: 2em;
+ 
+ text-indent: 2em;
+ 
+
+
+
+}
+
+.tabla{
+  
+ 
+border-collapse: collapse;
+ width: 100%; 
+ padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+  background: white; 
+  color: black; 
+  font-weight: bold; 
+  
+  
+
+
+
+}
+.td{
+  
+ 
+
+ 
+  background: rgb(234, 234, 234); 
+  font-weight: normal;
+  
+
+}
+.te{
+  
+ 
+
+ 
+text-align: right;
+  
+
+}
+
+
 
 /****************************************************************/
 /*                          Imagen del curso                     */
@@ -15,15 +182,21 @@
 }
 
 .redondo {
-margin: 0;
-padding: 0;
-border-radius: 800px;
-overflow: hidden;
-width:60px;
-z-index:2;
-top: 150px;
+  margin: 0;
+  padding: 0;
+  border-radius: 600px;
+  overflow: hidden;
+  width:40px;
+  height: 40px;
+  z-index:2;
+  top: 150px;
 }
+.dinero{
+top: 310px;
+text-align: right;
 
+}
+ 
 .pagination{
 align:center;
 position: inherit;
@@ -51,16 +224,76 @@ width: 20px;
   border-radius: .1em;
 }
 
-.pull-right { float: right;
-visibility:visible;
-top: 230px;
-
-  }
-.pull-left { float: left; 
-visibility:visible;
- }
-
 .#{$fa-css-prefix} {
   &.pull-left { margin-right: .3em; }
   &.pull-right { margin-left: .3em; }
+}
+
+
+/*******************************************************************/
+/*                           CARGA ACADEMICA                       */
+/*******************************************************************/
+
+.recomendaciones .card{
+  background-color: #fff;
+}
+
+.curso-actual img{
+  height: 150px;
+  width: 150px;
+}
+
+.curso-actual .media-body{
+  padding-top: 20px;
+  vertical-align: middle;
+  width: 380px;
+}
+
+.curso-actual .progress{
+  margin-bottom: 0;
+}
+
+.curso-actual .fecha-fin, .curso-actual .btn.ingresar{
+  float: right;
+}
+
+.recomendaciones .card-image, .listado .card-image{
+  position: relative;
+  z-index: 99;
+}
+
+.recomendaciones span{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 20px;
+  color:#fff;
+  z-index: 101;
+}
+.recomendaciones .card-content{
+  padding: 1rem 1rem 0.5rem;
+}
+
+.recomendaciones .card-content p{
+  color:rgb(67, 71, 75);
+  font-size: 14px;
+}
+.recomendaciones .card-image:before {
+  content: "";
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(transparent, rgb(67, 71, 75));
+}
+
+.inline li{
+  float: left;
+  margin-left: 10px;
+}
+
+.deseos li{
+  width: 48%;
 }

@@ -5020,7 +5020,6 @@ small {
     font-weight: 300; }
   .card a {
     color: #ffab40;
-    margin-right: 16px;
     -webkit-transition: color 0.3s ease;
     -moz-transition: color 0.3s ease;
     -o-transition: color 0.3s ease;
@@ -5056,8 +5055,7 @@ small {
       right: 0;
       top: 0;
       bottom: 0;
-      width: 100%;
-      z-index: -1; }
+      width: 100%; }
     .card .card-image span.card-title {
       position: absolute;
       bottom: 0;
@@ -5076,7 +5074,7 @@ small {
       margin: 0;
       color: inherit; }
     .card .card-content span.card-title {
-      line-height: 48px; }
+        }
   .card .card-action {
     border-top: 1px solid rgba(160, 160, 160, 0.2);
     padding: 16px; }
@@ -5175,7 +5173,7 @@ ul.tabs {
     width: 15%; }
     @media only screen and (min-width : 992px) {
       ul.tabs li.tab {
-        max-width: 25%; } }
+        } }
     ul.tabs li.tab a {
       color: #ee6e73;
       display: block;
@@ -5240,7 +5238,6 @@ ul.tabs li.tab {
 .btn, .btn-large, .btn-flat {
   display: inline-block;
   height: 36px;
-  margin-bottom: 15px;
   padding: 0 2rem;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
