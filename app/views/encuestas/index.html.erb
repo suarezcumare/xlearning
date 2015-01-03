@@ -1,0 +1,101 @@
+<% content_for :css_personalizado do%>
+	<%= stylesheet_link_tag    "encuestas" %>
+<% end %>
+
+<div class="text-right">
+	<ol class="breadcrumb">
+	  <li><%= link_to "Home", root_path %></li>
+	  <li class="active">Encuestas</li>
+	</ol>
+</div>
+
+<div class="row pad30-h">
+	<div class="col-lg-6">
+		<h5 class="text-uppercase"> Encuestas</h5>
+	</div>
+	
+</div>
+
+<div class="row">
+	<div class="col-lg-10 pad45-h">
+		<div class="panel curso-actual">
+			
+			<div class="col-md-12">
+				
+				 <%= render "encuestas/application/tipencuestas" %>
+
+			</div>
+			<div class="col-md-12">
+
+				  <%= render "encuestas/application/cuadrosencuestas" %>
+
+			</div>
+
+			<div class="col-md-12">
+				<div class="col-lg-6">
+					<h5 class="text-uppercase"> ultimas Encuestas </h5>
+				</div>
+
+			</div>
+
+			<div class="col-md-12">
+				<br> <br>
+				<div class="col-md-4">
+
+							<div class="panel curso-actual">
+								<div class="media">
+								  
+								  <div class="media-body">
+								    <h6 class="media-heading text-uppercase">Satisfacción de los clientes</h6>
+								    <div>
+									    <div class="progress">
+										  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="	width: 60%;">
+										    <span class="sr-only">60% Completado</span>
+										  </div>
+										</div>
+										<span class="fecha-inicio"> Nov, 12 de 2014</span>
+										<span class="fecha-fin">Feb, 13 de 2015</span>
+									</div>
+									<p> Aqui se describira porque se realizo esta encuesta </p>
+									<br/>
+									<%= link_to "Resultados", "/estadisticos/2", {class: "btn btn-danger ingresar"}%>
+								  </div>
+								</div>
+							</div>
+
+				</div>
+
+				<div class="col-md-4">
+					<div class="panel curso-actual">
+								<div class="media">
+								  
+								  <div class="media-body">
+								    <h6 class="media-heading text-uppercase"> Contenido de los cursos</h6>
+								    <div>
+									    <div class="progress">
+										  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="	width: 60%;">
+										    <span class="sr-only">60% Completado</span>
+										  </div>
+										</div>
+										<span class="fecha-inicio"> Nov, 25 de 2014</span>
+										<span class="fecha-fin">Mar, 01 de 2015</span>
+									</div>
+									<p> Aqui se describira porque se realizo esta encuesta </p>
+									<br/>
+									<%= link_to "Resultados", "/estadisticos/1", {class: "btn btn-danger ingresar"}%>
+								  </div>
+								</div>
+							</div>
+
+
+				</div>
+
+
+
+			</div>
+
+
+	</div>
+  </div>
+</div>
+
