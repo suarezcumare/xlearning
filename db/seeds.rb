@@ -8,7 +8,7 @@
 
 
 #dispositivo
-	dispositivo.create([{nombre: 'desktop'},{nombre: 'movil'},{nombre: 'google glass'},{nombre: 'google wear'},])
+	Dispositivo.create([{nombre: 'desktop'},{nombre: 'movil'},{nombre: 'google glass'},{nombre: 'google wear'},])
 	
 #licencias
 	Licencia.create([{nombre: 'Atribución', descripcion: 'Esta licencia permite a otros distribuir, remezclar, retocar, y crear a partir de tu obra, incluso con fines comerciales, siempre y cuando te den crédito por la creación original. Esta es la más flexible de las licencias ofrecidas. Se recomienda para la máxima difusión y utilización de los materiales licenciados.'},
@@ -33,6 +33,6 @@
 		{nombre: 'docx'}, {nombre: 'xmlx'}, {nombre: 'pptx'}, {nombre: 'jpg'}, {nombre: 'png'}, {nombre: 'jpeg'},{nombre: 'gif'},
 		{nombre: 'mp3'},{nombre: 'wma'},{nombre: 'mp4'},{nombre: 'css'},{nombre: 'html'},{nombre: 'js'}])
 
-	
+
 
 
