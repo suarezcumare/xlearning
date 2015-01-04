@@ -7,7 +7,7 @@ class CreatePerfils < ActiveRecord::Migration
       t.text :intereses
       t.string :ocupacion
       t.references :usuario, index: true
-      t.text biografia 
+      t.text :biografia 
     end
   end
 end
