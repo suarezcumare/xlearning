@@ -1,0 +1,108 @@
+<!-- perfil/apariencia  -->
+
+<div class="text-right">
+	<ol class="breadcrumb">
+	  <li><%= link_to "Home", root_path %></li>
+	  <li class="active">Apariencia</li>
+	</ol>
+</div>
+
+<div class="row">
+	<div class="col s7">
+		<h5 class="text-uppercase pad15-h">Apariencia</h5>
+		<span> El diseño te permitirá llevar un color que identifique a tu organización, elige tu estilo y mejora como te ven tus usuarios. </span>
+	</div>	
+	<div class="col s3">
+		<select>
+			<option value="0" selected>Diseños</option>
+			<option value="1">Diseño en Azul</option>
+			<option value="2">Diseño en Verde</option>
+			<option value="3">Diseño en Rojo</option>
+			<option value="3">Diseño en Púpura</option>
+		</select>
+	</div>	
+	<div>
+		<%= link_to "Guardar", apariencia_path, {class: "btn btn-primary"}%>
+	</div>
+</div>
+
+<div class="row pad30-h">
+	<div class="col s12">
+
+		<h5 class="text-uppercase pad15-h"> Estilos de apariencias </h5>
+	</div>
+	<div class="col s5">
+		<div class="panel pad15">
+			<div class="row">
+				<div class="col s3"><img src="/assets/estilos/azul.jpg" class="img-responsive"/></div>
+				<div class="col s7">
+					<h5> Diseño en Azul</h5>
+					<p>
+						El diseño en azul te permitirá asociar tu organización con la estabilidad y la profundidad, ademas representando la lealtad, confianza, sabiduría e inteligencia que los caracteriza.
+					</p>
+				</div>
+				<div class="col s2 text-center h2 pad60">
+					<a href="/assets/estilos/azul.jpg" download><i class="medium mdi-file-cloud-download"></i></a>
+					<a href="/assets/estilos/azul.jpg" target="_blank"><i class="medium mdi-action-launch"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="col s5">
+		<div class="panel pad15">
+			<div class="row">
+				<div class="col s3"><img src="/assets/estilos/verde.jpg" class="img-responsive"/></div>
+				<div class="col s7">
+					<h5> Diseño en Verde</h5>
+					<p>
+						El diseño en verde te permitirá asociar tu organización con la armonía, el crecimiento y la frescura. Si tu empresa es conservacionista o sobre productos de medicina este color es el ideal.
+					</p>
+				</div>
+				<div class="col s2 text-center h2 pad60">
+					<a href="/assets/estilos/verde.jpg" download><i class="medium mdi-file-cloud-download"></i></a>
+					<a href="/assets/estilos/verde.jpg" target="_blank"><i class="medium mdi-action-launch"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col s5">
+		<div class="panel pad15">
+			<div class="row">
+				<div class="col s3"><img src="/assets/estilos/rojo.jpg" class="img-responsive"/></div>
+				<div class="col s7">
+					<h5> Diseño en Rojo</h5>
+					<p>
+						El diseño en rojo te permitirá llevar un color intenso a tu organización, la energía, la fortaleza y determinación. Resalta sobre el resto de los colores.
+					</p>
+				</div>
+				<div class="col s2 text-center h2 pad60">
+					<a href="/assets/estilos/rojo.jpg" download><i class="medium mdi-file-cloud-download"></i></a>
+					<a href="/assets/estilos/rojo.jpg" target="_blank"><i class="medium mdi-action-launch"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col s5">
+		<div class="panel pad15">
+			<div class="row">
+				<div class="col s3"><img src="/assets/estilos/azul.jpg" class="img-responsive"/></div>
+				<div class="col s7">
+					<h5> Diseño en Púpura</h5>
+					<p>
+						El diseño en púrpura te aporta la estabilidad del azul y la energia del color rojo, se asocia a realeza y simboliza el poder, nobleza, lujo y ambición.
+					</p>
+				</div>
+				<div class="col s2 text-center h2 pad60">
+					<a href="/assets/estilos/azul.jpg" download><i class="medium mdi-file-cloud-download"></i></a>
+					<a href="/assets/estilos/azul.jpg" target="_blank"><i class="medium mdi-action-launch"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+</div>

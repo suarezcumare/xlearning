@@ -1,0 +1,37 @@
+<div class="card no-margin-v">
+	<div class="text-center blue lighten-1">
+		<img src="/assets/cocina.jpg" style="width:65%;" 
+			class="pad15 center-block circle responsive-img">
+		<h5 class="card-title white-text no-margin-v">Cocina C.A</h5>
+		<span class="text-uppercase white-text">gourmet y delicateses</span>
+	</div>  
+	<div class="card-content text-center no-padding no-padding-v">
+		
+	
+		
+			<ul class="bordered text-left hoverable">
+				<li><a href="/perfil" class="text-uppercase" style="display:block;">Info</a></li>
+				<li><a href="/perfil/politicas" class="text-uppercase" style="display:block;">Politicas</a></li>
+				<li><a href="/cursos" class="text-uppercase" style="display:block;">Cursos</a></li>
+				<li><a href="#preferencias" class="text-uppercase">preferencias</a></li>
+			<%  if @usuario != nil %>
+				<li><a href="/perfil/editar" class="text-uppercase">editar</a></li>
+				<li><a href="/apariencia/editar" class="text-uppercase">Apariencia</a></li>
+			<% end %>
+			</ul>
+		
+			<a class="btn btn-danger" href="javascript:void(0)"> escribir</a>
+			
+	</div>
+</div>
+<div class="pad15"></div>
+<div class="panel z-depth-2">
+	<ul class="bordered pad15">
+		<li><a class="fb" href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
+		<li><a class="tw" href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
+		<li><a class="lk" href="javascript:void(0)"><i class="fa fa-linkedin"></i> </a></li>
+		<li><a class="gh" href="javascript:void(0)"><i class="fa fa-github"></i></a> </li>
+	</ul>
+
+</div>
+

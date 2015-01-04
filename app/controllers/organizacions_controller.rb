@@ -1,74 +1,133 @@
+=begin
+  organizacions_controller.rb
+
+  Laboratorio III. Dreamteam B. / Ejecutivo Desktop 
+
+  Proyecto  : Xlearning 
+  
+      Autores :     C.I         Email
+    Asaro Guillermo   C.I.: 20.010.162  guillermoasaro@gmail.com
+  Bravo Jhosedith   C.I.: 20.237.969  jhosedithbravo.23@gmail.com
+  Maldonado Carlex  C.I.: 22.331.306  c.valentinamm@gmail.com
+  Suarez Tony     C.I.: 20.671.198  suarezcumare@gmail.com
+
+  
+  Ultima Modificación, Fecha  : 07 de enero del 2015
+=end
+
+
 class OrganizacionsController < ApplicationController
-  before_action :set_organizacion, only: [:show, :edit, :update, :destroy]
+ 
 
-  # GET /organizacions
-  # GET /organizacions.json
-  def index
-    @organizacions = Organizacion.all
-  end
+  def perfil
 
-  # GET /organizacions/1
-  # GET /organizacions/1.json
-  def show
-  end
+    @usuario = Usuario.new
+    @rol = Rol.new
+    @rol =  Rol.where(nombre: 'administrador')
+    
+    
+   if usuario_signed_in?
+      @usuarioRol = UsuarioRol.new
+      @usuarioRol = UsuarioRol.where(usuario_rol: current_usuario.rol_actual.id, rol_id: @rol[0] ) 
 
-  # GET /organizacions/new
-  def new
-    @organizacion = Organizacion.new
-  end
+         if @usuarioRol.nil?
+            @usuario.id = current_usuario.id
+        else
+             @usuario = nil
+        end
 
-  # GET /organizacions/1/edit
-  def edit
-  end
-
-  # POST /organizacions
-  # POST /organizacions.json
-  def create
-    @organizacion = Organizacion.new(organizacion_params)
-
-    respond_to do |format|
-      if @organizacion.save
-        format.html { redirect_to @organizacion, notice: 'Organizacion was successfully created.' }
-        format.json { render :show, status: :created, location: @organizacion }
-      else
-        format.html { render :new }
-        format.json { render json: @organizacion.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /organizacions/1
-  # PATCH/PUT /organizacions/1.json
-  def update
-    respond_to do |format|
-      if @organizacion.update(organizacion_params)
-        format.html { redirect_to @organizacion, notice: 'Organizacion was successfully updated.' }
-        format.json { render :show, status: :ok, location: @organizacion }
-      else
-        format.html { render :edit }
-        format.json { render json: @organizacion.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /organizacions/1
-  # DELETE /organizacions/1.json
-  def destroy
-    @organizacion.destroy
-    respond_to do |format|
-      format.html { redirect_to organizacions_url, notice: 'Organizacion was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_organizacion
-      @organizacion = Organizacion.find(params[:id])
+    else
+       @usuarioRol = @usuario = nil
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def organizacion_params
-      params.require(:organizacion).permit(:nombre, :subdominio, :estatus)
+
+   
+
+  end
+
+
+  def edit_perfil
+
+
+    @usuario = Usuario.new
+    @rol = Rol.new
+    @rol =  Rol.where(nombre: 'administrador')
+    
+    
+   if usuario_signed_in?
+      @usuarioRol = UsuarioRol.new
+      @usuarioRol = UsuarioRol.where(usuario_rol: current_usuario.rol_actual.id, rol_id: @rol[0] ) 
+
+         if @usuarioRol.nil?
+            @usuario.id = current_usuario.id
+            render "/organizacions/edit_perfil"
+        else
+             @usuario = nil
+             render "/organizacions/perfil" 
+        end
+
+    else
+       @usuarioRol = @usuario = nil
+       render "/organizacions/perfil" 
     end
+
+
+   end
+
+
+  def apariencia
+
+
+
+    @usuario = Usuario.new
+    @rol = Rol.new
+    @rol =  Rol.where(nombre: 'administrador')
+    
+    
+   if usuario_signed_in?
+      @usuarioRol = UsuarioRol.new
+      @usuarioRol = UsuarioRol.where(usuario_rol: current_usuario.rol_actual.id, rol_id: @rol[0] ) 
+
+         if @usuarioRol.nil?
+            @usuario.id = current_usuario.id
+            render "/organizacions/apariencia"
+        else
+             @usuario = nil
+             render "/organizacions/perfil"
+        end
+
+    else
+       @usuarioRol = @usuario = nil
+       render "/organizacions/perfil" 
+    end
+
+
+  end
+
+
+  def politicas
+
+     @usuario = Usuario.new
+    @rol = Rol.new
+    @rol =  Rol.where(nombre: 'administrador')
+    
+    
+   if usuario_signed_in?
+      @usuarioRol = UsuarioRol.new
+      @usuarioRol = UsuarioRol.where(usuario_rol: current_usuario.rol_actual.id, rol_id: @rol[0] ) 
+
+         if @usuarioRol.nil?
+            @usuario.id = current_usuario.id
+        else
+             @usuario = nil
+        end
+
+    else
+       @usuarioRol = @usuario = nil
+    end
+
+
+  end
+
+
 end

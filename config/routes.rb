@@ -29,8 +29,16 @@ Xlearning::Application.routes.draw do
       match "/estadisticos/:id/:grafico" => "estadisticos#estadistico_personalizado", via: :get
       match "/encuestas/" => "encuestas#index", via: :get
       match "/encuestas/nuevo" => "encuestas#nuevo", via: :get
-      match "/encuestas/:id/" => "encuestas#show", via: :get
-      
+      match "/encuestas/ver/" => "encuestas#show", via: :get
+      match "/apariencia/editar" => "organizacions#apariencia", via: :get
+     
+
+      match "/" => "organizacions#perfil", via: :get
+      match "/perfil/editar" => "organizacions#edit_perfil", via: :get
+      match "/perfil/editar" => "organizacions#save_perfil", via: :post
+      match "/perfil" => "organizacions#perfil", via: :get
+      match "/perfil/politicas" => "organizacions#politicas", via: :get
+     
       
 	end
 	devise_for :usuarios, via: :post
