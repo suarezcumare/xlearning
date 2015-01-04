@@ -19,10 +19,10 @@ Xlearning::Application.routes.draw do
   		match "/historial/certificados/" => "certificados#index", via: :get
   		match "/evaluacion/corregir/" => "evaluacion_grupos#create", via: :post
  		
-      match "/usuarios/editar" => "usuario#edit", via: :get
-  		match "/usuarios/editar" => "usuario#save", via: :post
-      match "/usuarios/:id" => "usuario#perfil_index", via: :get
-  		match "/preferencias" => "usuario#preferencias", via: :get
+      match "/usuarios/editar" => "usuarios#edit", via: :get
+  		match "/usuarios/editar" => "usuarios#save", via: :post
+      match "/usuarios/:id" => "usuarios#show", via: :get
+  		match "/preferencias" => "usuarios#preferencias", via: :get
 
   		match "/estadisticos" => "estadisticos#index_organizacion", via: :get
   		match "/estadisticos/:id/" => "estadisticos#estadistico_general", via: :get

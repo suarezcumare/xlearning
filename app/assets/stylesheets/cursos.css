@@ -3,78 +3,60 @@
 /****************************************************************/
 
 #baner{
-  height: 200px;
+  height: 250px;
   background-size: 100% auto;
+  position: relative;
 }
-.circulo{
-  
- 
-border-radius: 300px;
-width:180px;
- height: 180px;
- 
- top: 135px;
- left: 110px;
-z-index:2;
-margin:1em auto;
-position:absolute;
 
-
-
+.circulo{ 
+  border-radius: 300px;
+  width:180px;
+  height: 180px;
+  top: 135px;
+  left: 110px;
+  z-index:2;
+  margin:1em auto;
+  position:absolute;
 }
 
 .botn{
-
- 
-
   top: 100px;
- left: 150px;
-  
-  }
+  left: 150px;  
+}
+
+#info-instructor{
+  margin-top: 100px;
+}
 
 .botones{
-
- text-transform: uppercase;
- width:250px;
- height: 60px;
- bottom: 50px;
+  text-transform: uppercase;
+  width:250px;
+  height: 60px;
+  bottom: 50px;
   top: 1px;
- left: 100px;
- color: black;
-
- position: relative;
-
-  
-  }
-
-
+  left: 100px;
+  color: black;
+  position: relative;
+}
 
 .titulo{
-
- position: absolute; 
- right:285px; 
- bottom: 20px;
- width:350px;
- height: 80px;
- 
- color: yellow;
-
-background-color: black;
-
-  }
+  position: absolute; 
+  right:285px; 
+  bottom: 20px;
+  color: white;
+  padding: 10px 20px;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 50;
+}
 
 .nombre{
   margin-left: 120px; 
   margin-top:130px;
-  
- 
 }
 .descripcion{
   margin-top:25px;
-margin-left:20px;
- text-indent: 2em;
- 
-
+  margin-left:20px;
+  text-indent: 2em;
 }
 .descripciondos{
   margin-top:25px;

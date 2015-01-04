@@ -1,0 +1,41 @@
+<!-- Usuarios/perfil -->
+
+<% content_for :css_personalizado do %>
+ <%= stylesheet_link_tag    "usuarios" %>
+<% end %>
+
+<div class="text-right">
+  <ol class="breadcrumb">
+    <li><%= link_to "Home", root_path %></li>
+    <li class="active">Mi perfil</li>
+  </ol>
+</div>
+
+<div class="row pad30-h">
+  <div class="col s3">
+    <%= render "usuarios/application/panelPersonal" %>
+  </div>
+  <div class="col s7">
+    <div class="panel pad30-h">
+      <div class="row">
+         <div class="col s12">
+            <h5 class="blue-text accent-1 text-uppercase"> Acerca de mi</h5>
+            <br/> 
+            <i class="fa fa-tag font21px"></i> Barquisimeto, Venezuela
+
+            <p class="margen">
+                  <br>
+                 Is an Associate Professor of Biostatistics at the Johns Hopkins Bloomberg School of Public Health and a Co-Editor of the Simply Statistics blog. He received his Ph.D. in Statistics from the University of California, Los Angeles and is a prominent researcher in the areas of air pollution and health risk assessment and statistical methods for environmental data. He created the course Statistical Programming at Johns Hopkins as a way to introduce students to the computational tools for data analysis. Dr. Peng is also a national leader in the area of methods and standards for reproducible research and is the Reproducible Research editor for the journal Biostatistics.
+            </p>
+            <br>
+            <i class="fa fa-pencil font21px"></i> Intereses
+            <p class="margen">
+               Is an Associate Professor of Biostatistics at the Johns Hopkins Bloomberg School of Public Health and a Co-Editor of the Simply Statistics blog. He received his Ph.D. in Statistics from the University of California, Los Angeles and is a prominent researcher in the areas of air pollution and health risk assessment and statistical methods for environmental data. He created the course Statistical Programming at Johns Hopkins as a way to introduce students to the computational tools for data analysis. Dr. Peng is also a national leader in the area of methods and standards for reproducible research and is the Reproducible Research editor for the journal Biostatistics.
+            </p>
+         </div>
+       </div> 
+    </div>
+    <%= render "usuarios/application/panelCurso" %>
+  </div>
+</div>
+

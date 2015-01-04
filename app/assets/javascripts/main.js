@@ -4,6 +4,11 @@ $(document).ready(function(){
 	$('.datepicker').pickadate();
 	$('.modal-trigger').leanModal();
     $(".dropdown-toggle").dropdown();
+    $('.dropdown-button').dropdown({
+	      //constrain_width: false, // Does not change width of dropdown to that of the activator
+	      //hover: false // Activate on click
+	    }
+	);
 	$("#busqueda-trigger").click(function(){
 		$("#top-search-bar").css("display","table");
 	});

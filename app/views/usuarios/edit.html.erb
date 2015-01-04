@@ -1,0 +1,174 @@
+<!-- Usuario/editar perfil -->
+
+<% content_for :css_personalizado do %>
+ <%= stylesheet_link_tag    "usuarios" %> 
+ <%= stylesheet_link_tag    "plugins/fileinput.min.css" %> 
+<% end %>
+
+<div class="text-right">
+  <ol class="breadcrumb">
+    <li><%= link_to "Home", root_path %></li>
+    <li class="active">Editar perfil</li>
+  </ol>
+</div>
+<div class="row pad15">
+  <div class="col s3">
+    <h5 class="text-uppercase pad30-h">Editar perfil</h5>
+  </div>  
+</div>
+<div class="row pad30-h">
+  <div class="col s8 panel">
+    <div id="menu-editar-perfil" class="row">
+      <div class="col s9">
+        <ul id="menu-editar-perfil" class="tabs">
+          <li class="tab col s4">
+            <a href="#basico">Información</a>
+          </li>
+          <li class="tab col s4">
+            <a href="#avatar">cambiar foto</a>
+          </li>
+          <li class="tab col s4">
+            <a href="#contrasena">cambiar contraseña</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="basico" class="pad30-h">
+      <div class="row">
+        <div class="col s12">
+          <div class="pad15"></div>
+          <%= form_for(resource, :as => resource_name, :url => usuarios_editar_path, :html => { :method => :post }) do |f| %>
+            <div class="row">
+              <div class="input-field col s6">
+                <label for="usuario[nombre]">Nombre</label>
+                <input id="usuario[nombre]" type="text" required></input>
+              </div>
+              <div class="input-field col s6">
+                <label for="usuario[apellidos]">Apellido</label>
+                <input id="usuario[apellidos]" type="text" required></input>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <label for="usuario[email]">Email</label>
+                <input id="usuario[email]" type="email" required>         
+              </div>
+              <div clas="input-field col s6">
+                <label>Sexo</label>
+                <p>
+                  <input name="usuario[sexo]" type="radio" id="sexo_usuario_1" checked class="with-gap"/>
+                  <label for="sexo_usuario_1">Masculino</label>
+                  <input name="usuario[sexo]" type="radio" id="sexo_usuario_0"  class="with-gap"/>
+                  <label for="sexo_usuario_0">Femenino</label>
+                </p>
+              </div>  
+              
+            </div>
+            <div class="row">
+              <div class="col s6">
+                <label>País</label>
+                <select name="usuario[pais]">
+                  <option value="" disabled selected>Escoge tu país</option>
+                  <option value="1">Venezuela</option>
+                  <option value="2">Colombia</option>
+                  <option value="3">Panamá</option>
+                </select>
+              </div>
+            </div>
+
+            <hr/>
+
+            <div class="row">
+              <div class="input-field col s5">
+                <label for="usuario[perfil][ocupacion]">Ocupación</label>
+                <input id="usuario[perfil][ocupacion]" type="text" required></input>                  
+              </div>
+            </div>
+            <div class="col s12 input-field">
+              <div class="col s12">
+                <label for="usuario[perfil][biografia]">Acerca de tí</label>
+                <textarea id="usuario[perfil][biografia]"></textarea>                
+              </div>  
+            </div>
+            <div class="col s12 input-field">
+              <div class="col s12">
+                <label for="usuario[perfil][intereses]">Intereses</label>
+                <textarea id="usuario[perfil][intereses]"></textarea>                
+              </div>  
+            </div>
+
+            <hr/>
+
+            <h5>Redes sociales</h5>
+            <div class="row">
+              <div class="form-control col s6">
+                No has agregado ninguna red social. Usa el botón a la derecha para hacerlo.
+              </div>
+              <div class="col s6 text-center">
+                <a href="javascript:void(0)" class="btn-floating waves-effect waves-light red dropdown-button"
+                    data-activates='dropdown-redes-sociales'>
+                  <i class="mdi-content-add"></i>
+                </a>
+              </div>
+            </div>
+            <div class="row pad30">
+              <div class="form-control block-center">           
+                <a href="javascript:void(0)" class="btn btn-success">Guardar</a>
+                <a href="javascript:void(0)" class="btn btn-info">Cancelar</a> 
+              </div>
+            </div>
+            <div class="pad15"></div> 
+          <% end %>
+        </div>
+      </div> 
+    </div>
+    <div id="avatar">
+      <div class="row">
+        <br/>
+        <div class="col s12">
+            <input id="avatar-id" type="file" class="file" data-upload-url="/usuario/guardar_foto"/>
+        </div>
+      </div>
+      <div class="pad15"></div>
+    </div>
+    <div id="contrasena" class="pad30-h">
+      <div class="row">
+        <div class="col s6"> <%= render "devise/passwords/edit" %> </div>
+      </div>
+      <div class="pad15"></div>
+    </div>
+  </div>
+</div>
+<ul id='dropdown-redes-sociales' class='dropdown-content list-inline pad15'>
+  <li><a href="javascript:void(0)" class="fb"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="javascript:void(0)" class="tw"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="javascript:void(0)" class="gp"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="javascript:void(0)" class="lk"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="javascript:void(0)" class="gh"><i class="fa fa-github"></i></a></li>
+</ul>
+<% content_for :js_personalizado do %>
+  <%= javascript_include_tag 'usuarios' %>
+  <%= javascript_include_tag 'plugins/fileinput.js' %>
+
+  <script>
+    $("#avatar-id").fileinput({
+      'browseLabel':'buscar',
+      'initialPreview': [
+        "<img src='/assets/profile_user.jpg' class='file-preview-image' alt='Avatar' title='Foto de perfil actual'>",
+      ],
+      'initialCaption':'archivo(s) seleccionado(s)',
+      'allowedFileTypes':['image'],
+      'allowedFileExtensions':['jpg', 'gif', 'png', 'jpeg'],
+      'browseClass':'btn btn-primary btn-flat',
+      'browseIcon':'<i class="mdi-file-attachment"></i>',
+      'removeLabel':'quitar',
+      'removeIcon':'<i class="mdi-content-clear"></i>',
+      'removeClass':'btn btn-danger btn-flat',
+      'uploadLabel':'Subir',
+      'uploadIcon':'<i class="mdi-file-file-upload"></i>',
+      'uploadClass':'btn btn-success btn-flat',
+    });
+  </script>
+
+<% end %>
+
