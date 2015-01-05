@@ -1,0 +1,29 @@
+.listado-recursos .preview{
+	width: 100%;
+}
+.listado-recursos .preview.no-file{
+	height: 200px;
+	text-align: center;
+	font-size: 65px;
+	padding-top: 50px;
+}
+.listado-recursos img {
+	display: block;
+	margin: 0 auto;
+	height: 200px;
+}
+.listado-recursos .preview.no-file span{
+	vertical-align: middle;
+}
+.listado-recursos .preview.no-file.tipo-imagen{
+	background-color: #2196f3;
+}
+.listado-recursos .preview.no-file.tipo-video{
+	background-color: #fb8c00;
+}
+.listado-recursos .preview.no-file.tipo-documento{
+	background-color: #1de9b6;
+}
+.listado-recursos .preview.no-file.tipo-enlace{
+	background-color: #6a1b9a;
+}

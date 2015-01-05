@@ -19,7 +19,8 @@ $(document).ready(function(){
 		$("#top-search-bar").css("display","none");
 	});
     //$('.collapsible').collapsible();
-
+    $('[data-toggle="tooltip"]').tooltip();
+    
     $('.submenu-trigger').click(function () {
   		if($(this).hasClass("menu-open"))
   			$(this).removeClass("menu-open").addClass("menu-close");

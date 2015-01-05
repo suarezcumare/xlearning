@@ -319,11 +319,28 @@ header{
 .nav-wrapper .brand-logo img{
   margin-top: -5px;
 }
-nav ul a{
+nav div > ul > li > a{
   color:#767676 !important;
+  position: relative;
+  height: 64px;
 }
-nav .inverse ul a{
-  color: #8BD6DF !important;
+nav div.inverse > ul > li > a{
+  color: #CACFD0 !important;
+}
+nav ul a .badge{
+  color: white;
+  border-radius: 100%;
+  width: 20px !important;
+  height: 20px;
+  padding: 0px;
+  font-weight: normal;
+  line-height: 20px;
+  float: none;
+  position: absolute;
+  z-index: 10000;
+  top: 10px;
+  left: 50%;
+  font-size: 75%;
 }
 a.activar-busqueda{
   display: block;
@@ -336,8 +353,12 @@ a.activar-busqueda{
   text-align: center;
 }
 .inverse a.activar-busqueda{
-  color: #8BD6DF;
+  color: #CACFD0 ;
   border-left: 1px solid #626161;
+}
+
+ul.dropdown-menu li{
+  float: none;
 }
 
 .logged-in-usuario{
@@ -643,29 +664,29 @@ label{
   width: 32px;
   text-align: center;
   height: 32px;
-  padding-top: 3px;
+  padding: 3px 0px !important;
   font-size: 20px !important;
 }
 .fb:hover, .tw:hover, .gp:hover, .lk:hover, .gh:hover{
   color:white !important;
 }
-.fb{
-  background-color: #3B5998;
+.fb, .fb:hover{
+  background-color: #3B5998 !important;
 }
 
-.tw{
-  background-color: #55ACEE;
+.tw, .tw:hover{
+  background-color: #55ACEE !important;
 }
-.gp{
-  background-color: #d34836;
-}
-
-.lk{
-  background-color: #007bb6;
+.gp, .gp:hover{
+  background-color: #d34836  !important;
 }
 
-.gh{
-  background-color: #31104F;
+.lk, .lk:hover{
+  background-color: #007bb6  !important;
+}
+
+.gh, .gh:hover{
+  background-color: #31104F !important;
 }
 
 /*****************************************************/

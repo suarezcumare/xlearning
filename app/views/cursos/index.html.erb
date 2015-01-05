@@ -1,294 +1,109 @@
+<!-- Cursos -->
+
 <% content_for :css_personalizado do %>
   <%= stylesheet_link_tag    "cursos" %>
+  <%= stylesheet_link_tag    "clases" %>
 <% end %>
+
+<div class="text-right">
+  <ol class="breadcrumb">
+    <li><%= link_to "Home", root_path %></li>
+    <li class="active">Oferta de cursos</li>
+  </ol>
+</div>
   
 <div class="row">
   <div class="col-md-8">
-    <br/>
-    <br/>
-    <h3>Cursos y Especializaciones</h3>
+    <h5>Cursos y Especializaciones</h5>
   </div>
   <div class="col-md-4">
-    <br/>
-    <br/>
-    <div class="input-group margin-bottom-sm">
-      <span class="input-group-addon"><i class="fa fa-search"></i></span>
-      <input class="form-control" type="text" placeholder="Que quieres aprender?"></input>
+    <div class="input-group pad15">
+      <span class="input-group-addon light-blue"><i class="fa fa-search white-text"></i></span>
+      <input class="form-control" type="text" placeholder="  ¿Qué quieres aprender?"></input>
     </div>
- 
   </div>
-
 </div>
 
 <div class="row">
-  <div  class="col-md-2">
-    <br/><br/>
+  <div  class="col s2 pad15-h">
     <form action="" method="get">
-      <h5>Categoria</h5>
+      <h6>Categoría</h6>
       <ul>
         <li><input id="chk1" type="checkbox" name="categoria" value="1"><label for="chk1">Todos</label></li>
         <li><input id="chk2" type="checkbox" name="categoria" value="2"><label for="chk2">Servicios</label></li>
         <li><input id="chk3" type="checkbox" name="categoria" value="3"><label for="chk3">Desarrollo Web</label></li>
         <li><input id="chk4" type="checkbox" name="categoria" value="4"><label for="chk4">Interfaz de Usuario</label></li>
       </ul>
-    </form>
-    <form>
-      <br/>
-      <h5>Costo</h5>
+      <h6>Costo</h6>
       <ul>
-        <li><input type="checkbox" name="costo" value="1">Pago</input></li>
-        <li><input type="checkbox" name="costo" value="2">Gratuito</input></li>
+        <li><input id="chk5" type="checkbox" name="costo" value="1"><label for="chk5">Pago</label></li>
+        <li><input id="chk6" type="checkbox" name="costo" value="2"><label for="chk6">Gratuito</label></li>
+      </ul>
+      <h6>Nivel de dificultad</h6>
+      <ul>
+        <li><input id="chk7" type="checkbox" name="nivel" value="1"><label for="chk7">Basico</label></li>
+        <li><input id="chk8" type="checkbox" name="nivel" value="2"><label for="chk8">Intermedio</label></li>
+        <li><input id="chk9" type="checkbox" name="nivel" value="2"><label for="chk9">Avanzado</label></li>
       </ul>
     </form>
-    <form>
-      <br/>
-        <h5>Nivel de dificultad</h5>
-        <ul>
-          <li><input type="checkbox" name="nivel" value="1">Basico</input></li>
-          <li><input type="checkbox" name="nivel" value="2">Intermedio</input></li>
-          <li><input type="checkbox"  name="nivel" value="3">Avanzado</input></li>
-       </ul>
-    </form>
   </div>
-  <div class="col-md-10">
-    <br/>
-    <ul class="pager">
-      <li ><a href="#">&larr; </a></li>
-      <li ><a href="#"> &rarr;</a></li>
-    </ul>
-    <br/>
-    <h4>Recomendado para ti.</h4>   
-    <div class="col-md-4">
-    <br/>
-    <li >
-        <a href=""class=" fa fa-heart fa-2x pull-right  " >  
-         
-          <img  src="/assets/curso1.jpg" class="img-curso"     >
-          <br clear=all>
-       </a>
-       
-        <a> 
-          <img  src="/assets/instructora1.png" class="redondo" >  
-        </a> 
-     
-      <h6>Ing. Any Torres </h6>
-      <h5>Curso: Introduccion al Desarrollo web </h5>
-          <li >
-             <h5 align=right >950bs   </h5>
-             <img src="/assets/etiqueta.png"  class="etiqueta" >
-           
-      
-  </li>
-  </li>
-
-       <br>
-       <br>
-
-  <li >
-        <a href=""class=" fa fa-heart fa-2x pull-right  " >  
-         
-          <img  src="/assets/curso1.jpg" class="img-curso"     >
-          <br clear=all>
-       </a>
-       
-        <a> 
-          <img  src="/assets/instructora1.png" class="redondo" >  
-        </a> 
-     
-      <h6>Ing. Any Torres </h6>
-      <h5>Curso: Introduccion al Desarrollo web </h5>
-           <li >
-             <h5 align=right >950bs  </h5>
-             <img src="/assets/etiqueta.png"  class="etiqueta" > 
-           
-      
-  </li>
-  </li>
-
-       <br>
-<br>
-
- <li >
-        <a href=""class=" fa fa-heart fa-2x pull-right  " >  
-         
-          <img  src="/assets/curso1.jpg" class="img-curso"     >
-          <br clear=all>
-       </a>
-       
-        <a> 
-          <img  src="/assets/instructora1.png" class="redondo" >  
-        </a> 
-     
-      <h6>Ing. Any Torres </h6>
-      <h5>Curso: Introduccion al Desarrollo web </h5>
-          <li >
-             <h5 align=right >950bs  </h5>
-              <img src="/assets/etiqueta.png"  class="etiqueta" >
-           
-      
-  </li>
-  </li>
-
-           
-  
-
+  <div class="col s10">
+    <div class="row">
+      <div class="col s12">
+        <ul class="text-right pager no-margin-v">
+          <li ><a href="#">&larr; </a></li>
+          <li ><a href="#"> &rarr;</a></li>
+        </ul>
+      </div>
     </div>
-
-    <div class="col-md-4">
-       <li >
-        <a href=""class=" fa fa-heart-o fa-2x pull-right  " >  
-         
-          <img  src="/assets/curso4.jpeg" class="img-curso"     >
-          <br clear=all>
-       </a>
-       
-        <a> 
-          <img  src="/assets/instructor3.jpeg" class="redondo" >  
-        </a> 
-     
-      <h6>Ing. Richar Sanz</h6>
-      <h5>Curso: Android Lollipop </h5>
-          <li >
-             <h5 align=right >1500bs   </h5>
-             <img src="/assets/etiqueta.png"  class="etiqueta" >
-           
-      
-  </li>
-  </li>
-
-       <br>
-       <br>
-   <li >
-        <a href=""class=" fa fa-heart-o fa-2x pull-right  " >  
-         
-          <img  src="/assets/curso4.jpeg" class="img-curso"     >
-          <br clear=all>
-       </a>
-       
-        <a> 
-          <img  src="/assets/instructor3.jpeg" class="redondo" >  
-        </a> 
-     
-      <h6>Ing. Richar Sanz</h6>
-      <h5>Curso: Android Lollipop </h5>
-          <li >
-             <h5 align=right >1500bs   </h5>
-             <img src="/assets/etiqueta.png"  class="etiqueta" >
-           
-      
-  </li>
-  </li>
-    
-       <br>
-       <br>
-   <li >
-        <a href=""class=" fa fa-heart-o fa-2x pull-right  " >  
-         
-          <img  src="/assets/curso4.jpeg" class="img-curso"     >
-          <br clear=all>
-       </a>
-       
-        <a> 
-          <img  src="/assets/instructor3.jpeg" class="redondo" >  
-        </a> 
-     
-      <h6>Ing. Richar Sanz</h6>
-      <h5>Curso: Android Lollipop </h5>
-          <li >
-             <h5 align=right >1500bs   </h5>
-             <img src="/assets/etiqueta.png"  class="etiqueta" >
-           
-      
-  </li>
-  </li>
-   
-         </div>
-              
-
-<div class="col-md-4">
-
-
-
- <li >
-        <a href=""class=" fa fa-heart-o fa-2x pull-right  " >  
-         
-          <img  src="/assets/curso5.png" class="img-curso"     >
-          <br clear=all>
-       </a>
-       
-        <a> 
-          <img  src="/assets/instructor3.jpeg" class="redondo" >  
-        </a> 
-     
-      <h6>Ing. Richar Sanz</h6>
-      <h5>Curso: Api de google maps </h5>
-          <li >
-             <h5 align=right >1500bs  </h5>
-              <img src="/assets/etiqueta.png"  class="etiqueta" >
-           
-      
-  </li>
-  </li>
-  <br>
-    <br>
-   <li >
-        <a href=""class=" fa fa-heart-o fa-2x pull-right  " >  
-         
-          <img  src="/assets/curso5.png" class="img-curso"     >
-          <br clear=all>
-       </a>
-       
-        <a> 
-          <img  src="/assets/instructor3.jpeg" class="redondo" >  
-        </a> 
-     
-      <h6>Ing. Richar Sanz</h6>
-      <h5>Curso: Api de google maps </h5>
-          <li >
-             <h5 align=right >1500bs  </h5>
-             <img src="/assets/etiqueta.png"  class="etiqueta" > 
-           
-      
-  </li>
-  </li>
-    <br>
-    <br>
-  <li >
-        <a href=""class=" fa fa-heart-o fa-2x pull-right  " >  
-         
-          <img  src="/assets/curso5.png" class="img-curso"     >
-          <br clear=all>
-       </a>
-       
-        <a> 
-          <img  src="/assets/instructor3.jpeg" class="redondo" >  
-        </a> 
-     
-      <h6>Ing. Richar Sanz</h6>
-      <h5>Curso:Api de google maps </h5>
-         
-         <li >
-             <h5 align=right >1500bs  </h5>
-            <img src="/assets/etiqueta.png"  class="etiqueta" >
-      
-  </li>
-
-   </li>  
-
-
-
-</div>
-<div class="text-center">
-  <ul class="pagination">
-  <li><a href="#">&laquo;</a></li>
-  <li><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-  <li><a href="#">&raquo;</a></li>
-</ul>
-</div>
-</div>
-
+    <div class="row">
+      <ul>
+        <li class="col s4 listado">
+          <div class="card white">
+            <div class="card-image">
+              <div class="favoritear fav" data-toggle="tooltip" data-placement="bottom" title="Quiero hacer este curso">
+                <a href="javascript:void(0)">
+                  <i class="fa fa-heart fa-2x grey-text"></i>
+                  <i class="fa fa-heart fondo red-text darken-2"></i>
+                </a>
+              </div>
+              <img  src="/assets/curso1.jpg" class="img-curso">
+              <span class="card-title">  </span>
+            </div>  
+            <div class="card-content">
+              <h5 >Curso: Introduccion al Desarrollo web </h5>
+              <img  src="/assets/instructora1.png" class="redondo">  
+              <span class="h4">Ing. Any Torres</span>
+              <div class="row">
+                <div class="col s6">
+                  <div class="ec-stars-wrapper">
+                   <a href="#" data-value="1" title="">&#9733;</a>
+                   <a href="#" data-value="2" title="">&#9733;</a>
+                   <a href="#" data-value="3" title="">&#9733;</a>
+                   <a href="#" data-value="4" title="">&#9733;</a>
+                   <a href="#" data-value="5" title="">&#9733;</a>
+                  </div> 
+                </div>
+                <div class="col s6">
+                  <span align=right class="pull-right grey-text darken-4">Bs. 950 <img src="/assets/etiqueta.png"  class="etiqueta"></span>
+                </div>
+              </div>
+            </div>
+            <div class="card-action"><a href= "/cursos/1/ver">Más información</a></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="text-center">
+    <ul class="pagination">
+      <li><a href="#">&laquo;</a></li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">&raquo;</a></li>
+    </ul>
+  </div>
 </div>

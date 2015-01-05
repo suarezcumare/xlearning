@@ -1,0 +1,148 @@
+<!-- Cursos -->
+
+<% content_for :css_personalizado do %>
+  <%= stylesheet_link_tag    "biblioteca" %>
+<% end %>
+
+<div class="text-right">
+  <ol class="breadcrumb">
+    <li><%= link_to "Home", root_path %></li>
+    <li class="active">Biblioteca virtual</li>
+  </ol>
+</div>
+  
+<div class="row">
+  <div class="col-md-8">
+    <h5>Biblioteca virtual</h5>
+  </div>
+  <div class="col-md-4">
+    <div class="input-group pad15">
+      <span class="input-group-addon light-blue"><i class="fa fa-search white-text"></i></span>
+      <input class="form-control" type="text" placeholder="  ¿Qué estás buscando?"></input>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div  class="col s2 pad15-h">
+    <form action="" method="get">
+      <h6>Tipo de archivo</h6>
+      <ul>
+        <li><input id="id-imagen" type="checkbox" name="tipo" value="1"><label for="id-imagen">Imágenes</label></li>
+        <li><input id="id-video" type="checkbox" name="tipo" value="2"><label for="id-video">Videos</label></li>
+        <li><input id="id-documento" type="checkbox" name="tipo" value="2"><label for="id-documento">Documentos</label></li>
+        <li><input id="id-enlace" type="checkbox" name="tipo" value="2"><label for="id-enlace">Enlaces</label></li>
+      </ul>
+      <h6>Categoría</h6>
+      <ul>
+        <li><input id="chk1" type="checkbox" name="categoria" value="1"><label for="chk1">Todos</label></li>
+        <li><input id="chk2" type="checkbox" name="categoria" value="2"><label for="chk2">Servicios</label></li>
+        <li><input id="chk3" type="checkbox" name="categoria" value="3"><label for="chk3">Desarrollo Web</label></li>
+        <li><input id="chk4" type="checkbox" name="categoria" value="4"><label for="chk4">Interfaz de Usuario</label></li>
+      </ul>
+    </form>
+  </div>
+  <div class="col s10">
+    <div class="row">
+      <div class="col s12">
+        <!-- <ul class="text-right pager no-margin-v">
+          <li ><a href="#">&larr; </a></li>
+          <li ><a href="#"> &rarr;</a></li>
+        </ul> -->
+      </div>
+    </div>
+    <div class="row">
+      <ul>
+        <li class="col s3 listado-recursos">
+          <div class="preview tipo-documento valign-wrapper">  
+            <img src="/assets/biblioteca/libro1.jpg"/>
+          </div>  
+          <span class="titulo">Thinking in Java</span>
+          <div class="ec-stars-wrapper">
+            <a href="javascript:void(0)" data-value="1" title="Pésimo">&#9733;</a>
+            <a href="javascript:void(0)" data-value="2" title="Malo">&#9733;</a>
+            <a href="javascript:void(0)" data-value="3" title="Regular">&#9733;</a>
+            <a href="javascript:void(0)" data-value="4" title="Bueno">&#9733;</a>
+            <a href="javascript:void(0)" data-value="5" title="Excelente"><i class="fa fa-star-o"></i></a>
+          </div> 
+        </li>
+        <li class="col s3 listado-recursos">
+          <div class="preview tipo-documento valign-wrapper">  
+            <img src="/assets/biblioteca/libro2.jpg"/>
+          </div>  
+          <span class="titulo">Global UX</span>
+          <div class="ec-stars-wrapper">
+            <a href="javascript:void(0)" data-value="1" title="Pésimo">&#9733;</a>
+            <a href="javascript:void(0)" data-value="2" title="Malo">&#9733;</a>
+            <a href="javascript:void(0)" data-value="3" title="Regular">&#9733;</a>
+            <a href="javascript:void(0)" data-value="4" title="Bueno">&#9733;</a>
+            <a href="javascript:void(0)" data-value="5" title="Excelente"><i class="fa fa-star-o"></i></a>
+          </div> 
+        </li>
+        <li class="col s3 listado-recursos">
+          <div class="preview tipo-video no-file valign-wrapper">  
+            <span class="mdi-av-video-collection white-text"></span>
+          </div>  
+          <span class="titulo">Guía para servidores con Apache</span>
+          <div class="ec-stars-wrapper">
+            <a href="javascript:void(0)" data-value="1" title="Pésimo">&#9733;</a>
+            <a href="javascript:void(0)" data-value="2" title="Malo">&#9733;</a>
+            <a href="javascript:void(0)" data-value="3" title="Regular">&#9733;</a>
+            <a href="javascript:void(0)" data-value="4" title="Bueno">&#9733;</a>
+            <a href="javascript:void(0)" data-value="5" title="Excelente"><i class="fa fa-star-o"></i></a>
+          </div> 
+        </li>
+        <li class="col s3 listado-recursos">
+          <div class="preview tipo-imagen no-file valign-wrapper">  
+            <span class="mdi-image-panorama white-text"></span>
+          </div>  
+          <span class="titulo">Ciclo de vida de una app de Android</span>
+          <div class="ec-stars-wrapper">
+            <a href="javascript:void(0)" data-value="1" title="Pésimo">&#9733;</a>
+            <a href="javascript:void(0)" data-value="2" title="Malo">&#9733;</a>
+            <a href="javascript:void(0)" data-value="3" title="Regular">&#9733;</a>
+            <a href="javascript:void(0)" data-value="4" title="Bueno">&#9733;</a>
+            <a href="javascript:void(0)" data-value="5" title="Excelente">&#9733;</a>
+          </div> 
+        </li>
+        <li class="col s3 listado-recursos">
+          <div class="preview tipo-documento no-file valign-wrapper">  
+            <span class="mdi-action-description white-text"></span>
+          </div>  
+          <span class="titulo">Desarrollar aplicaciones web con Java Enterprise</span>
+          <div class="ec-stars-wrapper">
+            <a href="javascript:void(0)" data-value="1" title="Pésimo">&#9733;</a>
+            <a href="javascript:void(0)" data-value="2" title="Malo">&#9733;</a>
+            <a href="javascript:void(0)" data-value="3" title="Regular">&#9733;</a>
+            <a href="javascript:void(0)" data-value="4" title="Bueno">&#9733;</a>
+            <a href="javascript:void(0)" data-value="5" title="Excelente">&#9733;</a>
+          </div> 
+        </li>
+        <li class="col s3 listado-recursos">
+          <div class="preview tipo-enlace no-file valign-wrapper">  
+            <span class="fa fa-link white-text"></span>
+          </div>  
+          <span class="titulo">Desarrollar aplicaciones web con Java Enterprise</span>
+          <div class="ec-stars-wrapper">
+            <a href="javascript:void(0)" data-value="1" title="Pésimo">&#9733;</a>
+            <a href="javascript:void(0)" data-value="2" title="Malo">&#9733;</a>
+            <a href="javascript:void(0)" data-value="3" title="Regular">&#9733;</a>
+            <a href="javascript:void(0)" data-value="4" title="Bueno">&#9733;</a>
+            <a href="javascript:void(0)" data-value="5" title="Excelente">&#9733;</a>
+          </div> 
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="text-center">
+    <ul class="pagination">
+      <li><a href="#">&laquo;</a></li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">&raquo;</a></li>
+    </ul>
+  </div>
+</div>

@@ -152,14 +152,10 @@ word-wrap: break-word
 /*                       input file                             */
 /****************************************************************/
 
-#menu-editar-perfil{
-  border-bottom: 1px solid #f4f4f4;
+#lista-redes-sociales.vacia:first-child{
+  display: inline;
 }
 
-#menu-editar-perfil li a{
-  text-transform: capitalize;
-  font-size: 90%;
-  font-weight: 400;
-  color:#767172;
-  letter-spacing: 0px;
+#lista-redes-sociales.llena:first-child{
+  display: inline;
 }

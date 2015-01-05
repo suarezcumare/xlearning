@@ -2162,7 +2162,6 @@ td, th {
         background-color: #e1f5fe; }
 
 span.badge {
-  min-width: 3rem;
   padding: 0 6px;
   text-align: center;
   font-size: 1rem;
