@@ -1,0 +1,61 @@
+<!-- /usuarios  -->
+
+
+<% content_for :css_personalizado do %>
+ <%= stylesheet_link_tag    "jquery.dataTables" %> 
+<% end %>
+
+
+<div class="text-right">
+	<ol class="breadcrumb">
+	  <li><%= link_to "Home", root_path %></li>
+	  <li class="active">Apariencia</li>
+	</ol>
+</div>
+
+
+<h5 class="text-uppercase pad30-h"> Usuarios </h5>
+
+
+ <ul class="tabs">
+      <li class="tab col s2" title="Todos"><a href="#todos">Todos</a></li>
+      <li class="tab col s2" title="Administradores"><a href="#administradores">Administradores </a></li>
+      <li class="tab col s2" title="Coordinadores"> <a href="#coordinadores"> Coordinadores </i></a></li>
+      <li class="tab col s2" title="Instructores"> <a href="#facilitadores"> Facilitadores</a></li>
+      <li class="tab col s2" title="Estudiantes"> <a href="#estudiantes">Estudiantes</a></li>
+    </ul>
+
+
+<div class="row pad30-h">
+
+ <div class="tab-pane" id="todos">
+ 
+ <%= render "organizacions/usuarios/todos" %>
+ </div>
+ <div class="tab-pane" id="administradores">
+ 	 <%= render "organizacions/usuarios/administradores" %>
+ </div>
+ <div class="tab-pane" id="coordinadores">
+ 	 <%= render "organizacions/usuarios/coordinadores" %>
+ </div>
+ <div class="tab-pane" id="facilitadores">
+ 	 <%= render "organizacions/usuarios/facilitadores" %>
+ </div>
+ <div class="tab-pane" id="estudiantes">
+ 	 <%= render "organizacions/usuarios/estudiantes" %>
+ </div>
+
+	
+</div>
+
+<% content_for :js_personalizado do %>
+
+  <%= javascript_include_tag 'jquery.dataTables.min' %>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+	$('#example').dataTable();
+    });
+  </script>
+
+<% end %>

@@ -1,0 +1,36 @@
+<br><br>
+<table id="examplecoordinadores" class="display" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>correo</th>
+              <th>Rol</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-search="Herrod Hatfield">H. Hatfield</td>
+              <td>Chandler@</td>
+              <td>coordinador</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td data-search="Michael Bruce">M. Bruce</td>
+              <td>Chandler@</td>
+              <td>coordinador</td>
+              <td> </td>
+            </tr>
+          </tbody>
+        </table>
+
+        
+<% content_for :js_personalizado do %>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+  $('#examplecoordinadores').dataTable();
+    });
+  </script>
+
+<% end %>

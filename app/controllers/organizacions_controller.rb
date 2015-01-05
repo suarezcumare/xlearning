@@ -78,7 +78,6 @@ class OrganizacionsController < ApplicationController
   def apariencia
 
 
-
     @usuario = Usuario.new
     @rol = Rol.new
     @rol =  Rol.where(nombre: 'administrador')
@@ -90,10 +89,10 @@ class OrganizacionsController < ApplicationController
 
          if @usuarioRol.nil?
             @usuario.id = current_usuario.id
-            render "/organizacions/apariencia"
+            
         else
              @usuario = nil
-             render "/organizacions/perfil"
+             render "/organizacions/perfil" 
         end
 
     else
@@ -102,12 +101,12 @@ class OrganizacionsController < ApplicationController
     end
 
 
+
+
   end
 
+  def usuarios
 
-  def politicas
-
-     @usuario = Usuario.new
     @rol = Rol.new
     @rol =  Rol.where(nombre: 'administrador')
     
@@ -118,12 +117,15 @@ class OrganizacionsController < ApplicationController
 
          if @usuarioRol.nil?
             @usuario.id = current_usuario.id
+          
         else
              @usuario = nil
+             render "/organizacions/perfil" 
         end
 
     else
        @usuarioRol = @usuario = nil
+       render "/organizacions/perfil" 
     end
 
 
