@@ -1,0 +1,103 @@
+  <br><br>
+<table id="exampletodos" class="display" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>correo</th>
+              <th>Rol</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+          
+            <tr>
+              <td data-search="Herrod Chandler">H. Chandler</td>
+              <td>Chandler@</td>
+              <td>administrador</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Chandler">H. Butler</td>
+              <td>Chandler@</td>
+              <td>estudiante</td>
+              <td> </td>  
+            </tr>
+            <tr>
+              <td data-search="Herrod Alexander">H. Alexander</td>
+              <td>Chandler@</td>
+              <td>instructor</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Perez">H. Perez</td>
+              <td>Chandler@</td>
+              <td>administrador</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Snider">H. Snider</td>
+              <td>Chandler@</td>
+              <td>estudiante</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Suarez">H. Suarez</td>
+              <td>Chandler@</td>
+              <td>estudiante</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Chandler">H. Decker</td>
+              <td>Chandler@</td>
+              <td>estudiante</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Sanchez">H. Sanchez</td>
+              <td>Chandler@</td>
+              <td>instructor</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Chandler">H. Chandler</td>
+              <td>Chandler@</td>
+              <td>instructor</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Hatfield">H. Hatfield</td>
+              <td>Chandler@</td>
+              <td>coordinador</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Ramirez">H. Ramirez</td>
+              <td>Chandler@</td>
+              <td>instructor</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td data-search="Michael Bruce">M. Bruce</td>
+              <td>Chandler@</td>
+              <td>coordinador</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td data-search="Donna Snider">D. Snider</td>
+              <td>Chandler@</td>
+              <td>estudiante</td>
+              <td> </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+<% content_for :js_personalizado do %>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+  $('#exampletodos').dataTable();
+    });
+  </script>
+
+<% end %>

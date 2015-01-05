@@ -38,7 +38,7 @@ Xlearning::Application.routes.draw do
       match "/perfil/editar" => "organizacions#edit_perfil", via: :get
       match "/perfil/editar" => "organizacions#save_perfil", via: :post
       match "/perfil" => "organizacions#perfil", via: :get
-      match "/perfil/politicas" => "organizacions#politicas", via: :get
+        match "/usuarios" => "organizacions#usuarios", via: :get
      
       
 	end
