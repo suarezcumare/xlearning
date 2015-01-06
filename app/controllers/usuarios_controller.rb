@@ -19,4 +19,16 @@ class UsuariosController < ApplicationController
 		# render plain: "renderizando usuarios/editar"
 		#render "usuarios/editar"
 	end
+
+	def new
+		if usuario_signed_in?
+			redirect_to root_path
+		else
+			if request.subdomain.present?
+				render "devise/registrations/new"
+			else
+				render "usuarios/new"
+			end
+		end
+	end
 end

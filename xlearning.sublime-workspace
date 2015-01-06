@@ -531,7 +531,7 @@
 			"file": "config/routes.rb",
 			"settings":
 			{
-				"buffer_size": 2257,
+				"buffer_size": 2250,
 				"line_ending": "Windows"
 			}
 		},
@@ -574,6 +574,14 @@
 				"buffer_size": 2565,
 				"line_ending": "Windows"
 			}
+		},
+		{
+			"file": "config/initializers/assets.rb",
+			"settings":
+			{
+				"buffer_size": 2347,
+				"line_ending": "Windows"
+			}
 		}
 	],
 	"build_system": "Packages/C++/C++.sublime-build",
@@ -600,6 +608,7 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/cursos/index.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/materialize.min.css",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/organizacions_controller.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/cursos/show.html.erb",
@@ -607,7 +616,6 @@
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/controllers/objeto_aprendizaje_controller.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/config/initializers/assets.rb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/usuarios/show.html.erb",
-		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/cursos/index.html.erb",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/stylesheets/usuarios.css",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/assets/javascripts/usuarios.js",
 		"/C/Users/Valentina/Documents/GitHub/xlearning/app/views/usuarios/edit.html.erb",
@@ -873,7 +881,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -908,15 +916,15 @@
 					"file": "config/routes.rb",
 					"settings":
 					{
-						"buffer_size": 2257,
+						"buffer_size": 2250,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								894,
-								894
+								0,
+								0
 							]
 						],
 						"settings":
@@ -999,8 +1007,8 @@
 						"selection":
 						[
 							[
-								2158,
-								2158
+								6666,
+								6666
 							]
 						],
 						"settings":
@@ -1010,7 +1018,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 270.0,
+						"translation.y": 1718.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1033,7 +1041,8 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1065,6 +1074,32 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "config/initializers/assets.rb",
+					"settings":
+					{
+						"buffer_size": 2347,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2346,
+								2346
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 149.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

@@ -16,6 +16,6 @@ class Organizacion < ActiveRecord::Base
 		def convertir_subdominio
 			self.subdominio = subdominio.try(:downcase)
 		end
-
+	belongs_to :dueno, class_name: "Usuario", foreign_key: "dueno_id"
 
 end

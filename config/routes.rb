@@ -25,6 +25,9 @@ Xlearning::Application.routes.draw do
       match "/usuarios/:id" => "usuarios#show", via: :get
   		match "/preferencias" => "usuarios#preferencias", via: :get
 
+      match "/clases/:id_clases/asignacion/:id_asignacion/presentar" => "asignacion#presentar", via: :get
+      match "/clases/:id_clases/asignacion/:id_asignacion/overview" => "asignacion#overview", via: :get
+
   		match "/estadisticos" => "estadisticos#index_organizacion", via: :get
   		match "/estadisticos/:id/" => "estadisticos#estadistico_general", via: :get
       match "/estadisticos/:id/:grafico" => "estadisticos#estadistico_personalizado", via: :get
@@ -38,15 +41,15 @@ Xlearning::Application.routes.draw do
       match "/perfil/editar" => "organizacions#edit_perfil", via: :get
       match "/perfil/editar" => "organizacions#save_perfil", via: :post
       match "/perfil" => "organizacions#perfil", via: :get
-        match "/usuarios" => "organizacions#usuarios", via: :get
-     
-      
+      match "/usuarios" => "organizacions#usuarios", via: :get
 	end
+
+  match "/registro" => "usuarios#new", via: :get
 	devise_for :usuarios, via: :post
 	devise_scope :usuario do
   		post "/entrar" => "devise/sessions#create"
   		get "/entrar" => "devise/sessions#new"
-  		get "/registro" => "devise/registrations#new"
+  		#get "/registro" => "devise/registrations#new"
 	end
 	root 'portal#index'
 	resources :organizacions

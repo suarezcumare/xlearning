@@ -18,6 +18,7 @@ class Usuario < ActiveRecord::Base
   has_many :evaluacion_grupos, :through => :evaluacion_presentadas
   has_one :pais
   has_one :perfil
+  has_one :organizacion
 
   attr_accessor :rol_actual
   @rol_actual

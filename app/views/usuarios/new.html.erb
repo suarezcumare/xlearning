@@ -1,0 +1,265 @@
+<% content_for :css_personalizado do %>
+   <%= stylesheet_link_tag    "usuarios" %>
+<% end %>
+<div class="row">
+	<div class="col s8">
+		<div id="form_wizard_1" class="block-center">
+			<form action="javascript:;" class="form-horizontal" id="submit_form" method="POST">
+				<div class="form-wizard">
+					<div class="form-body">
+						<ul class="nav nav-pills nav-justified steps">
+							<li>
+								<a href="#tab1" data-toggle="tab" class="step">
+								<span class="number">
+								1 </span>
+								<span class="desc">
+								<i class="fa fa-check"></i> Cuenta </span>
+								</a>
+							</li>
+							<li>
+								<a href="#tab2" data-toggle="tab" class="step">
+								<span class="number">
+								2 </span>
+								<span class="desc">
+								<i class="fa fa-check"></i> Organización </span>
+								</a>
+							</li>
+							<li>
+								<a href="#tab3" data-toggle="tab" class="step active">
+								<span class="number">
+								3 </span>
+								<span class="desc">
+								<i class="fa fa-check"></i> Pago </span>
+								</a>
+							</li>
+							<li>
+								<a href="#tab4" data-toggle="tab" class="step">
+								<span class="number">
+								4 </span>
+								<span class="desc">
+								<i class="fa fa-check"></i> Confirmación </span>
+								</a>
+							</li>
+						</ul>
+						<div id="bar" class="progress progress-striped" role="progressbar">
+							<div class="progress-bar progress-bar-success">
+							</div>
+						</div>
+						<div class="tab-content">
+							<div class="alert alert-danger display-none">
+								<button class="close" data-dismiss="alert"></button>
+								Algunos campos tienen errores. Por favor revisa abajo.
+							</div>
+							<div class="alert alert-success display-none">
+								<button class="close" data-dismiss="alert"></button>
+								La validación fue exitosa.
+							</div>
+							<div class="tab-pane active" id="tab1">
+								<h4 class="block">Provee los datos de tu cuenta</h4>
+								<div class="row">
+									<div class="col s5 offset-s1">
+										<div class="input-field">
+											<label for="usuario_email2">Email <span class="required">
+											* </span>
+											</label>
+											<input type="text" id="usuario_email2" name="usuario[email]" required/>
+										</div>
+										<div class="input-field">
+											<label for="usuario_nombre">Nombre <span class="required">
+											* </span>
+											</label>
+											<input type="text" id="usuario_nombre" name="usuario[nombre]" required/>
+										</div>
+										<div class="input-field">
+											<label for="usuario_password2">Contraseña <span class="required">
+											* </span>
+											</label>
+											<input type="password" name="password" id="usuario_password2" required maxlength="30" name="usuario[password2]"/>
+										</div>
+										<div class="input-field">
+											<label for="usuario_password_confirmation">Confirma tu contraseña <span class="required">
+											* </span>
+											</label>
+											<input type="password" name="usuario[password_confirmation]" id="usuario_password_confirmation" required maxlength="30"/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="tab2">
+								<h4 class="block">Provee los detalles de la organización</h4>
+								<div class="row">
+									<div class="col s5 offset-s1">
+										<div class="input-field">
+											<label for="organizacion_nombre">Nombre <span class="required">
+											* </span></label>
+											<input type="text" id="organizacion_nombre" 
+											name="organizacion[descripcion]" required/>
+										</div>
+										<div class="input-field">
+											<label for="organizacion_descripcion">Descripción</label>
+											<input type="text" name="organizacion[nombre]" id="organizacion_nombre"/>
+										</div>
+										<div class="input-field">
+											<label for="organizacion_subdominio">Subdominio <span class="required">
+											* </span>
+											</label>
+											<input type="text" name="organizacion[usuario]" id="organizacion_usuario" required/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="tab3">
+								<h3 class="block">Provee los datos de tu tarjeta de crédito</h3>
+								<div class="row">
+									<div class="col s5 offset-s1">
+										<div class="input-field">
+											<label for="card_name">Nombre <span class="required">
+											* </span>
+											</label>
+											<input type="text"id="card_name" name="card_name" required/>
+										</div>
+										<div class="input-field">
+											<label for="card_number">Número de tarjeta <span class="required">
+											* </span>
+											</label>
+											<input type="text" id="card_number" name="card_number" required/>
+										</div>
+										<div class="input-field">
+											<label id="card_cvc">CVC <span class="required">
+											* </span>
+											</label>
+											<input type="text" placeholder="" id="card_cvc" name="card_cvc" required/>
+										</div>
+										<div class="input-field">
+											<label for="card_expiry_date">Fecha de expiración (MM/AAAA) <span class="required">
+											* </span>
+											</label>
+											<input type="text" placeholder="MM/AAAA" maxlength="7" id="card_expiry_date" name="card_expiry_date" required/>
+										</div>
+										<!-- <div class="form-group">
+											<label class="control-label col-md-3">Payment Options <span class="required">
+											* </span>
+											</label>
+											<div class="col-md-4">
+												<div class="checkbox-list">
+													<label>
+													<input type="checkbox" name="payment[]" value="1" data-title="Auto-Pay with this Credit Card."/> Auto-Pay with this Credit Card </label>
+													<label>
+													<input type="checkbox" name="payment[]" value="2" data-title="Email me monthly billing."/> Email me monthly billing </label>
+												</div>
+												<div id="form_payment_error">
+												</div>
+											</div>
+										</div> -->
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="tab4">
+								<h4 class="block">Confirma tu cuenta</h4>
+								<h5 class="form-section">Datos de la cuenta</h5>
+								<div class="form-group">
+									<label class="control-label col-md-3">Email</label>
+									<div class="col-md-4">
+										<p class="form-control-static" data-display="username">
+										</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-md-3">Nombre</label>
+									<div class="col-md-4">
+										<p class="form-control-static" data-display="email">
+										</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-md-3">Plan</label>
+									<div class="col-md-4">
+										<p class="form-control-static" data-display="plan">
+										</p>
+									</div>
+								</div>
+								<h5 class="form-section">Datos de la organización</h5>
+								<div class="form-group">
+									<label class="control-label col-md-3">Nombre</label>
+									<div class="col-md-4">
+										<p class="form-control-static" data-display="organizacion[nombre]">
+										</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-md-3">Descripción</label>
+									<div class="col-md-4">
+										<p class="form-control-static" data-display="organizacion[descripcion]">
+										</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-md-3">Subdominio</label>
+									<div class="col-md-4">
+										<p class="form-control-static" data-display="organizacion[subdominio]">
+										</p>
+									</div>
+								</div>
+								<h5 class="form-section">Pago</h5>
+								<div class="form-group">
+									<label class="control-label col-md-3">Nombre del tarjetahabiente</label>
+									<div class="col-md-4">
+										<p class="form-control-static" data-display="card_name">
+										</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-md-3">Número de tarjeta de crédito</label>
+									<div class="col-md-4">
+										<p class="form-control-static" data-display="card_number">
+										</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-md-3">CVC:</label>
+									<div class="col-md-4">
+										<p class="form-control-static" data-display="card_cvc">
+										</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-md-3">Fecha de expiración</label>
+									<div class="col-md-4">
+										<p class="form-control-static" data-display="card_expiry_date">
+										</p>
+									</div>
+								</div>
+								<!-- <div class="form-group">
+									<label class="control-label col-md-3">Payment Options:</label>
+									<div class="col-md-4">
+										<p class="form-control-static" data-display="payment">
+										</p>
+									</div>
+								</div> -->
+							</div>
+						</div>
+					</div>
+					<div class="form-actions">
+						<div class="row">
+							<div class="col-md-offset-3 col-md-9">
+								<a href="javascript:;" class="btn btn-danger button-previous">
+								<i class="m-icon-swapleft"></i> Atrás </a>
+								<a href="javascript:;" class="btn btn-primary button-next">
+								Continuar <i class="m-icon-swapright m-icon-white"></i>
+								</a>
+								<a href="javascript:;" class="btn btn-success button-submit">
+								Enviar <i class="m-icon-swapright m-icon-white"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<% content_for :js_personalizado do %>
+	<%= javascript_include_tag "plugins/jquery.bootstrap.wizard.min" %>
+	<%= javascript_include_tag "usuarios" %>
+<% end %>
