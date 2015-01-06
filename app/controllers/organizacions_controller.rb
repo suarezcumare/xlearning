@@ -21,55 +21,44 @@ class OrganizacionsController < ApplicationController
 
   def perfil
 
-    @usuario = Usuario.new
-    @rol = Rol.new
-    @rol =  Rol.where(nombre: 'administrador')
-    
-    
-   if usuario_signed_in?
-      @usuarioRol = UsuarioRol.new
-      @usuarioRol = UsuarioRol.where(usuario_rol: current_usuario.rol_actual.id, rol_id: @rol[0] ) 
+  
+   if !usuario_signed_in?
+          @valor = false; 
+     else
 
-         if @usuarioRol.nil?
-            @usuario.id = current_usuario.id
+        @rol =  Rol.where(nombre: 'administrador')
+        
+        @usuarioRol = UsuarioRol.where(usuario_id: current_usuario.rol_actual.id, rol_id: @rol[0].id) 
+
+        if @usuarioRol[0] == nil
+          @valor = false;
         else
-             @usuario = nil
+           @valor = true;
         end
-
-    else
-       @usuarioRol = @usuario = nil
-    end
-
-
-   
+         
+     end
 
   end
 
 
   def edit_perfil
 
+     if !usuario_signed_in?
+         render "organizacions/perfil"
+     else
 
-    @usuario = Usuario.new
-    @rol = Rol.new
-    @rol =  Rol.where(nombre: 'administrador')
-    
-    
-   if usuario_signed_in?
-      @usuarioRol = UsuarioRol.new
-      @usuarioRol = UsuarioRol.where(usuario_rol: current_usuario.rol_actual.id, rol_id: @rol[0] ) 
+        @rol =  Rol.where(nombre: 'administrador')
+        
+        @usuarioRol = UsuarioRol.where(usuario_id: current_usuario.rol_actual.id, rol_id: @rol[0].id) 
 
-         if @usuarioRol.nil?
-            @usuario.id = current_usuario.id
-            render "/organizacions/edit_perfil"
+        if @usuarioRol[0] == nil
+          render "organizacions/perfil"
         else
-             @usuario = nil
-             render "/organizacions/perfil" 
+           @valor = true;
         end
-
-    else
-       @usuarioRol = @usuario = nil
-       render "/organizacions/perfil" 
-    end
+         
+     end
+    
 
 
    end
@@ -78,55 +67,43 @@ class OrganizacionsController < ApplicationController
   def apariencia
 
 
-    @usuario = Usuario.new
-    @rol = Rol.new
-    @rol =  Rol.where(nombre: 'administrador')
-    
-    
-   if usuario_signed_in?
-      @usuarioRol = UsuarioRol.new
-      @usuarioRol = UsuarioRol.where(usuario_rol: current_usuario.rol_actual.id, rol_id: @rol[0] ) 
+     if !usuario_signed_in?
+         render "organizacions/perfil"
+     else
 
-         if @usuarioRol.nil?
-            @usuario.id = current_usuario.id
-            
+        @rol =  Rol.where(nombre: 'administrador')
+        
+        @usuarioRol = UsuarioRol.where(usuario_id: current_usuario.rol_actual.id, rol_id: @rol[0].id) 
+
+        if @usuarioRol[0] == nil
+          render "organizacions/perfil"
         else
-             @usuario = nil
-             render "/organizacions/perfil" 
+           @valor = true;
         end
-
-    else
-       @usuarioRol = @usuario = nil
-       render "/organizacions/perfil" 
-    end
-
-
+         
+     end
 
 
   end
 
   def usuarios
 
-    @rol = Rol.new
-    @rol =  Rol.where(nombre: 'administrador')
-    
-    
-   if usuario_signed_in?
-      @usuarioRol = UsuarioRol.new
-      @usuarioRol = UsuarioRol.where(usuario_rol: current_usuario.rol_actual.id, rol_id: @rol[0] ) 
+    if !usuario_signed_in?
+         render "organizacions/perfil"
+     else
 
-         if @usuarioRol.nil?
-            @usuario.id = current_usuario.id
-          
+        @rol =  Rol.where(nombre: 'administrador')
+        
+        @usuarioRol = UsuarioRol.where(usuario_id: current_usuario.rol_actual.id, rol_id: @rol[0].id) 
+
+        if @usuarioRol[0] == nil
+          render "organizacions/perfil"
         else
-             @usuario = nil
-             render "/organizacions/perfil" 
+           @valor = true;
         end
-
-    else
-       @usuarioRol = @usuario = nil
-       render "/organizacions/perfil" 
-    end
+         
+     end
+   
 
 
   end

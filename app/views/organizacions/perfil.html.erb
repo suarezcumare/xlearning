@@ -5,7 +5,6 @@
 <% end %>
 
 
-
 <div class="row " style="background-image: url('/assets/cocina.jpg');">
 <div class="text-right">
   <ol class="breadcrumb">
@@ -21,7 +20,7 @@
       <li role="presentation" title="Estadisticas del sistema" > <a href="#politicas" class="black-text"> <b>Politicas </b> </a> </li>
       <li role="presentation" title="Estadisticas Sociales" > <a href="/cursos" class="black-text"> <b>Cursos </b> </a> </li>
       <li role="presentation" title="Estadisticas Sociales" > <a href="#instructores" class="black-text"> <b> Instructores </b> </a> </li>
-      <%  if @usuario != nil %>
+      <%  if @valor == true %>
       <li role="presentation" title="Estadisticas Sociales" > <a href="/perfil/editar" class="black-text"> <b> Editar </b> </a> </li>
       <li role="presentation" title="Estadisticas Sociales" > <a href="/apariencia/editar" class="black-text"> <b>Apariencia </b> </a> </li>
       <li role="presentation" title="Estadisticas Sociales" > <a href="/usuarios" class="black-text"> <b> Usuarios </b> </a> </li>
