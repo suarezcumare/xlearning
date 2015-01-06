@@ -42,6 +42,8 @@ Xlearning::Application.routes.draw do
       match "/perfil/editar" => "organizacions#save_perfil", via: :post
       match "/perfil" => "organizacions#perfil", via: :get
       match "/usuarios" => "organizacions#usuarios", via: :get
+
+      match "/objetoAprendizaje/nuevo" => "objeto_aprendizaje#new", via: :get
 	end
 
   match "/registro" => "usuarios#new", via: :get

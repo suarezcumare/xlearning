@@ -1,0 +1,157 @@
+<% content_for :css_personalizado do %>
+
+ <%= stylesheet_link_tag    "plugins/fileinput.min" %> 
+<% end %>
+
+
+<a href="#openObjetoAprendizaje" class="modal-trigger">Agregar Objeto Aprendizaje</a>
+
+<div id="openObjetoAprendizaje" class=" panel-info modal" style="width:1500px;"> 
+	<div class="panel-body" >
+		  <div class="row">
+           <div class="col s12 pad30-h">
+            <h5 class="text-uppercase pad30-h text-primary" >Agregar Objeto Aprendizaje</h5>
+           </div>
+
+        <div class="col s4">
+           <h6 class="text-uppercase ">Configurando tus archivos</h6 >
+
+           <div class="input-field col s12">
+              <label for="objetoAprendizaje[nombre]">Nombre</label>
+              <input id="objetoAprendizaje[nombre]" type="text" required></input>
+            </div>
+            <div class="input-field col s12">
+              <label for="objetoAprendizaje[descripcion]">Descripción</label>
+              <input id="objetoAprendizaje[descripcion]" type="text" required></input>
+            </div>
+
+          <div class="col s12">
+             
+           
+               
+              <label><b> Tipo de Licencia </b></label>
+              <select name="usuario[pais]">
+                <option value="" disabled selected>Licencias</option>
+                <option value="1">Atribución</option>
+                <option value="2">Atribución-CompartirIgual</option>
+                <option value="3">Atribución-SinDerivadas</option>
+                <option value="4">Atribución-NoComercial</option>
+                <option value="5">Atribución-NoComercial-CompartirIgual</option>
+                  <option value="6">Atribución-NoComercial-SinDerivadas</option>
+              </select>
+          </div>
+
+          <div class=" col s12 ">
+           
+            <%= check_box_tag(:biblioteca) %>
+           <%= label_tag(:biblioteca, "Mostrar contenido en la libreria virtua") %>
+        </div>
+
+        <div class="col s12">
+        <div class="form-control block-center">
+          <button type="submit" href="" class="btn-success btn-lg">Enviar</button>
+          <a href="" class="btn-info btn-lg modal-close">Cancelar</a>
+        </div>
+      </div>
+
+      </div>
+        <div class="col s8">
+               <div class="col s12 pad30-h">
+                 <div class="col s12 panel">
+                       <h5>Agregar Archivo</h5>
+                          <input id="laptop" type="file" class="file" data-upload-url="/usuario/guardar_foto"/>
+                      
+                   </div>
+                </div>
+         </div>
+         
+          <div class="col s7 panel">
+            <br>
+            <ul id="lista-archivos" class="vacia">
+
+                <li>No haz agregado todas las versiones, Debes agregar todas las versiones para que se vean en todos los dispositivos.</li>
+                
+              </ul>
+            </div>
+
+            <div class="col s5 text-center">
+              <div class="dropdown">
+                <a href="javascript:void(0)" class="btn-floating btn-ms waves-effect waves-light red"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="mdi-content-add"></i>
+                </a>
+                <ul id="agregar-archivos" class='dropdown-menu list-inline' role="menu">
+                  <li><a href="javascript:void(0)" class="phone" title="Versión movil"><i class="mdi-hardware-phone-android fb"></i></a></li>
+                  <li><a href="javascript:void(0)" class="watch" title="Versión google watch"><i class="mdi-hardware-watch tw"></i></a></li>
+                  <li><a href="javascript:void(0)" class="glass" title="Versión glass"><i class="mdi-communication-voicemail lk"></i></a></li>
+                </ul>
+              </div>
+              
+            </div>
+        </div>
+      </div>
+</div> 
+
+
+<% content_for :js_personalizado do %>
+  <%= javascript_include_tag 'plugins/fileinput.js' %>
+  <script type="text/javascript">
+       $("#laptop").fileinput({
+      'browseLabel':'cambiar',
+      'showCaption':false,
+      'initialPreview': [
+        "<img src='/assets/profile_user.jpg' class='file-preview-image' alt='Avatar' title='Foto de perfil actual'>",
+      ],
+      'initialPreviewShowDelete':false,
+      'initialCaption':'archivo(s) seleccionado(s)',
+      
+      'browseClass':'btn btn-primary',
+      'browseIcon':'<i class="mdi-file-attachment"></i>',
+      'showRemove':false,
+      'uploadLabel':'Subir',
+      'uploadIcon':'<i class="mdi-file-file-upload"></i>',
+      'uploadClass':'btn btn-success ',
+    });
+
+       $(document).ready(function(){
+  
+      $("#agregar-archivos a").click(function(){
+      var source = this;
+      if($("#lista-archivos").hasClass("vacia"))
+        $("#lista-archivos").removeClass("vacia").addClass("llena");
+      var class_a = $(source).attr("class"),
+        class_i = $(source).children().first().attr("class");
+      $("#lista-archivos").append("<li> <h4>" +class_a +" </h4><div class='input-group col s12 panel'><span class='input-group-addon "+
+            class_a+"'><i class='"+class_i+"'></i></span>"+
+            "<input id="+class_a+" type='file' class='file' data-upload-url='/usuario/guardar_foto'/></div></li>");
+      
+
+
+       $("#"+class_a).fileinput({
+      'browseLabel':'cambiar',
+      'showCaption':false,
+      'initialPreview': [
+        "<img src='/assets/profile_user.jpg' class='file-preview-image' alt='Avatar' title='Foto de perfil actual'>",
+      ],
+      'initialPreviewShowDelete':false,
+      'initialCaption':'archivo(s) seleccionado(s)',
+      
+      'browseClass':'btn btn-primary',
+      'browseIcon':'<i class="mdi-file-attachment"></i>',
+      'showRemove':false,
+      'uploadLabel':'Subir',
+      'uploadIcon':'<i class="mdi-file-file-upload"></i>',
+      'uploadClass':'btn btn-success ',
+    });
+
+    }); 
+
+  
+
+
+});
+    
+
+  </script>
+<% end %>
+
