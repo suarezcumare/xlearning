@@ -7,6 +7,10 @@ class ClasesController < ApplicationController
 		def nuevo_material 
 		end	
 
+		def calendario_facilitador
+			render "/clases/calendario_facilitador"
+		end	
+
 
 	
 end

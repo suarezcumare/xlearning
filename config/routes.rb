@@ -44,6 +44,8 @@ Xlearning::Application.routes.draw do
       match "/usuarios" => "organizacions#usuarios", via: :get
 
       match "/objetoAprendizaje/nuevo" => "objeto_aprendizaje#new", via: :get
+      match "/calendario/facilitador" => "clases#calendario_facilitador", via: :get
+
 	end
 
   match "/registro" => "usuarios#new", via: :get
