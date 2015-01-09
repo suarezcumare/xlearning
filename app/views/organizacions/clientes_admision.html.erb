@@ -1,0 +1,237 @@
+<!-- /usuarios  -->
+
+
+<% content_for :css_personalizado do %>
+ <%= stylesheet_link_tag    "jquery.dataTables" %> 
+<% end %>
+
+
+<div class="text-right">
+	<ol class="breadcrumb">
+	  <li><%= link_to "Home", root_path %></li>
+	  <li class="active">Admisión de Clientes</li>
+	</ol>
+</div>
+
+<h5 class="text-uppercase pad30-h"> Admisión de Clientes </h5>
+
+
+<div class="row pad30-h">
+
+<ul class="tabs">
+      <li class="tab col s2" title="Todas las Admisiones"><a href="#admisionesTodos"> Admitir</a></li>
+      <li class="tab col s2" title="Adminisiones bloqueadas"><a href="#adminisionesBloqueadas">Bloqueados </a></li>
+</ul>
+
+<div class="tab-pane" id="admisionesTodos">
+<br>
+    <table id="clientesadmision" class="display" cellspacing="0" width="100%">
+    <br>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Mensaje</th>
+              <th>Fecha</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+          
+            <tr>
+              <td data-search="Herrod Chandler">H. Chandler</td>
+              <td>Chandler@</td>
+              <td> mensaje</td>
+              <td>2015/01/12</td>
+              <td> 
+                 <a href="javascript:void(0)" class="btn-primary btn-sm">Aceptar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Bloquear</a>
+              </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Chandler">H. Butler</td>
+              <td>Chandler@</td>
+              <td> mensaje</td>
+              <td>2015/01/12</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-primary btn-sm">Aceptar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Bloquear</a>
+              </td>  
+            </tr>
+            <tr>
+              <td data-search="Herrod Alexander">H. Alexander</td>
+              <td>Chandler@</td>
+              <td> mensaje</td>
+              <td>2015/01/12</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-primary btn-sm">Aceptar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Bloquear</a>
+              </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Perez">H. Perez</td>
+              <td>Chandler@</td>
+              <td> mensaje</td>
+              <td>2015/01/12</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-primary btn-sm">Aceptar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Bloquear</a>
+              </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Snider">H. Snider</td>
+              <td>Chandler@</td>
+              <td> mensaje</td>
+              <td>2015/01/12</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-primary btn-sm">Aceptar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Bloquear</a>
+              </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Suarez">H. Suarez</td>
+              <td>Chandler@</td>
+              <td> mensaje</td>
+              <td>2015/01/12</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-primary btn-sm">Aceptar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Bloquear</a>
+              </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Chandler">H. Decker</td>
+              <td>Chandler@</td>
+              <td> mensaje</td>
+              <td>2015/01/12</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-primary btn-sm">Aceptar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Bloquear</a>
+              </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Sanchez">H. Sanchez</td>
+              <td>Chandler@</td>
+              <td> mensaje</td>
+              <td>2015/01/12</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-primary btn-sm">Aceptar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Bloquear</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+</div>
+<div class="tab-pane" id="adminisionesBloqueadas">
+<br>
+      <table id="clientebloqueados" class="display" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Mensaje</th>
+              <th>Fecha</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+          
+            <tr>
+              <td data-search="Herrod Chandler">H. Chandler</td>
+              <td>Chandler@</td>
+              <td> mensaje</td>
+              <td>2015/01/12</td>
+              <td> 
+                 <a href="javascript:void(0)" class="btn-primary btn-sm">Desbloquear</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Eliminar</a>
+              </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Chandler">H. Butler</td>
+              <td>Chandler@</td>
+              <td> mensaje</td>
+              <td>2015/01/12</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-primary btn-sm">Desbloquear</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Eliminar</a>
+              </td>  
+            </tr>
+            <tr>
+              <td data-search="Herrod Alexander">H. Alexander</td>
+              <td>Chandler@</td>
+              <td> mensaje</td>
+              <td>2015/01/12</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-primary btn-sm">Desbloquear</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Eliminar</a>
+              </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Perez">H. Perez</td>
+              <td>Chandler@</td>
+              <td> mensaje</td>
+              <td>2015/01/12</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-primary btn-sm">Desbloquear</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Eliminar</a>
+              </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Snider">H. Snider</td>
+              <td>Chandler@</td>
+              <td> mensaje</td>
+              <td>2015/01/12</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-primary btn-sm">Desbloquear</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Eliminar</a>
+              </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Suarez">H. Suarez</td>
+              <td>Chandler@</td>
+              <td> mensaje</td>
+              <td>2015/01/12</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-primary btn-sm">Desbloquear</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Eliminar</a>
+              </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Chandler">H. Decker</td>
+              <td>Chandler@</td>
+              <td> mensaje</td>
+              <td>2015/01/12</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-primary btn-sm">Desbloquear</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Eliminar</a>
+              </td>
+            </tr>
+            <tr>
+              <td data-search="Herrod Sanchez">H. Sanchez</td>
+              <td>Chandler@</td>
+              <td> mensaje</td>
+              <td>2015/01/12</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-primary btn-sm">Desbloquear</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+</div>
+
+</div>
+
+<% content_for :js_personalizado do %>
+
+  <%= javascript_include_tag 'jquery.dataTables.min' %>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+	$('#clientesadmision').dataTable();
+  $('#clientebloqueados').dataTable();
+    });
+  </script>
+
+<% end %>
