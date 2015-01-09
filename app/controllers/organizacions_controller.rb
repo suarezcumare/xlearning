@@ -24,16 +24,19 @@ class OrganizacionsController < ApplicationController
   
    if !usuario_signed_in?
           @valor = false; 
+          render "organizacions/perfil"
      else
 
         @rol =  Rol.where(nombre: 'administrador')
         
-        @usuarioRol = UsuarioRol.where(usuario_id: current_usuario.rol_actual.id, rol_id: @rol[0].id) 
+        @usuarioRol = UsuarioRol.where(usuario_id: current_usuario.id, rol_id: current_usuario.rol_actual.id) 
 
-        if @usuarioRol[0] == nil
+        if @usuarioRol[0] == nil or @rol[0].id != current_usuario.rol_actual.id
           @valor = false;
+      
         else
            @valor = true;
+        
         end
          
      end
@@ -49,9 +52,9 @@ class OrganizacionsController < ApplicationController
 
         @rol =  Rol.where(nombre: 'administrador')
         
-        @usuarioRol = UsuarioRol.where(usuario_id: current_usuario.rol_actual.id, rol_id: @rol[0].id) 
+        @usuarioRol = UsuarioRol.where(usuario_id: current_usuario.id, rol_id: current_usuario.rol_actual.id) 
 
-        if @usuarioRol[0] == nil
+        if @usuarioRol[0] == nil or @rol[0].id != current_usuario.rol_actual.id
           render "organizacions/perfil"
         else
            @valor = true;
@@ -73,9 +76,9 @@ class OrganizacionsController < ApplicationController
 
         @rol =  Rol.where(nombre: 'administrador')
         
-        @usuarioRol = UsuarioRol.where(usuario_id: current_usuario.rol_actual.id, rol_id: @rol[0].id) 
+        @usuarioRol = UsuarioRol.where(usuario_id: current_usuario.id, rol_id: current_usuario.rol_actual.id) 
 
-        if @usuarioRol[0] == nil
+        if @usuarioRol[0] == nil or @rol[0].id != current_usuario.rol_actual.id
           render "organizacions/perfil"
         else
            @valor = true;
@@ -94,9 +97,9 @@ class OrganizacionsController < ApplicationController
 
         @rol =  Rol.where(nombre: 'administrador')
         
-        @usuarioRol = UsuarioRol.where(usuario_id: current_usuario.rol_actual.id, rol_id: @rol[0].id) 
+        @usuarioRol = UsuarioRol.where(usuario_id: current_usuario.id, rol_id: current_usuario.rol_actual.id) 
 
-        if @usuarioRol[0] == nil
+        if @usuarioRol[0] == nil or @rol[0].id != current_usuario.rol_actual.id
           render "organizacions/perfil"
         else
            @valor = true;
@@ -107,6 +110,13 @@ class OrganizacionsController < ApplicationController
 
 
   end
+
+   def admision
+
+    render "organizacions/clientes_admision"
+    
+  end
+
 
 
 end
