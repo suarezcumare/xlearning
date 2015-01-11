@@ -111,9 +111,15 @@ class OrganizacionsController < ApplicationController
 
   end
 
-   def admision
+  def admision
 
     render "organizacions/clientes_admision"
+    
+  end
+
+  def show
+
+    render "organizacions/show"
     
   end
 

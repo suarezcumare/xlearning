@@ -1,0 +1,194 @@
+<!-- Cursos -->
+
+<% content_for :css_personalizado do %>
+  <%= stylesheet_link_tag    "estadisticos" %>
+<% end %>
+
+<div class="text-right">
+  <ol class="breadcrumb">
+    <li><%= link_to "Home", root_path %></li>
+    <li class="active">Editar Estadisticos</li>
+  </ol>
+</div>
+  
+<div class="row">
+  <div class="col s12">
+    <h5 class="text-uppercase pad30-h">Editar  menu ejecutivo</h5>
+  </div>  
+</div>
+
+<div class="row pad30-h">
+<div class="col s6">
+  <br>
+
+      <div class="panel panel-primary leccion">
+          <div class="panel-heading" role="tab" id="menuesheading1">
+            <a data-toggle="collapse" href="#menucollapse1" 
+              aria-expanded="true" aria-controls="leccionescollapse1" class="titulo-leccion panel-title">
+              <i class="fa fa-line-chart"></i>
+              <h4>
+                 Sistema 
+              </h4>
+            </a>
+          </div>
+          <div id="menucollapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="menuheading1">
+            <div class="panel-body">
+              <div class="descripcion-leccion pad15 pad30-h">Descripcion del el menú.</div>
+                  
+                  <ul class="pad30-h">
+                  <li><input id="chk1" type="checkbox" checked="checked" name="sistema" value="1"><label for="chk1">Nivel de Recursos</label></li>
+                  <li><input id="chk2" type="checkbox" name="sistema" value="2"><label for="chk2">Rentabilidad</label></li>
+                </ul>
+                 <div style="float:right;">
+                    <a href="javascript:void(0)" class="btn btn-primary btn-xs waves-effect">Actualizar</a>
+                </div>
+               
+            </div>
+          </div>
+        </div>
+          <div class="panel panel-primary leccion">
+          <div class="panel-heading" role="tab" id="menuheading2">
+            <a data-toggle="collapse" href="#menucollapse2" 
+              aria-expanded="true" aria-controls="menucollapse2" class="titulo-leccion panel-title">
+                <i class="fa fa-line-chart"></i>
+              <h4>
+                 Clientes
+              </h4>
+            </a>
+          </div>
+          <div id="menucollapse2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="menuheading2">
+            <div class="panel-body">
+              <div class="descripcion-leccion pad15 pad30-h">Descripcion del menu
+              </div>
+                   <ul class="pad30-h">
+                      <li><input id="chk3" type="checkbox" checked="checked" name="cliente" value="1"><label for="chk3">Nivel del cliente</label></li>
+                      <li><input id="chk4" type="checkbox" checked="checked" name="cliente" value="2"><label for="chk4">Dispositivos Utilizados</label></li>
+                  </ul>
+                   <div style="float:right;">
+                    <a href="javascript:void(0)" class="btn btn-primary btn-xs waves-effect">Actualizar</a>
+                </div>      
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-primary leccion">
+          <div class="panel-heading" role="tab" id="menuheading3">
+            <a data-toggle="collapse" href="#menucollapse3" 
+              aria-expanded="true" aria-controls="menucollapse3" class="titulo-leccion panel-title">
+                <i class="fa fa-line-chart"></i>
+              <h4>
+                 Cursos
+              </h4>
+
+            </a>
+          </div>
+          <div id="menucollapse3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="menuheading3">
+            <div class="panel-body">
+              <div class="descripcion-leccion pad15 pad30-h">
+                <div class="col l12">
+                  Descripcion del menu
+                </div>
+              </div>
+                 <ul class="pad30-h">
+                    <li><input id="chk5" type="checkbox" name="cursos" value="1"><label for="chk5">Nivel de Ingresos</label></li>
+                    <li><input id="chk6" type="checkbox" name="cursos" value="2"><label for="chk6">Ganacias y Perdidas</label></li>
+                </ul> 
+                  
+                <div style="float:right;">
+                    <a href="javascript:void(0)" class="btn btn-primary btn-xs waves-effect">Actualizar</a>
+                </div>
+
+            </div>
+          </div>
+        </div> 
+         <div class="panel panel-primary leccion">
+          <div class="panel-heading" role="tab" id="menuheading4">
+            <a data-toggle="collapse" href="#menucollapse4" 
+              aria-expanded="true" aria-controls="menucollapse4" class="titulo-leccion panel-title">
+                <i class="fa fa-line-chart"></i>
+              <h4>
+                 Financiero
+              </h4>
+            </a>
+          </div>
+          <div id="menucollapse4" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="menuheading4">
+            <div class="panel-body">
+              <div class="descripcion-leccion pad15 pad30-h">Descripcion del menu</div>
+                    
+                    <ul class="pad30-h">
+                    <li><input id="chk7" type="checkbox" checked="checked" name="Financieros" value="1"><label for="chk7">Nivel de Ingresos</label></li>
+                    <li><input id="chk8" type="checkbox" name="Financieros" value="2"><label for="chk8">Ganacias y Perdidas</label></li>
+                  </ul>  
+                   <div style="float:right;">
+                    <a href="javascript:void(0)" class="btn btn-primary btn-xs waves-effect">Actualizar</a>
+                </div>      
+            </div>
+          </div>
+        </div> 
+
+
+    </div>
+     
+    <div class="col s6">
+
+            <h5> Agregar una Nueva Opción Estadistica</h5>
+            <br><br>
+             <%= form_for(resource, :as => resource_name, :url => estadisticos_editar_path, :html => { :method => :post }) do |f| %>
+                   <div class="col s12">
+                      <div class="col s5">
+                        <label>Opción del Menú</label>
+                        <select name="opcionmenu[opcion]">
+                          <option value="" disabled selected>Escoge opción</option>
+                          <option value="1">Sistema</option>
+                          <option value="2">Clientes</option>
+                          <option value="3">Cursos</option>
+                           <option value="3">Financiero</option>
+                        </select>
+                    </div>
+
+                 </div>
+
+                 <div class="col s12 ">
+                      <div class="input-field col s6">
+                        <label for="opcionmenu[nombre]">Nombre</label>
+                        <input id="opcionmenu[nombre]" type="text" required></input>
+                      </div>
+                 </div>
+
+                  <div class="row pad30">
+              <div class="col s12">         
+                <a href="javascript:void(0)" class="btn btn-success">Guardar</a>
+                <a href="javascript:void(0)" class="btn btn-info">Cancelar</a> 
+              </div>
+            </div>
+            <% end %>
+
+
+                
+
+    </div>
+
+</div>
+
+
+
+
+<!-- Modal Structure -->
+<div id="modal5" class="modal">
+  <div class="modal-content">
+    <a href="#" style="float:right;" class="waves-effect btn-flat modal-close"><i class="mdi-content-clear"></i></a>
+    <h4>Nombre Menu</h4>
+    <br/>
+    <p>
+      <%= form_for(resource, :as => resource_name, :url => usuarios_editar_path, :html => { :method => :post }) do |f| %>
+          <div class="input-field col s6">
+            <label for="opcionmenu[nombre]">Nombre</label>
+            <input id="opcionmenu[nombre]" type="text" required></input>
+          </div>
+           <div class="input-field col s6">
+              <label for="opcionmenu[nombre]">Nombre</label>
+              <input id="opcionmenu[nombre]" type="text" required></input>
+          </div>
+        <% end %>
+    </p>
+  </div>
+</div>          

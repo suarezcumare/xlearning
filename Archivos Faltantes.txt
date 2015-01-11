@@ -10,9 +10,7 @@ Biblioteca
 
 
 Secciones
-/secciones/facilitador
 /secciones/nuevo
-/secciones/todo  --> secciones por coodinador
 
 
 
@@ -34,7 +32,6 @@ Estadistico aqui falta la tabla de excel para hacer las propias funciones
 
 
 Organizaciones
-/organizaciones/todas
 /organizaciones/nuevo
 /organizaciones/modifcar
 
@@ -46,7 +43,6 @@ Costos
 /costos/todos
 
 Encuesta
-/encuesta/todas
 /encuesta/modificar
 
 

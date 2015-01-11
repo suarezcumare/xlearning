@@ -1,149 +1,295 @@
 <% content_for :css_personalizado do %>
-   <%= stylesheet_link_tag    "fullcalendar" %>
-   <%= stylesheet_link_tag    "portal" %>
+  <%= stylesheet_link_tag    "portal/main.css" %>
+    <%= stylesheet_link_tag    "portal/main.less.css" %>
+    <%= stylesheet_link_tag    "portal/animate" %>
+    <%= stylesheet_link_tag    "portal/responsive" %>
+     <%= stylesheet_link_tag    "portal/responsive.less.css" %>
+     <%= stylesheet_link_tag    "portal/normal" %>
+     <%= stylesheet_link_tag    "portal/style" %>
 <% end %>
-<div class="row titulo-seccion">
-  <div class="col s6">
-    <h5 class="text-uppercase">Inicio</h5>
-  </div>
-  <div class="col s6 text-right">
-    <ol class="breadcrumb">
-      <li class="active"><%= link_to "Home", root_path %></li>
-    </ol>
-  </div>
-</div>
+    <header style="height:40px;">
+       <div class="container" >
+            <div class="row">
+                <div class="col-md-9 col-xs-6 col-sm-6">
+                    <div class="menu">
+                        <!--<nav class="navbar navbar-default" role="navigation">-->
+                            <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    </button>
+                                </div>
 
-<div class="row">
-	<div class="col s6">
-		<div class="panel panel-success">
-			<div class="panel-heading"><i class="fa fa-bullhorn"></i> Últimos Mensajes</div>
-				<ul id="lista-ultimos-mensajes" class="bordered hoverable">
-					<li class="mensaje-instructor">
-						<div class="media">
-						  <a class="media-left media-middle" href="javascript:void(0)">
-						    <img src="/assets/profile_user.jpg" alt="..." class=" avatar img-circle img-responsive">
-						  </a>
-						  <div class="media-body">
-						    <blockquote>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget ...</blockquote>
-						    <!-- <a href="javascript:void(0)" class="btn btn-link">Ver todo</a> -->
-						  </div>
-						</div>
-						<div class="text-muted text-right">9 de Ene de 2015, 4:35 p.m.</div>
-						<div class="text-muted text-right">Publicado en el curso de API de Google Maps</div>
-					</li>
-					<li class="mensaje-chat">
-						<div class="media">
-						  <a class="media-left media-middle" href="javascript:void(0)">
-						    <img src="/assets/chico2.jpg" alt="..." class=" avatar img-circle img-responsive">
-						  </a>
-						  <div class="media-body">
-						    <blockquote>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget ...</blockquote>
-						    <!-- <a href="javascript:void(0)" class="btn btn-link">Ver todo</a> -->
-						  </div>
-						</div>
-						<div class="text-muted text-right">7 de Ene de 2015, 4:13 p.m.</div>
-						<div class="text-muted text-right">Mensaje privado</div>
-					</li>
-				</ul>
-		</div>
-	</div>
-	<div class="col s6">
-		<div class="panel panel-danger">
-			<div class="panel-heading">
-				<i></i> Últimos avisos
-			</div>
-			<div class="panel-body">
-				<ul id="lista-ultimas-acciones" class="bordered hoverable">
-					<li>Se publicó la unidad 3 del curso "API de Google Maps".</li>
-					<li>Se corrigió el cuestionario de la unidad 2.</li>
-					<li>Finalizó el tiempo de entrega para la actividad 3.</li>
-					<li>Se aperturó una nueva edición de "Seguridad Web".</li>
-					<li>Hay un nuevo mensaje en el tema que estás siguiendo.</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="row">
-	<div class="col s6">
-		<div class="panel">
-			<div id='calendar'></div>
-		</div>
-	</div>
-	<div class="col s6">
-		<div class="panel panel-warning">
-			<div class="panel-heading">
-				<i></i> Mis últimas acciones
-			</div>
-			<div class="panel-body">
-				<ul id="lista-ultimas-acciones" class="bordered hoverable">
-					<li>Te inscribiste en el curso de "Chrome Developer Tools".</li>
-					<li>Realizaste un pago para el curso de "Chrome Developer Tools".</li>
-					<li>Marcaste el libro "Thinking in Java" para leerlo después.</li>
-					<li>Descargaste el pdf "Lección 2: Algoritmos para cálculos de distancias".</li>
-					<li>Presentaste el cuestionario para de la unidad 2.</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>	
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="list-inline">
+                                        <li><a href="#banner"> <div class="mnu-item" style="margin-right:15px;"> Inicio </div></a></li>
+                                        <li><a href="#service"><div class="mnu-item" style="margin-right:15px;">Servicios</div></a></li>
+                                        <li><a href="#feature"><div class="mnu-item" style="margin-right:15px;">Caracteristicas</div></a></li>
+                                        <li><a href="#utility-2"><div class="mnu-item" style="margin-right:15px;">Más</div></a></li>
+                                        <li><a href="#utility"><div class="mnu-item" style="margin-right:15px;">Planes</div></a></li>
+                                        
+                                    </ul>
+                                  
+                                </div><!-- /.navbar-collapse -->
+                            </div><!-- /.container-fluid -->
+                        <!--</nav>-->
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12 col-sm-3">
+                    <ul class="social-info">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="banner" class="wow fadeInUp">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="block">
+                        <img class="app-img img-responsive" src="assets/elearning3.jpg" alt="">
+                    </div>
+                    
+                </div>
+                <div class="col-md-6 col-md-offset-1 col-sm-6">
+                    <div class="block">
+                        <h1>
+                            XLearning, Conectate con la educación
+                        </h1>
+                        <p class="black-text">
+                            Imparte cursos a través del más avanzado Sistema Integrado de educación a distancia, basado en el uso de distintos dispositivos (móviles, wearables) y medios electrónicos como herramientas para mejorar el acceso a la formación, comunicación e interacción y que facilita la adopción de nuevos modos de entender y desarrollar aprendizajes.
+                        </p>         
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-<% content_for :js_personalizado do %>
-  <%= javascript_include_tag 'fullcalendar.min' %>
-  <script type="text/javascript">
+    <section id="service">
+        <div class="container">
+            <div class="service-wrapper">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="block wow fadeInRight" data-wow-delay="1s">
+                            <div class="icon">
+                               <i class="fa fa-desktop"></i> 
+                            </div>
+                            
+                            <h3>100% Personalizable</h3>
+                            <p>Elige entre distintos temas predefinidos y modificalos a tu gusto.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="block wow fadeInRight" data-wow-delay="1.3s">
+                            <div class="icon">
+                                <i class="fa  fa-paper-plane"></i>
+                            </div>
+                            <h3>Diseño atractivo</h3>
+                            <p > Natural y agradable a la vista, diseño intuitivo muy amigable</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="block wow fadeInRight" data-wow-delay="1.6s">
+                            <div class="icon">
+                                <i class="fa  fa-file-text"></i>
+                            </div>
+                            <h3>Bien Documentado</h3>
+                            <p>Con la contratación de nuestros servicios obtendrás un manual de uso del sistema y utilizacion de todas sus características.</p>
+                        </div>
+                    </div>
+                     <div class="col-md-3 col-sm-6">
+                        <div class="block wow fadeInRight" data-wow-delay="1.9s">
+                            <div class="icon">
+                                <i class="fa  fa-line-chart"></i>
+                            </div>
+                            <h3>Reportes Estadisticos</h3>
+                            <p>Toda la informacion de tus clientes y tus cursos presentados de manera oportuna.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="feature">
+        <div class="container">
+        <div class="feature-wrapper">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-delay=".8s">
+                    <h2 class="title">Nuestras Características</h2>
+
+                    <div class="feature-item">
+
+                        <div class="media">
+                            <div class="pull-left icon" href="#">
+                                <i class="fa fa-paint-brush"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Personalizacion Total</h4>
+                                <p>Tu portal XLearning se adapta a la personalidad de tu empresa, añade tu logo, y elige los colores que representen a tu empresa. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+
+                        <div class="media">
+                            <div class="pull-left icon" href="#">
+                                <i class="fa fa-qrcode"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Todos tus recursos organizados</h4>
+                                <p> Añade recursos audiovisuales o documentos (PDF) a tus cursos, donde cada uno se mostrará en la lección que tu elijas. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+
+                        <div class="media">
+                            <div class="pull-left icon" href="#">
+                                <i class="fa fa-recycle"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Reutilización</h4>
+                                <p>Usa tus recursos cuando quieras y donde quieras, si dos cursos utilizan algun recurso en común, no tienes que subirlo dos veces.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay=".8s">
+                    <div class="block">
+                        <img class="img-responsive" src="assets/multi2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+  <section id="utility-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay=".8s">
+                    <div class="block">
+                        <h2>Únicos con soporte "Wearable"</h2>
+                        <p>
+                            Tambien llamada tecnología vestible, obten interacción en todo momento en tiempo real. Lleva tus cursos a cualquier momento donde los usuarios podran recibir notificaciones directamente a sus dispositivos Google Glass ("GLΛSS") o Smart Watches bajo Android Wear.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-delay=".8s">
+                    <img class="img-responsive" src="assets/wear3.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="utility">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-6 wow fadeInDown" data-wow-delay=".8s">
+                    <div class="block">
+                        <h2>Nuestros Planes</h2><br><br>
+
+        <div class="w-row">
+            <div class="w-col w-col-4">
+              <div class="plan1 plan2">
+                <div class="plan2-ser2">
+                  <h4 align="center">PEQUEÑAS EMPRESAS</h4>
+                  <div class="price">$25 / Mes</div>
+                </div>
+                <p class="plan1-ser1-para">
+                  <br>Sin&nbsp;limites&nbsp;de&nbsp;Estudiantes
+                  <br>
+                  <br><b>80GB</b>&nbsp;de&nbsp;almacenamiento
+                  <br>
+                  <br>Sin&nbsp;limites&nbsp;de&nbsp;Cursos
+                  <br>
+                  <br>Sin&nbsp;limites&nbsp;de&nbsp;ancho&nbsp;de&nbsp;banda
+                  <br>
+                  <br>Sistema&nbsp;de&nbsp;facturación&nbsp;gratis</p><a class="plan-1-butn2 plan-1-butn" href="#">Seleccionar</a>
+              </div>
+            </div>
+            <div class="w-col w-col-4">
+              <div class="plan1 plan3">
+                <div class="plan1-ser1 plan3-ser3">
+                  <h4 align="center">MEDIANA EMPRESA</h4>
+                  <div class="price">$50 / Mes</div>
+                </div>
+                <p class="plan1-ser1-para">
+                  <br>Sin&nbsp;limites&nbsp;de&nbsp;Estudiantes
+                  <br>
+                  <br><b>120GB</b>&nbsp;de&nbsp;almacenamiento
+                  <br>
+                  <br>Sin&nbsp;limites&nbsp;de&nbsp;Cursos
+                  <br>
+                  <br>Sin&nbsp;limites&nbsp;de&nbsp;ancho&nbsp;de&nbsp;banda
+                  <br>
+                  <br>Sistema&nbsp;de&nbsp;facturación&nbsp;gratis</p><a class="plan-1-butn plan-1-butn3" href="#">Seleccionar</a>
+              </div>
+            </div>
+            <div class="w-col w-col-4">
+              <div class="plan1 plan4">
+                <div class="plan1-ser1 plan4-ser4">
+                  <h4 align="center">GRANDES EMPRESAS</h4>
+                  <div class="price">$90&nbsp;/ Mes</div>
+                </div>
+                <p class="plan1-ser1-para">
+                  <br>Sin&nbsp;limites&nbsp;de&nbsp;Estudiantes
+                  <br>
+                  <br><b>160GB</b>&nbsp;de&nbsp;almacenamiento
+                  <br>
+                  <br>Sin&nbsp;limites&nbsp;de&nbsp;Cursos
+                  <br>
+                  <br>Sin&nbsp;limites&nbsp;de&nbsp;ancho&nbsp;de&nbsp;banda
+                  <br>
+                  <br>Sistema&nbsp;de&nbsp;facturación&nbsp;gratis</p><a class="plan-1-butn plan-4-butn4" href="#">Seleccionar</a>
+              </div>
+            </div>
+          </div>
+
   
-     $('#calendar').fullCalendar({
-        header: {
-          left: 'prev,next today',
-          center: 'month,basicWeek',
-          right: 'title'
-        },
-        defaultDate: Date(),
-        editable: false,
-        eventLimit: true, // allow "more" link when too many events
-        events: [
-          {
-            title: 'Inicio del curso',
-            start: '2014-12-01'
-          },
-          {
-            title: 'Examen Primera Lección',
-            start: '2014-12-10',
-            end: '2014-12-12'
-          },
-          {
-            id: 9,
-            title: 'Discuciones de ejercicios propuestos',
-            start: '2014-12-12T16:00:00'
-          },
-          {
-            id: 999,
-            title: 'Discuciones de ejercicios propuestos',
-            start: '2014-12-19T16:00:00'
-          },
-          {
-            title: 'Examen Segunda Lección',
-            start: '2014-12-28',
-            end: '2014-12-30'
-          },
-          {
-            id: 991,
-            title: 'Discuciones generales',
-            start: '2014-12-24T16:00:00'
-          },
-          {
-            id: 991,
-            title: 'Discuciones generales',
-            start: '2014-12-31T16:00:00'
-          },
-          {
-            title: 'Entregar Proyecto Lab3',
-            url: 'http://google.com/',
-            start: '2015-01-04'
-          }
-        ]
-    });
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br>
+    </section>
+
+
+  
+    <section>
+        <div class="container">
+            <div class="row">
+                <a href="http://www.googleadservices.com/pagead/aclk?sa=L&ai=C2MQcjNKxVLuzMtPdfNymgqAJhNbTjQb0gbqssQGMi4WeCxABIABg3waCARVjYS1kaWdpdGFsaW5zcGlyYXRpb26IAQGgAayB5s4DyAECqQJTr_WtIJ6FPqgDAaoEeE_QwudvurQovr6cRivTkqHSEIgVQgri1vQbfARP7GUCr_-ftFndtVuweKCxEqqvFracn8mcQyB4mZeUSiPPe6YY-LHx4PboxGXHuDOG9kHBTO5SbGKxx7rwacCR81gwrLe5H43PcBExFJmthFGrytLL_isi6Nl6wYgGAaAGAoAHvP6ZMQ&num=1&cid=5Gjyd7igmYNPV69oxt4f_z5U&sig=AOD64_34o1cas51fjiYQcYpkzRfAEJQ4KA&client=ca-digitalinspiration&adurl=http://soli-lite.com" target="_blank"><img src="assets/publicidad.jpeg" alt="soli-lite" border="0" ></a>
+            </div>
+        </div>
+
+    </section>
+
+    <% content_for :js_personalizado do %>
+  <%= javascript_include_tag 'portal/wow.min' %>
+  <%= javascript_include_tag 'portal/plugins' %>
+  <%= javascript_include_tag 'portal/main' %>
+  <%= javascript_include_tag 'portal/vendor/modernizr-2.6.2.min' %>
+  
+
+  <script>
+     new WOW(
+            ).init();
   </script>
 
 <% end %>
