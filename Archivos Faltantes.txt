@@ -10,7 +10,6 @@ Biblioteca
 
 
 Secciones
-/secciones/facilitador
 /secciones/nuevo
 /secciones/todo  --> secciones por coodinador
 
