@@ -12,6 +12,13 @@ hr{
   width: 50%;
 }
 
+.publicidad{
+  background: #673ab7;
+  font-size: 30px;
+  color: white;
+  padding: 30px 0;
+}
+
 /*****************************************************/
 /*                 TITULO DE LA PAGINA               */
 /*****************************************************/
@@ -249,8 +256,7 @@ main{
   border-color: #159a80;
 }
 .panel {
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border:1px solid #eee;
 }
 .well {
   border-color: #dcdcdc;
@@ -372,7 +378,6 @@ nav ul a .badge{
   line-height: 20px;
   float: none;
   position: absolute;
-  z-index: 10000;
   top: 10px;
   left: 50%;
   font-size: 75%;
@@ -458,6 +463,15 @@ footer .footer-copyright{
   bottom: 0;
   z-index: 99;
   background-color: #F4F1F1;
+  overflow: hidden;
+  transition: width 0.5s;
+}
+
+#sidebar-menu.cerrado{
+  width: 45px;
+}
+#sidebar-menu.cerrado span{
+  display: none;
 }
 
 #sidebar-menu.inverse{
@@ -471,7 +485,7 @@ footer .footer-copyright{
 
 #sidebar-menu > ul > li{
   border-top: 1px solid #D7D7D7;
-  margin-top: 0px;
+  margin-top: 0px; 
 }
 #sidebar-menu.inverse > ul > li{
   border-top: 1px solid rgb(94, 94, 94);
@@ -479,14 +493,26 @@ footer .footer-copyright{
 #sidebar-menu ul > li:first{
   border-top: none;
 }
-
+.toggler-wrapper{
+  background: rgb(43, 59, 68);
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+.toggler-wrapper a{
+  color: rgb(105, 125, 136);
+  text-transform: uppercase;
+  font-size: 13px;
+  display: block;
+  padding: 10px;
+}
 /*#sidebar-menu ul.collapsible .collapsible-header{
   background: transparent;
   border: none;
   padding-top: 0px;
 }*/
 
-.nav-pills > li a{
+#sidebar-menu > ul > li a{
   -moz-transition: background-color 1s;
   -webkit-transition: background-color 1s;
   transition: background-color 1s;
@@ -509,17 +535,25 @@ footer .footer-copyright{
   background-color: #E3E3E3;
 }
 
-.nav-pills > li > a i{
-  margin-top: 15px;
-  font-size: 20px;
+#sidebar-menu > ul > li > a{
+  height: 42px;
+  width: 228px;
+  position: relative;
+  line-height: 22px;
+  display: block;
+  padding: 10px 12px;
+}
+#sidebar-menu > ul > li > a i{
+  font-size: 16px;
   float: none;
   text-align: left;
   display: inline;
   margin-right: 0;
+  vertical-align: bottom;
 }
 
-.nav-pills > li:hover > a:hover, .nav-pills > li.active > a,
-  .nav-pills a.menu-open{
+#sidebar-menu > ul > li:hover > a:hover, #sidebar-menu > ul > li.active > a,
+  #sidebar-menu > ul a.menu-open{
   background-color: #03A9F4 !important;
   color:#fff;
 }

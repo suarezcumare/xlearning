@@ -39,7 +39,7 @@ Timeline UI Base
 /* The date/time */
 .timeline > li .timeline-time {
   display: block;
-  width: 15%;
+  width: 12%;
   text-align: right;
   position: absolute;
 }

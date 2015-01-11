@@ -1,6 +1,6 @@
 module MenuHelper
 	def construir menu
-		codigo = "<ul class='nav nav-pills nav-stacked'>"
+		codigo = "<ul>"
 		menu.opcionmenu.each do |item|
 			if item.hijos.length > 0
 				codigo << "<li><a href='#submenu-#{item.id}' class='submenu-trigger' data-toggle='collapse'>"

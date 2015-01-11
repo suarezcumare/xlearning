@@ -12,11 +12,11 @@ $(document).ready(function(){
 	$("#busqueda-trigger").click(function(){
 		$("#top-search-bar").css("display","table");
 	});
-	$("#hide-search-bar").click(function(){
+	$("#hide-search-bar, main").click(function(){
 		$("#top-search-bar").css("display","none");
 	});
-	$("main").click(function(){
-		$("#top-search-bar").css("display","none");
+	$(".toggler-wrapper a").click(function(){
+		$("#sidebar-menu").toggleClass("cerrado");
 	});
     //$('.collapsible').collapsible();
     $('[data-toggle="tooltip"]').tooltip();

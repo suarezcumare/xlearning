@@ -35,9 +35,7 @@ Xlearning::Application.routes.draw do
       match "/encuestas/nuevo" => "encuestas#nuevo", via: :get
       match "/encuestas/ver/" => "encuestas#show", via: :get
       match "/apariencia/editar" => "organizacions#apariencia", via: :get
-     
-
-      match "/" => "organizacions#perfil", via: :get
+    
       match "/perfil/editar" => "organizacions#edit_perfil", via: :get
       match "/perfil/editar" => "organizacions#save_perfil", via: :post
       match "/perfil" => "organizacions#perfil", via: :get
@@ -50,6 +48,7 @@ Xlearning::Application.routes.draw do
 
 	end
 
+  match "/inicio" => "portal#index", via: :get
   match "/registro" => "usuarios#new", via: :get
 	devise_for :usuarios, via: :post
 	devise_scope :usuario do

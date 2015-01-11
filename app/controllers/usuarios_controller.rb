@@ -31,4 +31,7 @@ class UsuariosController < ApplicationController
 			end
 		end
 	end
+
+	def preferencias
+	end
 end

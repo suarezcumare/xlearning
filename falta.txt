@@ -1,0 +1,55 @@
+Pantallas Faltantes
+
+
+Mi Cuenta
+/preferencias
+
+
+Biblioteca
+/biblioteca/importar 
+
+
+Secciones
+/secciones/facilitador
+/secciones/nuevo
+/secciones/todo  --> secciones por coodinador
+
+Calendario ---> Calendario General de los profesores.
+
+
+Cursos
+/cursos/nuevos
+/modificar
+
+
+
+Clientes
+/politicas -> Politicas de Adminision a los clientes
+/Clients/todos
+
+Cursos
+/cursos/estructura -> Estructura jerarquica
+/cursos/taxonomia
+
+
+Estadistico aqui falta la tabla de excel para hacer las propias funciones
+
+
+Organizaciones
+/organizaciones/todas
+/organizaciones/nuevo
+/organizaciones/modifcar
+
+
+
+Costos
+/Costos/nuevo
+/costos/editar
+/costos/todos
+
+Encuesta
+/encuesta/todas
+/encuesta/modificar
+
+
+
