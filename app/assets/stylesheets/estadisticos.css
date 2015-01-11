@@ -414,3 +414,54 @@ Timeline UI Base
     border-bottom-color: #555555;
   }
 }
+
+
+
+/****************************************************************/
+/*                 Estadisticos-edit                            */
+/****************************************************************/
+
+a.titulo-leccion{
+  color: white;
+  display: block;
+}
+.titulo-leccion h4{
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0px
+}
+
+.leccion .panel-body{
+  padding: 0;
+  font-weight: 400;
+}
+
+.leccion table.bordered tr{
+  border-top: 1px solid #e0e0e0;
+  border-bottom: none;
+}
+
+.leccion table.bordered tr.header{
+  padding-left: 30px;
+  background: #f2f2f2;
+}
+
+.leccion table.bordered td, .leccion table.bordered th {
+  padding: 10px 5px;
+}
+
+span.porcentaje-completado{
+  float: right;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding-top: 10px;
+}
+
+table.contenido i, table.contenido a, table.contenido a:hover{
+  color: #7a7a7a;
+}
+
+table.contenido tr:first, table.contenido tr:nth-child(4){
+  width: 5%;
+}
