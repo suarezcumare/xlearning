@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-01-2015 a las 14:28:23
+-- Tiempo de generación: 11-01-2015 a las 15:59:18
 -- Versión del servidor: 5.5.32
 -- Versión de PHP: 5.4.19
 
@@ -468,7 +468,7 @@ CREATE TABLE IF NOT EXISTS `opcion_menus` (
   PRIMARY KEY (`id`),
   KEY `index_opcion_menus_on_padre_id` (`padre_id`),
   KEY `index_opcion_menus_on_menu_id` (`menu_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=121 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=127 ;
 
 --
 -- Volcado de datos para la tabla `opcion_menus`
@@ -514,7 +514,7 @@ INSERT INTO `opcion_menus` (`id`, `nombre`, `raiz`, `url`, `padre_id`, `menu_id`
 (44, 'Cursos', 1, NULL, NULL, 4, NULL, 5),
 (45, 'Estructura Jerárquica', 0, '/cursos/jerarquia', 44, 4, NULL, 1),
 (46, 'Taxonomia', 0, '/cursos/taxonomia', 44, 4, NULL, 2),
-(47, 'Mi cuenta', 1, NULL, NULL, 4, 'mdi-action-perm-identity', 7),
+(47, 'Mi cuenta', 1, NULL, NULL, 4, 'mdi-action-perm-identity', 8),
 (48, 'Ver perfil', 0, '/usuarios/1', 47, 4, NULL, 1),
 (49, 'Modificar perfil', 0, '/usuarios/editar', 47, 4, 'mdi-content-create', 2),
 (50, 'Preferencias', 0, '/preferencias', 47, 4, 'mdi-action-settings', 3),
@@ -571,9 +571,9 @@ INSERT INTO `opcion_menus` (`id`, `nombre`, `raiz`, `url`, `padre_id`, `menu_id`
 (105, 'Modificar', 0, '/organizacion/modificar', 103, 7, 'fa fa-edit', 2),
 (106, 'Todas', 0, '/organizacion/todas', 103, 7, NULL, 3),
 (107, 'Encuestas', 1, NULL, NULL, 7, 'fa fa-book', 4),
-(108, 'Nuevo', 0, '/encuestas/nuevo', 107, 7, NULL, 1),
-(109, 'Modificar', 0, '/encuestas/modificar', 107, 7, 'fa fa-edit', 2),
-(110, 'Todas', 0, '/encuestas/todas', 107, 7, NULL, 3),
+(108, 'Nuevo', 0, '/encuestas/nuevo', 107, 7, NULL, 2),
+(109, 'Modificar', 0, '/encuestas/modificar', 107, 7, 'fa fa-edit', 3),
+(110, 'Todas', 0, '/encuestas/todas', 107, 7, NULL, 4),
 (111, 'Costos', 1, NULL, NULL, 7, NULL, 5),
 (112, 'Nuevo', 0, '/costos/nuevo', 111, 7, NULL, 3),
 (113, 'Modificar', 0, '/costos/modificar', 111, 7, NULL, 3),
@@ -583,7 +583,13 @@ INSERT INTO `opcion_menus` (`id`, `nombre`, `raiz`, `url`, `padre_id`, `menu_id`
 (117, 'Modificar perfil', 0, '/usuarios/editar', 115, 7, '', 2),
 (118, 'Preferencias', 0, '/preferencias', 115, 7, 'mdi-action-settings', 3),
 (119, 'Estadisticos', 1, NULL, NULL, 4, 'mdi-action-settings', 6),
-(120, 'Configurar', 0, '/estadisticos/editar', 119, 4, 'fa fa-edit', 1);
+(120, 'Configurar', 0, '/estadisticos/editar', 119, 4, 'fa fa-edit', 1),
+(121, 'Encuestas', 1, NULL, NULL, 4, 'fa fa-book', 7),
+(122, 'Ver', 0, '/encuestas', 121, 4, NULL, 1),
+(123, 'Nevo', 0, '/encuestas/nuevo', 121, 4, 'fa fa-edit', 2),
+(124, 'Modificar', 0, '/encuestas/modificar', 121, 4, NULL, 3),
+(125, 'Todas', 0, '/encuestas/todas', 121, 4, NULL, 4),
+(126, 'Ver', 0, '/encuestas', 107, 7, NULL, 1);
 
 -- --------------------------------------------------------
 
