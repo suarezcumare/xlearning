@@ -13,8 +13,6 @@
 
   
   Ultima Modificación, Fecha  : 07 de enero del 2015
-
-
 -->
 
 <!DOCTYPE html>
@@ -38,25 +36,29 @@
   </head>
   <body>
     <header>
-      <%= render "application/header" %>
+      <% if request.subdomain.present? %>
+        <%= render "application/portal/header" %>
+      <% else %>
+        <%= render "application/portal/header_portal" %>
+      <% end %>
     </header>
     <main class="container-fluid no-padding no-margin">
       <div class="row">
         <% if usuario_signed_in? %>
           <div class="col-md-3 col-lg-2 no-padding">
-            <%= render "application/menu" %>
+            <%= render "application/portal/menu" %>
           </div>
           <div class="col-md-9 col-lg-10  no-padding">
             <%= yield %>
             <footer>
-              <%= render "application/footer" %>
+              <%= render "application/portal/footer" %>
             </footer>
           </div>
         <% else %>
             <div class="col-md-12 col-lg-12 no-padding">
               <%= yield %>
               <footer>
-                <%= render "application/footer" %>
+                <%= render "application/portal/footer" %>
               </footer>
             </div>
         <% end %>

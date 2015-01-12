@@ -1,0 +1,149 @@
+<% content_for :css_personalizado do %>
+   <%= stylesheet_link_tag    "fullcalendar" %>
+   <%= stylesheet_link_tag    "portal" %>
+<% end %>
+<div class="row titulo-seccion">
+  <div class="col s6">
+    <h5 class="text-uppercase">Inicio</h5>
+  </div>
+  <div class="col s6 text-right">
+    <ol class="breadcrumb">
+      <li class="active"><%= link_to "Home", root_path %></li>
+    </ol>
+  </div>
+</div>
+
+<div class="row">
+	<div class="col s6">
+		<div class="panel panel-success">
+			<div class="panel-heading"><i class="fa fa-bullhorn"></i> Últimos Mensajes</div>
+				<ul id="lista-ultimos-mensajes" class="bordered hoverable">
+					<li class="mensaje-instructor">
+						<div class="media">
+						  <a class="media-left media-middle" href="javascript:void(0)">
+						    <img src="/assets/profile_user.jpg" alt="..." class=" avatar img-circle img-responsive">
+						  </a>
+						  <div class="media-body">
+						    <blockquote>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget ...</blockquote>
+						    <!-- <a href="javascript:void(0)" class="btn btn-link">Ver todo</a> -->
+						  </div>
+						</div>
+						<div class="text-muted text-right">9 de Ene de 2015, 4:35 p.m.</div>
+						<div class="text-muted text-right">Publicado en el curso de API de Google Maps</div>
+					</li>
+					<li class="mensaje-chat">
+						<div class="media">
+						  <a class="media-left media-middle" href="javascript:void(0)">
+						    <img src="/assets/chico2.jpg" alt="..." class=" avatar img-circle img-responsive">
+						  </a>
+						  <div class="media-body">
+						    <blockquote>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget ...</blockquote>
+						    <!-- <a href="javascript:void(0)" class="btn btn-link">Ver todo</a> -->
+						  </div>
+						</div>
+						<div class="text-muted text-right">7 de Ene de 2015, 4:13 p.m.</div>
+						<div class="text-muted text-right">Mensaje privado</div>
+					</li>
+				</ul>
+		</div>
+	</div>
+	<div class="col s6">
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+				<i></i> Últimos avisos
+			</div>
+			<div class="panel-body">
+				<ul id="lista-ultimas-acciones" class="bordered hoverable">
+					<li>Se publicó la unidad 3 del curso "API de Google Maps".</li>
+					<li>Se corrigió el cuestionario de la unidad 2.</li>
+					<li>Finalizó el tiempo de entrega para la actividad 3.</li>
+					<li>Se aperturó una nueva edición de "Seguridad Web".</li>
+					<li>Hay un nuevo mensaje en el tema que estás siguiendo.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col s6">
+		<div class="panel">
+			<div id='calendar'></div>
+		</div>
+	</div>
+	<div class="col s6">
+		<div class="panel panel-warning">
+			<div class="panel-heading">
+				<i></i> Mis últimas acciones
+			</div>
+			<div class="panel-body">
+				<ul id="lista-ultimas-acciones" class="bordered hoverable">
+					<li>Te inscribiste en el curso de "Chrome Developer Tools".</li>
+					<li>Realizaste un pago para el curso de "Chrome Developer Tools".</li>
+					<li>Marcaste el libro "Thinking in Java" para leerlo después.</li>
+					<li>Descargaste el pdf "Lección 2: Algoritmos para cálculos de distancias".</li>
+					<li>Presentaste el cuestionario para de la unidad 2.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>	
+
+
+<% content_for :js_personalizado do %>
+  <%= javascript_include_tag 'fullcalendar.min' %>
+  <script type="text/javascript">
+  
+     $('#calendar').fullCalendar({
+        header: {
+          left: 'prev,next today',
+          center: 'month,basicWeek',
+          right: 'title'
+        },
+        defaultDate: Date(),
+        editable: false,
+        eventLimit: true, // allow "more" link when too many events
+        events: [
+          {
+            title: 'Inicio del curso',
+            start: '2014-12-01'
+          },
+          {
+            title: 'Examen Primera Lección',
+            start: '2014-12-10',
+            end: '2014-12-12'
+          },
+          {
+            id: 9,
+            title: 'Discuciones de ejercicios propuestos',
+            start: '2014-12-12T16:00:00'
+          },
+          {
+            id: 999,
+            title: 'Discuciones de ejercicios propuestos',
+            start: '2014-12-19T16:00:00'
+          },
+          {
+            title: 'Examen Segunda Lección',
+            start: '2014-12-28',
+            end: '2014-12-30'
+          },
+          {
+            id: 991,
+            title: 'Discuciones generales',
+            start: '2014-12-24T16:00:00'
+          },
+          {
+            id: 991,
+            title: 'Discuciones generales',
+            start: '2014-12-31T16:00:00'
+          },
+          {
+            title: 'Entregar Proyecto Lab3',
+            url: 'http://google.com/',
+            start: '2015-01-04'
+          }
+        ]
+    });
+  </script>
+
+<% end %>

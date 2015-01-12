@@ -2,69 +2,357 @@
 
 <% content_for :css_personalizado do %>
   <%= stylesheet_link_tag    "organizacion" %>
+  <%= stylesheet_link_tag    "mainOrg" %>
+  <%= stylesheet_link_tag    "prettyPhoto" %>
 <% end %>
 
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+    
+    <section id="main-slider" class="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="container">
+                    <div class="carousel-content">
+                        <h1>Aprende a Cocinar Facil!</h1>
+                        <p class="lead">Ofrecemos los mejores cursos de cocina, gracias al sistema XLearning de ultima tecnologia<br>Inscribete ya!</p>
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item">
+                <div class="container">
+                    <div class="carousel-content">
+                        <h1>Comida internacional</h1>
+                        <p class="lead">Comida Española, Italiana, Francesa, Asiática, Latinoamericana e Internacional <br> Esculturas de Hielo y Tailandesas Talladas en Frutas y Vegetales </p>
+                    </div>
+                </div>
+            </div><!--/.item-->
+        </div><!--/.carousel-inner-->
+        
+    </section><!--/#main-slider-->
 
-<div class="row " style="background-image: url('/assets/cocina.jpg');">
-<div class="text-right">
-  <ol class="breadcrumb">
-    <li><%= link_to "Home", root_path %></li>
-  </ol>
-</div>
+    <section id="services">
+        <div class="container">
+            <div class="box first">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="fa fa-money icon-md icon-color2"></i>
+                            <h4>Precios</h4>
+                            <p>Sin competencia, hazte experto pagando menos .</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="fa fa-mobile icon-md icon-color1"></i>
+                            <h4>En tu Telefono</h4>
+                            <p>Sigue tu curso en cualquier momento y desde cualquier lugar</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="fa fa-laptop icon-md icon-color3"></i>
+                            <h4>Aplicación Web</h4>
+                            <p>Accede a nuestra plataforma desde tu pc tan solo con el uso del navegador.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="fa fa-university  icon-md icon-color4"></i>
+                            <h4>Certificación</h4>
+                            <p>Abalado por las más prestigiosas instituciones culinarias.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="fa fa-users icon-md icon-color5"></i>
+                            <h4>Muchos cursos</h4>
+                            <p>De todo tipo, de cualquier país o cultura, aqui lo tenemos!.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="fa fa-video-camera icon-md icon-color6"></i>
+                            <h4>Video Clases</h4>
+                            <p>Entra en video clases en vivo con nuestros instructores expertos.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                </div><!--/.row-->
+            </div><!--/.box-->
+        </div><!--/.container-->
+    </section><!--/#services-->
 
-  
-      <div class="tabs side-nav">
-  
-    <ul class="nav nav-pills pull-right">
-      <li role="presentation" title="Estadisticas en lo Económico" > <a href="#home" class="black-text"> <b> Home </b> </a> </li>
-      <li role="presentation" title="Estadisticas del sistema" > <a href="#politicas" class="black-text"> <b>Politicas </b> </a> </li>
-      <li role="presentation" title="Estadisticas Sociales" > <a href="/cursos" class="black-text"> <b>Cursos </b> </a> </li>
-      <li role="presentation" title="Estadisticas Sociales" > <a href="#instructores" class="black-text"> <b> Instructores </b> </a> </li>
-      <%  if @valor == true %>
-      <li role="presentation" title="Estadisticas Sociales" > <a href="/perfil/editar" class="black-text"> <b> Editar </b> </a> </li>
-      <li role="presentation" title="Estadisticas Sociales" > <a href="/apariencia/editar" class="black-text"> <b>Apariencia </b> </a> </li>
-      <li role="presentation" title="Estadisticas Sociales" > <a href="/usuarios" class="black-text"> <b> Usuarios </b> </a> </li>
-      <%  end %>
-       <li role="presentation" title="Estadisticas Sociales" > <a href="#contacto" class="black-text"> <b> Conctacto </b> </a> </li>
-      
-    </ul>
+    <section id="portfolio">
+        <div class="container">
+            <div class="box">
+                <div class="center gap">
+                    <h2>Cursos Disponibles</h2>
+                    <p class="lead">Elige tu gastronomia favorita</p>
+                </div><!--/.center-->
+                <ul class="portfolio-filter">
+                    <li><a class="btn btn-primary active" href="#" data-filter="*">Todas</a></li>
+                    <li><a class="btn btn-primary" href="#" data-filter=".bootstrap">Venezolana</a></li>
+                    <li><a class="btn btn-primary" href="#" data-filter=".html">Italiana</a></li>
+                    <li><a class="btn btn-primary" href="#" data-filter=".wordpress">Vegetariana</a></li>
+                </ul><!--/#portfolio-filter-->
+                <ul class="portfolio-items col-4">
+                    <li class="portfolio-item apps">
+                        <div class="item-inner">
+                            <div class="portfolio-image">
+                                <img src="assets/cocina/portfolio/thumb/item1.jpg" alt="">
+                                <div class="overlay">
+                                    <a class="preview btn btn-danger" title="Todo con Frutas" href="assets/cocina/portfolio/full/item1.jpg"><i class="fa fa-eye"></i></a>             
+                                </div>
+                            </div>
+                            <h5>Todo con Frutas</h5>
+                        </div>
+                    </li><!--/.portfolio-item-->
+                    <li class="portfolio-item joomla bootstrap">
+                        <div class="item-inner">
+                            <div class="portfolio-image">
+                                <img src="assets/cocina/portfolio/thumb/item2.jpg" alt="">
+                                <div class="overlay">
+                                    <a class="preview btn btn-danger" title="El Pabellon" href="assets/cocina/portfolio/full/item2.jpg"><i class="fa fa-eye"></i></a>  
+                                </div>
+                            </div> 
+                            <h5>El Pabellon</h5>         
+                        </div>
+                    </li><!--/.portfolio-item-->
+                    <li class="portfolio-item bootstrap wordpress">
+                        <div class="item-inner">
+                            <div class="portfolio-image">
+                                <img src="assets/cocina/portfolio/thumb/item3.jpg" alt="">
+                                <div class="overlay">
+                                    <a class="preview btn btn-danger" title="Las mejores sopas" href="assets/cocina/portfolio/full/item3.jpg"><i class="fa fa-eye"></i></a>        
+                                </div> 
+                            </div>
+                            <h5>Las mejores sopas</h5>          
+                        </div>           
+                    </li><!--/.portfolio-item-->
+                    <li class="portfolio-item joomla wordpress apps">
+                        <div class="item-inner">
+                            <div class="portfolio-image">
+                                <img src="assets/cocina/portfolio/thumb/item4.jpg" alt="">
+                                <div class="overlay">
+                                    <a class="preview btn btn-danger" title="Parrilla Vegetariana" href="assets/cocina/portfolio/full/item4.jpg"><i class="fa fa-eye"></i></a>          
+                                </div>   
+                            </div>
+                            <h5>Parrilla Vegetariana</h5>        
+                        </div>           
+                    </li><!--/.portfolio-item-->
+                    <li class="portfolio-item joomla html">
+                        <div class="item-inner">
+                            <div class="portfolio-image">
+                                <img src="assets/cocina/portfolio/thumb/item5.jpg" alt="">
+                                <div class="overlay">
+                                    <a class="preview btn btn-danger" title="Pizzas" href="assets/cocina/portfolio/full/item5.jpg"><i class="fa fa-eye"></i></a>          
+                                </div>  
+                            </div>
+                            <h5>Pizzas</h5>  
+                        </div>       
+                    </li><!--/.portfolio-item-->
+                    <li class="portfolio-item wordpress html">
+                        <div class="item-inner">
+                            <div class="portfolio-image">
+                                <img src="assets/cocina/portfolio/thumb/item6.jpg" alt="">
+                                <div class="overlay">
+                                    <a class="preview btn btn-danger" title="Pastas" href="assets/cocina/portfolio/full/item6.jpg"><i class="fa fa-eye"></i></a>           
+                                </div>  
+                            </div>
+                            <h5>Pastas</h5>         
+                        </div>           
+                    </li><!--/.portfolio-item-->
+                    <li class="portfolio-item joomla html">
+                        <div class="item-inner">
+                            <div class="portfolio-image">
+                                <img src="assets/cocina/portfolio/thumb/item5.jpg" alt="">
+                                <div class="overlay">
+                                    <a class="preview btn btn-danger" title="Pizzas II" href="assets/cocina/portfolio/full/item5.jpg"><i class="fa fa-eye"></i></a>          
+                                </div>  
+                            </div>
+                            <h5>Pizzas II</h5>  
+                        </div>       
+                    </li><!--/.portfolio-item-->
+                    <li class="portfolio-item wordpress html">
+                        <div class="item-inner">
+                            <div class="portfolio-image">
+                                <img src="assets/cocina/portfolio/thumb/item6.jpg" alt="">
+                                <div class="overlay">
+                                    <a class="preview btn btn-danger" title="Pastas II" href="assets/cocina/portfolio/full/item6.jpg"><i class="fa fa-eye"></i></a>           
+                                </div>   
+                            </div>
+                            <h5>Pastas II</h5>        
+                        </div>         
+                    </li><!--/.portfolio-item-->
+                </ul>   
+            </div><!--/.box-->
+        </div><!--/.container-->
+    </section><!--/#portfolio-->
 
-  </div>
-
-</div>
-
-
-
-
-<div class="row pad30-h">
-  <div class="col-lg-12"> 
-      <div class="tab-pane" id="home">
-        <div class="row">
-          <div class="col-md-12 text-primary text-uppercase text-center" style="font-size: 25px;"> Cocina C.A <hr> <span class="text-muted "style="font-size: 18px;">  GOURMET Y DELICATESES </span></div>
-         
+    <section id="pricing">
+        <div class="container">
+            <div class="box">
+                <div class="center">
+                    <h2>¿Cuanto cuesta? </h2>
+                    <p class="lead">Elige el plan que mejor se adapte a ti <br> y comencemos a cocinar!</p>
+                </div><!--/.center-->   
+                <div class="big-gap"></div>
+                <div id="pricing-table" class="row" >
+                    <div class="col-sm-6">
+                        <ul class="plan">
+                            <li class="plan-name">Basico</li>
+                            <li class="plan-price">$2</li>
+                            <li>Precio por mes</li>
+                            <li>Cursos Basicos disponibles</li>
+                            <li>Certificado virtual</li>
+                            <li>Conectividad en todo momento</li>
+                            <li>Soporte tecnico</li>
+                            <li class="plan-action"><a href="#" class="btn btn-primary btn-lg">Inscribirse</a></li>
+                        </ul>
+                    </div><!--/.col-sm-4-->
+                    
+                    <div class="col-sm-6">
+                        <ul class="plan featured">
+                            <li class="plan-name">Avanzado</li>
+                            <li class="plan-price">$9</li>
+                            <li>Precio por mes</li>
+                            <li>Todos los cursos disponibles</li>
+                            <li>Certificado Fisico</li>
+                            <li>Conectividad en todo momento</li>
+                            <li>Soporte tecnico</li>
+                            <li class="plan-action"><a href="#" class="btn btn-primary btn-lg">Inscribirse</a></li>
+                        </ul>
+                    </div><!--/.col-sm-4-->
+                </div> 
+            </div> 
         </div>
+    </section><!--/#pricing-->
 
-    </div>
+    <section id="about-us">
+        <div class="container">
+            <div class="box">
+                <div class="center">
+                    <h2>Instructores</h2>
+                    <p class="lead">Los mas preparados cheffs internacionales te guiaran a en la cocina.<br>Juntos suman 50 años de experiencia.</p>
+                </div>
+                <div class="gap"></div>
+                <div id="team-scroller" class="carousel scale">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            
+                                <div class="col-sm-4">
+                                   <div class="member">
+                                        <p><img class="img-responsive img-thumbnail img-circle" src="assets/cocina/team1.jpg" alt="" ></p>
+                                        <h3>Vincent Calaguas<small class="designation">President</small></h3>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="member">
+                                        <p><img class="img-responsive img-thumbnail img-circle" src="assets/cocina/team2.jpg" alt="" ></p>
+                                        <h3>Karen Richardson<small class="designation">Senior Vice President</small></h3>
+                                    </div>
+                                </div>        
+                                <div class="col-sm-4">
+                                    <div class="member">
+                                        <p><img class="img-responsive img-thumbnail img-circle" src="assets/cocina/team3.jpg" alt="" ></p>
+                                        <h3>Donald Ford<small class="designation">Assitant Vice President</small></h3>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                        
+                    </div>
+                    <a class="left-arrow" href="#team-scroller" data-slide="prev">
+                        <i class="fa fa-angle-left icon-4x"></i>
+                    </a>
+                    <a class="right-arrow" href="#team-scroller" data-slide="next">
+                        <i class="fa fa-angle-right icon-4x"></i>
+                    </a>
+                </div><!--/.carousel-->
+            </div><!--/.box-->
+        </div><!--/.container-->
+    </section><!--/#about-us-->
 
-    <div class="tab-pane" id="politicas">
-         <%= render "organizacions/elementos/politicas" %>
-    </div>
-    <div class="tab-pane pad30-h" id="instructores">
-        <%= render "organizacions/elementos/instructores" %>
-    </div>
-    <div class="tab-pane" id="contacto">
-          <%= render "organizacions/elementos/contactos" %>    
-      
-    </div>
+    <section id="contact">
+        <div class="container">
+            <div class="box last">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>Contact Form</h1>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                        <div class="status alert alert-success" style="display: none"></div>
+                        <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php" role="form">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" required="required" placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" required="required" placeholder="Email address">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Message"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-danger btn-lg">Send Message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div><!--/.col-sm-6-->
+                    <div class="col-sm-6">
+                        <h1>Our Address</h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <address>
+                                    <strong>Twitter, Inc.</strong><br>
+                                    795 Folsom Ave, Suite 600<br>
+                                    San Francisco, CA 94107<br>
+                                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                                </address>
+                            </div>
+                            <div class="col-md-6">
+                                <address>
+                                    <strong>Twitter, Inc.</strong><br>
+                                    795 Folsom Ave, Suite 600<br>
+                                    San Francisco, CA 94107<br>
+                                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                                </address>
+                            </div>
+                        </div>
+                        <h1>Connect with us</h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="social">
+                                    <li><a href="#"><i class="fa fa-facebook icon-social"></i> Facebook</a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus icon-social"></i> Google Plus</a></li>
+                                    <li><a href="#"><i class="fa fa-pinterest icon-social"></i> Pinterest</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="social">
+                                    <li><a href="#"><i class="fa fa-linkedin icon-social"></i> Linkedin</a></li>
+                                    <li><a href="#"><i class="fa fa-twitter icon-social"></i> Twitter</a></li>
+                                    <li><a href="#"><i class="fa fa-youtube icon-social"></i> Youtube</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!--/.col-sm-6-->
+                </div><!--/.row-->
+            </div><!--/.box-->
+        </div><!--/.container-->
+    </section><!--/#contact-->
 
-  </div>
-</div>
+<% content_for :js_personalizado do %>
 
-
-
-
-
-
-
-
- 
+  <%= javascript_include_tag 'organizacion/jquery.isotope.min' %>
+  <%= javascript_include_tag 'organizacion/jquery.prettyPhoto.js' %>
+  <%= javascript_include_tag 'organizacion/main' %>
+  <%= javascript_include_tag 'organizacion/respond.min' %>
+  <% end %>
+</body>

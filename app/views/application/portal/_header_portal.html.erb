@@ -1,0 +1,64 @@
+<nav id="menu-header">
+    <div class="nav-wrapper inverse">
+      <a href="javascript:void(0)" class="brand-logo">
+      	<img src="/assets/logo-header.png"/>Learning
+      </a>
+      <a id="busqueda-trigger" class="activar-busqueda" href="javascript:void(0)"><i class="mdi-action-search"></i></a>
+      <% if usuario_signed_in? %>
+      <ul id="nav-mobile" class="right side-nav">
+        <li>
+          <a href="javascript:void(0)">
+            <span class="badge light-blue">2</span><i class="mdi-social-notifications-none"></i>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">
+            <span class="badge light-blue">2</span><i class="fa fa-envelope-o"></i>
+          </a>
+        </li>
+        <li class="dropdown">
+        	<a href="javascript.html" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+        		<div class="media logged-in-usuario">
+        			<div class="media-left">
+    						<img src="/assets/avatar/usuario-<%= current_usuario.id%>.jpg" class="img-circle" alt=""/>
+    					</div>
+    					<div class="media-body">
+    						<h6 class="media-heading"><%= current_usuario.nombre%></h6>
+    						<span class="rol"><%= current_usuario.rol_actual.nombre %></span>
+    					</div>
+				    </div>
+        	</a>
+        	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+  			    <li role="presentation"></li> 
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+  			    <li role="presentation"><%= link_to "Salir", destroy_usuario_session_url,method: :delete %></li>
+			    </ul>
+        </li>
+      </ul>
+      <% else %>
+      	<ul id="nav-mobile" class="right side-nav">
+	        <li><a href="#banner">Inicio</a></li>
+            <li><a href="#service">Servicios</a></li>
+            <li><a href="#feature">Caracteristicas</a></li>
+            <li><a href="#utility">Planes</a></li>
+	        <li><a href="<%= registro_path %>">Registrarse</a></li>
+	        <li><a href="#login-form" class="modal-trigger">Iniciar sesi&oacute;n</a></li>
+	     </ul>
+      <% end %>
+      <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
+  </div>
+  <div id="top-search-bar" class="search-bar">
+    <form>
+      <div class="query pad15-h">
+        <input type="text" name="q" class="pad15-h" placeholder="Escribe lo que estás buscando y presiona Enter"></input>
+      </div>
+      <div class="close-search">
+        <a id="hide-search-bar"href="javascript:void(0)"><i class="mdi-content-clear"></i></a>
+      </div>
+    </form>
+  </div>
+</nav>
+
+<% if !usuario_signed_in? %>
+<%= render "devise/sessions/new" %>
+<% end %>
