@@ -17,11 +17,16 @@
 
 
 class OrganizacionsController < ApplicationController
- 
+
+  def index
+    if request.subdomain.present?
+      render "organizacions/perfil"
+    else
+      render "portal/index"
+    end 
+  end
 
   def perfil
-
-  
    if !usuario_signed_in?
           @valor = false; 
           render "organizacions/perfil"

@@ -62,6 +62,6 @@ Xlearning::Application.routes.draw do
       get "/entrar" => "devise/sessions#new"
       #get "/registro" => "devise/registrations#new"
   end
-  root 'portal#index'
+  root 'organizacions#index'
   resources :organizacions
 end
