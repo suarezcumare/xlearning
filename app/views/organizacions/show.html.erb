@@ -20,13 +20,6 @@
 
 <div class="row pad30-h">
 
-<ul class="tabs">
-      <li class="tab col s2" title="Todas las Organizaciones"><a href="#organizacionesTodas"> Todas </a></li>
-      <li class="tab col s2" title="Organizaciones bloqueadas"><a href="#organizacionesBloqueadas">Bloqueadas </a></li>
-</ul>
-
-<div class="tab-pane" id="organizacionesTodas">
-<br>
     <table id="organizacionTodas" class="display" cellspacing="0" width="100%">
     <br>
           <thead>
@@ -131,113 +124,6 @@
           </tbody>
         </table>
 
-</div>
-<div class="tab-pane" id="organizacionesBloqueadas">
-<br>
-      <table id="organizacionbloqueados" class="display" cellspacing="0" width="100%">
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Correo</th>
-              <th>Mensaje</th>
-              <th>Fecha</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-          
-            <tr>
-              <td data-search="Herrod Chandler">H. Chandler</td>
-              <td>Chandler@</td>
-              <td> mensaje</td>
-              <td>2015/01/12</td>
-              <td> 
-                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
-                 <a href="javascript:void(0)" class="btn-primary btn-sm">Desbloquear</a>
-                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Eliminar</a>
-              </td>
-            </tr>
-            <tr>
-              <td data-search="Herrod Chandler">H. Butler</td>
-              <td>Chandler@</td>
-              <td> mensaje</td>
-              <td>2015/01/12</td>
-              <td> 
-                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
-                <a href="javascript:void(0)" class="btn-primary btn-sm">Desbloquear</a>
-                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Eliminar</a>
-              </td>  
-            </tr>
-            <tr>
-              <td data-search="Herrod Alexander">H. Alexander</td>
-              <td>Chandler@</td>
-              <td> mensaje</td>
-              <td>2015/01/12</td>
-              <td> 
-                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
-                <a href="javascript:void(0)" class="btn-primary btn-sm">Desbloquear</a>
-                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Eliminar</a>
-              </td>
-            </tr>
-            <tr>
-              <td data-search="Herrod Perez">H. Perez</td>
-              <td>Chandler@</td>
-              <td> mensaje</td>
-              <td>2015/01/12</td>
-              <td> 
-                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
-                <a href="javascript:void(0)" class="btn-primary btn-sm">Desbloquear</a>
-                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Eliminar</a>
-              </td>
-            </tr>
-            <tr>
-              <td data-search="Herrod Snider">H. Snider</td>
-              <td>Chandler@</td>
-              <td> mensaje</td>
-              <td>2015/01/12</td>
-              <td> 
-                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
-                <a href="javascript:void(0)" class="btn-primary btn-sm">Desbloquear</a>
-                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Eliminar</a>
-              </td>
-            </tr>
-            <tr>
-              <td data-search="Herrod Suarez">H. Suarez</td>
-              <td>Chandler@</td>
-              <td> mensaje</td>
-              <td>2015/01/12</td>
-              <td> 
-                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
-                <a href="javascript:void(0)" class="btn-primary btn-sm">Desbloquear</a>
-                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Eliminar</a>
-              </td>
-            </tr>
-            <tr>
-              <td data-search="Herrod Chandler">H. Decker</td>
-              <td>Chandler@</td>
-              <td> mensaje</td>
-              <td>2015/01/12</td>
-              <td> 
-                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
-                <a href="javascript:void(0)" class="btn-primary btn-sm">Desbloquear</a>
-                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Eliminar</a>
-              </td>
-            </tr>
-            <tr>
-              <td data-search="Herrod Sanchez">H. Sanchez</td>
-              <td>Chandler@</td>
-              <td> mensaje</td>
-              <td>2015/01/12</td>
-              <td> 
-                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
-                <a href="javascript:void(0)" class="btn-primary btn-sm">Desbloquear</a>
-                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Eliminar</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-</div>
 
 </div>
 
@@ -248,7 +134,6 @@
   <script type="text/javascript">
     $(document).ready(function(){
   $('#organizacionTodas').dataTable();
-  $('#organizacionbloqueados').dataTable();
     });
   </script>
 
