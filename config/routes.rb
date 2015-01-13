@@ -49,11 +49,11 @@ Xlearning::Application.routes.draw do
       match "/estudiantes" => "organizacions#admision", via: :get
       match "/secciones/facilitador" => "grupos#facilitador_secciones", via: :get
       match "/secciones/coordinador" => "grupos#coordinador_secciones", via: :get
-       match "/organizacion/todas" => "organizacions#show", via: :get
-       match "/cursos/editar" => "cursos#edit", via: :get
-        match "/cursos/editar" => "cursos#edit", via: :post
-         match '/politicas' => 'grupos#politica_admision', via: :get
-       #match "/encuestas/modificar/:id" => "encuestas#edit", via: :get
+      match "/organizacion/todas" => "organizacions#show", via: :get
+      match "/cursos/editar" => "cursos#edit", via: :get
+      match "/cursos/editar" => "cursos#edit", via: :post
+      match '/politicas' => 'grupos#politica_admision', via: :get
+      match "/encuestas/modificar/:id" => "encuestas#edit", via: :get
 
       
 
