@@ -2,12 +2,18 @@
 	<%= stylesheet_link_tag    "encuestas" %>
 <% end %>
 
-<div class="text-right">
-	<ol class="breadcrumb">
+<div class="row titulo-seccion">
+  <div class="col s6">
+    <h5 class="text-uppercase"> Encuestas</h5>
+  </div>
+  <div class="col s6 text-right">
+    <ol class="breadcrumb">
 	  <li><%= link_to "Home", root_path %></li>
 	  <li class="active">Mis Encuestas</li>
-	</ol>
+    </ol>
+  </div>
 </div>
+
 
 <div class="col-md-10">
   <%= render "encuestas/application/cuadrosencuestas" %>
