@@ -5,17 +5,24 @@
   <%= stylesheet_link_tag    "clases" %>
 <% end %>
 
-<div class="row titulo-seccion">
-  <div class="col s6">
-    <h5 class="text-uppercase">Explorar Cursos</h5>
+<div class="text-right">
+  <ol class="breadcrumb">
+    <li><%= link_to "Home", root_path %></li>
+    <li class="active">Oferta de cursos</li>
+  </ol>
+</div>
+  
+<div class="row">
+  <div class="col-md-8">
+    <h5>Cursos y Especializaciones</h5>
   </div>
-  <div class="col s6 text-right">
-    <ol class="breadcrumb">
-      <li><%= link_to "Home", root_path %></li>
-      <li class="active">Oferta de cursos</li>
-    </ol>
+  <div class="col-md-4">
+    <div class="input-group pad15">
+      <span class="input-group-addon light-blue"><i class="fa fa-search white-text"></i></span>
+      <input class="form-control" type="text" placeholder="  ¿Qué quieres aprender?"></input>
+    </div>
   </div>
-</div>  
+</div>
 
 <div class="row">
   <div  class="col s2 pad15-h">
@@ -42,21 +49,13 @@
   </div>
   <div class="col s10">
     <div class="row">
-    <div class="col s4 offset-s7">
-      <div class="input-group pad15">
-        <span class="input-group-addon light-blue"><i class="fa fa-search white-text"></i></span>
-        <input class="form-control" type="text" placeholder="  ¿Qué quieres aprender?"></input>
-      </div>
-    </div>
-  </div>
-    <div class="row">
       <div class="col s12">
         <ul class="text-right pager no-margin-v">
           <li ><a href="#">&larr; </a></li>
           <li ><a href="#"> &rarr;</a></li>
         </ul>
       </div>
-    </div>
+    </div>   
     <div class="row">
       <ul>
         <li class="col s4 listado">
@@ -72,7 +71,71 @@
               <span class="card-title">  </span>
             </div>  
             <div class="card-content">
-              <h5 >Curso: Introduccion al Desarrollo web </h5>
+              <h5 >Curso: Introduccion al Desarrollo </h5>
+              <img  src="/assets/instructora1.png" class="redondo">  
+              <span class="h4">Ing. Any Torres</span>
+              <div class="row">
+                <div class="col s6">
+                  <div class="ec-stars-wrapper">
+                   <a href="#" data-value="1" title="">&#9733;</a>
+                   <a href="#" data-value="2" title="">&#9733;</a>
+                   <a href="#" data-value="3" title="">&#9733;</a>
+                   <a href="#" data-value="4" title="">&#9733;</a>
+                   <a href="#" data-value="5" title="">&#9733;</a>
+                  </div> 
+                </div>
+                <div class="col s6">
+                  <span align=right class="pull-right grey-text darken-4">Bs. 950 <img src="/assets/etiqueta.png"  class="etiqueta"></span>
+                </div>
+              </div>
+            </div>
+            <div class="card-action"><a href= "/cursos/1/ver">Más información</a></div>
+          </div>
+          <div class="card white">
+            <div class="card-image">
+              <div class="favoritear fav" data-toggle="tooltip" data-placement="bottom" title="Quiero hacer este curso">
+                <a href="javascript:void(0)">
+                  <i class="fa fa-heart fa-2x grey-text"></i>
+                  <i class="fa fa-heart fondo red-text darken-2"></i>
+                </a>
+              </div>
+              <img  src="/assets/curso1.jpg" class="img-curso">
+              <span class="card-title">  </span>
+            </div>  
+            <div class="card-content">
+              <h5 >Curso: Introduccion al Desarrollo </h5>
+              <img  src="/assets/instructora1.png" class="redondo">  
+              <span class="h4">Ing. Any Torres</span>
+              <div class="row">
+                <div class="col s6">
+                  <div class="ec-stars-wrapper">
+                   <a href="#" data-value="1" title="">&#9733;</a>
+                   <a href="#" data-value="2" title="">&#9733;</a>
+                   <a href="#" data-value="3" title="">&#9733;</a>
+                   <a href="#" data-value="4" title="">&#9733;</a>
+                   <a href="#" data-value="5" title="">&#9733;</a>
+                  </div> 
+                </div>
+                <div class="col s6">
+                  <span align=right class="pull-right grey-text darken-4">Bs. 950 <img src="/assets/etiqueta.png"  class="etiqueta"></span>
+                </div>
+              </div>
+            </div>
+            <div class="card-action"><a href= "/cursos/1/ver">Más información</a></div>
+          </div>
+          <div class="card white">
+            <div class="card-image">
+              <div class="favoritear fav" data-toggle="tooltip" data-placement="bottom" title="Quiero hacer este curso">
+                <a href="javascript:void(0)">
+                  <i class="fa fa-heart fa-2x grey-text"></i>
+                  <i class="fa fa-heart fondo red-text darken-2"></i>
+                </a>
+              </div>
+              <img  src="/assets/curso1.jpg" class="img-curso">
+              <span class="card-title">  </span>
+            </div>  
+            <div class="card-content">
+              <h5 >Curso: Introduccion al Desarrollo </h5>
               <img  src="/assets/instructora1.png" class="redondo">  
               <span class="h4">Ing. Any Torres</span>
               <div class="row">
@@ -94,6 +157,211 @@
           </div>
         </li>
       </ul>
+      <ul>
+        <li class="col s4 listado">
+          <div class="card white">
+            <div class="card-image">
+              <div class="favoritear fav" data-toggle="tooltip" data-placement="bottom" title="Quiero hacer este curso">
+                <a href="javascript:void(0)">
+                  <i class="fa fa-heart fa-2x grey-text"></i>
+                  <i class="fa fa-heart fondo red-text darken-2"></i>
+                </a>
+              </div>
+              <img  src="/assets/curso4.jpeg" class="img-curso">
+              <span class="card-title">  </span>
+            </div>  
+            <div class="card-content">
+              <h5 >Curso: Android Lollipop </h5>
+              <img  src="/assets/instructor3.jpeg" class="redondo">  
+              <span class="h4">Ing. Richard Sanz</span>
+              <div class="row">
+                <div class="col s6">
+                  <div class="ec-stars-wrapper">
+                   <a href="#" data-value="1" title="">&#9733;</a>
+                   <a href="#" data-value="2" title="">&#9733;</a>
+                   <a href="#" data-value="3" title="">&#9733;</a>
+                   <a href="#" data-value="4" title="">&#9733;</a>
+                   <a href="#" data-value="5" title="">&#9733;</a>
+                  </div> 
+                </div>
+                <div class="col s6">
+                  <span align=right class="pull-right grey-text darken-4">Bs. 1500 <img src="/assets/etiqueta.png"  class="etiqueta"></span>
+                </div>
+              </div>
+            </div>
+            <div class="card-action"><a href= "/cursos/1/ver">Más información</a></div>
+          </div>
+           <div class="card white">
+            <div class="card-image">
+              <div class="favoritear fav" data-toggle="tooltip" data-placement="bottom" title="Quiero hacer este curso">
+                <a href="javascript:void(0)">
+                  <i class="fa fa-heart fa-2x grey-text"></i>
+                  <i class="fa fa-heart fondo red-text darken-2"></i>
+                </a>
+              </div>
+              <img  src="/assets/curso4.jpeg" class="img-curso">
+              <span class="card-title">  </span>
+            </div>  
+            <div class="card-content">
+              <h5 >Curso: Android Lollipop </h5>
+              <img  src="/assets/instructor3.jpeg" class="redondo">  
+              <span class="h4">Ing. Richard Sanz</span>
+              <div class="row">
+                <div class="col s6">
+                  <div class="ec-stars-wrapper">
+                   <a href="#" data-value="1" title="">&#9733;</a>
+                   <a href="#" data-value="2" title="">&#9733;</a>
+                   <a href="#" data-value="3" title="">&#9733;</a>
+                   <a href="#" data-value="4" title="">&#9733;</a>
+                   <a href="#" data-value="5" title="">&#9733;</a>
+                  
+                 </div> 
+                </div>
+                <div class="col s6">
+                  <span align=right class="pull-right grey-text darken-4">Bs. 1500 <img src="/assets/etiqueta.png"  class="etiqueta"></span>
+                </div>
+              </div>
+            </div>
+            <div class="card-action"><a href= "/cursos/1/ver">Más información</a></div>
+          </div>
+           <div class="card white">
+            <div class="card-image">
+              <div class="favoritear fav" data-toggle="tooltip" data-placement="bottom" title="Quiero hacer este curso">
+                <a href="javascript:void(0)">
+                  <i class="fa fa-heart fa-2x grey-text"></i>
+                  <i class="fa fa-heart fondo red-text darken-2"></i>
+                </a>
+              </div>
+              <img  src="/assets/curso4.jpeg" class="img-curso">
+              <span class="card-title">  </span>
+            </div>  
+            <div class="card-content">
+              <h5 >Curso: Android Lollipop </h5>
+              <img  src="/assets/instructor3.jpeg" class="redondo">  
+              <span class="h4">Ing. Richard Sanz</span>
+              <div class="row">
+                <div class="col s6">
+                  <div class="ec-stars-wrapper">
+                   <a href="#" data-value="1" title="">&#9733;</a>
+                   <a href="#" data-value="2" title="">&#9733;</a>
+                   <a href="#" data-value="3" title="">&#9733;</a>
+                   <a href="#" data-value="4" title="">&#9733;</a>
+                   <a href="#" data-value="5" title="">&#9733;</a>
+                  </div> 
+                </div>
+                <div class="col s6">
+                  <span align=right class="pull-right grey-text darken-4">Bs. 1500 <img src="/assets/etiqueta.png"  class="etiqueta"></span>
+                </div>
+              </div>
+            </div>
+            <div class="card-action"><a href= "/cursos/1/ver">Más información</a></div>
+          </div>
+        </li>
+      </ul>
+      <ul>
+        <li class="col s4 listado">
+          <div class="card white">
+            <div class="card-image">
+              <div class="favoritear fav" data-toggle="tooltip" data-placement="bottom" title="Quiero hacer este curso">
+                <a href="javascript:void(0)">
+                  <i class="fa fa-heart-o fa-2x grey-text"></i>
+                  <i class="fa fa-heart fondo red-text darken-2"></i>
+                </a>
+              </div>
+              <img  src="/assets/curso5.png" class="img-curso">
+              <span class="card-title">  </span>
+            </div>  
+            <div class="card-content">
+              <h5 >Curso:Api de Google Maps </h5>
+              <img  src="/assets/instructor3.jpeg" class="redondo">  
+              <span class="h4">Ing. Richard Sanz</span>
+              <div class="row">
+                <div class="col s6">
+                  <div class="ec-stars-wrapper">
+                   <a href="#" data-value="1" title="">&#9733;</a>
+                   <a href="#" data-value="2" title="">&#9733;</a>
+                   <a href="#" data-value="3" title="">&#9733;</a>
+                   <a href="#" data-value="4" title="">&#9733;</a>
+                   <a href="#" data-value="5" title="">&#9733;</a>
+                  </div> 
+                </div>
+                <div class="col s6">
+                  <span align=right class="pull-right grey-text darken-4">Bs. 950 <img src="/assets/etiqueta.png"  class="etiqueta"></span>
+                </div>
+              </div>
+            </div>
+            <div class="card-action"><a href= "/cursos/1/ver">Más información</a></div>
+          </div>
+        <div class="card white">
+            <div class="card-image">
+              <div class="favoritear fav" data-toggle="tooltip" data-placement="bottom" title="Quiero hacer este curso">
+                <a href="javascript:void(0)">
+                  <i class="fa fa-heart-o fa-2x grey-text"></i>
+                  <i class="fa fa-heart fondo red-text darken-2"></i>
+                </a>
+              </div>
+              <img  src="/assets/curso5.png" class="img-curso">
+              <span class="card-title">  </span>
+            </div>  
+            <div class="card-content">
+              <h5 >Curso:Api de Google Maps </h5>
+              <img  src="/assets/instructor3.jpeg" class="redondo">  
+              <span class="h4">Ing. Richard Sanz</span>
+              <div class="row">
+                <div class="col s6">
+                  <div class="ec-stars-wrapper">
+                   <a href="#" data-value="1" title="">&#9733;</a>
+                   <a href="#" data-value="2" title="">&#9733;</a>
+                   <a href="#" data-value="3" title="">&#9733;</a>
+                   <a href="#" data-value="4" title="">&#9733;</a>
+                   <a href="#" data-value="5" title="">&#9733;</a>
+                  </div> 
+                </div>
+                <div class="col s6">
+                  <span align=right class="pull-right grey-text darken-4">Bs. 950 <img src="/assets/etiqueta.png"  class="etiqueta"></span>
+                </div>
+              </div>
+            </div>
+            <div class="card-action"><a href= "/cursos/1/ver">Más información</a></div>
+          </div>
+        <div class="card white">
+            <div class="card-image">
+              <div class="favoritear fav" data-toggle="tooltip" data-placement="bottom" title="Quiero hacer este curso">
+                <a href="javascript:void(0)">
+                  <i class="fa fa-heart-o fa-2x grey-text"></i>
+                  <i class="fa fa-heart fondo red-text darken-2"></i>
+                </a>
+              </div>
+              <img  src="/assets/curso5.png" class="img-curso">
+              <span class="card-title">  </span>
+            </div>  
+            <div class="card-content">
+              <h5 >Curso:Api de Google Maps </h5>
+              <img  src="/assets/instructor3.jpeg" class="redondo">  
+              <span class="h4">Ing. Richard Sanz</span>
+              <div class="row">
+                <div class="col s6">
+                  <div class="ec-stars-wrapper">
+                   <a href="#" data-value="1" title="">&#9733;</a>
+                   <a href="#" data-value="2" title="">&#9733;</a>
+                   <a href="#" data-value="3" title="">&#9733;</a>
+                   <a href="#" data-value="4" title="">&#9733;</a>
+                   <a href="#" data-value="5" title="">&#9733;</a>
+                  </div> 
+                </div>
+                <div class="col s6">
+                  <span align=right class="pull-right grey-text darken-4">Bs. 950 <img src="/assets/etiqueta.png"  class="etiqueta"></span>
+                </div>
+              </div>
+            </div>
+            <div class="card-action"><a href= "/cursos/1/ver">Más información</a></div>
+          </div>
+        
+        </li>
+      </ul>
+
+
+
     </div>
   </div>
   <div class="text-center">
