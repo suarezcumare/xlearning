@@ -1,112 +1,128 @@
 
 <% content_for :css_personalizado do %>
-   <%= stylesheet_link_tag    "fullcalendar" %>
-  <%= stylesheet_link_tag    "timeline" %>
   <%= stylesheet_link_tag    "clases" %>
+  <%= stylesheet_link_tag    "plugins/fileinput.min" %> 
  
 <% end %>
-<div class="row pad30">
-  <div class="col-md-7 col-lg-7">
-    <%= render "clases/application/header" %>
-    
-    <!-- Inicio cuadro Generar, llevado por un tabs -->      
-    <br>
-    <div class="tab-pane" id="leccionesCurso">
-      <%= render "clases/elementos/lista" %>
-    </div>
-    <div class="tab-pane" id="bitacoraCurso">
-      <%= render "clases/elementos/bitacora" %>
-    </div>
-    <div class="tab-pane" id="evaluacionesCurso">      
-      <%= render "clases/elementos/evaluaciones" %>
-    </div>
-    <div class="tab-pane" id="calendarioCurso">       
-      <%= render "clases/elementos/calendario" %>
-    </div>
-    <div class="tab-pane" id="notificacionesEvaluacionesCurso">      
-      <%= render "clases/elementos/notificaciones" %>
-    </div>
-    <div class="tab-pane" id="descipcionesCurso">
-      <%= render "clases/elementos/descripciones" %>
-    </div>
-   <!-- Fin cuadro Generar, llevado por un tabs -->   
-  
+<div class="row titulo-seccion">
+  <div class="col s6">
+    <h5 class="text-uppercase"> Configurando Curso</h5>
   </div>
-  <div class="col-md-3 col-lg-3">
-      <%= render "clases/application/instructor" %>
-      <br>
-      <%= render "clases/application/panelDerecha" %>
+  <div class="col s6 text-right">
+    <ol class="breadcrumb">
+      <li><%= link_to "Home", root_path %></li>
+       <li><%= link_to "Cursos", cursos_path %></li>
+    <li class="active">Configurando</li>
+    </ol>
   </div>
-
 </div>
 
+
+<div class="row pad30-h">
+  <div class="col s8 panel">
+    <div class="row">
+      <div class="col s12">
+        <%= form_for(resource, :as => resource_name, :url => cursos_editar_path, :html => { :method => :post }) do |f| %>
+          <div class="row">
+            <h5>Datos Curso</h5>
+            <div class="input-field col s6">
+              <label for="cursos[titulo]">Titulo</label>
+              <input id="cursos[titulo]" type="text" required></input>
+            </div>
+            <div class="col-lg-3">
+                   Fecha Inicio: <input id="fecha1" type="date" class="datepicker">
+               </div>
+              <div class="col-lg-3">
+                   Fehca Finalización: <input id="fecha2" type="date" class="datepicker">
+              </div>
+          </div>
+          <div class="row">
+            <div class="col s6">
+              <label>Tipo Curso</label>
+              <select name="curso[tipo]">
+                <option value="" disabled selected>Tipo Curso</option>
+                <option value="1">Pago</option>
+                <option value="2">Gratis</option>
+              </select>
+            </div>
+          </div>
+
+          <hr/>
+          <div class="row">
+            <div class="input-field col s12">
+              <label for="curso[descripcion]">Descripción</label>
+              <input id="curso[descripcion]" type="text" required></input>                  
+            </div>
+          </div>
+           <div class="row">
+            <div class="input-field col s12">
+              <label for="curso[objetivos]">Objetivos</label>
+              <input id="curso[objetivos]" type="text" required></input>                  
+            </div>
+          </div>
+           <div class="row">
+            <div class="input-field col s12">
+              <label for="curso[requisitos]">Requisitos</label>
+              <input id="curso[requisitos]" type="text" required></input>                  
+            </div>
+          </div>
+           <div class="row">
+            <div class="input-field col s12">
+              <label for="curso[dirigido]">A quien va dirigido</label>
+              <input id="curso[dirigido]" type="text" required></input>                  
+            </div>
+          </div>
+          
+          <hr/>
+          <div class="row pad30">
+            <div class="col s12">         
+              <a href="javascript:void(0)" class="btn btn-success">Guardar</a>
+              <a href="javascript:void(0)" class="btn btn-info">Cancelar</a> 
+            </div>
+          </div>
+          <div class="pad15"></div> 
+        <% end %>
+      </div>
+    </div> 
+  </div>
+  <div class="col s4">
+    <div class="row">
+      <div class="col s12 panel">
+        <h5>Cambiar foto</h5>
+        <input id="avatar-id" type="file" class="file" data-upload-url="/usuario/guardar_foto"/>
+        <div class="pad15"></div>
+      </div>
+    </div>
+    <div class="pad15"></div>
+    <div class="row panel pad15 pad30-h">
+      <div class="col s12">
+       <b> Si desea modificar el contenido de las lecciones debe dirigirse al curso a modificar </b>
+        <div class="pad15"></div>
+      </div>
+    </div>
+    <div class="pad15"></div>
+  </div>
+</div>
 <% content_for :js_personalizado do %>
-
- 
-
+  <%= javascript_include_tag 'plugins/fileinput.js' %>
   <script type="text/javascript">
-    $(document).ready(function(){
-
-      $('#calendar').fullCalendar({
-      header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,basicWeek'
-      },
-      defaultDate: '2014-12-01',
-      editable: true,
-      eventLimit: true, // allow "more" link when too many events
-      events: [
-        {
-          title: 'Inicio del curso',
-          start: '2014-12-01'
-        },
-        {
-          title: 'Examen Primera Lección',
-          start: '2014-12-10',
-          end: '2014-12-12'
-        },
-        {
-          id: 9,
-          title: 'Discuciones de ejercicios propuestos',
-          start: '2014-12-12T16:00:00'
-        },
-        {
-          id: 999,
-          title: 'Discuciones de ejercicios propuestos',
-          start: '2014-12-19T16:00:00'
-        },
-        {
-          title: 'Examen Segunda Lección',
-          start: '2014-12-28',
-          end: '2014-12-30'
-        },
-        {
-          id: 991,
-          title: 'Discuciones generales',
-          start: '2014-12-24T16:00:00'
-        },
-        {
-          id: 991,
-          title: 'Discuciones generales',
-          start: '2014-12-31T16:00:00'
-        },
-        {
-          title: 'Entregar Proyecto Lab3',
-          url: 'http://google.com/',
-          start: '2015-01-04'
-        }
-      ]
-    });
-
-
-
-$('.tooltipped').tooltip({"delay": 50});    
-$('ul.tabs').tabs();
-$('.modal-trigger').leanModal();
-
+    $("#avatar-id").fileinput({
+      'browseLabel':'cambiar',
+      'showCaption':false,
+      'initialPreview': [
+        "<img src='/assets/clases-imagen.jpg' class='file-preview-image' alt='Avatar' title='Foto de perfil actual'>",
+      ],
+      'initialPreviewShowDelete':false,
+      'initialCaption':'archivo(s) seleccionado(s)',
+      'allowedFileTypes':['image'],
+      'allowedFileExtensions':['jpg', 'gif', 'png', 'jpeg'],
+      'browseClass':'btn btn-primary',
+      'browseIcon':'<i class="mdi-file-attachment"></i>',
+      'showRemove':false,
+      'uploadLabel':'Subir',
+      'uploadIcon':'<i class="mdi-file-file-upload"></i>',
+      'uploadClass':'btn btn-success ',
     });
   </script>
-
 <% end %>
 

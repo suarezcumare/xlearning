@@ -4,19 +4,15 @@
 
 <div class="row titulo-seccion">
   <div class="col s6">
-    <h5 class="text-uppercase"> Nuevas Encuestas</h5>
+    <h5 class="text-uppercase"> Editando Encuestas</h5>
   </div>
   <div class="col s6 text-right">
     <ol class="breadcrumb">
       <li><%= link_to "Home", root_path %></li>
 	  <li><%= link_to "Encuestas", encuestas_path %> </li> 
-	  <li class="active">Nuevo</li>
+	  <li class="active">Editar</li>
     </ol>
   </div>
-</div>
-
-<div class="col-md-10">
-	<%= render "encuestas/application/cuadrosencuestas" %>
 </div>
 
 
@@ -47,14 +43,33 @@
 			
 			<div class="col-md-12 pad15">
 				
+				<div class="col-md-12">
+					<span class="black-text"> <b> Titulo de la Pregunta </b> </span>
+				</div>
+
 				<div class="col-md-4 col-xs-3">
+					<span class="black-text"> <b> Pregunta Si o No: </b> </span>
+				</div>	
+
+				<div class="col-md-2 col-xs-2">
+					<a class="btn btn-danger" data-toggle="collapse" href="#collapsesino" aria-expanded="false" >Modificar</a>
+				</div>	
+	
+			</div>
+			<div class="col-md-12 pad15">
+
+				<div class="col-md-12">
+					<span class="black-text"> <b> Titulo de la Pregunta </b> </span>
+				</div>
+				
+				<div class="col-md-4 col-xs-3 ">
 					<span class="black-text"> <b> Pregunta Si o No: </b> </span>
 				</div>	
 				<div class="col-md-3 col-xs-2">
 					<a class="modal-trigger text-uppercase" href="#modalsino"> Información</a>
 				</div>	
 				<div class="col-md-2 col-xs-2">
-					<a class="btn btn-danger" data-toggle="collapse" href="#collapsesino" aria-expanded="false" >Añedir</a>
+					<a class="btn btn-danger" data-toggle="collapse" href="#collapsesino" aria-expanded="false" >Modificar</a>
 				</div>	
 	
 			</div>
@@ -68,7 +83,7 @@
 					<a class=" modal-trigger text-uppercase" href="#modalsimple"> Información</a>
 				</div>	
 				<div class="col-md-2 col-xs-2">
-					<a class="btn btn-danger" data-toggle="collapse" href="#collapsesimple" aria-expanded="false" >Añedir</a>
+					<a class="btn btn-danger" data-toggle="collapse" href="#collapsesimple" aria-expanded="false" >Modificar</a>
 				</div>	
 	
 			</div>
@@ -82,7 +97,7 @@
 					<a class=" modal-trigger text-uppercase" href="#modalmultiple"> Información</a>
 				</div>	
 				<div class="col-md-2 col-xs-2">
-					<a class="btn btn-danger" data-toggle="collapse" href="#collapsemultiple" aria-expanded="false" >Añedir</a>
+					<a class="btn btn-danger" data-toggle="collapse" href="#collapsemultiple" aria-expanded="false" >Modificar</a>
 				</div>	
 	
 			</div>
@@ -96,7 +111,7 @@
 					<a class=" modal-trigger text-uppercase" href="#modalabierta"> Información</a>
 				</div>	
 				<div class="col-md-2 col-xs-2">
-					<a class="btn btn-danger" data-toggle="collapse" href="#collapseabierta" aria-expanded="false" >Añedir</a>
+					<a class="btn btn-danger" data-toggle="collapse" href="#collapseabierta" aria-expanded="false" >Modificar</a>
 				</div>	
 	
 			</div>
