@@ -2,14 +2,31 @@
 <% content_for :css_personalizado do %>
   <%= stylesheet_link_tag    "estadisticos" %>
 <% end %>
-<div class="row pad30">
+
+<div class="row titulo-seccion">
+  <div class="col s6">
+    <h5 class="text-uppercase">Estadisticos</h5>
+  </div>
+  <div class="col s6 text-right">
+   <ol class="breadcrumb">
+    <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "Estadisticos", estadisticos_path %></li>
+    <li class="active">Gaficos</li>
+  </ol>
+  </div>
+</div>
+
+
+
+<div class="row pad45-h">
+<div class="col s2 pad45-h" ></div>
    <% if params[:grafico] == '4' %>
 
-      <div class="col-lg-8">
+      <div class="col-lg-10 ">
                <h5 class="text-uppercase"> Nombre del Estadisticos</h5>
       </div>
 
-      <div class="col-lg-8">
+      <div class="col-lg-10">
           <br> <br> <br>
         <div class="tab-simple"> 
             <h6 class="text-uppercase blue-text margen"> Genera tus Estadisticos</h6>
@@ -30,7 +47,7 @@
         <br> <br> <br>
       </div>
 
-  <div class="col-lg-8">
+  <div class="col-lg-10">
     <div class="col-md-2 col-xs-0"></div>
          <canvas id="bar" width="600" height="400">[No canvas support]</canvas>
    </div>       
@@ -40,7 +57,7 @@
                <h5 class="text-uppercase"> Nombre del Estadisticos</h5>
       </div>
 
-      <div class="col-lg-8">
+      <div class="col-lg-10">
           <br> <br> <br>
         <div class="tab-simple"> 
             <h6 class="text-uppercase blue-text margen"> Genera tus Estadisticos</h6>
@@ -61,17 +78,17 @@
         <br> <br> <br>
       </div>
 
-  <div class="col-lg-8">
+  <div class="col-lg-10">
      <div class="col-md-2 col-xs-0"></div>
          <canvas id="circularchar" width="600" height="500">[No canvas support]</canvas>
    </div>  
 
   <% elsif params[:grafico]=='5'    %>
-      <div class="col-lg-8">
+      <div class="col-lg-10">
         <h5 class="text-uppercase"> Nombre del Estadisticos</h5>
       </div>
 
-        <div class="col-lg-8">
+        <div class="col-lg-10">
             <br> <br> <br>
           <div class="tab-simple"> 
               <h6 class="text-uppercase blue-text margen"> Genera tus Estadisticos</h6>
@@ -92,7 +109,7 @@
           <br> <br> <br>
         </div>
 
-        <div class="col-lg-8">
+        <div class="col-lg-10">
            <div class="col-md-2 col-xs-0"></div>
                 <canvas id="Pie" width="600" height="250">[No canvas support]</canvas>
 
@@ -100,11 +117,11 @@
 
   <% elsif  params[:grafico]== '2'    %>
 
-      <div class="col-lg-8">
+      <div class="col-lg-10">
         <h5 class="text-uppercase"> Nombre del Estadisticos</h5>
       </div>
 
-        <div class="col-lg-8">
+        <div class="col-lg-10">
             <br> <br> <br>
           <div class="tab-simple"> 
               <h6 class="text-uppercase blue-text margen"> Genera tus Estadisticos</h6>
@@ -125,7 +142,7 @@
           <br> <br> <br>
         </div>
 
-        <div class="col-lg-8">
+        <div class="col-lg-10">
            <div class="col-md-2 col-xs-0"></div>
                 <canvas id="skeleton" title="Progreso por clientes en la Organización" width="500" height="300" style="box-shadow: "></canvas>
 
@@ -134,11 +151,11 @@
    <% elsif params[:grafico] == '1'    %>
 
 
-          <div class="col-lg-8">
+          <div class="col-lg-10">
         <h5 class="text-uppercase"> Nombre del Estadisticos</h5>
       </div>
 
-        <div class="col-lg-8">
+        <div class="col-lg-10">
             <br> <br> <br>
           <div class="tab-simple"> 
               <h6 class="text-uppercase blue-text margen"> Genera tus Estadisticos</h6>
@@ -161,7 +178,7 @@
           <br> <br> <br>
         </div>
 
-        <div class="col-lg-8">
+        <div class="col-lg-10">
 
                 <ul class="timeline">
                   <li class="timeline-yellow">

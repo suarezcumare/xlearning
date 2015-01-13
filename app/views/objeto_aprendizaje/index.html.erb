@@ -4,16 +4,20 @@
   <%= stylesheet_link_tag    "biblioteca" %>
 <% end %>
 
-<div class="text-right">
-  <ol class="breadcrumb">
-    <li><%= link_to "Home", root_path %></li>
+<div class="row titulo-seccion">
+  <div class="col s6">
+    <h5 class="text-uppercase">Biblioteca virtual</h5>
+  </div>
+  <div class="col s6 text-right">
+    <ol class="breadcrumb">
+     <li><%= link_to "Home", root_path %></li>
     <li class="active">Biblioteca virtual</li>
-  </ol>
+    </ol>
+  </div>
 </div>
-  
+
 <div class="row">
   <div class="col-md-8">
-    <h5>Biblioteca virtual</h5>
   </div>
   <div class="col-md-4">
     <div class="input-group pad15">

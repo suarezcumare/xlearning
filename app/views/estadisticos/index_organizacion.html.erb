@@ -2,9 +2,24 @@
 <% content_for :css_personalizado do %>
   <%= stylesheet_link_tag    "estadisticos" %>
 <% end %>
+
+
+<div class="row titulo-seccion">
+  <div class="col s6">
+    <h5 class="text-uppercase">Estadisticos</h5>
+  </div>
+  <div class="col s6 text-right">
+   <ol class="breadcrumb">
+    <li><%= link_to "Home", root_path %></li>
+    <li class="active">Estadisticos</li>
+  </ol>
+  </div>
+</div>
+
+
 <div class="row pad30">
   <div class="row pad30-h">
-  <div class="col-lg-8 tabs">
+  <div class="col-lg-12 tabs">
      
     <h5 class="text-uppercase">Estadisticos</h5>
     <ul class="nav nav-pills pull-right">
@@ -16,7 +31,7 @@
 
   </div>
   
-  <div class="col-lg-8">    
+  <div class="col-lg-10">    
       <div class="tab-pane" id="economico">
         <div>
           <h5 class="text-uppercase"> Económico</h5>
