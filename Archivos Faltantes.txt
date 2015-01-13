@@ -8,7 +8,6 @@ Secciones
 
 Cursos
 /cursos/nuevos
-/modificar
 
 
 Clientes

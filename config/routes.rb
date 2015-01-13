@@ -7,7 +7,6 @@ end
 Xlearning::Application.routes.draw do
 
     get 'cursos/:id/ver' => 'cursos#show'
-        get 'politicas' => 'grupos#politica_admision'
     get 'cursos' => 'cursos#index'
     match "/validar_email" => "usuario#validar_email", via: :post
     match "/menu" => "menu#find", via: :get
@@ -52,6 +51,8 @@ Xlearning::Application.routes.draw do
       match "/secciones/coordinador" => "grupos#coordinador_secciones", via: :get
        match "/organizacion/todas" => "organizacions#show", via: :get
        match "/cursos/editar" => "cursos#edit", via: :get
+        match "/cursos/editar" => "cursos#edit", via: :post
+         match '/politicas' => 'grupos#politica_admision', via: :get
        #match "/encuestas/modificar/:id" => "encuestas#edit", via: :get
 
       
