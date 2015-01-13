@@ -5,15 +5,17 @@
  <%= stylesheet_link_tag    "jquery.dataTables" %> 
 <% end %>
 
-
-<div class="text-right">
-	<ol class="breadcrumb">
-	  <li><%= link_to "Home", root_path %></li>
-	  <li class="active">Organizaciones</li>
-	</ol>
+<div class="row titulo-seccion">
+  <div class="col s6">
+    <h5 class="text-uppercase">Organizaciones</h5>
+  </div>
+  <div class="col s6 text-right">
+  <ol class="breadcrumb">
+    <li><%= link_to "Home", root_path %></li>
+    <li class="active">Organizaciones</li>
+  </ol>
+  </div>
 </div>
-
-<h5 class="text-uppercase pad30-h"> Las Organizaciones </h5>
 
 
 <div class="row pad30-h">
@@ -245,7 +247,7 @@
 
   <script type="text/javascript">
     $(document).ready(function(){
-	$('#organizacionTodas').dataTable();
+  $('#organizacionTodas').dataTable();
   $('#organizacionbloqueados').dataTable();
     });
   </script>

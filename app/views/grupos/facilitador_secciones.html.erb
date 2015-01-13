@@ -2,21 +2,21 @@
 	<%= stylesheet_link_tag    "cursos" %>
 	<%= stylesheet_link_tag    "clases" %>
 <% end %>
+
 <div class="row titulo-seccion">
   <div class="col s6">
-    <h5 class="text-uppercase">Mis secciones</h5>
+    <h5 class="text-uppercase">Mis Secciones</h5>
   </div>
   <div class="col s6 text-right">
     <ol class="breadcrumb">
-      <li><%= link_to "Home", root_path %></li>
-      <li class="active">Mis secciones</li>
+     <li><%= link_to "Home", root_path %></li>
+	  <li class="active">Mis Secciones</li>
     </ol>
   </div>
 </div>
 
 <div class="row pad30-h">
 	<div class="col s6 offset-s6">
-
 		<ul class="nav nav-pills pull-right">
 		  <li role="presentation" class="active"><%= link_to "Actual", secciones_facilitador_path %></li>
 		  <li role="presentation"><%= link_to "Pasados", secciones_facilitador_path %></li>

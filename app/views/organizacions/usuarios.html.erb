@@ -5,57 +5,190 @@
  <%= stylesheet_link_tag    "jquery.dataTables" %> 
 <% end %>
 
-
-<div class="text-right">
-	<ol class="breadcrumb">
-	  <li><%= link_to "Home", root_path %></li>
-	  <li class="active">Apariencia</li>
-	</ol>
+<div class="row titulo-seccion">
+  <div class="col s6">
+    <h5 class="text-uppercase">Usuarios</h5>
+  </div>
+  <div class="col s6 text-right">
+   <ol class="breadcrumb">
+    <li><%= link_to "Home", root_path %></li>
+    <li class="active">Usuarios</li>
+  </ol>
+  </div>
 </div>
 
 
-<h5 class="text-uppercase pad30-h"> Usuarios </h5>
-
-
- <ul class="tabs">
-      <li class="tab col s2" title="Todos"><a href="#todos">Todos</a></li>
-      <li class="tab col s2" title="Administradores"><a href="#administradores">Administradores </a></li>
-      <li class="tab col s2" title="Coordinadores"> <a href="#coordinadores"> Coordinadores </i></a></li>
-      <li class="tab col s2" title="Instructores"> <a href="#facilitadores"> Facilitadores</a></li>
-      <li class="tab col s2" title="Estudiantes"> <a href="#estudiantes">Estudiantes</a></li>
-    </ul>
-
 
 <div class="row pad30-h">
+<br><br>
+<table id="exampletodos" class="display" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>correo</th>
+              <th>Rol</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+          
+            <tr>
+              <td data-search="Herrod Chandler">H. Chandler</td>
+              <td>Chandler@</td>
+              <td>administrador</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
+                 <a href="javascript:void(0)" class="btn-primary btn-sm">Agregar Rol</a> 
+                 <a href="javascript:void(0)" class="btn-warning btn-sm disabled ">Desahilitar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Mensaje</a>
+              </td>  
+            </tr>
+            <tr>
+              <td data-search="Herrod Chandler">H. Butler</td>
+              <td>Chandler@</td>
+              <td>estudiante</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
+                 <a href="javascript:void(0)" class="btn-primary btn-sm">Agregar Rol</a> 
+                 <a href="javascript:void(0)" class="btn-warning btn-sm disabled ">Desahilitar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Mensaje</a>
+              </td>    
+            </tr>
+            <tr>
+              <td data-search="Herrod Alexander">H. Alexander</td>
+              <td>Chandler@</td>
+              <td>instructor</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
+                 <a href="javascript:void(0)" class="btn-primary btn-sm">Agregar Rol</a> 
+                 <a href="javascript:void(0)" class="btn-warning btn-sm disabled ">Desahilitar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Mensaje</a>
+              </td>  
+            </tr>
+            <tr>
+              <td data-search="Herrod Perez">H. Perez</td>
+              <td>Chandler@</td>
+              <td>administrador</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
+                 <a href="javascript:void(0)" class="btn-primary btn-sm">Agregar Rol</a> 
+                 <a href="javascript:void(0)" class="btn-warning btn-sm disabled ">Desahilitar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Mensaje</a>
+              </td>  
+            </tr>
+            <tr>
+              <td data-search="Herrod Snider">H. Snider</td>
+              <td>Chandler@</td>
+              <td>estudiante</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
+                 <a href="javascript:void(0)" class="btn-primary btn-sm">Agregar Rol</a> 
+                 <a href="javascript:void(0)" class="btn-warning btn-sm disabled ">Desahilitar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Mensaje</a>
+              </td>  
+            </tr>
+            <tr>
+              <td data-search="Herrod Suarez">H. Suarez</td>
+              <td>Chandler@</td>
+              <td>estudiante</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
+                 <a href="javascript:void(0)" class="btn-primary btn-sm">Agregar Rol</a> 
+                 <a href="javascript:void(0)" class="btn-warning btn-sm disabled ">Desahilitar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Mensaje</a>
+              </td>  
+            </tr>
+            <tr>
+              <td data-search="Herrod Chandler">H. Decker</td>
+              <td>Chandler@</td>
+              <td>estudiante</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
+                 <a href="javascript:void(0)" class="btn-primary btn-sm">Agregar Rol</a> 
+                 <a href="javascript:void(0)" class="btn-warning btn-sm disabled ">Desahilitar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Mensaje</a>
+              </td>  
+            </tr>
+            <tr>
+              <td data-search="Herrod Sanchez">H. Sanchez</td>
+              <td>Chandler@</td>
+              <td>instructor</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
+                 <a href="javascript:void(0)" class="btn-primary btn-sm">Agregar Rol</a> 
+                 <a href="javascript:void(0)" class="btn-warning btn-sm disabled ">Desahilitar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Mensaje</a>
+              </td>  
+            </tr>
+            <tr>
+              <td data-search="Herrod Chandler">H. Chandler</td>
+              <td>Chandler@</td>
+              <td>instructor</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
+                 <a href="javascript:void(0)" class="btn-primary btn-sm">Agregar Rol</a> 
+                 <a href="javascript:void(0)" class="btn-warning btn-sm disabled ">Desahilitar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Mensaje</a>
+              </td>  
+            </tr>
+            <tr>
+              <td data-search="Herrod Hatfield">H. Hatfield</td>
+              <td>Chandler@</td>
+              <td>coordinador</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
+                 <a href="javascript:void(0)" class="btn-primary btn-sm">Agregar Rol</a> 
+                 <a href="javascript:void(0)" class="btn-warning btn-sm disabled ">Desahilitar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Mensaje</a>
+              </td>  
+            </tr>
+            <tr>
+              <td data-search="Herrod Ramirez">H. Ramirez</td>
+              <td>Chandler@</td>
+              <td>instructor</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
+                 <a href="javascript:void(0)" class="btn-primary btn-sm">Agregar Rol</a> 
+                 <a href="javascript:void(0)" class="btn-warning btn-sm disabled ">Desahilitar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Mensaje</a>
+              </td>  
+            </tr>
+            <tr>
+              <td data-search="Michael Bruce">M. Bruce</td>
+              <td>Chandler@</td>
+              <td>coordinador</td>
+              <td> 
+                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
+                 <a href="javascript:void(0)" class="btn-primary btn-sm">Agregar Rol</a> 
+                 <a href="javascript:void(0)" class="btn-warning btn-sm disabled ">Desahilitar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Mensaje</a>
+              </td>  
+            </tr>
+            <tr>
+              <td data-search="Donna Snider">D. Snider</td>
+              <td>Chandler@</td>
+              <td>estudiante</td>
+             <td> 
+                <a href="javascript:void(0)" class="btn-success btn-sm">Ver</a>
+                 <a href="javascript:void(0)" class="btn-primary btn-sm">Agregar Rol</a> 
+                 <a href="javascript:void(0)" class="btn-warning btn-sm disabled ">Desahilitar</a>
+                 <a href="javascript:void(0)" class="btn-info btn-sm disabled ">Mensaje</a>
+              </td>  
+            </tr>
+          </tbody>
+        </table>
 
- <div class="tab-pane" id="todos">
+
  
- <%= render "organizacions/usuarios/todos" %>
- </div>
- <div class="tab-pane" id="administradores">
- 	 <%= render "organizacions/usuarios/administradores" %>
- </div>
- <div class="tab-pane" id="coordinadores">
- 	 <%= render "organizacions/usuarios/coordinadores" %>
- </div>
- <div class="tab-pane" id="facilitadores">
- 	 <%= render "organizacions/usuarios/facilitadores" %>
- </div>
- <div class="tab-pane" id="estudiantes">
- 	 <%= render "organizacions/usuarios/estudiantes" %>
- </div>
-
-	
+  
 </div>
 
 <% content_for :js_personalizado do %>
 
   <%= javascript_include_tag 'jquery.dataTables.min' %>
-
-  <script type="text/javascript">
+ <script type="text/javascript">
     $(document).ready(function(){
-	$('#example').dataTable();
+  $('#exampletodos').dataTable();
     });
   </script>
-
 <% end %>

@@ -1,23 +1,14 @@
 Pantallas Faltantes
 
-
-Mi Cuenta
-/preferencias
-
-
 Biblioteca
 /biblioteca/importar 
-
 
 Secciones
 /secciones/nuevo
 
-
-
 Cursos
 /cursos/nuevos
 /modificar
-
 
 
 Clientes
@@ -34,7 +25,6 @@ Estadistico aqui falta la tabla de excel para hacer las propias funciones
 Organizaciones
 /organizaciones/nuevo
 /organizaciones/modifcar
-
 
 
 Costos

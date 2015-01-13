@@ -50,7 +50,10 @@ Xlearning::Application.routes.draw do
       match "/secciones/facilitador" => "grupos#facilitador_secciones", via: :get
       match "/secciones/coordinador" => "grupos#coordinador_secciones", via: :get
        match "/organizacion/todas" => "organizacions#show", via: :get
+       match "/cursos/editar" => "cursos#edit", via: :get
+       #match "/encuestas/modificar/:id" => "encuestas#edit", via: :get
 
+      
 
   end
 
