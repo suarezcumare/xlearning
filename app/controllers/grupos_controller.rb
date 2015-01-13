@@ -15,4 +15,8 @@ class GruposController < ApplicationController
 		render "coordinador_secciones"
 		
 	end
+	def politica_admision
+		
+		
+	end
 end

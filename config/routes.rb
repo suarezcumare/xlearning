@@ -7,6 +7,7 @@ end
 Xlearning::Application.routes.draw do
 
     get 'cursos/:id/ver' => 'cursos#show'
+        get 'politicas' => 'grupos#politica_admision'
     get 'cursos' => 'cursos#index'
     match "/validar_email" => "usuario#validar_email", via: :post
     match "/menu" => "menu#find", via: :get
