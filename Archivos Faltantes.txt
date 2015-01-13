@@ -11,9 +11,6 @@ Cursos
 /modificar
 
 
-Clientes
-/politicas -> Politicas de Adminision a los clientes
-
 Cursos
 /cursos/estructura -> Estructura jerarquica
 /cursos/taxonomia
