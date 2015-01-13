@@ -3,92 +3,79 @@
  <%= stylesheet_link_tag    "plugins/fileinput.min" %> 
 <% end %>
 
-
+<div class="row titulo-seccion">
+  <div class="col s6">
+    <h5 class="text-uppercase">Agregar objeto de aprendizaje</h5>
+  </div>
+  <div class="col s6 text-right">
+    <ol class="breadcrumb">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Biblioteca virtual", "/biblioteca" %></li>
+      <li class="active">Agregar nuevo objeto de aprendizaje</li>
+    </ol>
+  </div>
+</div>  
 <!-- <a href="#openObjetoAprendizaje" class="modal-trigger">Agregar Objeto Aprendizaje</a> -->
-
+<div class="pad15"></div>
 <!-- <div id="openObjetoAprendizaje" class=" panel-info modal" style="width:1500px;"> 
 	<div class="panel-body" > -->
 		  <div class="row">
-           <div class="col s12 pad30-h">
-            <h5 class="text-uppercase pad30-h text-primary" >Agregar Objeto Aprendizaje</h5>
-           </div>
-
-        <div class="col s4">
+        <div class="col s5">
            <h6 class="text-uppercase ">Configurando tus archivos</h6 >
 
-           <div class="input-field col s12">
+           <div class="input-field">
               <label for="objetoAprendizaje[nombre]">Nombre</label>
               <input id="objetoAprendizaje[nombre]" type="text" required></input>
             </div>
-            <div class="input-field col s12">
+            <div class="input-field">
               <label for="objetoAprendizaje[descripcion]">Descripción</label>
               <input id="objetoAprendizaje[descripcion]" type="text" required></input>
             </div>
-
-          <div class="col s12">
-             
-           
-               
-              <label><b> Tipo de Licencia </b></label>
-              <select name="usuario[pais]">
-                <option value="" disabled selected>Licencias</option>
-                <option value="1">Atribución</option>
-                <option value="2">Atribución-CompartirIgual</option>
-                <option value="3">Atribución-SinDerivadas</option>
-                <option value="4">Atribución-NoComercial</option>
-                <option value="5">Atribución-NoComercial-CompartirIgual</option>
-                  <option value="6">Atribución-NoComercial-SinDerivadas</option>
-              </select>
-          </div>
-
-          <div class=" col s12 ">
-           
+            <label>Tipo de Licencia</label>
+            <select name="usuario[pais]">
+              <option value="" disabled selected>Selecciona una licencia</option>
+              <option value="1">Atribución</option>
+              <option value="2">Atribución-Compartir Igual</option>
+              <option value="3">Atribución-Sin Derivadas</option>
+              <option value="4">Atribución-No Comercial</option>
+              <option value="5">Atribución-No Comercial-Compartir Igual</option>
+              <option value="6">Atribución-No Comercial-Sin Derivadas</option>
+            </select>
             <%= check_box_tag(:biblioteca) %>
-           <%= label_tag(:biblioteca, "Mostrar contenido en la libreria virtua") %>
-        </div>
+            <%= label_tag(:biblioteca, "Mostrar contenido en la libreria virtual") %>
 
-        <div class="col s12">
-        <div class="form-control block-center">
-          <button type="submit" href="" class="btn-success btn-lg">Enviar</button>
-          <a href="" class="btn-info btn-lg modal-close">Cancelar</a>
-        </div>
-      </div>
-
-      </div>
-        <div class="col s8">
-               <div class="col s12 pad30-h">
-                 <div class="col s12 panel">
-                       <h5>Agregar Archivo</h5>
-                          <input id="laptop" type="file" class="file" data-upload-url="/usuario/guardar_foto"/>
-                      
-                   </div>
-                </div>
-         </div>
-         
-          <div class="col s7 panel">
-            <br>
-            <ul id="lista-archivos" class="vacia">
-
-                <li>No haz agregado todas las versiones, Debes agregar todas las versiones para que se vean en todos los dispositivos.</li>
-                
-              </ul>
+            <div class="col s12">
+              <button type="submit" class="btn btn-success">Enviar</button>
+              <button type="reset" class="btn btn-info">Cancelar</button>
             </div>
 
-            <div class="col s5 text-center">
-              <div class="dropdown">
-                <a href="javascript:void(0)" class="btn-floating btn-ms waves-effect waves-light red"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="mdi-content-add"></i>
-                </a>
-                <ul id="agregar-archivos" class='dropdown-menu list-inline' role="menu">
-                  <li><a href="javascript:void(0)" class="phone" title="Versión movil"><i class="mdi-hardware-phone-android fb"></i></a></li>
-                  <li><a href="javascript:void(0)" class="watch" title="Versión google watch"><i class="mdi-hardware-watch tw"></i></a></li>
-                  <li><a href="javascript:void(0)" class="glass" title="Versión glass"><i class="mdi-communication-voicemail lk"></i></a></li>
-                </ul>
-              </div>
-              
-            </div>
         </div>
+        <div class="col s7">
+          <h5>Agregar Archivo</h5>
+          <input id="laptop" type="file" class="file" data-upload-url="/usuario/guardar_foto"/>
+        </div>
+      </div>
+      <div class="pad15"></div>
+      <div class="row">
+        <div class="col s7 panel">
+          <ul id="lista-archivos" class="vacia pad15-h">
+            <li>No haz agregado todas las versiones, Debes agregar todas las versiones para que se vean en todos los dispositivos.</li>  
+          </ul>
+        </div>
+        <div class="col s5 text-center">
+          <div class="dropdown">
+            <a href="javascript:void(0)" class="btn-floating btn-ms waves-effect waves-light red"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="mdi-content-add"></i>
+            </a>
+            <ul id="agregar-archivos" class='dropdown-menu list-inline' role="menu">
+              <li><a href="javascript:void(0)" class="phone" title="Versión movil"><i class="mdi-hardware-phone-android fb"></i></a></li>
+              <li><a href="javascript:void(0)" class="watch" title="Versión google watch"><i class="mdi-hardware-watch tw"></i></a></li>
+              <li><a href="javascript:void(0)" class="glass" title="Versión glass"><i class="mdi-communication-voicemail lk"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
      <!-- </div>
 </div> -->
 

@@ -11,7 +11,7 @@ Xlearning::Application.routes.draw do
     match "/validar_email" => "usuario#validar_email", via: :post
     match "/menu" => "menu#find", via: :get
     constraints(SubdomainPresent) do
-      match "/clases/:id" => "grupos#show", via: :get
+      match "/clases/:id" => "clases#index", via: :get
       match "/clases/:id/evaluacion/:id/overview" => "evaluacion#overview", via: :get
       match "/clases/:id/evaluacion/:id/presentar" => "evaluacion#presentar", via: :get
       match "/clases/" => "grupos#index", via: :get

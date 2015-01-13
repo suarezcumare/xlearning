@@ -411,6 +411,11 @@ ul.dropdown-menu li{
   padding-top: 15px;
 }
 
+.logged-in-usuario img{
+  width: 45px;
+  height: 45px;
+}
+
 .logged-in-usuario .media-body h6{
   font-weight: bold;
 }

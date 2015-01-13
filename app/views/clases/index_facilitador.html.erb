@@ -1,0 +1,63 @@
+<% content_for :css_personalizado do %>
+  <%= stylesheet_link_tag    "timeline" %>
+  <%= stylesheet_link_tag    "clases" %>
+<% end %>
+<div class="row titulo-seccion">
+  <div class="col s6">
+    <h5 class="text-uppercase">Salón de clases</h5>
+  </div>
+  <div class="col s6 text-right">
+    <ol class="breadcrumb">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Mis secciones", clases_path %></li>
+      <li class="active">API de Google Maps</li>
+    </ol>
+  </div>
+</div>
+<div class="row pad30 pad30-h">
+  <div class="col-md-7 col-lg-7">
+    <%= render "clases/application/header_facilitador" %>
+    
+    <!-- Inicio cuadro Generar, llevado por un tabs -->      
+    <br>
+    <div class="tab-pane" id="leccionesCurso">
+      <%= render "clases/elementos/lista" %>
+    </div>
+    <div class="tab-pane" id="bitacoraCurso">
+      <%= render "clases/elementos/bitacora" %>
+    </div>
+    <div class="tab-pane" id="evaluacionesCurso">      
+      <%= render "clases/elementos/evaluaciones" %>
+    </div>
+    <div class="tab-pane" id="calendarioCurso">       
+      <%= render "clases/elementos/calendario" %>
+    </div>
+    <div class="tab-pane" id="notificacionesEvaluacionesCurso">      
+      <%= render "clases/elementos/notificaciones" %>
+    </div>
+    <div class="tab-pane" id="descipcionesCurso">
+      <%= render "clases/elementos/descripciones" %>
+    </div>
+   <!-- Fin cuadro Generar, llevado por un tabs -->   
+  
+  </div>
+  <div class="col s5">
+      <%= render "clases/elementos/sidebar" %>
+  </div>
+
+</div>
+
+<% content_for :js_personalizado do %>
+   <%= javascript_include_tag 'clases' %>
+
+ 
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+    $('.tooltipped').tooltip({"delay": 50});    
+    $('ul.mod-evaluaciones').tabs();
+  });
+  </script>
+
+<% end %>
+

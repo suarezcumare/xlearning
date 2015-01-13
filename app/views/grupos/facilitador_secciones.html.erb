@@ -2,19 +2,20 @@
 	<%= stylesheet_link_tag    "cursos" %>
 	<%= stylesheet_link_tag    "clases" %>
 <% end %>
-
-<div class="text-right">
-	<ol class="breadcrumb">
-	  <li><%= link_to "Home", root_path %></li>
-	  <li class="active">Mis Secciones</li>
-	</ol>
+<div class="row titulo-seccion">
+  <div class="col s6">
+    <h5 class="text-uppercase">Mis secciones</h5>
+  </div>
+  <div class="col s6 text-right">
+    <ol class="breadcrumb">
+      <li><%= link_to "Home", root_path %></li>
+      <li class="active">Mis secciones</li>
+    </ol>
+  </div>
 </div>
 
 <div class="row pad30-h">
-	<div class="col-lg-6">
-		<h5 class="text-uppercase">Mis Secciones</h5>
-	</div>
-	<div class="col-lg-6">
+	<div class="col s6 offset-s6">
 
 		<ul class="nav nav-pills pull-right">
 		  <li role="presentation" class="active"><%= link_to "Actual", secciones_facilitador_path %></li>
@@ -43,7 +44,7 @@
 					<span class="fecha-fin">Feb, 13 de 2015</span>
 				</div>
 				<br/>
-				<%= link_to "Información", "/clases/1", {class: "text-uppercase" }%>
+				<%= link_to "Información", "/cursos/1", {class: "text-uppercase" }%>
 				<%= link_to "Ver Sección", "/clases/1", {class: "btn btn-danger ingresar"}%>
 			  </div>
 			</div>
