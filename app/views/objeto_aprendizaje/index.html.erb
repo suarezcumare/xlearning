@@ -19,13 +19,13 @@
 <div class="row">
   <div class="col-md-8">
   </div>
-  <div class="col-md-4">
-    <div class="input-group pad15">
-      <span class="input-group-addon light-blue"><i class="fa fa-search white-text"></i></span>
-      <input class="form-control" type="text" placeholder="  ¿Qué estás buscando?"></input>
-    </div>
+  <div class="col s6 text-right">
+    <ol class="breadcrumb">
+      <li><%= link_to "Home", root_path %></li>
+      <li class="active">Biblioteca virtual</li>
+    </ol>
   </div>
-</div>
+</div>  
 
 <div class="row">
   <div  class="col s2 pad15-h">
@@ -47,6 +47,14 @@
     </form>
   </div>
   <div class="col s10">
+    <div class="row">
+      <div class="col s4 offset-s7">
+        <div class="input-group pad15">
+          <span class="input-group-addon light-blue"><i class="fa fa-search white-text"></i></span>
+          <input class="form-control" type="text" placeholder="  ¿Qué estás buscando?"></input>
+        </div>
+      </div>
+    </div>
     <div class="row">
       <div class="col s12">
         <!-- <ul class="text-right pager no-margin-v">

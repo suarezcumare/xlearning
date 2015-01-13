@@ -1,10 +1,25 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,300italic);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700);
+#inicio{
+  background: url(20090423class44771.jpg);
+  height: 550px;
+  padding-top: 250px;
+}
+
+#inicio h1, #inicio  h3{
+  color: white;
+  text-align: center;
+  position: relative;
+  margin: 0px; 
+  text-shadow: 2px 2px gray;
+}
+
+#inicio h1{
+  font-size: 65px;
+  /*transform: translateY(200px);*/
+}
 #banner {
   background-size: cover;
   position: relative;
-  padding: 100px 0;
+  padding: 50px 0;
 }
 #banner .app-img {
   padding-top: 10px;
@@ -78,11 +93,10 @@
 }
 #service {
   padding: 30px 0;
+  background: rgb(100, 164, 226);
 }
 #service .service-wrapper {
-  border-top: 1px solid #dedede;
-  border-bottom: 1px solid #dedede;
-  padding: 110px 0;
+  padding: 60px 0;
 }
 #service .block {
   cursor: pointer;
@@ -91,16 +105,20 @@
 #service .block:hover .icon i {
   color: #fff;
 }
+#service .block h3{
+  font-size: 28px;
+  line-height: 30px;
+  color: white;
+}
 #service .block:hover h3 {
-  color: #138BC1;
+  color: #fff;
 }
 #service .block:hover .icon {
   border: 1px solid #FFFFFF;
-  background: #5CB4F4;
-  color: #fff;
-  -webkit-box-shadow: 0 0 0px 2px #5CB4F4;
-  -moz-box-shadow: 0 0 0px 2px #5CB4F4;
-  box-shadow: 0 0 0px 2px #056686;
+  background: #fff;
+}
+#service .block:hover .icon i{
+  color: #bbb;
 }
 #service .block .icon {
   width: 90px;
@@ -113,16 +131,18 @@
   -o-transition: .2s all;
   transition: .2s all;
 }
+#service .block p{
+  color: white;
+}
 #service .block i {
   font-size: 25px;
   line-height: 90px;
-  color: #989898;
   -webkit-transition: .2s all;
   -o-transition: .2s all;
   transition: .2s all;
+  color:#fff;
 }
 #service .block h3 {
-  color: #555;
   font-weight: 300;
 }
 #service .block p {
@@ -132,7 +152,6 @@
   padding: 1px 0;
 }
 #feature .feature-wrapper {
-  
   border-bottom: 1px solid #dedede;
   padding: 110px 0;
 }
@@ -174,6 +193,10 @@
 #utility .block h2 {
   padding-top: 70px;
   color: #444;
+}
+#utility h4 {
+  font-size: 22px;
+  padding-top: 10px;
 }
 #utility .block p {
   line-height: 32px;

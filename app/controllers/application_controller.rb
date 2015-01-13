@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
   before_filter :load_db, :load_menu
 
   @menu
+  protected
+
+  def after_sign_in_path_for(resource)
+    return "/inicio"
+  end
 
   private
   	def load_db

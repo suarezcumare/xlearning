@@ -3,22 +3,22 @@
 	<div id="titulo">
 		<h3>Reg&iacute;strate</h3>
 	</div>
-	<div id="secciones" style="display:inline-block;">
-		<div class="pull-left seccion">
+	<div id="secciones" style="display:inline-block;width:100%;">
+		<div class="pull-left seccion s6">
 			<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 			  <%= devise_error_messages! %>
-
-			  <div><%= f.label :email, "Email" %><br />
-			  <div class="input-group"><%= f.email_field :email, :autofocus => true %>
-			  	<div class="estado input-group-addon"></div></div>
+			  <div class="input-field">
+			  	<%= f.email_field :email,  :required=>true %>
+			  	<%= f.label :email, "Email" %>
 			  </div>
-			  <div><%= f.label :password, "Contraseña" %><br />
-			  <div class="input-group"><%= f.password_field :password, {"maxlength"=>30} %><div class="estado input-group-addon"></div></div>
-			</div>
-
-			  <div><%= f.label :password_confirmation, "Confirmar contraseña" %><br />
-			  <div class="input-group"><%= f.password_field :password_confirmation, {"maxlength"=>30} %><div class="estado input-group-addon"></div></div>
-			</div>
+			  <div class="input-field">
+			  	<%= f.label :password, "Contraseña" %>
+			  	<%= f.password_field :password, :maxlength=>30, :required=>true %>
+			  </div>
+			  <div class="input-field">
+			  	<%= f.label :password_confirmation, "Confirmar contraseña" %>
+			  	<%= f.password_field :password_confirmation, :maxlength=>30, :required=>true %>
+			  </div>
 			  <div><%= check_box_tag(:terminos) %>
 				   <%= label_tag(:terminos, "Acepto los términos de uso") %></div>
 			  <div><%= f.submit "Enviar", class: "btn btn-danger" %>
@@ -30,7 +30,7 @@
 
 			<% end %>
 		</div>
-		<div class="pull-left seccion text-center">
+		<div class="pull-left seccion text-center s6">
 			<div class="pad45">
 				<i class="mdi-action-perm-contact-cal"></i><br>
 				Si ya tienes una cuenta <a href="#login-form" class="modal-trigger">inicia sesi&oacute;n</a>

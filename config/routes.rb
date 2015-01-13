@@ -12,7 +12,7 @@ Xlearning::Application.routes.draw do
     match "/validar_email" => "usuario#validar_email", via: :post
     match "/menu" => "menu#find", via: :get
     constraints(SubdomainPresent) do
-      match "/clases/:id" => "grupos#show", via: :get
+      match "/clases/:id" => "clases#index", via: :get
       match "/clases/:id/evaluacion/:id/overview" => "evaluacion#overview", via: :get
       match "/clases/:id/evaluacion/:id/presentar" => "evaluacion#presentar", via: :get
       match "/clases/" => "grupos#index", via: :get
@@ -51,7 +51,10 @@ Xlearning::Application.routes.draw do
       match "/secciones/facilitador" => "grupos#facilitador_secciones", via: :get
       match "/secciones/coordinador" => "grupos#coordinador_secciones", via: :get
        match "/organizacion/todas" => "organizacions#show", via: :get
+       match "/cursos/editar" => "cursos#edit", via: :get
+       #match "/encuestas/modificar/:id" => "encuestas#edit", via: :get
 
+      
 
   end
 
