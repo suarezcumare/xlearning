@@ -22,70 +22,50 @@
 			  <li role="presentation"><%= link_to "Pasados", clases_path %></li>
 			  <li role="presentation"><%= link_to "Futuros", clases_path %></li>
 			</ul>
-			<div class="panel curso-actual">
-				<div class="media">
-				  <a class="media-left" href="#">
-				    <img src="/assets/clases-imagen.jpg" alt="">
-				  </a>
-				  <div class="media-body">
-				    <h5 class="media-heading">API de Google Maps</h5>
-				    <div>
-					    <div class="progress">
-						  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="	width: 60%;">
-						    <span class="sr-only">60% Completado</span>
+			
+			 <%  @grupos.each do |grupo| %>	 	
+		  <br>
+		    		<div class="panel curso-actual">
+						<div class="media">
+						  <a class="media-left" href="#">
+						    <img src="/assets/clases-imagen.jpg" alt="">
+						  </a>
+						  <div class="media-body">
+						    <h5 class="media-heading"><%= grupo.curso.nombre %></h5>
+						    <div>
+							    <div class="progress">
+								  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="	width: 10%;">
+								    <span class="sr-only">60% Completado</span>
+								  </div>
+								</div>
+								<span class="fecha-inicio"> <%=grupo.fecha_inicio %></span>
+								<span class="fecha-fin"><%=grupo.fecha_fin %></span>
+							</div>
+							<br/>
+							 <a class="modal-trigger text-uppercase" href="#modal<%= grupo.curso.id %>"> Información</a>
+							<%= link_to "Ir a clases", "clases/#{grupo.curso.id}", {class: "btn btn-danger ingresar"}%>
 						  </div>
 						</div>
-						<span class="fecha-inicio"> Nov, 12 de 2014</span>
-						<span class="fecha-fin">Feb, 13 de 2015</span>
 					</div>
-					<br/>
-					<%= link_to "Información", "/clases/1", {class: "text-uppercase" }%>
-					<%= link_to "Ir a clases", "clases/1", {class: "btn btn-danger ingresar"}%>
-				  </div>
-				</div>
-			</div>
-			<div class="panel curso-actual">
-				<div class="media">
-				  <a class="media-left" href="#">
-				    <img src="/assets/clases-imagen.jpg" alt="">
-				  </a>
-				  <div class="media-body">
-				    <h5 class="media-heading">API de Google Maps</h5>
-				    <div>
-					    <div class="progress">
-						  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="	width: 60%;">
-						    <span class="sr-only">60% Completado</span>
-						  </div>
-						</div>
-						<span class="fecha-inicio"> Nov, 12 de 2014</span>
-						<span class="fecha-fin">Feb, 13 de 2015</span>
-					</div>
-					<%= link_to "Información", clases_path(1), {class: "text-uppercase"}%>
-					<%= link_to "Ir a clases", clases_path(1), {class: "btn btn-danger ingresar"}%>
-				  </div>
-				</div>
-			</div>
-			<div class="panel curso-actual">
-				<div class="media">
-				  <a class="media-left" href="#">
-				    <img src="/assets/clases-imagen.jpg" alt="">
-				  </a>
-				  <div class="media-body">
-				    <h5 class="media-heading">API de Google Maps</h5>
-				    <div>
-					    <div class="progress">
-						  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="	width: 60%;">
-						    <span class="sr-only">60% Completado</span>
-						  </div>
-						</div>
-						<span class="fecha-inicio"> Nov, 12 de 2014</span>
-						<span class="fecha-fin">Feb, 13 de 2015</span>
-					</div>
-					<%= link_to "Información", clases_path(1), {class: "text-uppercase"}%>
-					<%= link_to "Ir a clases", clases_path(1), {class: "btn btn-danger ingresar"}%>
-				  </div>
-				</div>
-			</div>
+					
+					<!-- Modal Structure -->
+					  <div id="modal<%= grupo.curso.id %>" class="modal">
+					    	<a href="#" style="float:right;" class="waves-effect btn-flat modal-close"><i class="mdi-content-clear"></i></a>
+					    <h4 class="text-primary pad15 pad30-h"><%= grupo.curso.nombre %></h4>
+
+					    <p class="pad15 pad15-h"><span> <b> Descripción: </b> </span> <%= grupo.curso.descripcion%></p>
+					    <p class="pad15 pad15-h"><span> <b> Objetivos: </b> </span> <%= grupo.curso.objetivos%></p>
+					     <p class="pad15 pad15-h"><%= grupo.curso.perfil_estudiante%></p>
+					    <p class="pad15 pad15-h"><%= grupo.curso.prerequisitos%></p>
+					   
+					  </div>
+		  <% end %>
+
+		   <div id="myClases"></div>
+
+
+
+
 			<div class="pad15"></div>
 			<hr/>
 			<div class="pad15"></div>
