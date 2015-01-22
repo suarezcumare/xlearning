@@ -148,6 +148,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    seed_dump (3.2.1)
+      activerecord (~> 4)
+      activesupport (~> 4)
     showdown-rails (0.0.4)
       actionpack (>= 3.1)
       railties (>= 3.1)
@@ -195,6 +198,7 @@ DEPENDENCIES
   react-rails!
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  seed_dump
   showdown-rails
   therubyracer
   tzinfo-data
