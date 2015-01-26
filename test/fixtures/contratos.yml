@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  organizacion_id: 
+  fecha_creacion: 2015-01-18 19:31:14
+  observacion: MyText
+  plan_id: 
+
+two:
+  organizacion_id: 
+  fecha_creacion: 2015-01-18 19:31:14
+  observacion: MyText
+  plan_id: 

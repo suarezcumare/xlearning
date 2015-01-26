@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  descripcion: MyText
-  titulo: MyString
-  fecha: 2014-12-18 00:16:20
+  notificble_id: 
+  fecha: 2015-01-20 21:19:39
   usuario_id: 
-  grupo_id: 
+  tipo_notificacion_id: 
+  leido: false
 
 two:
-  descripcion: MyText
-  titulo: MyString
-  fecha: 2014-12-18 00:16:20
+  notificble_id: 
+  fecha: 2015-01-20 21:19:39
   usuario_id: 
-  grupo_id: 
+  tipo_notificacion_id: 
+  leido: false

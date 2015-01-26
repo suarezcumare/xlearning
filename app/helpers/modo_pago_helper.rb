@@ -1,0 +1,2 @@
+module ModoPagoHelper
+end

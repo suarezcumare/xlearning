@@ -9,4 +9,5 @@ class Curso < ActiveRecord::Base
 	has_many :cursos, :through => :prelacions
 	has_many :curso_categoria
   	has_many :categoria, :through => :curso_categoria
+  	belongs_to :item_estructura, class_name: "ItemEstructuraOfertaAcademica", foreign_key: "item_estructura_id"
 end

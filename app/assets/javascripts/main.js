@@ -1,4 +1,20 @@
+var Xlearning = function(){
+	var scrollTo = function(el, offeset) {
+		console.log("scrollTo");
+        var pos = (el && el.size() > 0) ? el.offset().top : 0;
+        console.log("scrollTo: "+pos);
+        if (el) {           
+            pos = pos + (offeset ? offeset : -1 * el.height());
+        }
+
+        $('html,body').animate({
+            scrollTop: pos
+        }, 'slow');
+    }
+}
+
 $(document).ready(function(){
+	
 	$('ul.tabs').tabs();
 	$('select').not('.disabled').material_select();
 	$('.datepicker').pickadate();
@@ -9,6 +25,9 @@ $(document).ready(function(){
 	      //hover: false // Activate on click
 	    }
 	);
+	$(function () {
+	  $('[data-toggle="popover"]').popover()
+	})
 	$("#busqueda-trigger").click(function(){
 		$("#top-search-bar").css("display","table");
 	});
@@ -82,5 +101,7 @@ $(document).ready(function(){
 	        	$("#visualizador").html("");
 	        } 
 		});
+		
 	});
 });
+

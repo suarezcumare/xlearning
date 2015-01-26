@@ -230,4 +230,6 @@ Devise.setup do |config|
 
   config.http_authenticatable_on_xhr = false
   config.navigational_formats = ["*/*", :html, :json]
+
+  config.omniauth :facebook, "441132936040087", "9048ed2c57fa43adb81a5b6172724d1b"
 end

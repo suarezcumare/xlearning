@@ -4,7 +4,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :load_db, :load_menu
 
+  def ensure_signup_complete
+    # Ensure we don't go into an infinite loop
+    return if action_name == 'finish_signup'
+
+    # Redirect to the 'finish_signup' page if the user
+    # email hasn't been verified yet
+    if current_usuario && !current_usuario.email_verified?
+      redirect_to finish_signup_path(current_usuario)
+    end
+  end
+
   @menu
+  
   protected
 
   def after_sign_in_path_for(resource)

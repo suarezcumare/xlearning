@@ -163,8 +163,13 @@ word-wrap: break-word
 /****************************************************************/
 /*                       Bootstrap Wizard                       */
 /****************************************************************/
+#form_wizard_1{
+  width: 80%;
+  min-width: 600px; 
+}
+
 .form-wizard .progress {
-  margin-bottom: 30px;
+  
 }
 .form-wizard .steps {
   padding: 10px 0;
@@ -176,7 +181,7 @@ word-wrap: break-word
   box-shadow: none;
 }
 .form-wizard .steps > li > a.step {
-  background-color: #fff !important;
+  background-color: transparent; !important;
   background-image: none;
   filter: none;
   border: 0px;
@@ -229,7 +234,9 @@ word-wrap: break-word
   color: #999;
   display: inline-block;
 }
-
+#campos-paypal, #form_wizard_1 .feedback{
+  display: none;
+}
 @media (min-width: 768px) and (max-width: 1200px) {
   /* 768px & 1200px */
   .form-wizard .step .desc {

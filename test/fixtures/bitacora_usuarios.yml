@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: 2015-01-20 20:58:07
+  trackeable_id: 
+  tipo_evento_id: 
+  usuario_id: 
+
+two:
+  fecha: 2015-01-20 20:58:07
+  trackeable_id: 
+  tipo_evento_id: 
+  usuario_id: 

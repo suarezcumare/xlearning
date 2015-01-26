@@ -372,6 +372,7 @@ nav ul a .badge{
   color: white;
   border-radius: 100%;
   width: 20px !important;
+  min-width: 20px;
   height: 20px;
   padding: 0px;
   font-weight: normal;
@@ -586,6 +587,7 @@ footer .footer-copyright{
   font-size: 11px;
   margin-bottom: 15px;
   color: #d34836;
+  font-weight: 400;
 }
 
 input:-webkit-autofill, textarea:-webkit-autofill {
@@ -646,11 +648,11 @@ label{
 }
 .btn-success:hover,
 .btn-success:focus {
-  background-color: #139178;
+  background-color: #00bfa5;
 }
 .btn-success:active,
 .btn-success.active {
-  background-color: #139178;
+  background-color: #0d6855;
 }
 .btn-success:disabled,
 .btn-success[disabled] {
@@ -714,8 +716,9 @@ label{
 #login-form{
   width: 400px;
   border-radius: 5px;
-  /*height: 400px;*/
-  background-color: #6c7a8d;
+  padding: 0px;
+  background-color: #F5F7FA;
+  border: 0px;
 }
 #login-form legend{
   color:#03a9f4;

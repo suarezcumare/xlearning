@@ -128,6 +128,11 @@ class OrganizacionsController < ApplicationController
     
   end
 
-
-
+  def validar_subdominio
+    if BaseDato.exists?(nombre: params[:usuario][:organizacion_attributes][:subdominio])
+      render json: false
+    else
+      render json: true
+    end
+  end
 end

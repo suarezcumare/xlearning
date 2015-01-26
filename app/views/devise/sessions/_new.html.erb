@@ -6,11 +6,14 @@
 		<%= form_for(:usuario, :url => entrar_url,
 				:html => {:id => "form-iniciar-sesion"}) do |f| %>
 		  	<legend class="text-center">Inicia sesi&oacute;n</legend>
-			  <div><%= f.label :email,"Email" %><br />
-			  <%= f.email_field :email, :autofocus => true %></div>
-
-			  <div><%= f.label :password, "Contraseña" %><br />
-			  <%= f.password_field :password, {"id"=>"password"} %></div>
+		  		<div class="input-field">
+			  		<%= f.email_field :email, :autofocus => true %>
+			  		<%= f.label :email,"Email" %>
+		  		</div>
+		  		<div class="input-field">
+			  		<%= f.password_field :password, {"id"=>"password"} %>
+			  		<%= f.label :password, "Contraseña" %>
+		  		</div>
 			  <% if devise_mapping.rememberable? -%>
 			    <span class="pull-right"><%= f.check_box :remember_me %> <%= f.label :remember_me, "No cerrar sesión" %></span>
 			  <% end -%>
@@ -21,7 +24,7 @@
 			  
 			  <div class="text-center">
 			  <strong>O inicia sesi&oacute;n con </strong>
-			  <a href="javascript:void(0)" class="fb"><i class="fa fa-facebook"></i></a>
+			  <a href="<%= omniauth_authorize_path(resource_name, :facebook) %>" class="fb"><i class="fa fa-facebook"></i></a>
 			  <a href="javascript:void(0)" class="tw"><i class="fa fa-twitter"></i></a>
 			  <a href="javascript:void(0)" class="gp"><i class="fa fa-google-plus"></i></a>
 			</div>

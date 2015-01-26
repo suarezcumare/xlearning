@@ -1,11 +1,12 @@
 class CreateNotificacions < ActiveRecord::Migration
   def change
     create_table :notificacions do |t|
-      t.text :descripcion
-      t.string :titulo
+      t.references :notificble, index: true
       t.datetime :fecha
       t.references :usuario, index: true
-      t.references :grupo, index: true
+      t.references :tipo_notificacion, index: true
+      t.boolean :leido
+      t.string :contexto
     end
   end
 end

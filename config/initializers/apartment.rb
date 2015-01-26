@@ -18,7 +18,8 @@ Apartment.configure do |config|
   # config.excluded_models = %w{Tenant}
   #
   config.excluded_models = %w{ Organizacion Rol OpcionMenu 
-    Menu TipoFormato Licencia ModoPago BaseDato}
+    Menu TipoFormato Licencia ModoPago BaseDato RedSocial TipoEvento FrecuenciaPago Plan 
+    Contrato Organizacion}
 
   # use postgres schemas?
   config.use_schemas = true

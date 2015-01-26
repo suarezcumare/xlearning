@@ -2912,7 +2912,7 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-success {
   color: #ffffff;
-  background-color: #0CC496;
+  background-color: #0CC496 !important;
   border-color: transparent;
 }
 .btn-success:hover,
@@ -6061,11 +6061,6 @@ button.close {
 .panel-body:after,
 .modal-footer:after {
   clear: both;
-}
-.center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 .pull-right {
   float: right !important;

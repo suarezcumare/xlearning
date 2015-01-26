@@ -37,9 +37,9 @@
       </ul>
       <% else %>
       	<ul id="nav-mobile" class="right side-nav">
-            <li><a href="#service">Servicios</a></li>
-            <li><a href="#feature">Caracteristicas</a></li>
-            <li><a href="#utility">Planes</a></li>
+            <li><a href="<%= root_path %>#service">Servicios</a></li>
+            <li><a href="<%= root_path %>#feature">Caracteristicas</a></li>
+            <li><a href="<%= root_path %>#utility">Planes</a></li>
 	        <li><a href="<%= registro_path %>">Registrarse</a></li>
 	     </ul>
       <% end %>
@@ -56,7 +56,3 @@
     </form>
   </div>
 </nav>
-
-<% if !usuario_signed_in? %>
-<%= render "devise/sessions/new" %>
-<% end %>
