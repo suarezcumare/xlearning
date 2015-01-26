@@ -42,27 +42,23 @@
         <%= render "application/portal/header_portal" %>
       <% end %>
     </header>
-    <main class="container-fluid no-padding no-margin">
-      <div class="row">
-        <% if usuario_signed_in? %>
-          <div class="col-md-3 col-lg-2 no-padding">
-            <%= render "application/portal/menu" %>
-          </div>
-          <div class="col-md-9 col-lg-10  no-padding">
+    <main>
+      <% if usuario_signed_in? %>
+        <%= render "application/portal/menu" %>
+        <div id ="contenedor" class="container-fluid no-padding logged-in">
+          <div class="col s12">
             <%= yield %>
             <footer>
               <%= render "application/portal/footer" %>
             </footer>
           </div>
-        <% else %>
-            <div class="col-md-12 col-lg-12 no-padding">
-              <%= yield %>
-              <footer>
-                <%= render "application/portal/footer" %>
-              </footer>
-            </div>
-        <% end %>
-      </div>
+        </div>
+      <% else %>
+        <%= yield %>
+        <footer>
+          <%= render "application/portal/footer" %>
+        </footer>
+      <% end %>
       <div class="scroll-to-top">
         <a href="javascript:void(0)"><i class="fa fa-arrow-circle-o-up"></i></a>
       </div>

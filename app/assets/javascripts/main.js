@@ -35,7 +35,7 @@ $(document).ready(function(){
 		$("#top-search-bar").css("display","none");
 	});
 	$(".toggler-wrapper a").click(function(){
-		$("#sidebar-menu").toggleClass("cerrado");
+		$("main").toggleClass("cerrado");
 	});
     //$('.collapsible').collapsible();
     $('[data-toggle="tooltip"]').tooltip();
