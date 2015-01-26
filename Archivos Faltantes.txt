@@ -10,9 +10,6 @@ Cursos
 /cursos/nuevos
 
 
-Clientes
-/politicas -> Politicas de Adminision a los clientes
-
 Cursos
 /cursos/estructura -> Estructura jerarquica
 /cursos/taxonomia
