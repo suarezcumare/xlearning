@@ -39,4 +39,213 @@ class GruposController < ApplicationController
 		
 		
 	end
+
+	def generarClasesActuales
+
+  	@grupos = Grupo.includes(:curso).where('fecha_inicio <= ? and ? <= fecha_fin and usuario_id = ?', Time.now.midnight,Time.now.midnight, current_usuario.id )
+
+   @son2 = @grupos.count
+
+   if @son2 > 0 
+	    @i2=1
+	    $tirajson2 = '[ '
+	 @grupos.each do |grupos|
+	      	if @i2<@son2
+
+				$tirajson2 = $tirajson2 +   ' { "codigo": "'  + grupos.id.to_s +
+											'","nombre": "'+ grupos.curso.nombre.to_s +
+											'","fechaI": "'+ grupos.fecha_inicio.to_s +
+											'","fechaF": "'+ grupos.fecha_inicio.to_s +
+											'","descripcion": "'+ grupos.curso.descripcion.to_s +
+											'","objetivos": "'+ grupos.curso.objetivos.to_s +
+											'","perfil": "'+ 	grupos.curso.perfil_estudiante.to_s +
+											'","img": "'+ 	grupos.curso.prerequisitos.to_s +
+											'","url": "'  "/clases/"   + grupos.id.to_s +  '"}, '
+	        else
+				 $tirajson2 = $tirajson2 +   ' { "codigo": "'  + grupos.id.to_s +
+											'","nombre": "'+ grupos.curso.nombre.to_s +
+											'","fechaI": "'+ grupos.fecha_inicio.to_s +
+											'","fechaF": "'+ grupos.fecha_inicio.to_s +
+											'","descripcion": "'+ grupos.curso.descripcion.to_s +
+											'","objetivos": "'+ grupos.curso.objetivos.to_s +
+											'","perfil": "'+ 	grupos.curso.perfil_estudiante.to_s +
+											'","prerequisitos": "'+ 	grupos.curso.prerequisitos.to_s +
+											'","img": "'+ 	grupos.curso.prerequisitos.to_s +
+											'","url": "'    "/clases/" + grupos.id.to_s +  '"} '
+	      end
+	    		@i2=@i2+1
+	  end
+	   	 $tirajson2 = $tirajson2 + ' ]'
+   else
+    $tirajson2 = '[ ]'; 
+   end
+   
+  		render :json => $tirajson2 
+
+	end
+
+	def generarClasesPasadas
+
+  	@grupos = Grupo.includes(:curso).where('fecha_inicio <= ? and ? > fecha_fin and usuario_id = ?', Time.now.midnight,Time.now.midnight, current_usuario.id )
+
+   @son2 = @grupos.count
+
+   if @son2 > 0 
+	    @i2=1
+	    $tirajson2 = '[ '
+	 @grupos.each do |grupos|
+	      	if @i2<@son2
+
+				$tirajson2 = $tirajson2 +   ' { "codigo": "'  + grupos.id.to_s +
+											'","nombre": "'+ grupos.curso.nombre.to_s +
+											'","fechaI": "'+ grupos.fecha_inicio.to_s +
+											'","fechaF": "'+ grupos.fecha_inicio.to_s +
+											'","descripcion": "'+ grupos.curso.descripcion.to_s +
+											'","objetivos": "'+ grupos.curso.objetivos.to_s +
+											'","perfil": "'+ 	grupos.curso.perfil_estudiante.to_s +
+											'","img": "'+ 	grupos.curso.prerequisitos.to_s +
+											'","url": "'  "/clases/"   + grupos.id.to_s +  '"}, '
+	        else
+				 $tirajson2 = $tirajson2 +   ' { "codigo": "'  + grupos.id.to_s +
+											'","nombre": "'+ grupos.curso.nombre.to_s +
+											'","fechaI": "'+ grupos.fecha_inicio.to_s +
+											'","fechaF": "'+ grupos.fecha_inicio.to_s +
+											'","descripcion": "'+ grupos.curso.descripcion.to_s +
+											'","objetivos": "'+ grupos.curso.objetivos.to_s +
+											'","perfil": "'+ 	grupos.curso.perfil_estudiante.to_s +
+											'","prerequisitos": "'+ 	grupos.curso.prerequisitos.to_s +
+											'","img": "'+ 	grupos.curso.prerequisitos.to_s +
+											'","url": "'    "/clases/" + grupos.id.to_s +  '"} '
+	      end
+	    		@i2=@i2+1
+	  end
+	   	 $tirajson2 = $tirajson2 + ' ]'
+   else
+    $tirajson2 = '[ ]'; 
+   end
+   
+  		render :json => $tirajson2 
+
+	end
+
+	def generarClasesFuturas
+
+  	@grupos = Grupo.includes(:curso).where('fecha_inicio >= ? and ? <= fecha_fin and usuario_id = ?', Time.now.midnight,Time.now.midnight, current_usuario.id )
+
+   @son2 = @grupos.count
+
+   if @son2 > 0 
+	    @i2=1
+	    $tirajson2 = '[ '
+	 @grupos.each do |grupos|
+	      	if @i2<@son2
+
+				$tirajson2 = $tirajson2 +   ' { "codigo": "'  + grupos.id.to_s +
+											'","nombre": "'+ grupos.curso.nombre.to_s +
+											'","fechaI": "'+ grupos.fecha_inicio.to_s +
+											'","fechaF": "'+ grupos.fecha_inicio.to_s +
+											'","descripcion": "'+ grupos.curso.descripcion.to_s +
+											'","objetivos": "'+ grupos.curso.objetivos.to_s +
+											'","perfil": "'+ 	grupos.curso.perfil_estudiante.to_s +
+											'","img": "'+ 	grupos.curso.prerequisitos.to_s +
+											'","url": "'  "/clases/"   + grupos.id.to_s +  '"}, '
+	        else
+				 $tirajson2 = $tirajson2 +   ' { "codigo": "'  + grupos.id.to_s +
+											'","nombre": "'+ grupos.curso.nombre.to_s +
+											'","fechaI": "'+ grupos.fecha_inicio.to_s +
+											'","fechaF": "'+ grupos.fecha_inicio.to_s +
+											'","descripcion": "'+ grupos.curso.descripcion.to_s +
+											'","objetivos": "'+ grupos.curso.objetivos.to_s +
+											'","perfil": "'+ 	grupos.curso.perfil_estudiante.to_s +
+											'","prerequisitos": "'+ 	grupos.curso.prerequisitos.to_s +
+											'","img": "'+ 	grupos.curso.prerequisitos.to_s +
+											'","url": "'    "/clases/" + grupos.id.to_s +  '"} '
+	      end
+	    		@i2=@i2+1
+	  end
+	   	 $tirajson2 = $tirajson2 + ' ]'
+   else
+    $tirajson2 = '[ ]'; 
+   end
+   
+  		render :json => $tirajson2 
+
+	end
+
+	def generarListaDeseos
+
+			#@grupos = Grupo.includes(:curso).where('fecha_inicio >= ? and ? <= fecha_fin and usuario_id = ?', Time.now.midnight,Time.now.midnight, current_usuario.id )
+  @cursos = Curso.all.limit(2)
+   @son2 = @cursos.count
+
+   if @son2 > 0 
+	    @i2=1
+	    $tirajson2 = '[ '
+	 @cursos.each do |curso|
+	      	if @i2<@son2
+
+				$tirajson2 = $tirajson2 +   ' { "codigo": "'  + curso.id.to_s +
+											'","nombre": "'+ curso.nombre.to_s +
+											'","descripcion": "'+ curso.descripcion.to_s +
+											'","img": "'+ 	curso.prerequisitos.to_s +
+											'","url": "'  "/clases/"   + curso.id.to_s +  '"}, '
+	        else
+				 $tirajson2 = $tirajson2 +   ' { "codigo": "'  + curso.id.to_s +
+											'","nombre": "'+ curso.nombre.to_s +
+											'","descripcion": "'+ curso.descripcion.to_s +
+											'","img": "'+ 	curso.prerequisitos.to_s +
+											'","url": "'  "/clases/"   + curso.id.to_s +  '"} '
+	      end
+	    		@i2=@i2+1
+	  end
+	   	 $tirajson2 = $tirajson2 + ' ]'
+   else
+    $tirajson2 = '[ ]'; 
+   end
+   
+  		render :json => $tirajson2 
+
+		
+	end
+
+	def generarListaRecomendados
+
+			#@grupos = Grupo.includes(:curso).where('fecha_inicio >= ? and ? <= fecha_fin and usuario_id = ?', Time.now.midnight,Time.now.midnight, current_usuario.id )
+   @cursos = Curso.all.limit(2)
+   @son2 = @cursos.count
+
+   if @son2 > 0 
+	    @i2=1
+	    $tirajson2 = '[ '
+	 @cursos.each do |curso|
+
+
+	      	if @i2<@son2
+
+				$tirajson2 = $tirajson2 +   ' { "codigo": "'  + curso.id.to_s +
+											'","nombre": "'+ curso.nombre.to_s +
+											'","descripcion": "'+ curso.descripcion.to_s +
+											'","img": "'+ 	curso.prerequisitos.to_s +
+											'","url": "'  "/clases/"   + curso.id.to_s +  '"}, '
+	        else
+				 $tirajson2 = $tirajson2 +   ' { "codigo": "'  + curso.id.to_s +
+											'","nombre": "'+ curso.nombre.to_s +
+											'","descripcion": "'+ curso.descripcion.to_s +
+											'","img": "'+ 	curso.prerequisitos.to_s +
+											'","url": "'  "/clases/"   + curso.id.to_s +  '"} '
+	      end
+	    		@i2=@i2+1
+	  end
+	   	 $tirajson2 = $tirajson2 + ' ]'
+   else
+    $tirajson2 = '[ ]';
+
+   end
+   
+  		render :json => $tirajson2 
+
+		
+	end
+
+
 end

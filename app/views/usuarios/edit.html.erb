@@ -7,7 +7,7 @@
 
 <div class="row titulo-seccion">
   <div class="col s6">
-    <h5 class="text-uppercase">Editar perfil</h5>
+    <h5 class="text-uppercase">Editar perfil  <%= @usuario.perfil.sexo %></h5>
   </div>
   <div class="col s6 text-right">
     <ol class="breadcrumb">
@@ -21,97 +21,100 @@
   <div class="col s8 panel">
     <div class="row">
       <div class="col s12">
-        <%= form_for(resource, :as => resource_name, :url => usuarios_editar_path, :html => { :method => :post }) do |f| %>
+        <%= form_for(@usuario,  :as => resource_name, :url => usuarios_editar_path, :html => { :method => :post }) do |f| %>
           <div class="row">
             <h5>Datos básicos</h5>
             <div class="input-field col s6">
-              <label for="usuario[nombre]">Nombre</label>
-              <input id="usuario[nombre]" type="text" required></input>
+             <%= f.label :nombre %>
+              <%= f.text_field :nombre, :required => true %>
             </div>
             <div class="input-field col s6">
-              <label for="usuario[apellidos]">Apellido</label>
-              <input id="usuario[apellidos]" type="text" required></input>
+              <%= f.label :apellido %>
+              <%= f.text_field :apellido, :required => true %>
+              
             </div>
           </div>
+           <%= f.fields_for :perfil do |perfil| %>
           <div class="row">
             <div class="input-field col s6">
-              <label for="usuario[email]">Email</label>
-              <input id="usuario[email]" type="email" required>         
+              <%= f.label :email %>
+              
+               <%= f.email_field :email, :required => true %>
+                    
             </div>
-            <div clas="input-field col s6">
-              <label>Sexo</label>
-              <p>
-                <input name="usuario[sexo]" type="radio" id="sexo_usuario_1" checked class="with-gap"/>
-                <label for="sexo_usuario_1">Masculino</label>
-                <input name="usuario[sexo]" type="radio" id="sexo_usuario_0"  class="with-gap"/>
-                <label for="sexo_usuario_0">Femenino</label>
-              </p>
-            </div>  
+            <label>Sexo</label>
+            <div>
+                <%= perfil.radio_button :sexo, "m", :checked => (@usuario.perfil.sexo == true) %>
+                <%= perfil.label :sexo_m, "Masculino" %>
+                <%= perfil.radio_button :sexo, "f", :checked => (@usuario.perfil.sexo == false)%>
+                <%= perfil.label :sexo_f, "Femenino"%>
+            </div> 
             
           </div>
           <div class="row">
             <div class="col s6">
+              <% pais_array = Pais.all.map { |pais| [pais.nombre, pais.id-1] } %>
               <label>País</label>
-              <select name="usuario[pais]">
-                <option value="" disabled selected>Escoge tu país</option>
-                <option value="1">Venezuela</option>
-                <option value="2">Colombia</option>
-                <option value="3">Panamá</option>
-              </select>
+              <%= perfil.select :pais_id, options_for_select( pais_array,  @usuario.perfil.pais_id.to_i - 1)   %> 
             </div>
           </div>
 
           <hr/>
-
           <h5></h5>
           <div class="row">
             <div class="input-field col s5">
-              <label for="usuario[perfil][ocupacion]">Ocupación</label>
-              <input id="usuario[perfil][ocupacion]" type="text" required></input>                  
+               <%= perfil.label :ocupacion %>
+               <%= perfil.text_field :ocupacion, :required => true %>             
             </div>
           </div>
           <div class="col s12 input-field">
             <div class="col s12">
-              <label for="usuario[perfil][biografia]">Acerca de tí</label>
-              <textarea id="usuario[perfil][biografia]"></textarea>                
+              <label for="usuario_perfil_biografia">Acerca de tí</label>
+              <%= perfil.text_area :biografia %>           
             </div>  
           </div>
           <div class="col s12 input-field">
             <div class="col s12">
-              <label for="usuario[perfil][intereses]">Intereses</label>
-              <textarea id="usuario[perfil][intereses]"></textarea>                
+               <%= perfil.label :intereses %> 
+               <%= perfil.text_area :intereses %>      
             </div>  
           </div>
 
           <hr/>
 
           <h5>Redes sociales</h5>
-          <div class="row">
-            <div class="col s7">
-              <ul id="lista-redes-sociales" class="vacia">
-                <li>No has agregado ninguna red social. Usa el botón a la derecha para hacerlo.</li>
-              </ul>
-            </div>
-            <div class="col s5 text-center">
-              <div class="dropdown">
-                <a href="javascript:void(0)" class="btn-floating waves-effect waves-light red"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="mdi-content-add"></i>
-                </a>
-                <ul id="agregar-red-social" class='dropdown-menu list-inline' role="menu">
-                  <li><a href="javascript:void(0)" class="fb"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="javascript:void(0)" class="tw"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="javascript:void(0)" class="gp"><i class="fa fa-google-plus"></i></a></li>
-                  <li><a href="javascript:void(0)" class="lk"><i class="fa fa-linkedin"></i></a></li>
-                  <li><a href="javascript:void(0)" class="gh"><i class="fa fa-github"></i></a></li>
-                </ul>
-              </div>
-              
-            </div>
-          </div>
+                    <div class="row">
+                      <div class="col s7">
+                        <ul id="lista-redes-sociales" class="vacia">
+                          <li>Te falta agregar alguna red social. Usa el botón a la derecha para hacerlo.</li>
+                        </ul>
+                      </div>
+                      <div class="col s5 text-center">
+                        <div class="dropdown">
+                          <a href="javascript:void(0)" class="btn-floating waves-effect waves-light red"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="mdi-content-add"></i>
+                          </a>
+                          <ul id="agregar-red-social" class='dropdown-menu list-inline' role="menu">
+                          <li ><a href="javascript:void(0)" id="facebook" class="fb"><i class="fa fa-facebook"></i></a></li> 
+
+                             <li ><a href="javascript:void(0)" id="twitter" class="tw"><i class="fa fa-twitter"></i></a></li>
+
+                           <li><a href="javascript:void(0)" id="googleplus" class="gp"><i class="fa fa-google-plus"></i></a></li> 
+
+                            <li><a href="javascript:void(0)" id="linkedin" class="lk"><i class="fa fa-linkedin"></i></a></li>
+
+                            <li><a href="javascript:void(0)"  id="github" class="gh"><i class="fa fa-github "></i></a></li> 
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+   
+      <%end%>
           <div class="row pad30">
-            <div class="col s12">         
-              <a href="javascript:void(0)" class="btn btn-success">Guardar</a>
+            <div class="col s12">  
+            <%= f.submit "guardar", :class => 'btn btn-success' %>       
               <a href="javascript:void(0)" class="btn btn-info">Cancelar</a> 
             </div>
           </div>
@@ -124,7 +127,7 @@
     <div class="row">
       <div class="col s12 panel">
         <h5>Cambiar foto</h5>
-        <input id="avatar-id" type="file" class="file" data-upload-url="/usuario/guardar_foto"/>
+        <input id="avatar_id" name="avatar_id" type="file" class="file"  data-upload-url="/usuario/guardar_foto"/>
         <div class="pad15"></div>
       </div>
     </div>
@@ -142,16 +145,16 @@
   <%= javascript_include_tag 'plugins/fileinput.js' %>
   <%= javascript_include_tag 'usuarios' %>
   <script type="text/javascript">
-    $("#avatar-id").fileinput({
+    $("#avatar_id").fileinput({
       'browseLabel':'cambiar',
       'showCaption':false,
       'initialPreview': [
-        "<img src='/assets/profile_user.jpg' class='file-preview-image' alt='Avatar' title='Foto de perfil actual'>",
+        "<img src='/assets/profile_user.jpg' class='file-preview-image' alt='Avatar' title='Foto de perfil actual'>"
       ],
       'initialPreviewShowDelete':false,
       'initialCaption':'archivo(s) seleccionado(s)',
       'allowedFileTypes':['image'],
-      'allowedFileExtensions':['jpg', 'gif', 'png', 'jpeg'],
+      'allowedFileExtensions':['jpg', 'png', 'jpeg'],
       'browseClass':'btn btn-primary',
       'browseIcon':'<i class="mdi-file-attachment"></i>',
       'showRemove':false,

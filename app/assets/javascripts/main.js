@@ -47,13 +47,17 @@ $(document).ready(function(){
   			$(this).removeClass("menu-close").addClass("menu-open");
 	});
 
-    $(".favoritear").click(function(){
-    	if($(this).hasClass("fav"))
-    		$(this).removeClass("fav");
-    	else
-    		$(this).addClass("fav");
+    // $(".favoritear").click(function(){
+    // 	if($(this).hasClass("fav"))
+    // 		$(this).removeClass("fav");
+    // 	else
+    // 		$(this).addClass("fav");
     	
-    });
+    // });
+
+	$(document).on("click",".favoritear",function(){
+			$(this).toggleClass("fav");
+	    });
 
     $('.collapsible').collapsible({ "accordion" : false });
 

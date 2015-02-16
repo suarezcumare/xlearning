@@ -9,5 +9,7 @@ Bundler.require(*Rails.groups)
 module Xlearning
   class Application < Rails::Application
   	config.i18n.default_locale = :es
+  	 config.time_zone = 'America/Caracas'
+   
   end
 end

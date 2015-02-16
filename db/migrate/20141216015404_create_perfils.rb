@@ -9,6 +9,7 @@ class CreatePerfils < ActiveRecord::Migration
       t.references :usuario, index: true
       t.text :biografia 
       t.references :pais, index: true
+      t.text :preferencia 
     end
   end
 end

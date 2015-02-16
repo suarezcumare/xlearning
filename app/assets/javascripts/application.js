@@ -21,4 +21,4 @@
 //= require additional-methods.min
 //= require validaciones
 //= require main
-// require_tree ./componentes
+//= require_tree ./componentes

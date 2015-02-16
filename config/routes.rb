@@ -64,7 +64,23 @@ Xlearning::Application.routes.draw do
       match '/politicas' => 'grupos#politica_admision', via: :get
       match "/encuestas/modificar/:id" => "encuestas#edit", via: :get
 
+
+      match "/usuario/guardar_foto" => "usuarios#save_foto", via: :post
+      match "/usuario/guardar_foto" => "usuarios#save_foto", via: :get
+      match "/preferencias" => "usuarios#preferencias_guardar", via: :post
       
+
+       #los json a utilizar
+       match "/json/clases/generarClasesActuales" => "grupos#generarClasesActuales", via: :get
+       match "/json/clases/generarClasesPasadas" => "grupos#generarClasesPasadas", via: :get
+       match "/json/clases/generarClasesFuturas" => "grupos#generarClasesFuturas", via: :get
+       match "/json/clases/generarListaDeseos" => "grupos#generarListaDeseos", via: :get
+       match "/json/clases/generarListaRecomendados" => "grupos#generarListaRecomendados", via: :get
+       match "/json/clases/generarClasesNotificacionesEvaluaciones" => "clases#generarClasesNotificacionesEvaluaciones", via: :post
+       match "/json/clases/generarClasesNotificacionesDiscuciones" => "clases#generarClasesNotificacionesDiscuciones", via: :get
+       match "/json/clases/generarClasesNotificaciones" => "clases#generarClasesNotificaciones", via: :get
+       match "/json/clases/generarClasesCalendarioEstudiante" => "clases#generarClasesCalendarioEstudiante", via: :get
+       match "/json/clases/generarClasesCalendarioFacilitador" => "clases#generarClasesCalendarioFacilitador", via: :get
 
   end
 

@@ -24,17 +24,17 @@ class ApplicationController < ActionController::Base
   end
 
   private
-  	def load_db
-  		Apartment::Tenant.switch()
-  		return unless request.subdomain.present?
+    def load_db
+      Apartment::Tenant.switch()
+      return unless request.subdomain.present?
 
-  		o = BaseDato.find_by(nombre: request.subdomain)
-  		if o
-  			Apartment::Tenant.switch(request.subdomain)
-  		else
-  			redirect_to root_url(subdomain: false)
-  		end
-  	end
+      o = BaseDato.find_by(nombre: request.subdomain)
+      if o
+        Apartment::Tenant.switch(request.subdomain)
+      else
+        redirect_to root_url(subdomain: false)
+      end
+    end
 
     def load_menu
       if usuario_signed_in?

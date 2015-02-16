@@ -9,15 +9,22 @@ class UsuariosController < ApplicationController
 
 
 	def show
-		@usuario = Usuario.new
-		@usuario.id = current_usuario.id
-		#render "usuarios/perfil"
+		@u_id = params[:id]
+		usua = Usuario.where("id = ?", @u_id)
+		usua.each do |usuario|
+			@usuario = usuario;
+		end
+
 	end
 
 	def edit
-		@usuario = current_usuario
-		# render plain: "renderizando usuarios/editar"
-		#render "usuarios/editar"
+			if usuario_signed_in? 
+
+				@usuario = current_usuario
+
+			else
+				redirect_to root_path
+			end	
 	end
 
 	def new
@@ -53,6 +60,37 @@ class UsuariosController < ApplicationController
 	end
 
 	def preferencias
+		if usuario_signed_in? 
+
+				@usuario = current_usuario
+
+			else
+				redirect_to root_path
+			end	
+	end
+
+	def preferencias_guardar
+		@usuario = current_usuario
+
+
+		render "usuarios/preferencias"
+	end
+
+	def save
+
+		render "usuarios/show"
+	end
+
+	def save_foto
+
+		@usuario = current_usuario
+
+		
+
+		#@usuario12 = params[:avatar_id]
+
+		render "usuarios/show"
+		
 	end
 
 	def finish_signup
