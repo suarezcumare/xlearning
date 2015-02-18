@@ -49,8 +49,10 @@ class GruposController < ApplicationController
    if @son2 > 0 
 	    @i2=1
 	    $tirajson2 = '[ '
+	    modulo = Modulo.new
 	 @grupos.each do |grupos|
 	      	if @i2<@son2
+				
 
 				$tirajson2 = $tirajson2 +   ' { "codigo": "'  + grupos.id.to_s +
 											'","nombre": "'+ grupos.curso.nombre.to_s +
@@ -60,6 +62,7 @@ class GruposController < ApplicationController
 											'","objetivos": "'+ grupos.curso.objetivos.to_s +
 											'","perfil": "'+ 	grupos.curso.perfil_estudiante.to_s +
 											'","img": "'+ 	grupos.curso.prerequisitos.to_s +
+											'","porcentaje": "' + modulo.porcentajeCurso(grupos.id).to_s + "%" +
 											'","url": "'  "/clases/"   + grupos.id.to_s +  '"}, '
 	        else
 				 $tirajson2 = $tirajson2 +   ' { "codigo": "'  + grupos.id.to_s +
@@ -71,6 +74,7 @@ class GruposController < ApplicationController
 											'","perfil": "'+ 	grupos.curso.perfil_estudiante.to_s +
 											'","prerequisitos": "'+ 	grupos.curso.prerequisitos.to_s +
 											'","img": "'+ 	grupos.curso.prerequisitos.to_s +
+											'","porcentaje": "'+   modulo.porcentajeCurso(grupos.id).to_s + "%" +
 											'","url": "'    "/clases/" + grupos.id.to_s +  '"} '
 	      end
 	    		@i2=@i2+1

@@ -36,7 +36,7 @@ var CommentList = React.createClass({
   render: function() {
     var commentNodes = this.props.data.map(function (comment) {
       return (
-        <CommentCargaAcademica fechaI={comment.fechaI} nombre={comment.nombre}  img={comment.img} fechaF={comment.fechaF} url={comment.url} codigo={comment.codigo} descripcion={comment.descripcion} objetivos={comment.objetivos} perfil={comment.perfil} prerequisitos={comment.prerequisitos} >
+        <CommentCargaAcademica porcentaje={comment.porcentaje} fechaI={comment.fechaI} nombre={comment.nombre}  img={comment.img} fechaF={comment.fechaF} url={comment.url} codigo={comment.codigo} descripcion={comment.descripcion} objetivos={comment.objetivos} perfil={comment.perfil} prerequisitos={comment.prerequisitos} >
           </CommentCargaAcademica>
       );
     });
@@ -65,8 +65,8 @@ var CommentCargaAcademica = React.createClass({
                     <h5 className="media-heading">{this.props.nombre} </h5>
                     <div>
                       <div className="progress">
-                      <div  className="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style={{"width":"35%"}}>
-                        <span className="sr-only">60% Completado</span>
+                      <div  className="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style={{"width": this.props.porcentaje}}>
+                        <span className="sr-only">{this.props.porcentaje} Completado {this.props.porcentaje}</span>
                       </div>
                     </div>
                     <span className="fecha-inicio"> {this.props.fechaI} </span>

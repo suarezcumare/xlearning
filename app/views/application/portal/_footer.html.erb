@@ -1,22 +1,78 @@
+  
+  <% organizacion = Organizacion.find_by(subdominio: request.subdomain) %>
+  <% redes = OrganizacionRedSocial.includes(:red_social).where("organizacion_id = ?", 1) %>
+
+
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
-        <h5 class="white-text">Footer Content</h5>
-        <p class="grey-text lighten-4">You can use rows and columns here to organize your footer content.</p>
+    
+        <h5 class="white-text">
+          <% if request.subdomain.present? %>
+          <%= organizacion.nombre%> || <%= organizacion.descripcion %></h5>
+          <% else %>
+             Xleaning || Conectate con la educación
+          <% end %>
+        <p class="grey-text lighten-4">
+           <% if request.subdomain.present? %>
+            <% if ! organizacion.slogan.nil? and organizacion.slogan != "" %> 
+              <%= organizacion.slogan %>
+              <% end %>
+       
+            
+          <% end %>
+        </p>
+          <p class="grey-text lighten-4">
+           <% if request.subdomain.present? %>
+             <% if ! organizacion.email1.nil? and organizacion.email1 != "" %> 
+                Correos: <%= organizacion.email1 %>
+             <% end %>
+           <% else %>
+              Correos: xleaning@xleaning.com
+          <% end %>
+
+            <p class="grey-text lighten-4">
+              <% if request.subdomain.present? %>
+                 <% if ! organizacion.email2.nil? and organizacion.email2 != "" %> 
+                Correos: <%= organizacion.email2 %>
+                <% end %>
+              <% else %>
+                   Correos: xleaning@gmail.com
+             <% end %>
+
+          <p class="grey-text lighten-4">
+           <% if request.subdomain.present? %>
+             <% if ! organizacion.telefono1.nil? and organizacion.telefono1 != "" %> 
+              Telefono: <%= organizacion.telefono1 %>
+             <% end %>
+
+           <% else %>
+             Telefono: +58 55811518
+          <% end %>
+           </p>
       </div>
       <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Links</h5>
-        <li><a class="grey-text lighten-3" href="#!">Link 1</a></li>
-        <li><a class="grey-text lighten-3" href="#!">Link 2</a></li>
-        <li><a class="grey-text lighten-3" href="#!">Link 3</a></li>
-        <li><a class="grey-text lighten-3" href="#!">Link 4</a></li>
+        <h5 class="white-text">Conectar</h5>
+        <ul class="list-inline">
+          <div class="pad15"></div>
+        <% if request.subdomain.present? %>
+          <% redes.each do |red| %>
+               <li><a class="grey-text lighten-3" href="<%= red.red_social.url %> <%= red.valor %>"> <i class="<%= red.red_social.icono %> "></i></a></li>
+           <% end %>
+          <% else %>
+               <li><a class="grey-text lighten-3" href="https://www.facebook.com/Xleaning"> <i class="fa fa-facebook fb"></i></a></li>
+               <li><a class="grey-text lighten-3" href="https://www.twitter.com/Xleaning"> <i class="fa fa-twitter tw"></i></a></li>
+               <li><a class="grey-text lighten-3" href="https://www.googleplus.com/Xleaning"> <i class="fa fa-google-plus gp"></i></a></li>
+               <li><a class="grey-text lighten-3" href="https://github.com/Xleaning"> <i class="fa fa-github gh"></i></a></li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
   <div class="footer-copyright">
     <div class="container">
-    © 2014 Copyright Text
-    <a class="grey-text lighten-4 right" href="#!">More Links</a>
+    © 2015 Copyright Xleaning
+    <!--<a class="grey-text lighten-4 right" href="#!">More Links</a> -->
     </div>
   </div>
         

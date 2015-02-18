@@ -77,10 +77,10 @@ Xlearning::Application.routes.draw do
        match "/json/clases/generarListaDeseos" => "grupos#generarListaDeseos", via: :get
        match "/json/clases/generarListaRecomendados" => "grupos#generarListaRecomendados", via: :get
        match "/json/clases/generarClasesNotificacionesEvaluaciones" => "clases#generarClasesNotificacionesEvaluaciones", via: :post
-       match "/json/clases/generarClasesNotificacionesDiscuciones" => "clases#generarClasesNotificacionesDiscuciones", via: :get
-       match "/json/clases/generarClasesNotificaciones" => "clases#generarClasesNotificaciones", via: :get
-       match "/json/clases/generarClasesCalendarioEstudiante" => "clases#generarClasesCalendarioEstudiante", via: :get
-       match "/json/clases/generarClasesCalendarioFacilitador" => "clases#generarClasesCalendarioFacilitador", via: :get
+       match "/json/clases/generarClasesNotificacionesDiscuciones" => "clases#generarClasesNotificacionesDiscuciones", via: :post
+       match "/json/clases/generarClasesNotificaciones" => "clases#generarClasesNotificaciones", via: :post
+       match "/json/clases/generarClasesCalendarioEstudiante" => "clases#generarClasesCalendarioEstudiante", via: :post
+       match "/json/clases/generarClasesCalendarioFacilitador" => "clases#generarClasesCalendarioFacilitador", via: :post
 
   end
 

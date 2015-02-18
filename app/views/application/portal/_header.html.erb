@@ -1,7 +1,11 @@
 <nav id="menu-header">
     <div class="nav-wrapper inverse">
       <a href="javascript:void(0)" class="brand-logo">
-      	<img src="/assets/logo-header.png"/>Learning
+
+     
+        <% organizacion = Organizacion.find_by(subdominio: request.subdomain) %>
+      	<img src="/assets/logo-header.png"/> <%= organizacion.nombre %>
+         
       </a>
       <a id="busqueda-trigger" class="activar-busqueda" href="javascript:void(0)"><i class="mdi-action-search"></i></a>
       <% if usuario_signed_in? %>

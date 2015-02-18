@@ -6,17 +6,11 @@
 		<h5 class="card-title grey-text darken-4"><%= @facilitador.nombre %> <%= @facilitador.apellido %></h5>
 		<span class="text-muted text-uppercase"><%= @facilitador.perfil.ocupacion %></span>
 		<ul class="list-inline pad15">
-			<li><a class="gp" href="/usuarios/<%=  @facilitador.id %>" target="_blank"><i class="fa fa-user"></i></a></li>
+			<li><a href="/usuarios/<%=  @facilitador.id %>" target="_blank" title="cuenta en <%= request.subdomain %>"><i class="fa fa-user gp"></i></a></li>	
 			
-			
-			<%@usuredes.each do |usuredes|%>
-				
-			<li><a class="fb" href="<%=   %> <%= usuredes.valor  %>" target="_blank"><i class="<%=  %>"></i></a></li>
-			<% end %>
-			
-			
-		
-			
+		<% @usuredes.each do |red| %>
+           <li><a href="<%= red.red_social.url %><%= red.valor %>"  target="_blank"> <i class="<%= red.red_social.icono %> "></i></a></li>
+           <% end %>
 		</ul>
 	</div>
 </div>

@@ -24,8 +24,6 @@ class ClasesController < ApplicationController
 		@usuredes = UsuarioRedSocial.includes(:red_social).where("usuario_id = ?", @facilitador.id)
 
 
-
-
 							render '/clases/index'
 				else
 				    render "portal/index_estudiante"
@@ -173,6 +171,7 @@ class ClasesController < ApplicationController
 			@evaluaciongrupos.each do |eva|
 				@eval = eva
 			end
+			
 			facilitador_id =@eval.grupo.curso.facilitador_id
 
 				@son2 = @evaluaciongrupos.count
