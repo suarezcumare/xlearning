@@ -112,5 +112,28 @@ class Modulo < ActiveRecord::Base
   end
 
 
+		 def duracion_curso(id)
+
+		 	@grupo = Grupo.where("id = ?", id)
+
+			@grupo.each do |grupo|
+				@grupo = grupo
+			end
+
+			end_date = Date.parse @grupo.fecha_fin.to_s
+			start_date =  Date.parse @grupo.fecha_inicio.to_s 
+			
+			total = (end_date - start_date).to_i
+
+	 	@porcentaje = total
+	
+	 if @porcentaje <= 0
+		return 0
+	 else
+	 	return @porcentaje
+	 end
+
+		 end
+
 
 end

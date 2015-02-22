@@ -14,7 +14,6 @@
       url: this.props.url,
       dataType: 'json',
       type: 'POST',
-
       data: "number="+ $("#ClasesNotificacionesEvaluaciones").attr("class"),
       success: function(data) {
         this.setState({data: data});

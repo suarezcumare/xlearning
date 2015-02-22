@@ -60,7 +60,7 @@ var CommentListaMisCursos = React.createClass({
            <div className="col s12 m6 l5">
               <div className="card white">
                 <div className="card-image">
-                  <img className="responsive-img" src="/assets/curso3.jpg"></img>
+                  <img className="responsive-img" src={this.props.img} ></img>
                 </div>
                 <div className="card-content">
                   <span className="card-title grey-text darken-3">{this.props.nombre}</span>
