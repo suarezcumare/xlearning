@@ -61,7 +61,7 @@ class GruposController < ApplicationController
 											'","descripcion": "'+ grupos.curso.descripcion.to_s +
 											'","objetivos": "'+ grupos.curso.objetivos.to_s +
 											'","perfil": "'+ 	grupos.curso.perfil_estudiante.to_s +
-											'","img": "'+ 	grupos.curso.prerequisitos.to_s +
+											'","img": "' "/" + request.subdomain + "/cursos/" + 	grupos.curso.foto.to_s +
 											'","porcentaje": "' + modulo.porcentajeCurso(grupos.id).to_s + "%" +
 											'","url": "'  "/clases/"   + grupos.id.to_s +  '"}, '
 	        else
@@ -73,7 +73,7 @@ class GruposController < ApplicationController
 											'","objetivos": "'+ grupos.curso.objetivos.to_s +
 											'","perfil": "'+ 	grupos.curso.perfil_estudiante.to_s +
 											'","prerequisitos": "'+ 	grupos.curso.prerequisitos.to_s +
-											'","img": "'+ 	grupos.curso.prerequisitos.to_s +
+											'","img": "' "/" + request.subdomain + "/cursos/" + 	grupos.curso.foto.to_s +
 											'","porcentaje": "'+   modulo.porcentajeCurso(grupos.id).to_s + "%" +
 											'","url": "'    "/clases/" + grupos.id.to_s +  '"} '
 	      end
@@ -107,7 +107,7 @@ class GruposController < ApplicationController
 											'","descripcion": "'+ grupos.curso.descripcion.to_s +
 											'","objetivos": "'+ grupos.curso.objetivos.to_s +
 											'","perfil": "'+ 	grupos.curso.perfil_estudiante.to_s +
-											'","img": "'+ 	grupos.curso.prerequisitos.to_s +
+											'","img": "' "/" + request.subdomain + "/cursos/" + 	grupos.curso.foto.to_s +
 											'","url": "'  "/clases/"   + grupos.id.to_s +  '"}, '
 	        else
 				 $tirajson2 = $tirajson2 +   ' { "codigo": "'  + grupos.id.to_s +
@@ -118,7 +118,7 @@ class GruposController < ApplicationController
 											'","objetivos": "'+ grupos.curso.objetivos.to_s +
 											'","perfil": "'+ 	grupos.curso.perfil_estudiante.to_s +
 											'","prerequisitos": "'+ 	grupos.curso.prerequisitos.to_s +
-											'","img": "'+ 	grupos.curso.prerequisitos.to_s +
+											'","img": "' "/" + request.subdomain + "/cursos/" + 	grupos.curso.foto.to_s +
 											'","url": "'    "/clases/" + grupos.id.to_s +  '"} '
 	      end
 	    		@i2=@i2+1
@@ -151,7 +151,7 @@ class GruposController < ApplicationController
 											'","descripcion": "'+ grupos.curso.descripcion.to_s +
 											'","objetivos": "'+ grupos.curso.objetivos.to_s +
 											'","perfil": "'+ 	grupos.curso.perfil_estudiante.to_s +
-											'","img": "'+ 	grupos.curso.prerequisitos.to_s +
+											'","img": "' "/" + request.subdomain + "/cursos/" + 	grupos.curso.foto.to_s +
 											'","url": "'  "/clases/"   + grupos.id.to_s +  '"}, '
 	        else
 				 $tirajson2 = $tirajson2 +   ' { "codigo": "'  + grupos.id.to_s +
@@ -162,7 +162,7 @@ class GruposController < ApplicationController
 											'","objetivos": "'+ grupos.curso.objetivos.to_s +
 											'","perfil": "'+ 	grupos.curso.perfil_estudiante.to_s +
 											'","prerequisitos": "'+ 	grupos.curso.prerequisitos.to_s +
-											'","img": "'+ 	grupos.curso.prerequisitos.to_s +
+											'","img": "' "/" + request.subdomain + "/cursos/" + 	grupos.curso.foto.to_s +
 											'","url": "'    "/clases/" + grupos.id.to_s +  '"} '
 	      end
 	    		@i2=@i2+1
@@ -177,28 +177,26 @@ class GruposController < ApplicationController
 	end
 
 	def generarListaDeseos
-
-			#@grupos = Grupo.includes(:curso).where('fecha_inicio >= ? and ? <= fecha_fin and usuario_id = ?', Time.now.midnight,Time.now.midnight, current_usuario.id )
-  @cursos = Curso.all.limit(2)
-   @son2 = @cursos.count
+		@grupos = Grupo.includes(:curso).where("grupos.usuario_id != ?", current_usuario.id).limit(2)
+   @son2 = @grupos.count
 
    if @son2 > 0 
 	    @i2=1
 	    $tirajson2 = '[ '
-	 @cursos.each do |curso|
+	 @grupos.each do |grupo|
 	      	if @i2<@son2
 
-				$tirajson2 = $tirajson2 +   ' { "codigo": "'  + curso.id.to_s +
-											'","nombre": "'+ curso.nombre.to_s +
-											'","descripcion": "'+ curso.descripcion.to_s +
-											'","img": "'+ 	curso.prerequisitos.to_s +
-											'","url": "'  "/clases/"   + curso.id.to_s +  '"}, '
+				$tirajson2 = $tirajson2 +   ' { "codigo": "'  + grupo.curso.id.to_s +
+											'","nombre": "'+ grupo.curso.nombre.to_s +
+											'","descripcion": "'+ grupo.curso.descripcion.to_s +
+											'","img": "' "/" + request.subdomain + "/cursos/" + 	grupo.curso.foto.to_s +
+											'","url": "'  "/cursos/"   + grupo.curso.id.to_s + "/ver"  '"}, '
 	        else
-				 $tirajson2 = $tirajson2 +   ' { "codigo": "'  + curso.id.to_s +
-											'","nombre": "'+ curso.nombre.to_s +
-											'","descripcion": "'+ curso.descripcion.to_s +
-											'","img": "'+ 	curso.prerequisitos.to_s +
-											'","url": "'  "/clases/"   + curso.id.to_s +  '"} '
+				 $tirajson2 = $tirajson2 +   ' { "codigo": "'  + grupo.curso.id.to_s +
+											'","nombre": "'+ grupo.curso.nombre.to_s +
+											'","descripcion": "'+ grupo.curso.descripcion.to_s +
+											'","img": "' "/" + request.subdomain + "/cursos/" + 	grupo.curso.foto.to_s +
+											'","url": "'  "/cursos/"   + grupo.curso.id.to_s + "/ver"  '"} '
 	      end
 	    		@i2=@i2+1
 	  end
@@ -214,29 +212,28 @@ class GruposController < ApplicationController
 
 	def generarListaRecomendados
 
-			#@grupos = Grupo.includes(:curso).where('fecha_inicio >= ? and ? <= fecha_fin and usuario_id = ?', Time.now.midnight,Time.now.midnight, current_usuario.id )
-   @cursos = Curso.all.limit(2)
-   @son2 = @cursos.count
+		
+@grupos = Grupo.includes(:curso).where("grupos.usuario_id != ?", current_usuario.id).limit(2)
+   @son2 = @grupos.count
 
    if @son2 > 0 
 	    @i2=1
 	    $tirajson2 = '[ '
-	 @cursos.each do |curso|
-
+	 @grupos.each do |grupo|
 
 	      	if @i2<@son2
 
-				$tirajson2 = $tirajson2 +   ' { "codigo": "'  + curso.id.to_s +
-											'","nombre": "'+ curso.nombre.to_s +
-											'","descripcion": "'+ curso.descripcion.to_s +
-											'","img": "'+ 	curso.prerequisitos.to_s +
-											'","url": "'  "/clases/"   + curso.id.to_s +  '"}, '
+				$tirajson2 = $tirajson2 +   ' { "codigo": "'  + grupo.curso.id.to_s +
+											'","nombre": "'+ grupo.curso.nombre.to_s +
+											'","descripcion": "'+ grupo.curso.descripcion.to_s +
+											'","img": "' "/" + request.subdomain + "/cursos/" + 	grupo.curso.foto.to_s +
+											'","url": "'  "/cursos/"   + grupo.curso.id.to_s + "/ver"  '"}, '
 	        else
-				 $tirajson2 = $tirajson2 +   ' { "codigo": "'  + curso.id.to_s +
-											'","nombre": "'+ curso.nombre.to_s +
-											'","descripcion": "'+ curso.descripcion.to_s +
-											'","img": "'+ 	curso.prerequisitos.to_s +
-											'","url": "'  "/clases/"   + curso.id.to_s +  '"} '
+				 $tirajson2 = $tirajson2 +   ' { "codigo": "'  + grupo.curso.id.to_s +
+											'","nombre": "'+ grupo.curso.nombre.to_s +
+											'","descripcion": "'+ grupo.curso.descripcion.to_s +
+											'","img": "' "/" + request.subdomain + "/cursos/" + 	grupo.curso.foto.to_s +
+											'","url": "'  "/cursos/"   + grupo.curso.id.to_s + "/ver"  '"} '
 	      end
 	    		@i2=@i2+1
 	  end

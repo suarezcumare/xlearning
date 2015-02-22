@@ -26,11 +26,11 @@
 <div class="panel z-depth-2">
 	<ul class="bordered pad15">
 		
-	
-
-	<li><a  href=" <%=  %>" target="_blank"><i class="<%=  %>"></i></a></li>
-
-
+		<li><a href="/usuarios/<%=  @usuario.id %>" target="_blank" title="cuenta en <%= request.subdomain %>"><i class="fa fa-user gp"></i></a> <%= @usuario.nombre %> <%= @usuario.apellido %></li>	
+			
+		<% @usuredes.each do |red| %>
+           <li><a href="<%= red.red_social.url %><%= red.valor %>"  target="_blank"> <i class="<%= red.red_social.icono %> "></i> <%= red.red_social.url %><%= red.valor %> </a></li>
+           <% end %>
 
 	</ul>
 

@@ -15,6 +15,8 @@ class UsuariosController < ApplicationController
 			@usuario = usuario;
 		end
 
+	@usuredes = UsuarioRedSocial.includes(:red_social).where("usuario_id = ?", @usuario.id)
+
 	end
 
 	def edit

@@ -138,6 +138,7 @@ ActiveRecord::Schema.define(version: 20150122004428) do
     t.boolean "estatus"
     t.integer "facilitador_id"
     t.integer "comentario_id"
+    t.string  "foto"
   end
 
   add_index "cursos", ["comentario_id"], name: "index_cursos_on_comentario_id", using: :btree
@@ -412,7 +413,7 @@ ActiveRecord::Schema.define(version: 20150122004428) do
   end
 
   create_table "perfils", force: true do |t|
-    t.binary  "foto"
+    t.string  "foto"
     t.string  "formato_foto"
     t.boolean "sexo"
     t.text    "intereses"

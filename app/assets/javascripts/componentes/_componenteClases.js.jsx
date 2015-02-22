@@ -14,7 +14,8 @@
       url: this.props.url,
       dataType: 'json',
       type: 'POST',
-      data: "number=1",
+
+      data: "number="+ $("#ClasesNotificacionesEvaluaciones").attr("class"),
       success: function(data) {
         this.setState({data: data});
       }.bind(this),
@@ -96,7 +97,7 @@ React.render(
       url: this.props.url,
       dataType: 'json',
       type: 'POST',
-      data: "number=1",
+      data: "number=" + $("#ClasesNotificacionesDiscuciones").attr("class"),
       success: function(data) {
         this.setState({data: data});
       }.bind(this),
@@ -176,7 +177,7 @@ React.render(
      url: this.props.url,
       dataType: 'json',
       type: 'POST',
-      data: "number=1",
+      data: "number=" + $("#ClasesNotificaciones").attr("class"),
       success: function(data) {
         this.setState({data: data});
       }.bind(this),

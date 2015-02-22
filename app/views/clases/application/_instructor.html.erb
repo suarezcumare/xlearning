@@ -1,6 +1,14 @@
 <div id="info-instructor" class="card white">
 	<div class="card-image">
-		<img src="/assets/profile_user.jpg" class="img-responsive">
+
+		
+
+		 <% if ! @facilitador.perfil.foto.nil? and @facilitador.perfil.foto != "" %>
+          <img src="/<%= request.subdomain %>/avatar/<%= @facilitador.perfil.foto %>" class="img-responsive">
+        <% else %>
+        	<img src="/assets/avatar/sinfoto.jpg" class="img-responsive">
+        <% end %>
+
 	</div>  
 	<div class="card-content text-center">
 		<h5 class="card-title grey-text darken-4"><%= @facilitador.nombre %> <%= @facilitador.apellido %></h5>

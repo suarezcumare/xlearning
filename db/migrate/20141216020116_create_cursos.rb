@@ -14,6 +14,7 @@ class CreateCursos < ActiveRecord::Migration
       t.boolean :estatus
       t.references :facilitador, index: true
       t.references :comentario, index: true
+      t.string :foto
     end
   end
 end

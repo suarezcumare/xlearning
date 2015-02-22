@@ -58,7 +58,7 @@ var CommentCargaAcademica = React.createClass({
                 <div className="panel curso-actual">
                 <div className="media">
                   <a className="media-left" href="#">
-                    <img src="/assets/clases-imagen.jpg" alt=""> </img>
+                    <img src={this.props.img} alt=""> </img>
                   </a>
                  
                    <div className="media-body">
@@ -171,14 +171,14 @@ var CommentListaDeseos = React.createClass({
                             <i className="fa fa-heart fondo red-text darken-2"></i>
                           </a>
                       </div>
-                    <img src="assets/curso1.jpg" className="img-responsive"> </img>
+                    <img src={this.props.img} > </img>
                     <span className="card-title">{this.props.nombre} </span>
                   </div>  
                   <div className="card-content">
                     <p>  </p>
                   </div>
                   <div className="card-action">
-                    <a href="javascript:void(0)">Más información</a>
+                    <a href={this.props.url} >Más información</a>
                   </div>
               </div>
           </li>
@@ -261,14 +261,14 @@ var CommentListaRecomendados = React.createClass({
                             <i className="fa fa-heart fondo red-text darken-2"></i>
                           </a>
                       </div>
-                    <img src="assets/curso1.jpg" className="img-responsive"> </img>
+                    <img src={this.props.img} > </img>
                     <span className="card-title">{this.props.nombre} </span>
                   </div>  
                   <div className="card-content">
                     <p>   </p>
                   </div>
                   <div className="card-action">
-                    <a href="javascript:void(0)"> Más información</a>
+                    <a href={this.props.url}> Más información</a>
                   </div>
               </div>
           </li>

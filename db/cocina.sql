@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-02-2015 a las 12:16:11
+-- Tiempo de generación: 22-02-2015 a las 12:55:10
 -- Versión del servidor: 5.5.32
 -- Versión de PHP: 5.4.19
 
@@ -225,6 +225,7 @@ CREATE TABLE IF NOT EXISTS `cursos` (
   `estatus` tinyint(1) DEFAULT NULL,
   `facilitador_id` int(11) DEFAULT NULL,
   `comentario_id` int(11) DEFAULT NULL,
+  `foto` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_cursos_on_comentario_id` (`comentario_id`) USING BTREE,
   KEY `index_cursos_on_facilitador_id` (`facilitador_id`) USING BTREE
@@ -234,10 +235,10 @@ CREATE TABLE IF NOT EXISTS `cursos` (
 -- Volcado de datos para la tabla `cursos`
 --
 
-INSERT INTO `cursos` (`id`, `nombre`, `descripcion`, `objetivos`, `prerequisitos`, `perfil_estudiante`, `pago`, `costo`, `matricula_maxima`, `puntaje_aprobacion`, `horas_semanales`, `estatus`, `facilitador_id`, `comentario_id`) VALUES
-(1, 'Comida Italiana', 'Comida italiana, Comida italiana, Comida italiana', 'Aprender las disintas maneras de utilzar la herramienta brindada por google de mapa.', NULL, 'Desarrollador, programador.', NULL, NULL, 20, 100, 12, NULL, 2, NULL),
-(2, 'Comida Inglesa', 'Comida inglesa, Comida inglesa, Comida inglesa', 'Lenguaje R como herramientas para resultados estadisticos.', NULL, 'Desarrollador', NULL, NULL, 30, 48, 6, NULL, 2, NULL),
-(3, 'Comida Venezolana', 'Comida Venezolana, Comida Venezolana', 'Desarrollo movil plus', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL);
+INSERT INTO `cursos` (`id`, `nombre`, `descripcion`, `objetivos`, `prerequisitos`, `perfil_estudiante`, `pago`, `costo`, `matricula_maxima`, `puntaje_aprobacion`, `horas_semanales`, `estatus`, `facilitador_id`, `comentario_id`, `foto`) VALUES
+(1, 'Comida Italiana', 'Comida italiana, Comida italiana, Comida italiana', 'Aprender las disintas maneras de utilzar la herramienta brindada por google de mapa.', NULL, 'Desarrollador, programador.', NULL, NULL, 20, 100, 12, NULL, 2, NULL, '1.jpg'),
+(2, 'Comida Inglesa', 'Comida inglesa, Comida inglesa, Comida inglesa', 'Lenguaje R como herramientas para resultados estadisticos.', NULL, 'Desarrollador', NULL, NULL, 30, 48, 6, NULL, 2, NULL, '2.jpg'),
+(3, 'Comida Venezolana', 'Comida Venezolana, Comida Venezolana', 'Desarrollo movil plus', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, '3.jpg');
 
 -- --------------------------------------------------------
 
@@ -423,14 +424,16 @@ CREATE TABLE IF NOT EXISTS `grupos` (
   PRIMARY KEY (`id`),
   KEY `index_grupos_on_curso_id` (`curso_id`) USING BTREE,
   KEY `index_grupos_on_usuario_id` (`usuario_id`) USING BTREE
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Volcado de datos para la tabla `grupos`
 --
 
 INSERT INTO `grupos` (`id`, `fecha_inicio`, `fecha_fin`, `cierre_inscripcion`, `estatus`, `curso_id`, `usuario_id`) VALUES
-(1, '2015-01-22', '2015-03-31', '2015-01-31', NULL, 1, 1);
+(1, '2015-01-22', '2015-03-31', '2015-01-31', NULL, 1, 1),
+(2, '2015-02-05', '2015-06-12', '2015-02-28', NULL, 2, 2),
+(3, '2015-02-28', '2015-05-09', '2015-03-04', NULL, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -700,7 +703,14 @@ CREATE TABLE IF NOT EXISTS `organizacion_red_socials` (
   PRIMARY KEY (`id`),
   KEY `index_organizacion_red_socials_on_organizacion_id` (`organizacion_id`) USING BTREE,
   KEY `index_organizacion_red_socials_on_red_social_id` (`red_social_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `organizacion_red_socials`
+--
+
+INSERT INTO `organizacion_red_socials` (`id`, `organizacion_id`, `red_social_id`, `valor`) VALUES
+(1, 1, 1, 'cocinaCocina');
 
 -- --------------------------------------------------------
 
@@ -787,7 +797,7 @@ INSERT INTO `pais` (`id`, `nombre`) VALUES
 
 CREATE TABLE IF NOT EXISTS `perfils` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `foto` blob,
+  `foto` varchar(256) DEFAULT NULL,
   `formato_foto` varchar(255) DEFAULT NULL,
   `sexo` tinyint(1) DEFAULT NULL,
   `intereses` text,
@@ -806,7 +816,7 @@ CREATE TABLE IF NOT EXISTS `perfils` (
 --
 
 INSERT INTO `perfils` (`id`, `foto`, `formato_foto`, `sexo`, `intereses`, `ocupacion`, `usuario_id`, `biografia`, `pais_id`, `preferencia`) VALUES
-(1, NULL, '9', 0, 'intereses intereses intereses intereses intereses intereses  intereses intereses intereses intereses intereses intereses intereses intereses intereses intereses intereses', 'Estudiante', 1, 'biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia  2', 1, NULL),
+(1, '1.jpg', '9', 0, 'intereses intereses intereses intereses intereses intereses  intereses intereses intereses intereses intereses intereses intereses intereses intereses intereses intereses', 'Estudiante', 1, 'biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia biografia  2', 1, 'cualquier persona'),
 (2, NULL, '9', 1, 'sin intereses', 'Desarrollador', 2, 'not found xD', 2, NULL);
 
 -- --------------------------------------------------------
@@ -1171,14 +1181,15 @@ CREATE TABLE IF NOT EXISTS `usuario_red_socials` (
   PRIMARY KEY (`id`),
   KEY `index_usuario_red_socials_on_red_social_id` (`red_social_id`) USING BTREE,
   KEY `index_usuario_red_socials_on_usuario_id` (`usuario_id`) USING BTREE
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Volcado de datos para la tabla `usuario_red_socials`
 --
 
 INSERT INTO `usuario_red_socials` (`id`, `usuario_id`, `red_social_id`, `valor`) VALUES
-(1, 2, 1, 'AHewstone');
+(1, 2, 1, 'AHewstone'),
+(2, 1, 2, 'valentina');
 
 -- --------------------------------------------------------
 
