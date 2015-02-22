@@ -7,7 +7,7 @@
 
 <div class="row titulo-seccion">
   <div class="col s6">
-    <h5 class="text-uppercase">Editar perfil  <%= @usuario.perfil.sexo %></h5>
+    <h5 class="text-uppercase">Editar perfil  <%= @usuario.nombre %></h5>
   </div>
   <div class="col s6 text-right">
     <ol class="breadcrumb">
@@ -21,7 +21,7 @@
   <div class="col s8 panel">
     <div class="row">
       <div class="col s12">
-        <%= form_for(@usuario,  :as => resource_name, :url => usuarios_editar_path, :html => { :method => :post }) do |f| %>
+        <%= form_for(@usuario,  :as => resource_name, :url => usuarios_editar_path, :html => { :method => :post },  :multipart => true ) do |f| %>
           <div class="row">
             <h5>Datos básicos</h5>
             <div class="input-field col s6">
@@ -125,11 +125,20 @@
   </div>
   <div class="col s4">
     <div class="row">
+
+    <%= form_tag( {controller: "usuarios", action: "save_foto", method: "post"},  multipart: true ) do %>
       <div class="col s12 panel">
         <h5>Cambiar foto</h5>
-        <input id="avatar_id" name="avatar_id" type="file" class="file"  data-upload-url="/usuario/guardar_foto"/>
+
+        <% if ! @usuario.perfil.foto.nil? and @usuario.perfil.foto != "" %>
+          <div id="avatar" class='/<%= request.subdomain %>/avatar/<%= @usuario.perfil.foto %>' > </div>
+        <% else %>
+        <div id="avatar" class='/assets/avatar/sinfoto.jpg' > </div>
+        <% end %>
+        <input id="avatar_id" name="avatar_id" type="file" class="file"  />
         <div class="pad15"></div>
       </div>
+    <% end %>
     </div>
     <div class="pad15"></div>
     <div class="row panel pad15 pad30-h">
@@ -140,17 +149,19 @@
     </div>
     <div class="pad15"></div>
   </div>
+  
 </div>
 <% content_for :js_personalizado do %>
   <%= javascript_include_tag 'plugins/fileinput.js' %>
   <%= javascript_include_tag 'usuarios' %>
   <script type="text/javascript">
     $("#avatar_id").fileinput({
-      'browseLabel':'cambiar',
+          'browseLabel':'cambiar',
       'showCaption':false,
       'initialPreview': [
-        "<img src='/assets/profile_user.jpg' class='file-preview-image' alt='Avatar' title='Foto de perfil actual'>"
+        "<img src='"+ $("#avatar").attr("class") +"' class='file-preview-image' alt='Avatar' title='Foto de perfil actual'>"
       ],
+
       'initialPreviewShowDelete':false,
       'initialCaption':'archivo(s) seleccionado(s)',
       'allowedFileTypes':['image'],

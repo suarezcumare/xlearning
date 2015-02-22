@@ -1,7 +1,11 @@
 <div class="card no-margin-v">
 	<div class="text-center blue lighten-1">
-		<img src="/assets/profile_user.jpg" style="width:65%;" 
-			class="pad15 center-block circle responsive-img">
+
+        <% if ! @usuario.perfil.foto.nil? and @usuario.perfil.foto != "" %>
+          <img src="/<%= request.subdomain %>/avatar/<%= @usuario.perfil.foto %>" style="width:65%;"  class="pad15 center-block circle responsive-img">
+        <% else %>
+        	<img src="/assets/avatar/sinfoto.jpg" style="width:65%;"  class="pad15 center-block circle responsive-img">
+        <% end %>
 		<h5 class="card-title white-text no-margin-v"> <%= @usuario.nombre + " " + @usuario.apellido %></h5>
 		<span class="text-uppercase white-text"><%= @usuario.perfil.ocupacion %></span>
 	</div>  
@@ -27,13 +31,6 @@
 	<li><a  href=" <%=  %>" target="_blank"><i class="<%=  %>"></i></a></li>
 
 
-
-
-
-
-			
-		
-		
 
 	</ul>
 

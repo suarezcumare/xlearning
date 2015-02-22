@@ -78,18 +78,57 @@ class UsuariosController < ApplicationController
 
 	def save
 
+		 @usuario = current_usuario
+
+		 @usuario.update(usuario_params_organizacion)
+
 		render "usuarios/show"
 	end
 
 	def save_foto
 
+		dir = "public/"+ request.subdomain + "/avatar"
+		 FileUtils.mkdir_p(dir) unless File.directory?(dir)
 		@usuario = current_usuario
 
+		  @perfil = Perfil.where("usuario_id = ?", @usuario.id)
+		  @perfil.each do |per|
+		  	@perfil = per
+		  end
+
+		  #Archivo subido por el usuario.
+	      archivo = params[:avatar_id]
+	      #Nombre original del archivo.
+	      nombre = archivo.original_filename
+
+
+	      #Extensión del archivo.
+	      extension = nombre.slice(nombre.rindex("."), nombre.length).downcase
+
+	       #Nombre original del archivo.
+	      nombre = @usuario.id.to_s + extension
+	      
+	     archivo.original_filename = nombre
+
+
+         #Ruta del archivo.
+         path = File.join(dir, nombre)
+         #Crear en el archivo en el directorio. Guardamos el resultado en una variable, será true si el archivo se ha guardado correctamente.
+         resultado = File.open(path, "wb") { |f| f.write(archivo.read) }
+         #Verifica si el archivo se subió correctamente.
+
+    	  @perfil.foto = nombre
+
+    	  @perfil.save
 		
+		render "usuarios/edit"
 
-		#@usuario12 = params[:avatar_id]
 
-		render "usuarios/show"
+
+		# def cleanup
+  #   File.delete("#{RAILS_ROOT}/dirname/#{@filename}") 
+  #           if File.exist?("#{RAILS_ROOT}/dirname/#{@filename}")
+  # 		end
 		
 	end
 
@@ -112,6 +151,12 @@ class UsuariosController < ApplicationController
 	    end
 
 	    def usuario_params
+	      accessible = [ :nombre, :apellido, :email,:organizacion_attributes => [ :id, :nombre, :descripcion, :subdominio,:contratos_attributes => [:id, :plan_id, :frecuencia_pago_id]] ] # extend with your own params
+	      accessible << [ :password, :password_confirmation ] unless params[:usuario][:password].blank?
+	      params.require(:usuario).permit(accessible)
+	    end
+
+	      def usuario_params
 	      accessible = [ :nombre, :apellido, :email,:organizacion_attributes => [ :id, :nombre, :descripcion, :subdominio,:contratos_attributes => [:id, :plan_id, :frecuencia_pago_id]] ] # extend with your own params
 	      accessible << [ :password, :password_confirmation ] unless params[:usuario][:password].blank?
 	      params.require(:usuario).permit(accessible)
