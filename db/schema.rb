@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150122004428) do
+ActiveRecord::Schema.define(version: 20150217145409) do
 
   create_table "archivo_objeto_aprendizajes", force: true do |t|
     t.binary   "archivo"
@@ -96,7 +96,8 @@ ActiveRecord::Schema.define(version: 20150122004428) do
     t.datetime "fecha_creacion"
     t.text     "observacion"
     t.integer  "plan_id"
-    t.boolean  "estatus"
+    t.boolean  "estatus",            default: true
+    t.integer  "frecuencia_pago_id",                null: false
   end
 
   add_index "contratos", ["organizacion_id"], name: "index_contratos_on_organizacion_id", using: :btree
@@ -158,6 +159,15 @@ ActiveRecord::Schema.define(version: 20150122004428) do
   add_index "entrega_asignacions", ["asignaciongrupo_id"], name: "index_entrega_asignacions_on_asignaciongrupo_id", using: :btree
   add_index "entrega_asignacions", ["tipoformato_id"], name: "index_entrega_asignacions_on_tipoformato_id", using: :btree
   add_index "entrega_asignacions", ["usuario_id"], name: "index_entrega_asignacions_on_usuario_id", using: :btree
+
+  create_table "estructura_oferta_academica_hierarchies", id: false, force: true do |t|
+    t.integer "ancestor_id",   null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations",   null: false
+  end
+
+  add_index "estructura_oferta_academica_hierarchies", ["ancestor_id", "descendant_id", "generations"], name: "estructura_oferta_academica_anc_desc_idx", unique: true, using: :btree
+  add_index "estructura_oferta_academica_hierarchies", ["descendant_id"], name: "estructura_oferta_academica_desc_idx", using: :btree
 
   create_table "estructura_oferta_academicas", force: true do |t|
     t.integer  "padre_id"
@@ -237,14 +247,23 @@ ActiveRecord::Schema.define(version: 20150122004428) do
   add_index "historials", ["curso_id"], name: "index_historials_on_curso_id", using: :btree
   add_index "historials", ["usuario_id"], name: "index_historials_on_usuario_id", using: :btree
 
+  create_table "item_estructura_oferta_academica_hierarchies", id: false, force: true do |t|
+    t.integer "ancestor_id",   null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations",   null: false
+  end
+
+  add_index "item_estructura_oferta_academica_hierarchies", ["ancestor_id", "descendant_id", "generations"], name: "item_estructura_oferta_academica_anc_desc_idx", unique: true, using: :btree
+  add_index "item_estructura_oferta_academica_hierarchies", ["descendant_id"], name: "item_estructura_oferta_academica_desc_idx", using: :btree
+
   create_table "item_estructura_oferta_academicas", force: true do |t|
     t.string  "nombre"
     t.integer "est_oferta_acad_id"
-    t.integer "padre_id"
+    t.integer "parent_id"
   end
 
   add_index "item_estructura_oferta_academicas", ["est_oferta_acad_id"], name: "index_item_estructura_oferta_academicas_on_est_oferta_acad_id", using: :btree
-  add_index "item_estructura_oferta_academicas", ["padre_id"], name: "index_item_estructura_oferta_academicas_on_padre_id", using: :btree
+  add_index "item_estructura_oferta_academicas", ["parent_id"], name: "index_item_estructura_oferta_academicas_on_padre_id", using: :btree
 
   create_table "item_resumen", force: true do |t|
     t.text    "titulo"
@@ -350,7 +369,6 @@ ActiveRecord::Schema.define(version: 20150122004428) do
     t.integer "estatus"
     t.string  "logo"
     t.string  "slogan"
-    t.string  "pin"
     t.integer "pais_id"
     t.string  "direccion"
     t.text    "descripcion"
@@ -362,6 +380,7 @@ ActiveRecord::Schema.define(version: 20150122004428) do
     t.string  "email2"
     t.string  "email3"
     t.string  "email4"
+    t.integer "usuario_id",  null: false
   end
 
   add_index "organizacions", ["pais_id"], name: "index_organizacions_on_pais_id", using: :btree
@@ -372,8 +391,6 @@ ActiveRecord::Schema.define(version: 20150122004428) do
     t.integer  "usuario_id"
     t.integer  "contrato_id"
     t.integer  "modo_pago_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   add_index "pago_contratos", ["contrato_id"], name: "index_pago_contratos_on_contrato_id", using: :btree
@@ -490,7 +507,8 @@ ActiveRecord::Schema.define(version: 20150122004428) do
   add_index "resumen", ["modulo_id"], name: "index_resumen_on_modulo_id", using: :btree
 
   create_table "rols", force: true do |t|
-    t.string "nombre"
+    t.string  "nombre"
+    t.boolean "portal", null: false
   end
 
   create_table "sugerencia", force: true do |t|
@@ -500,6 +518,12 @@ ActiveRecord::Schema.define(version: 20150122004428) do
   end
 
   add_index "sugerencia", ["usuario_id"], name: "index_sugerencia_on_usuario_id", using: :btree
+
+  create_table "tipo_archivos", force: true do |t|
+    t.string "nombre"
+    t.text   "descripcion"
+    t.string "icono"
+  end
 
   create_table "tipo_eventos", force: true do |t|
     t.string   "titulo"
@@ -536,7 +560,6 @@ ActiveRecord::Schema.define(version: 20150122004428) do
     t.string   "apellido",                           default: "", null: false
     t.text     "pregunta_secreta"
     t.text     "respuesta_secreta"
-    t.integer  "pais_id"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -547,6 +570,5 @@ ActiveRecord::Schema.define(version: 20150122004428) do
   end
 
   add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true, using: :btree
-  add_index "usuarios", ["pais_id"], name: "index_usuarios_on_pais_id", using: :btree
 
 end

@@ -127,23 +127,11 @@ border-collapse: collapse;
 
 }
 .td{
-  
- 
-
- 
   background: rgb(234, 234, 234); 
   font-weight: normal;
-  
-
 }
-.te{
-  
- 
-
- 
-text-align: right;
-  
-
+.te{ 
+  text-align: right;
 }
 
 
@@ -158,9 +146,6 @@ text-align: right;
  z-index:1;
  top:100px;
  float:left;
-
-
-
 }
 
 .redondo {
@@ -278,4 +263,168 @@ width: 20px;
 
 .deseos li{
   width: 48%;
+}
+
+
+/****************************************************************/
+/*                          JERARQUIA                           */
+/****************************************************************/
+
+.jerarquia input, .jerarquia input:focus, .jerarquia textarea{
+  border: none;
+  box-shadow: none;
+  resize: none;
+}
+.jerarquia .collapsible{
+  box-shadow: none;
+  border: none;
+}
+
+.jerarquia .campo-nombre{
+  /*background: #ff9800;*/
+  font-weight: 400;
+  border: 1px solid rgb(109, 109, 109);
+}
+
+.jerarquia .campo-nombre input{
+  font-size: 25px;
+  color: rgb(109, 109, 109);
+}
+.jerarquia i{
+  color: rgb(109, 109, 109);
+  margin: 0px;
+}
+.jerarquia .input-group-addon{
+  padding: 0px;
+  text-align: center;
+}
+
+.jerarquia ::-webkit-input-placeholder, .jerarquia :-moz-placeholder,
+  .jerarquia ::-moz-placeholder, .jerarquia :-ms-input-placeholder {  
+   color: white;  
+}
+
+/****************************************************************/
+/*                   ARBOL DE OFERTA DE ESTUDIO                 */
+/****************************************************************/
+
+.panel.item-arbol{
+  border: none;
+  box-shadow: none;
+}
+.panel.item-arbol > .panel-heading{
+    /* border: 1px solid #eeeeee; */
+  border-radius: 8px;
+  /* padding: 0; */
+  padding: 0 10px;
+  display: inline-block;
+  background-color: #03a9f4;
+}
+.panel.item-arbol > .panel-body{
+ /* background: #F9F9F9;
+  border: 1px solid #eeeeee;*/
+}
+.panel.item-arbol .panel-heading h5 {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0;
+  padding: 10px;
+  display: inline-block;
+}
+
+.panel.item-arbol .panel-heading .indicador{
+  width: 20px;
+  /* height: 100%; */
+  margin-left: 15px;
+  margin-top: 5px;
+  text-align: center;
+  /* float: left; */
+  /* vertical-align: middle; */
+  display: inline-block;
+  /* background-color: #6a1b9a; */
+  
+}
+.panel.item-arbol .panel-heading .indicador i{
+  padding-top: 0;
+  color: white;
+  font-size: 22px;
+  vertical-align: middle;
+}
+
+.acciones{
+  /*height: 49px;*/
+  float: right;
+  margin-left: 25px;
+}
+
+.accion{
+  width: 35px;
+  height: 35px;
+  display: block;
+  margin: 5px 5px;
+  float: left;
+  text-align: center;
+  /* border-radius: 100%; */
+  /* background: white; */
+}
+
+.accion i{
+    /* padding-top: 8%; */
+  display: block;
+  font-size: 25px;
+  color: rgb(255, 255, 255)
+}
+.panel.panel-curso .panel-heading{
+  padding: 0;
+}
+.panel.panel-curso .media-left{
+  width: 50px;
+  background-size: cover;
+  background-position-x: center; 
+}
+.panel.panel-curso .media-body{
+  padding: 0px;
+  /*max-width: 450px;*/
+}
+.panel.panel-curso .media-body h4{
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  margin: 8px;
+  color: rgb(110, 173, 236);
+}
+
+.panel.panel-curso .media-body p{
+  margin: 8px;
+  text-indent: 0;
+  color: rgb(107, 105, 105);
+
+}
+.panel.panel-curso .panel-body{
+  padding: 0;
+}
+
+.panel.leccion{
+  border: 0; 
+  margin: 2px 0px;
+  box-shadow: none;
+}
+.panel.leccion .panel-heading{
+  background: rgb(107, 104, 104);
+  padding: 10px;
+  border:1px solid gray;
+  border-radius: 0;
+}
+.panel.leccion .panel-heading h4{
+  color: white;
+  font-size: 16px;
+  line-height: 18px;
+  margin: 0;
+}
+
+#arbol{
+  max-width: 66.66667%;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
 }

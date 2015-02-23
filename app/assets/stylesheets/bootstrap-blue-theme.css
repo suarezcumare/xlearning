@@ -24,7 +24,7 @@ i{vertical-align: middle;}
 }
 
 #contenedor.logged-in{
-  margin-left: 228px;
+  margin-left: 200px;
   -webkit-transition: margin-left 0.5s;
   transition: margin-left 0.5s;
 }
@@ -462,10 +462,12 @@ footer .footer-copyright{
 /*****************************************************/
 /*                     SIDEBAR                       */
 /*****************************************************/
-
+main.cerrado  #contenedor{
+  margin-left: 45px; 
+}
 
 main #sidebar-menu {
-  width: 228px;
+  width: 200px;
   display: inline-block;
   margin: 0px auto;
   position: fixed;
@@ -481,9 +483,7 @@ main.cerrado #sidebar-menu{
   width: 45px;
 }
 
-main.cerrado  #contenedor{
-  margin-left: 45px; 
-}
+
 main.cerrado #sidebar-menu span{
   display: none;
 }
@@ -492,14 +492,21 @@ main.cerrado #sidebar-menu span{
   background-color: rgb(67, 71, 75); 
 }
 
-#sidebar-menu ul.collapsible{
+#sidebar-menu div.collapsible{
+  border: 0;
   box-shadow: none;
-  border: none;
+  overflow: visible !important;
+  margin: 0;
 }
-
+#sidebar-menu li{
+  width: 200px;
+  display: block;
+  position: relative;
+}
 #sidebar-menu > ul > li{
   border-top: 1px solid #D7D7D7;
   margin-top: 0px; 
+  
 }
 #sidebar-menu.inverse > ul > li{
   border-top: 1px solid rgb(94, 94, 94);
@@ -509,7 +516,11 @@ main.cerrado #sidebar-menu span{
 }
 
 #sidebar-menu i{
-  font-size: 28px;
+  font-size: 25px;
+}
+
+#sidebar-menu i.fa{
+  font-size: 20px;
 }
 
 .toggler-wrapper{
@@ -535,7 +546,6 @@ main.cerrado #sidebar-menu span{
   -moz-transition: background-color 1s;
   -webkit-transition: background-color 1s;
   transition: background-color 1s;
-  color:rgb(144, 144, 144);
   text-transform: uppercase;
   font-size: 13px; 
   font-weight: 300;
@@ -543,22 +553,13 @@ main.cerrado #sidebar-menu span{
 
 .submenu a{
   display: block;
-  padding: 5px 5px 5px 35px;
-  margin: 5px 0px;
-  -moz-transition: background-color 1s;
-  -webkit-transition: background-color 1s;
-  transition: background-color 1s;
-}
-
-.submenu a:hover{
-  background-color: #E3E3E3;
+  padding: 8px 15px;
 }
 
 #sidebar-menu > ul > li > a{
   height: 42px;
-  width: 228px;
+  width: 200px;
   position: relative;
-  line-height: 22px;
   display: block;
   padding: 10px 6px;
 }
@@ -573,9 +574,9 @@ main.cerrado #sidebar-menu span{
   vertical-align: bottom;
 }
 
-#sidebar-menu > ul > li:hover > a:hover, #sidebar-menu > ul > li.active > a,
-  #sidebar-menu > ul a.menu-open{
-  background-color: rgb(56, 60, 65) !important;
+#sidebar-menu > ul li:hover a:hover, #sidebar-menu ul li.active > a,
+  #sidebar-menu ul a.menu-open{
+  background-color: rgb(43, 48, 52) !important;
   color:#fff;
 }
 

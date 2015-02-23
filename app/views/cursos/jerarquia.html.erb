@@ -1,0 +1,37 @@
+<% content_for :css_personalizado do %>
+  <%= stylesheet_link_tag    "cursos" %>
+<% end %>
+
+<div class="row titulo-seccion">
+  <div class="col s6">
+    <h5 class="text-uppercase">Jerarquía de la oferta de estudio</h5>
+  </div>
+  <div class="col s6 text-right">
+    <ol class="breadcrumb">
+      <li><%= link_to "Home", root_path %></li>
+       <li><%= link_to "Cursos", cursos_path %></li>
+    <li class="active">Jerarquía</li>
+    </ol>
+  </div>
+</div>
+
+<div class="row">
+	<div class="col s5 offset-s1">
+    <div id="items">
+    </div>
+	</div>
+  <div class="col s4 offset-s1">
+    <div class="panel">
+      <div class="panel-body">
+        <h5 class="text-center">¿Qué es esto?</h5>
+        <p>
+          La jerarquía de la oferta académica se refiere a cómo se organizan los cursos. Pueden organizarse en carreras, especializaciones o cualquier jerarquía, solo crea una nueva y agrega los niveles.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :js_personalizado do %>
+  <%= javascript_include_tag 'cursos' %>
+<% end %>

@@ -3,7 +3,7 @@ class CreateRespuesta < ActiveRecord::Migration
     create_table :respuesta do |t|
       t.text :valor
       t.boolean :correcta
-      t.references :evaluacion, index: true
+      t.references :pregunta, index: true
     end
   end
 end

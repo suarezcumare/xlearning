@@ -1,20 +1,12 @@
-var Xlearning = function(){
-	var scrollTo = function(el, offeset) {
-		console.log("scrollTo");
-        var pos = (el && el.size() > 0) ? el.offset().top : 0;
-        console.log("scrollTo: "+pos);
-        if (el) {           
-            pos = pos + (offeset ? offeset : -1 * el.height());
-        }
-
-        $('html,body').animate({
-            scrollTop: pos
-        }, 'slow');
-    }
-}
-
 $(document).ready(function(){
-	
+	$("#cambiar-rol").click(function(){
+		$("<div id='dialogos'></div>").appendTo('body');
+		React.render(
+		  React.createElement(DialogoRoles, null),
+		  document.getElementById("dialogos")
+		);
+		$("#form-cambio-roles").openModal();
+	});
 	$('ul.tabs').tabs();
 	$('select').not('.disabled').material_select();
 	$('.datepicker').pickadate();
@@ -39,14 +31,6 @@ $(document).ready(function(){
 	});
     //$('.collapsible').collapsible();
     $('[data-toggle="tooltip"]').tooltip();
-    
-    $('.submenu-trigger').click(function () {
-  		if($(this).hasClass("menu-open"))
-  			$(this).removeClass("menu-open").addClass("menu-close");
-  		else
-  			$(this).removeClass("menu-close").addClass("menu-open");
-	});
-
     $(".favoritear").click(function(){
     	if($(this).hasClass("fav"))
     		$(this).removeClass("fav");

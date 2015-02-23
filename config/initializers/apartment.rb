@@ -18,8 +18,8 @@ Apartment.configure do |config|
   # config.excluded_models = %w{Tenant}
   #
   config.excluded_models = %w{ Organizacion Rol OpcionMenu 
-    Menu TipoFormato Licencia ModoPago BaseDato RedSocial TipoEvento FrecuenciaPago Plan 
-    Contrato Organizacion}
+    Menu TipoFormato Licencia ModoPago RedSocial TipoEvento FrecuenciaPago Plan 
+    Contrato TipoArchivo}
 
   # use postgres schemas?
   config.use_schemas = true
@@ -35,7 +35,7 @@ Apartment.configure do |config|
   # config.append_environment = true
 
   # supply list of database names for migrations to run on
-  config.tenant_names = lambda{ BaseDato.pluck  :nombre }
+  config.tenant_names = lambda{ Organizacion.pluck  :subdominio }
 end
 
 ##

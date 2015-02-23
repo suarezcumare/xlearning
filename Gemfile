@@ -20,3 +20,5 @@ gem "omniauth-google-oauth2"
 gem 'omniauth-linkedin'
 gem 'therubyracer', platforms: :ruby
 gem 'seed_dump'
+gem 'execjs'
+gem 'closure_tree'

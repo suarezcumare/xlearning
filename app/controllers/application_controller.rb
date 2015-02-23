@@ -28,8 +28,8 @@ class ApplicationController < ActionController::Base
   		Apartment::Tenant.switch()
   		return unless request.subdomain.present?
 
-  		o = BaseDato.find_by(nombre: request.subdomain)
-  		if o
+  		o = Organizacion.where(["subdominio = ?", request.subdomain]).pluck(:subdominio)
+  		if o.length > 0
   			Apartment::Tenant.switch(request.subdomain)
   		else
   			redirect_to root_url(subdomain: false)

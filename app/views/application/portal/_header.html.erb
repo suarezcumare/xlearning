@@ -29,8 +29,9 @@
 				    </div>
         	</a>
         	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-  			    <li role="presentation"></li> 
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Cambiar rol</a></li>
+            <li role="presentation">
+              <a id="cambiar-rol"role="menuitem" tabindex="-1" href="javascript:void(0)">Cambiar rol</a>
+            </li>
   			    <li role="presentation"><%= link_to "Salir", destroy_usuario_session_url,method: :delete %></li>
 			    </ul>
         </li>

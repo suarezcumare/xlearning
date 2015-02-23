@@ -2,7 +2,6 @@ class Organizacion < ActiveRecord::Base
 
 	after_create do
 		Apartment::Tenant.create(self.subdominio)
-		BaseDato.create(nombre: self.subdominio)
 		@u = self.usuario.clone
 		Apartment::Tenant.switch(self.subdominio)
 		@u.save
