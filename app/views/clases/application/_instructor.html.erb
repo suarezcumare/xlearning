@@ -1,17 +1,24 @@
 <div id="info-instructor" class="card white">
 	<div class="card-image">
-		<img src="/assets/profile_user.jpg" class="img-responsive">
+
+		
+
+		 <% if ! @facilitador.perfil.foto.nil? and @facilitador.perfil.foto != "" %>
+          <img src="/<%= request.subdomain %>/avatar/<%= @facilitador.perfil.foto %>" class="img-responsive">
+        <% else %>
+        	<img src="/assets/avatar/sinfoto.jpg" class="img-responsive">
+        <% end %>
+
 	</div>  
 	<div class="card-content text-center">
-		<h5 class="card-title grey-text darken-4">Jose Gonzáles</h5>
-		<span class="text-muted text-uppercase">desarrollador</span>
-		<!-- <p class="grey-text darken-4">I am a very simple card. I am good at containing small bits of information. 
-		I am convenient because I require little markup to use effectively.</p> -->
+		<h5 class="card-title grey-text darken-4"><%= @facilitador.nombre %> <%= @facilitador.apellido %></h5>
+		<span class="text-muted text-uppercase"><%= @facilitador.perfil.ocupacion %></span>
 		<ul class="list-inline pad15">
-			<li><a class="fb" href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
-			<li><a class="tw" href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
-			<li><a class="lk" href="javascript:void(0)"><i class="fa fa-linkedin"></i> </a></li>
-			<li><a class="gh" href="javascript:void(0)"><i class="fa fa-github"></i></a> </li>
+			<li><a href="/usuarios/<%=  @facilitador.id %>" target="_blank" title="cuenta en <%= request.subdomain %>"><i class="fa fa-user gp"></i></a></li>	
+			
+		<% @usuredes.each do |red| %>
+           <li><a href="<%= red.red_social.url %><%= red.valor %>"  target="_blank"> <i class="<%= red.red_social.icono %> "></i></a></li>
+           <% end %>
 		</ul>
 	</div>
 </div>

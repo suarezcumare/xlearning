@@ -31,13 +31,24 @@ $(document).ready(function(){
 	});
     //$('.collapsible').collapsible();
     $('[data-toggle="tooltip"]').tooltip();
-    $(".favoritear").click(function(){
-    	if($(this).hasClass("fav"))
-    		$(this).removeClass("fav");
-    	else
-    		$(this).addClass("fav");
-    	
-    });
+    
+    $('.submenu-trigger').click(function () {
+  		if($(this).hasClass("menu-open"))
+  			$(this).removeClass("menu-open").addClass("menu-close");
+  		else
+  			$(this).removeClass("menu-close").addClass("menu-open");
+	});
+
+    // $(".favoritear").click(function(){
+    // 	if($(this).hasClass("fav"))
+    // 		$(this).removeClass("fav");
+    // 	else
+    // 		$(this).addClass("fav");
+    // });
+
+	$(document).on("click",".favoritear",function(){
+			$(this).toggleClass("fav");
+	    });
 
     $('.collapsible').collapsible({ "accordion" : false });
 

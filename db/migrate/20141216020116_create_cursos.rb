@@ -14,6 +14,7 @@ class CreateCursos < ActiveRecord::Migration
       t.integer :horas_semanales
       t.boolean :estatus
       t.string :imagen_url
+      t.string :foto
     end
   end
 end

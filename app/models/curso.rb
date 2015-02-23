@@ -8,4 +8,5 @@ class Curso < ActiveRecord::Base
 	has_many :evaluacions
   	has_many :categoria, :through => :curso_categoria
   	belongs_to :item_estructura, class_name: "ItemEstructuraOfertaAcademica", foreign_key: "item_estructura_id"
+  	has_many :grupo
 end

@@ -8,7 +8,6 @@ Xlearning::Application.routes.draw do
   #match "/cursos" => "cursos#new", via: :get
   match "/validar_email" => "usuarios#validar_email", via: :post
   match "/validar_subdominio" => "organizacions#validar_subdominio", via: :post
-  match "/menu" => "menu#find", via: :get
   match "/usuarios/abrircuenta"=>"usuarios#create", via: :post
   devise_scope :usuario do
     post "/entrar" => "devise/sessions#create"
@@ -71,6 +70,23 @@ Xlearning::Application.routes.draw do
 
     #Manejo de Ofertas academicas
     resources :oferta_academica, controller: 'oferta_academicas'
+
+      match "/usuario/guardar_foto" => "usuarios#save_foto", via: :post
+      match "/usuario/guardar_foto" => "usuarios#save_foto", via: :get
+      match "/preferencias" => "usuarios#preferencias_guardar", via: :post
+      
+
+       #los json a utilizar
+       match "/json/clases/generarClasesActuales" => "grupos#generarClasesActuales", via: :get
+       match "/json/clases/generarClasesPasadas" => "grupos#generarClasesPasadas", via: :get
+       match "/json/clases/generarClasesFuturas" => "grupos#generarClasesFuturas", via: :get
+       match "/json/clases/generarListaDeseos" => "grupos#generarListaDeseos", via: :get
+       match "/json/clases/generarListaRecomendados" => "grupos#generarListaRecomendados", via: :get
+       match "/json/clases/generarClasesNotificacionesEvaluaciones" => "clases#generarClasesNotificacionesEvaluaciones", via: :post
+       match "/json/clases/generarClasesNotificacionesDiscuciones" => "clases#generarClasesNotificacionesDiscuciones", via: :post
+       match "/json/clases/generarClasesNotificaciones" => "clases#generarClasesNotificaciones", via: :post
+       match "/json/clases/generarClasesCalendarioEstudiante" => "clases#generarClasesCalendarioEstudiante", via: :post
+       match "/json/clases/generarClasesCalendarioFacilitador" => "clases#generarClasesCalendarioFacilitador", via: :post
   end
 
   match "/inicio" => "portal#index", via: :get

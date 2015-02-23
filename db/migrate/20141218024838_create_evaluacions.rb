@@ -13,6 +13,7 @@ class CreateEvaluacions < ActiveRecord::Migration
       t.float :valor_preguntas_cerradas
       t.float :puntuacion
       t.boolean :tipo
+      t.references :modulo, index: true
     end
   end
 end

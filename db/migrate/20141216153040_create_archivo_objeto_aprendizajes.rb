@@ -1,7 +1,7 @@
 class CreateArchivoObjetoAprendizajes < ActiveRecord::Migration
   def change
     create_table :archivo_objeto_aprendizajes do |t|
-      t.binary :archivo
+      t.longbinary :archivo
       t.references :usuario, index: true
       t.datetime :fechasubido
       t.references :licencia, index: true

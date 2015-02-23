@@ -5,7 +5,23 @@ class CursosController < ApplicationController
 
 	def show
 		respond_to do |format|
-		    format.html  # index.html.erb
+		    format.html  {
+		    	@curso = Curso.find(params[:id])
+		
+				# @curso.each do |curso|
+				# 	@curso  = curso
+				# end
+
+	 			# facilitador_id = @curso.facilitador_id
+				@facilitador = Usuario.where("id = ?", @curso.facilitador.id)
+
+				# @facilitador.each do |facilitador|
+				# 	@facilitador = facilitador
+				# end
+							
+				# @modulo = Modulo.includes(:curso).where("curso_id = ?", @curso.id).order("orden ASC")
+				@modulo = @curso.modulos
+		    }
 		    format.json  { 
 		    	if Curso.exists?(params[:id])
 		    		curso = Curso.includes(:categoria, modulos: [:evaluacions, objeto_aprendizajes: [:tipo_archivo]]).find(params[:id])#: [:evaluacions, objeto_aprendizajes: [:tipo_archivo]])

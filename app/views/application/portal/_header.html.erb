@@ -1,7 +1,11 @@
 <nav id="menu-header">
     <div class="nav-wrapper inverse">
       <a href="javascript:void(0)" class="brand-logo">
-      	<img src="/assets/logo-header.png"/>Learning
+
+     
+        <% organizacion = Organizacion.find_by(subdominio: request.subdomain) %>
+      	<img src="/assets/logo-header.png"/> <%= organizacion.nombre %>
+         
       </a>
       <a id="busqueda-trigger" class="activar-busqueda" href="javascript:void(0)"><i class="mdi-action-search"></i></a>
       <% if usuario_signed_in? %>
@@ -20,8 +24,13 @@
         	<a href="javascript.html" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
         		<div class="media logged-in-usuario">
         			<div class="media-left">
-    						<img src="/assets/avatar/usuario-<%= current_usuario.id%>.jpg" class="img-circle" alt=""/>
-    					</div>
+              
+                <% if ! current_usuario.perfil.foto.nil? and current_usuario.perfil.foto != "" %>
+    						      <img src="/<%= request.subdomain %>/avatar/<%= current_usuario.perfil.foto %>" class="img-circle" alt=""/>
+    					   <% else %>
+                      <img src="/assets/avatar/sinfoto.jpg" class="img-circle" alt=""/>
+                 <% end %>
+              </div>
     					<div class="media-body">
     						<h6 class="media-heading"><%= current_usuario.nombre%></h6>
     						<span class="rol"><%= current_usuario.rol_actual.nombre %></span>

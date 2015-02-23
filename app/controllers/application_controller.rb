@@ -24,10 +24,9 @@ class ApplicationController < ActionController::Base
   end
 
   private
-  	def load_db
-  		Apartment::Tenant.switch()
-  		return unless request.subdomain.present?
-
+    def load_db
+      Apartment::Tenant.switch()
+      return unless request.subdomain.present?
   		o = Organizacion.where(["subdominio = ?", request.subdomain]).pluck(:subdominio)
   		if o.length > 0
   			Apartment::Tenant.switch(request.subdomain)
