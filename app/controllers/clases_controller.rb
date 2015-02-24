@@ -168,8 +168,8 @@ class ClasesController < ApplicationController
 
 			numero 	= params[:number]
 
-			@evaluaciongrupos = EvaluacionGrupo.includes(:grupo).where("grupo_id = ?", 1)
-			@evaluaciongrupos = EvaluacionGrupo.includes(:evaluacion).where("grupo_id = ?", 1).order('fecha_habilitacion ASC')
+			@evaluaciongrupos = EvaluacionGrupo.includes(:grupo).where("grupo_id = ?", numero)
+			@evaluaciongrupos = EvaluacionGrupo.includes(:evaluacion).where("grupo_id = ?", numero).order('fecha_habilitacion ASC')
 
 			@evaluaciongrupos.each do |eva|
 				@eval = eva
