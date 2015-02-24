@@ -51,7 +51,7 @@ class UsuariosController < ApplicationController
 		# @pago.modo_pago = ModoPago.find(params[:modo_pago])
 		# @usuario
 		@respuesta = Hash.new
-	    if @usuario.save 
+	    if @usuario.save 	    	
 	       @respuesta["codigo"] = 200
 	       @respuesta["url"] = entrar_url(:subdomain => @usuario.organizacion.subdominio)
 	    else  
@@ -88,7 +88,7 @@ class UsuariosController < ApplicationController
 	end
 
 	def save_foto
-
+		name.ameasd
 		dir = "public/"+ request.subdomain + "/avatar"
 		 FileUtils.mkdir_p(dir) unless File.directory?(dir)
 		@usuario = current_usuario

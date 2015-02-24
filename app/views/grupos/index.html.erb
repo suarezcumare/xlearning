@@ -18,12 +18,33 @@
 	<div class="col s7">
 		<div class="pad45-h">
 			<ul class="nav nav-pills">
-			  <li role="presentation" class="active"><%= link_to "Actual", clases_path %></li>
-			  <li role="presentation"><%= link_to "Pasados", clases_path %></li>
-			  <li role="presentation"><%= link_to "Futuros", clases_path %></li>
+
+			 <% if @clases == "Actuales" %>
+			  	<li role="presentation" class="active"><%= link_to "Actual", clases_path %></li>
+			 <% else %>
+			 	<li role="presentation"><%= link_to "Actual", clases_path %></li>
+			  <% end %>
+
+			  <% if @clases == "Pasadas" %>
+			     <li role="presentation" class="active"><%= link_to "Pasados", clases_pasados_path %></li>
+			 <% else %>
+			 	   <li role="presentation"><%= link_to "Pasados", clases_pasados_path %></li>
+			  <% end %>
+
+			  <% if @clases == "Futuras" %>
+			  		<li role="presentation" class="active"><%= link_to "Futuros", clases_futuros_path %></li>
+			  <% else %>
+			 	<li role="presentation"><%= link_to "Futuros", clases_futuros_path %></li>
+			  <% end %>
 			</ul>
+
+		
+<br><br>
+				 <div id="idd" class="<%= @clases %>"></div>
+			 	 <div id="myClase<%= @clases %>"></div>
 			
-		   <div id="myClaseActual"></div>
+			
+		  
 
 
 			<div class="pad15"></div>
@@ -32,6 +53,7 @@
 			<div>
 				<h5 class="text-uppercase">Tu lista de deseos</h5>
 				<ul class="deseos recomendaciones inline">
+					<div id="ididdeseos" class="ididdeseos"></div>
 					<div id="myListaDeseos"></div>
 				</ul>
 			</div>
@@ -41,6 +63,7 @@
 		<div class="publicidad text-center">Disponible para publicidad</div>
 
 		<h5 class="text-uppercase">Recomendaciones para ti</h5>
+			<div id="ididrecomendados" class="ididrecomendados"></div>
 			<div id="myListaRecomendados"></div>
 
 

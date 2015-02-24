@@ -34,7 +34,7 @@
              <% @objeto = ArchivoObjetoAprendizaje.includes(:objeto_aprendizaje).where("archivo_objeto_aprendizajes.id = ?",  contenido.objeto_aprendizaje.id ) %>
 
             <% @objeto.each do |archivoObjetoAprendizaje| %>
-               <% if archivoObjetoAprendizaje.id == 1  %>  
+               <% if ! archivoObjetoAprendizaje.objeto_aprendizaje.nil?  %>  
 
 
                     <% if archivoObjetoAprendizaje.tipo_formato_id == 9 or archivoObjetoAprendizaje.tipo_formato_id == 10 or archivoObjetoAprendizaje.tipo_formato_id == 11 or archivoObjetoAprendizaje.tipo_formato_id == 12 %>  
@@ -42,15 +42,16 @@
                               <td></td>
                               <td colspan="2">
                                 <a href="javascript:void(0)" class="visualizador-contenido" data-contenido="imagen"
-                                  data-url=" <%=   %> ">
+                                  data-url="/biblioteca/<%= archivoObjetoAprendizaje.id %>/mostrar">
                                   <i class="mdi-image-slideshow"></i>
-                                  Imagen: <%= archivoObjetoAprendizaje.objeto_aprendizaje.nombre %> </a> <span class="badge  grey lighten-2"></span>
-                                <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
+                                    Imagen: <%= archivoObjetoAprendizaje.objeto_aprendizaje.nombre %> </a> <span class="badge  grey lighten-2"></span>
+                                <a href="/biblioteca/<%= archivoObjetoAprendizaje.id %>/descargar" ><i class="fa fa-download"></i></a>
                               </td>
                             </tr>
 
-                     <%  end %>
-                     <% if archivoObjetoAprendizaje.tipo_formato_id == 1 or archivoObjetoAprendizaje.tipo_formato_id == 2  %>  
+
+                   
+                     <% elsif archivoObjetoAprendizaje.tipo_formato_id == 1 or archivoObjetoAprendizaje.tipo_formato_id == 2  %>  
                    
                                <tr>
                                   <td></td>
@@ -61,43 +62,43 @@
                                   </td>
                                 </tr> 
 
-                    <% end %> 
+                  
 
-                     <% if archivoObjetoAprendizaje.tipo_formato_id == 3 or archivoObjetoAprendizaje.tipo_formato_id == 4  or archivoObjetoAprendizaje.tipo_formato_id == 5  or archivoObjetoAprendizaje.tipo_formato_id == 6  or archivoObjetoAprendizaje.tipo_formato_id == 7  or archivoObjetoAprendizaje.tipo_formato_id == 8  %>  
+                     <% elsif archivoObjetoAprendizaje.tipo_formato_id == 3 or archivoObjetoAprendizaje.tipo_formato_id == 4  or archivoObjetoAprendizaje.tipo_formato_id == 5  or archivoObjetoAprendizaje.tipo_formato_id == 6  or archivoObjetoAprendizaje.tipo_formato_id == 7  or archivoObjetoAprendizaje.tipo_formato_id == 8  %>  
 
                                <tr>
                                   <td></td>
                                   <td  colspan="2">
                                     <i class="fa fa-file-text-o"></i>
                                     Archivo zip: <%= archivoObjetoAprendizaje.objeto_aprendizaje.nombre %>  <span class="badge grey lighten-2">1 Mb</span>
-                                    <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
+                                    <a href="/biblioteca/<%= archivoObjetoAprendizaje.id %>/descargar"><i class="fa fa-download"></i></a>
                                   </td>
                                 </tr> 
 
                     <% end %> 
 
-                     <% if archivoObjetoAprendizaje.tipo_formato_id == 13 or archivoObjetoAprendizaje.tipo_formato_id == 14 or archivoObjetoAprendizaje.tipo_formato_id == 15 %>  
+                     <% elsif archivoObjetoAprendizaje.tipo_formato_id == 13 or archivoObjetoAprendizaje.tipo_formato_id == 14 or archivoObjetoAprendizaje.tipo_formato_id == 15 %>  
 
                                 <tr>
                                   <td></td>
                                   <td  colspan="2">
                                     <i class="fa fa-movie-o"></i>
                                     Video: <%= archivoObjetoAprendizaje.objeto_aprendizaje.nombre %>  <span class="badge grey lighten-2">12 Mb</span>
-                                    <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
+                                    <a href="/biblioteca/<%= archivoObjetoAprendizaje.id %>/descargar"><i class="fa fa-download"></i></a>
                                   </td>
                                 </tr> 
 
 
-                    <% end %> 
+              
 
-                     <% if archivoObjetoAprendizaje.tipo_formato_id == 16 or archivoObjetoAprendizaje.tipo_formato_id == 17 or archivoObjetoAprendizaje.tipo_formato_id == 18 %>  
+                     <% else %>  
 
                                <tr>
                                   <td></td>
                                   <td  colspan="2">
                                     <i class="fa fa-file-code-o"></i>
                                     Video: <%= archivoObjetoAprendizaje.objeto_aprendizaje.nombre %>  <span class="badge grey lighten-2">12 Mb</span>
-                                    <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
+                                    <a href="/biblioteca/<%= archivoObjetoAprendizaje.id %>/descargar"><i class="fa fa-download"></i></a>
                                   </td>
                                 </tr> 
 

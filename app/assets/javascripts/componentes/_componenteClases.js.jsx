@@ -76,11 +76,16 @@ var CommentClasesNotificacionesEvaluaciones = React.createClass({
 });
 
 
+var id = $("#ididnotivea").attr("class")
+
+if (id == "ididnotivea"){
+
 React.render(
   <CommentBoxClaseNotificacionesEvaluaciones  url="/json/clases/generarClasesNotificacionesEvaluaciones" />,
   document.getElementById('ClasesNotificacionesEvaluaciones')
 );
 
+}
 /* Fin notificacionesEvaluciones*/
 
 
@@ -154,12 +159,15 @@ var CommentClasesNotificacionesDiscuciones = React.createClass({
   }
 });
 
+var id = $("#ididnotidis").attr("class")
+
+if (id == "ididnotidis"){
 
 React.render(
   <CommentBoxClaseNotificacionesDiscuciones  url="/json/clases/generarClasesNotificacionesDiscuciones" />,
   document.getElementById('ClasesNotificacionesDiscuciones')
 );
-
+}
   //Fin notificacionesEvaluciones */
 
 
@@ -249,9 +257,14 @@ var CommentClasesNotificaciones = React.createClass({
 });
 
 
+var id = $("#ididnotifeva").attr("class")
+
+if (id == "ididnotifeva"){
+
 React.render(
   <CommentBoxClaseNotificaciones  url="/json/clases/generarClasesNotificaciones" />,
   document.getElementById('ClasesNotificaciones')
 );
 
+}
 /* Fin NotificacionesCurso*/

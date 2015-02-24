@@ -14,13 +14,15 @@
 ActiveRecord::Schema.define(version: 20150217145409) do
 
   create_table "archivo_objeto_aprendizajes", force: true do |t|
-    t.binary   "archivo"
+    t.binary   "archivo",               limit: 2147483647
     t.integer  "usuario_id"
     t.datetime "fechasubido"
     t.integer  "licencia_id"
     t.integer  "tipo_formato_id"
     t.integer  "dispositivo_id"
     t.integer  "objeto_aprendizaje_id"
+    t.boolean  "estatus_biblioteca"
+    t.string   "filename",              limit: 256
   end
 
   add_index "archivo_objeto_aprendizajes", ["dispositivo_id"], name: "index_archivo_objeto_aprendizajes_on_dispositivo_id", using: :btree
@@ -45,9 +47,11 @@ ActiveRecord::Schema.define(version: 20150217145409) do
     t.text    "instrucciones"
     t.float   "puntuacion",    limit: 24
     t.integer "curso_id"
+    t.integer "modulo_id"
   end
 
   add_index "asignacions", ["curso_id"], name: "index_asignacions_on_curso_id", using: :btree
+  add_index "asignacions", ["modulo_id"], name: "index_asignacions_on_modulo_id", using: :btree
 
   create_table "autenticacions", force: true do |t|
     t.integer  "usuario_id"
@@ -96,10 +100,11 @@ ActiveRecord::Schema.define(version: 20150217145409) do
     t.datetime "fecha_creacion"
     t.text     "observacion"
     t.integer  "plan_id"
-    t.boolean  "estatus",            default: true
-    t.integer  "frecuencia_pago_id",                null: false
+    t.boolean  "estatus"
+    t.integer  "frecuencia_pago_id"
   end
 
+  add_index "contratos", ["frecuencia_pago_id"], name: "index_contratos_on_frecuencia_pago_id", using: :btree
   add_index "contratos", ["organizacion_id"], name: "index_contratos_on_organizacion_id", using: :btree
   add_index "contratos", ["plan_id"], name: "index_contratos_on_plan_id", using: :btree
 
@@ -135,6 +140,7 @@ ActiveRecord::Schema.define(version: 20150217145409) do
     t.boolean "estatus"
     t.integer "facilitador_id"
     t.integer "comentario_id"
+    t.string  "foto",               limit: 256
   end
 
   add_index "cursos", ["comentario_id"], name: "index_cursos_on_comentario_id", using: :btree
@@ -214,9 +220,11 @@ ActiveRecord::Schema.define(version: 20150217145409) do
     t.float   "valor_preguntas_cerradas", limit: 24
     t.float   "puntuacion",               limit: 24
     t.boolean "tipo"
+    t.integer "modulo_id"
   end
 
   add_index "evaluacions", ["curso_id"], name: "index_evaluacions_on_curso_id", using: :btree
+  add_index "evaluacions", ["modulo_id"], name: "index_evaluacions_on_modulo_id", using: :btree
 
   create_table "frecuencia_pagos", force: true do |t|
     t.string   "nombre"
@@ -259,11 +267,11 @@ ActiveRecord::Schema.define(version: 20150217145409) do
   create_table "item_estructura_oferta_academicas", force: true do |t|
     t.string  "nombre"
     t.integer "est_oferta_acad_id"
-    t.integer "parent_id"
+    t.integer "padre_id"
   end
 
   add_index "item_estructura_oferta_academicas", ["est_oferta_acad_id"], name: "index_item_estructura_oferta_academicas_on_est_oferta_acad_id", using: :btree
-  add_index "item_estructura_oferta_academicas", ["parent_id"], name: "index_item_estructura_oferta_academicas_on_padre_id", using: :btree
+  add_index "item_estructura_oferta_academicas", ["padre_id"], name: "index_item_estructura_oferta_academicas_on_padre_id", using: :btree
 
   create_table "item_resumen", force: true do |t|
     t.text    "titulo"
@@ -380,7 +388,7 @@ ActiveRecord::Schema.define(version: 20150217145409) do
     t.string  "email2"
     t.string  "email3"
     t.string  "email4"
-    t.integer "usuario_id",  null: false
+    t.integer "usuario_id"
   end
 
   add_index "organizacions", ["pais_id"], name: "index_organizacions_on_pais_id", using: :btree
@@ -425,15 +433,18 @@ ActiveRecord::Schema.define(version: 20150217145409) do
   end
 
   create_table "perfils", force: true do |t|
-    t.binary  "foto"
+    t.string  "foto",         limit: 256
     t.string  "formato_foto"
     t.boolean "sexo"
     t.text    "intereses"
     t.string  "ocupacion"
     t.integer "usuario_id"
     t.text    "biografia"
+    t.integer "pais_id"
+    t.text    "preferencia"
   end
 
+  add_index "perfils", ["pais_id"], name: "index_perfils_on_pais_id", using: :btree
   add_index "perfils", ["usuario_id"], name: "index_perfils_on_usuario_id", using: :btree
 
   create_table "plans", force: true do |t|
@@ -507,8 +518,7 @@ ActiveRecord::Schema.define(version: 20150217145409) do
   add_index "resumen", ["modulo_id"], name: "index_resumen_on_modulo_id", using: :btree
 
   create_table "rols", force: true do |t|
-    t.string  "nombre"
-    t.boolean "portal", null: false
+    t.string "nombre"
   end
 
   create_table "sugerencia", force: true do |t|

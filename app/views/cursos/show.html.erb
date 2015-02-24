@@ -2,8 +2,12 @@
   <%= stylesheet_link_tag    "cursos" %>
 <% end %>
 <div class="row">
-  <div id="baner" class="col s12 no-padding" style="background-image:url('/<%= request.subdomain%>/cursos/<%= @curso.foto %>')">  
 
+  <% if ! @curso.foto.nil? %>
+  <div id="baner" class="col s12 no-padding" style="background-image:url('/<%= request.subdomain%>/cursos/<%= @curso.foto %>')">  
+  <% else %>
+    <div id="baner" class="col s12 no-padding" >  
+  <% end %>
 
      <% if ! @facilitador.perfil.foto.nil? and @facilitador.perfil.foto != "" %>
           <img src="/<%= request.subdomain %>/avatar/<%= @facilitador.perfil.foto %>" class="circulo">
@@ -47,7 +51,7 @@
         <% cursoc = cur %>
         <% end %>
 
-        <% if  cursoc.count > 0 %>
+        <% if  ! cursoc.nil? and  cursoc.count > 0   %>
         <% catego = Categoria.where("id = ?", cursoc.categoria_id).limit(1) %>
 
         <% catego.each do |cur| %>
@@ -210,9 +214,13 @@
           <% @objeto = ArchivoObjetoAprendizaje.includes(:objeto_aprendizaje).where("archivo_objeto_aprendizajes.id = ?",  contenido.objeto_aprendizaje.id ) %>
 
             <% @objeto.each do |archivoObjetoAprendizaje| %>
-        <tr>
-          <td>  <%= archivoObjetoAprendizaje.objeto_aprendizaje.nombre %> </td>
-        </tr>
+                
+                <% if ! archivoObjetoAprendizaje.objeto_aprendizaje.nil? %>
+                     <tr>
+                      <td>  <%= archivoObjetoAprendizaje.objeto_aprendizaje.id %> </td>
+                    </tr>
+                <% end %>
+
             <% end %> 
      <%  end %> 
       </tbody> 

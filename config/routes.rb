@@ -26,6 +26,9 @@ Xlearning::Application.routes.draw do
     match "/clases/:id_grupo/evaluacion/:id_evaluacion/overview" => "evaluacion_grupos#new", via: :get
     match "/clases/:id_grupo/evaluacion/:id_evaluacion/presentar" => "evaluacion_grupos#new", via: :get
     match "/clases/" => "grupos#index", via: :get
+    match "/clases_pasados/" => "grupos#pasados", via: :get
+    match "/clases_futuros/" => "grupos#futuros", via: :get
+    match "/historial/pagos/" => "pagos#index", via: :get
     match "/historial/pagos/" => "pagos#index", via: :get
     match "/historial/certificados/" => "certificados#index", via: :get
     match "/evaluacion/corregir/" => "evaluacion_grupos#create", via: :post
@@ -55,18 +58,23 @@ Xlearning::Application.routes.draw do
     match "/usuarios" => "organizacions#usuarios", via: :get
 
     match "/biblioteca/nuevo" => "objeto_aprendizaje#new", via: :get
+    match "/biblioteca/nuevo" => "objeto_aprendizaje#create", via: :post
+    match "/biblioteca/:id/descargar" => "objeto_aprendizaje#descargar_archivo", via: :get
+    match "/biblioteca/:id/mostrar" => "objeto_aprendizaje#mostrar_archivo", via: :get
     match "/calendario/facilitador" => "clases#calendario_facilitador", via: :get
 
     match "/estudiantes" => "organizacions#admision", via: :get
     match "/secciones/facilitador" => "grupos#facilitador_secciones", via: :get
     match "/secciones/coordinador" => "grupos#coordinador_secciones", via: :get
     match "/organizacion/todas" => "organizacions#show", via: :get
+    match "/cursos/:id/ver" => "cursos#show", via: :get
     match "/cursos/editar" => "cursos#edit", via: :get
     match "/cursos/editar" => "cursos#edit", via: :post
     match "/cursos/jerarquia" => "cursos#jerarquia", via: :get
     match "/cursos/jerarquia" => "cursos#crear_jerarquia", via: :post
     match '/politicas' => 'grupos#politica_admision', via: :get
     match "/encuestas/modificar/:id" => "encuestas#edit", via: :get
+
 
     #Manejo de Ofertas academicas
     resources :oferta_academica, controller: 'oferta_academicas'
@@ -85,7 +93,7 @@ Xlearning::Application.routes.draw do
        match "/json/clases/generarClasesNotificacionesEvaluaciones" => "clases#generarClasesNotificacionesEvaluaciones", via: :post
        match "/json/clases/generarClasesNotificacionesDiscuciones" => "clases#generarClasesNotificacionesDiscuciones", via: :post
        match "/json/clases/generarClasesNotificaciones" => "clases#generarClasesNotificaciones", via: :post
-       match "/json/clases/generarClasesCalendarioEstudiante" => "clases#generarClasesCalendarioEstudiante", via: :post
+       match "/json/clases/generarClasesCalendarioEstudiante" => "clases#generarClasesCalendarioEstudiante", via: [:post,:get]
        match "/json/clases/generarClasesCalendarioFacilitador" => "clases#generarClasesCalendarioFacilitador", via: :post
   end
 

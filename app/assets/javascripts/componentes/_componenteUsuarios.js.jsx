@@ -76,10 +76,16 @@ var CommentListaMisCursos = React.createClass({
 });
 
 
+var id = $("#iddusuario").attr("class")
+
+if (id == "ididUsuario"){
+
+
 React.render(
   <CommentBoxListaMisCursos  url="/json/clases/generarClasesActuales" />,
   document.getElementById('myListaMisCursos')
 );
 
+}
 /* Fin Panel curso (mis cursos) */
 
