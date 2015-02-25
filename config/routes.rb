@@ -82,10 +82,12 @@ Xlearning::Application.routes.draw do
       match "/usuario/guardar_foto" => "usuarios#save_foto", via: :post
       match "/usuario/guardar_foto" => "usuarios#save_foto", via: :get
       match "/preferencias" => "usuarios#preferencias_guardar", via: :post
+      match "/organizacion/guardar_logo" => "organizacions#save_logo", via: :post
+      match "/organizacion/guardar_portada" => "organizacions#save_portada", via: :post
       
 
        #los json a utilizar
-       match "/json/clases/generarClasesActuales" => "grupos#generarClasesActuales", via: :get
+       match "/json/clases/generarClasesActuales" => "grupos#generarClasesActuales", via: :post
        match "/json/clases/generarClasesPasadas" => "grupos#generarClasesPasadas", via: :get
        match "/json/clases/generarClasesFuturas" => "grupos#generarClasesFuturas", via: :get
        match "/json/clases/generarListaDeseos" => "grupos#generarListaDeseos", via: :get

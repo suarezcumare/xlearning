@@ -11,8 +11,10 @@
 
   componentDidMount: function() {
     $.ajax({
-      url: this.props.url,
+       url: this.props.url,
       dataType: 'json',
+      type: 'POST',
+      data: "number="+ $("#myListaMisCursos").attr("class"),
       success: function(data) {
         this.setState({data: data});
       }.bind(this),

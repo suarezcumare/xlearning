@@ -4,7 +4,7 @@
 		
 
 		 <% if ! @facilitador.perfil.foto.nil? and @facilitador.perfil.foto != "" %>
-          <img src="/<%= request.subdomain %>/avatar/<%= @facilitador.perfil.foto %>" class="img-responsive">
+          <img src="/systems/<%= request.subdomain %>/avatar/<%= @facilitador.perfil.foto %>" class="img-responsive">
         <% else %>
         	<img src="/assets/avatar/sinfoto.jpg" class="img-responsive">
         <% end %>

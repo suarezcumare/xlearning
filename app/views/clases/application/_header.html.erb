@@ -2,7 +2,11 @@
   <!-- Inicio Cuadro header -->
   <div class="media">
     <div class="media-left">
-      <img src="/<%= request.subdomain %>/cursos/<%= @eval.grupo.curso.foto %>" class="img-header-clases" alt="">
+      <% if ! @eval.grupo.curso.foto.nil? @eval.grupo.curso.foto != "" %>
+      <img src="/systems/<%= request.subdomain %>/cursos/<%= @eval.grupo.curso.foto %>" class="img-header-clases" alt="">
+      <% else %>
+       <img src="/assets/avatar/sinfoto.jpg" class="img-header-clases" alt="">
+      <% end %>
     </div>
     <div class="media-body">
       <div id="avance-porcentaje">

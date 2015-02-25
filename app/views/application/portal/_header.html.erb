@@ -3,9 +3,13 @@
       <a href="javascript:void(0)" class="brand-logo">
 
      
-        <% organizacion = Organizacion.find_by(subdominio: request.subdomain) %>
-      	<img src="/assets/logo-header.png"/> <%= organizacion.nombre %>
-         
+        <% @organizacion = Organizacion.find_by(subdominio: request.subdomain) %>
+    
+         <% if ! @organizacion.logo.nil? and @organizacion.logo != "" %>
+          <img src="/systems/<%= request.subdomain %>/portafolio/<%= @organizacion.logo %>" style="width: 33px;"> <%= @organizacion.nombre %>
+        <% else %>
+          <img src="/assets/logo-header.png" /> <%= @organizacion.nombre %>
+        <% end %>  
       </a>
       <a id="busqueda-trigger" class="activar-busqueda" href="javascript:void(0)"><i class="mdi-action-search"></i></a>
       <% if usuario_signed_in? %>
@@ -26,9 +30,9 @@
         			<div class="media-left">
               
                 <% if ! current_usuario.perfil.foto.nil? and current_usuario.perfil.foto != "" %>
-    						      <img src="/<%= request.subdomain %>/avatar/<%= current_usuario.perfil.foto %>" class="img-circle" alt=""/>
+    						      <img src="/systems/<%= request.subdomain %>/avatar/<%= current_usuario.perfil.foto %>" class="img-circle" alt=""/>
     					   <% else %>
-                      <img src="/assets/avatar/sinfoto.jpg" class="img-circle" alt=""/>
+                      <img src="/assets/avatar/sinfoto.jpg" /> <%= @organizacion.nombre %>
                  <% end %>
               </div>
     					<div class="media-body">

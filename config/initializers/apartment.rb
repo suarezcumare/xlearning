@@ -17,7 +17,7 @@ Apartment.configure do |config|
   #
   # config.excluded_models = %w{Tenant}
   #
-  config.excluded_models = %w{ Organizacion Rol OpcionMenu 
+  config.excluded_models = %w{Organizacion Rol OpcionMenu 
     Menu TipoFormato Licencia ModoPago RedSocial TipoEvento FrecuenciaPago Plan 
     Contrato TipoArchivo Dispositivo}
 

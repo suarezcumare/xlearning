@@ -79,7 +79,10 @@ class GruposController < ApplicationController
 
 
 	def generarClasesActuales
-  		@grupos = Grupo.includes(:curso).where('fecha_inicio <= ? and ? <= fecha_fin and usuario_id = ?', Time.now.midnight,Time.now.midnight, current_usuario.id )
+
+		numero = params[:number]
+
+  		@grupos = Grupo.includes(:curso).where('fecha_inicio <= ? and ? <= fecha_fin and usuario_id = ?', Time.now.midnight,Time.now.midnight, numero)
 
    @son2 = @grupos.count
 

@@ -1,7 +1,7 @@
 <!-- perfil/editar perfil -->
 
 <% content_for :css_personalizado do %>
- <%= stylesheet_link_tag    "usuarios" %> 
+ <%= stylesheet_link_tag    "organizacion" %> 
  <%= stylesheet_link_tag    "plugins/fileinput.min.css" %> 
 <% end %>
 
@@ -37,101 +37,94 @@
       <div class="row">
         <div class="col s12">
           <div class="pad15"></div>
-          <%= form_for(resource, :as => resource_name, :url => usuarios_editar_path, :html => { :method => :post }) do |f| %>
+          <%= form_for(@organizacion, :as => resource_name, :url => perfil_editar_path, :html => { :method => :post }) do |f| %>
             <div class="row">
               <div class="input-field col s6">
-                <label for="organizacions[nombre]">Nombre</label>
-                <input id="organizacions[nombre]" type="text" required></input>
+                 <%= f.label :nombre %>
+                <%= f.text_field :nombre, :required => true %>
               </div>
               <div class="input-field col s6">
-                <label for="organizacions[descripcion]">Descripción</label>
-                <input id="organizacions[descripcion]" type="text" required></input>
+                <%= f.label :descripcion %>
+                <%= f.text_field :descripcion, :required => true %>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s6">
-                <br>
-                <label for="organizacions[perfil][eslogan]">Eslogan</label>
-                <input id="organizacions[perfil][eslogan]" type="text" required></input>                  
+                <%= f.label :slogan %>
+                <%= f.text_field :slogan, :required => true %>              
               </div>
 
                  <div class="col s6">
-                <label>País</label>
-                <select name="organizacions[pais]">
-                  <option value="" disabled selected>Escoge tu país</option>
-                  <option value="1">Venezuela</option>
-                  <option value="2">Colombia</option>
-                  <option value="3">Panamá</option>
-                </select>
+                 <% pais_array = Pais.all.map { |pais| [pais.nombre, pais.id-1] } %>
+                  <label>País</label>
+                  <%= f.select :pais_id, options_for_select( pais_array,  @organizacion.pais_id.to_i - 1)   %> 
               </div>  
 
             </div>
 
-
             <div class="row">
               <div class="input-field col s6">
-                <label for="organizacions[email]">Email</label>
-                <input id="organizacions[email]" type="email" required>         
+                <%= f.label :email1 %>
+                <%= f.text_field :email1, :required => true %>           
               </div>
               <div class="input-field col s6">
-                <label for="organizacions[web]">Pagina Web</label>
-                <input id="organizacions[web]" type="text">         
+                <%= f.label :email2 %>
+                <%= f.text_field :email2 %>    
               </div>
 
             </div>
 
             <hr/>
 
-          
-            <div class="col s12 input-field">
-              <div class="col s12">
-                <label for="organizacions[perfil][biografia]">Acerca de tí</label>
-                <textarea id="organizacions[perfil][biografia]"></textarea>                
-              </div>  
+            <div class="row">
+              <div class="input-field col s6">
+                <%= f.label :telefono1 %>
+                <%= f.text_field :telefono1, :required => true %>          
+              </div>
+              <div class="input-field col s6">
+                <%= f.label :telefono2 %>
+                <%= f.text_field :telefono2 %>   
+              </div>
+
             </div>
-            <div class="col s12 input-field">
-              <div class="col s12">
-                <label for="organizacions[perfil][intereses]">Intereses</label>
-                <textarea id="organizacions[perfil][intereses]"></textarea>                
-              </div>  
-            </div>
-            <div class="col s12 input-field">
-              <div class="col s12">
-                <label for="organizacions[perfil][politicas]">Politicas</label>
-                <textarea id="organizacions[perfil][politicas]"></textarea>                
-              </div>  
-            </div>
-            <div class="col s12 input-field">
-              <div class="col s12">
-                <label for="organizacions[perfil][mision]">Misión</label>
-                <textarea id="organizacions[perfil][mision]"></textarea>                
-              </div>  
-            </div>
-            <div class="col s12 input-field">
-              <div class="col s12">
-                <label for="organizacions[perfil][vision]">Visión</label>
-                <textarea id="organizacions[perfil][vision]"></textarea>                
-              </div>  
-            </div>
+
+      
 
             <hr/>
 
-            <h5>Redes sociales</h5>
-            <div class="row">
-              <div class="form-control col s6">
-                No has agregado ninguna red social. Usa el botón a la derecha para hacerlo.
-              </div>
-              <div class="col s6 text-center">
-                <a href="javascript:void(0)" class="btn-floating waves-effect waves-light red dropdown-button"
-                    data-activates='dropdown-redes-sociales'>
-                  <i class="mdi-content-add"></i>
-                </a>
-              </div>
-            </div>
+              <h5>Redes sociales</h5>
+                    <div class="row">
+                      <div class="col s7">
+                        <ul id="lista-redes-sociales" class="vacia">
+                          <li>Te falta agregar alguna red social. Usa el botón a la derecha para hacerlo.</li>
+                        </ul>
+                      </div>
+                      <div class="col s5 text-center">
+                        <div class="dropdown">
+                          <a href="javascript:void(0)" class="btn-floating waves-effect waves-light red"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="mdi-content-add"></i>
+                          </a>
+                          <ul id="agregar-red-social" class='dropdown-menu list-inline' role="menu">
+                          <li ><a href="javascript:void(0)" id="facebook" class="fb"><i class="fa fa-facebook"></i></a></li> 
+
+                             <li ><a href="javascript:void(0)" id="twitter" class="tw"><i class="fa fa-twitter"></i></a></li>
+
+                           <li><a href="javascript:void(0)" id="googleplus" class="gp"><i class="fa fa-google-plus"></i></a></li> 
+
+                            <li><a href="javascript:void(0)" id="linkedin" class="lk"><i class="fa fa-linkedin"></i></a></li>
+
+                            <li><a href="javascript:void(0)"  id="github" class="gh"><i class="fa fa-github "></i></a></li> 
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+
             <div class="row pad30">
               <div class="form-control block-center">           
-                <a href="javascript:void(0)" class="btn btn-success">Guardar</a>
-                <a href="javascript:void(0)" class="btn btn-info">Cancelar</a> 
+                <%= f.submit "guardar", :class => 'btn btn-success' %>       
+               <a href="javascript:void(0)" class="btn btn-info">Cancelar</a> 
               </div>
             </div>
             <div class="pad15"></div> 
@@ -140,12 +133,38 @@
       </div> 
     </div>
     <div id="avatar">
+        <% @organizacion = Organizacion.find_by(subdominio: request.subdomain) %>
+    
+     <%= form_tag( {controller: "organizacions", action: "save_logo", method: "post"},  multipart: true ) do %>
       <div class="row">
         <br/>
-        <div class="col s12">
-            <input id="avatar-id" type="file" class="file" data-upload-url="/usuario/guardar_foto"/>
+       
+        <div class="col s12"> Logo:
+           <% if ! @organizacion.logo.nil? and @organizacion.logo != "" %>
+              <div id="avatarlogo" class='/systems/<%= request.subdomain %>/portafolio/<%= @organizacion.logo %>' > </div>
+            <% else %>
+            <div id="avatarlogo" class='/assets/avatar/sinfoto.jpg' > </div>
+            <% end %>
+            <input id="avatar_logo" name="avatar_logo" type="file" class="file" required/>
         </div>
+        
       </div>
+      <% end %>
+
+        <%= form_tag( {controller: "organizacions", action: "save_portada", method: "post"},  multipart: true ) do %>
+      <div class="row">
+        <br/>
+        <div class="col s12"> Portada:
+           <% if ! @organizacion.portada.nil? and @organizacion.portada != "" %>
+              <div id="avatarportada" class='/systems/<%= request.subdomain %>/portafolio/<%= @organizacion.portada %>' > </div>
+            <% else %>
+            <div id="avatarportada" class='/assets/avatar/sinfoto.jpg' > </div>
+            <% end %>
+            <input id="avatar_portada" name="avatar_portada" type="file" class="file" required/>
+        </div>
+        
+      </div>
+      <% end %>
       <div class="pad15"></div>
     </div>
     
@@ -163,10 +182,28 @@
   <%= javascript_include_tag 'plugins/fileinput.js' %>
 
   <script>
-    $("#avatar-id").fileinput({
+    $("#avatar_logo").fileinput({
       'browseLabel':'buscar',
       'initialPreview': [
-        "<img src='/assets/cocina.jpg' class='file-preview-image' alt='Avatar' title='Foto de perfil actual'>",
+        "<img src='"+ $("#avatarlogo").attr("class") +"' class='file-preview-image' alt='Avatar' title='Foto de perfil actual'>",
+      ],
+      'initialCaption':'archivo(s) seleccionado(s)',
+      'allowedFileTypes':['image'],
+      'allowedFileExtensions':['jpg', 'gif', 'png', 'jpeg'],
+      'browseClass':'btn btn-primary btn-flat',
+      'browseIcon':'<i class="mdi-file-attachment"></i>',
+      'removeLabel':'quitar',
+      'removeIcon':'<i class="mdi-content-clear"></i>',
+      'removeClass':'btn btn-danger btn-flat',
+      'uploadLabel':'Subir',
+      'uploadIcon':'<i class="mdi-file-file-upload"></i>',
+      'uploadClass':'btn btn-success btn-flat',
+    });
+
+      $("#avatar_portada").fileinput({
+      'browseLabel':'buscar',
+      'initialPreview': [
+        "<img src='"+ $("#avatarportada").attr("class") +"' class='file-preview-image' alt='Avatar' title='Foto de perfil actual'>",
       ],
       'initialCaption':'archivo(s) seleccionado(s)',
       'allowedFileTypes':['image'],

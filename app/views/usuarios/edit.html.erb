@@ -109,8 +109,6 @@
                         </div>
                       </div>
                     </div>
-
-   
       <%end%>
           <div class="row pad30">
             <div class="col s12">  
@@ -131,11 +129,11 @@
         <h5>Cambiar foto</h5>
 
         <% if ! @usuario.perfil.foto.nil? and @usuario.perfil.foto != "" %>
-          <div id="avatar" class='/<%= request.subdomain %>/avatar/<%= @usuario.perfil.foto %>' > </div>
+          <div id="avatar" class='/systems/<%= request.subdomain %>/avatar/<%= @usuario.perfil.foto %>' > </div>
         <% else %>
         <div id="avatar" class='/assets/avatar/sinfoto.jpg' > </div>
         <% end %>
-        <input id="avatar_id" name="avatar_id" type="file" class="file"  />
+        <input id="avatar_id" name="avatar_id" type="file" class="file"  required/>
         <div class="pad15"></div>
       </div>
     <% end %>

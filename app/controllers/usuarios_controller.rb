@@ -84,13 +84,121 @@ class UsuariosController < ApplicationController
 
 		 @usuario.update(usuario_params_organizacion)
 
+		 if ! params[:usuario][:perfil_attributes][:googleplus].nil?
+		 		red_social = RedSocial.find_by(nombre: 'googleplus')
+		 	
+		 		usuarioR = UsuarioRedSocial.where("usuario_id = ? and red_social_id = ?", current_usuario.id, red_social.id)
+		 		usuarioR.each do |us|
+		 			usuarioR = us
+		 		end
+
+		 		if ! usuarioR.nil?
+		 			usuarioR.valor = params[:usuario][:perfil_attributes][:googleplus]
+		 			usuarioR.save
+		 		else 
+			 		usuarioR = UsuarioRedSocial.new
+			 		usuarioR.usuario_id = current_usuario.id
+			 		usuarioR.red_social_id = red_social.id
+			 		usuarioR.valor = params[:usuario][:perfil_attributes][:googleplus]
+			 		usuarioR.save
+		 		end
+		 end
+		 if ! params[:usuario][:perfil_attributes][:facebook].nil?
+
+		 	red_social = RedSocial.find_by(nombre: 'facebook')
+		 	
+		 		usuarioR = UsuarioRedSocial.where("usuario_id = ? and red_social_id = ?", current_usuario.id, red_social.id)
+		 		usuarioR.each do |us|
+		 			usuarioR = us
+		 		end
+
+		 		if ! usuarioR.nil?
+		 			usuarioR.valor = params[:usuario][:perfil_attributes][:facebook]
+		 			usuarioR.save
+		 		else 
+			 		usuarioR = UsuarioRedSocial.new
+			 		usuarioR.usuario_id = current_usuario.id
+			 		usuarioR.red_social_id = red_social.id
+			 		usuarioR.valor = params[:usuario][:perfil_attributes][:facebook]
+			 		usuarioR.save
+		 		end
+
+		 end
+		 if ! params[:usuario][:perfil_attributes][:twitter].nil?
+
+		 	red_social = RedSocial.find_by(nombre: 'twitter')
+		 	
+		 		usuarioR = UsuarioRedSocial.where("usuario_id = ? and red_social_id = ?", current_usuario.id, red_social.id)
+		 		usuarioR.each do |us|
+		 			usuarioR = us
+		 		end
+
+		 		if ! usuarioR.nil?
+		 			usuarioR.valor = params[:usuario][:perfil_attributes][:twitter]
+		 			usuarioR.save
+		 		else 
+			 		usuarioR = UsuarioRedSocial.new
+			 		usuarioR.usuario_id = current_usuario.id
+			 		usuarioR.red_social_id = red_social.id
+			 		usuarioR.valor = params[:usuario][:perfil_attributes][:twitter]
+			 		usuarioR.save
+		 		end
+
+		 end
+		 if ! params[:usuario][:perfil_attributes][:linkedin].nil?
+
+		 	red_social = RedSocial.find_by(nombre: 'linkedin')
+		 	
+		 		usuarioR = UsuarioRedSocial.where("usuario_id = ? and red_social_id = ?", current_usuario.id, red_social.id)
+		 		usuarioR.each do |us|
+		 			usuarioR = us
+		 		end
+
+		 		if ! usuarioR.nil?
+		 			usuarioR.valor = params[:usuario][:perfil_attributes][:linkedin]
+		 			usuarioR.save
+		 		else 
+			 		usuarioR = UsuarioRedSocial.new
+			 		usuarioR.usuario_id = current_usuario.id
+			 		usuarioR.red_social_id = red_social.id
+			 		usuarioR.valor = params[:usuario][:perfil_attributes][:linkedin]
+			 		usuarioR.save
+		 		end
+
+		 end
+
+		 if ! params[:usuario][:perfil_attributes][:github].nil?
+
+		 	red_social = RedSocial.find_by(nombre: 'github')
+		 	
+		 		usuarioR = UsuarioRedSocial.where("usuario_id = ? and red_social_id = ?", current_usuario.id, red_social.id)
+		 		usuarioR.each do |us|
+		 			usuarioR = us
+		 		end
+
+		 		if ! usuarioR.nil?
+		 			usuarioR.valor = params[:usuario][:perfil_attributes][:github]
+		 			usuarioR.save
+		 		else 
+			 		usuarioR = UsuarioRedSocial.new
+			 		usuarioR.usuario_id = current_usuario.id
+			 		usuarioR.red_social_id = red_social.id
+			 		usuarioR.valor = params[:usuario][:perfil_attributes][:github]
+			 		usuarioR.save
+		 		end
+
+		 end
+
+
+		@usuario = Usuario.find_by(id: current_usuario.id)
+		@usuredes = UsuarioRedSocial.includes(:red_social).where("usuario_id = ?", @usuario.id)
+
 		render "usuarios/show"
 	end
 
 	def save_foto
-		name.ameasd
-		dir = "public/"+ request.subdomain + "/avatar"
-		 FileUtils.mkdir_p(dir) unless File.directory?(dir)
+		dir = "public/systems/"+ request.subdomain + "/avatar"
+
 		@usuario = current_usuario
 
 		  @perfil = Perfil.where("usuario_id = ?", @usuario.id)
@@ -123,7 +231,7 @@ class UsuariosController < ApplicationController
 
     	  @perfil.save
 		
-		render "usuarios/edit"
+		render "/usuarios/edit"
 
 
 
@@ -153,7 +261,7 @@ class UsuariosController < ApplicationController
 	    end
 
 	    def usuario_params
-	      accessible = [ :nombre, :apellido, :email,:organizacion_attributes => [ :id, :nombre, :descripcion, :subdominio,:contratos_attributes => [:id, :plan_id, :frecuencia_pago_id]] ] # extend with your own params
+	      accessible = [ :nombre, :apellido, :email,:perfil_attributes => [ :id, :sexo, :ocupacion, :biografia,:intereses ] ] # extend with your own params
 	      accessible << [ :password, :password_confirmation ] unless params[:usuario][:password].blank?
 	      params.require(:usuario).permit(accessible)
 	    end
@@ -163,4 +271,11 @@ class UsuariosController < ApplicationController
 	      accessible << [ :password, :password_confirmation ] unless params[:usuario][:password].blank?
 	      params.require(:usuario).permit(accessible)
 	    end
+
+	     def usuario_params_organizacion
+	      accessible = [ :nombre, :apellido, :email,:organizacion_attributes => [ :id, :nombre, :descripcion, :subdominio,:contratos_attributes => [:id, :plan_id, :frecuencia_pago_id]] ] # extend with your own params
+	      accessible << [ :password, :password_confirmation ] unless params[:usuario][:password].blank?
+	      params.require(:usuario).permit(accessible)
+	    end
+	    
 end

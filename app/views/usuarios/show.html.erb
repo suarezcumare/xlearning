@@ -29,9 +29,11 @@
             <h5 class="blue-text accent-1 text-uppercase"> Acerca de mi</h5>
             <br/> 
             <i class="fa fa-tag font21px"></i> <% pais = Pais.new %> 
-            <% pais = Pais.where("id = ?", @usuario.perfil.id).limit(1)  %> 
-            <% pais.each do |pais2| pais = pais2 end %> 
-            <%= pais.nombre %>
+            <% pais = Pais.find_by(id: @usuario.perfil.pais_id) %> 
+          
+            <% if ! pais.nil? %>
+              <%= pais.nombre %>
+            <% end %>
 
             <p class="margen">
                   <br>

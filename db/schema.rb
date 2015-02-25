@@ -14,15 +14,13 @@
 ActiveRecord::Schema.define(version: 20150217145409) do
 
   create_table "archivo_objeto_aprendizajes", force: true do |t|
-    t.binary   "archivo",               limit: 2147483647
+    t.binary   "archivo"
     t.integer  "usuario_id"
     t.datetime "fechasubido"
     t.integer  "licencia_id"
     t.integer  "tipo_formato_id"
     t.integer  "dispositivo_id"
     t.integer  "objeto_aprendizaje_id"
-    t.boolean  "estatus_biblioteca"
-    t.string   "filename",              limit: 256
   end
 
   add_index "archivo_objeto_aprendizajes", ["dispositivo_id"], name: "index_archivo_objeto_aprendizajes_on_dispositivo_id", using: :btree
@@ -140,7 +138,6 @@ ActiveRecord::Schema.define(version: 20150217145409) do
     t.boolean "estatus"
     t.integer "facilitador_id"
     t.integer "comentario_id"
-    t.string  "foto",               limit: 256
   end
 
   add_index "cursos", ["comentario_id"], name: "index_cursos_on_comentario_id", using: :btree
@@ -389,6 +386,7 @@ ActiveRecord::Schema.define(version: 20150217145409) do
     t.string  "email3"
     t.string  "email4"
     t.integer "usuario_id"
+    t.string  "portada",     limit: 256
   end
 
   add_index "organizacions", ["pais_id"], name: "index_organizacions_on_pais_id", using: :btree
@@ -433,7 +431,7 @@ ActiveRecord::Schema.define(version: 20150217145409) do
   end
 
   create_table "perfils", force: true do |t|
-    t.string  "foto",         limit: 256
+    t.string  "foto",         limit: 100
     t.string  "formato_foto"
     t.boolean "sexo"
     t.text    "intereses"
@@ -441,7 +439,6 @@ ActiveRecord::Schema.define(version: 20150217145409) do
     t.integer "usuario_id"
     t.text    "biografia"
     t.integer "pais_id"
-    t.text    "preferencia"
   end
 
   add_index "perfils", ["pais_id"], name: "index_perfils_on_pais_id", using: :btree
