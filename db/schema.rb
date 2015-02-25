@@ -97,8 +97,10 @@ ActiveRecord::Schema.define(version: 20150122004428) do
     t.text     "observacion"
     t.integer  "plan_id"
     t.boolean  "estatus"
+    t.integer  "frecuencia_pago_id"
   end
 
+  add_index "contratos", ["frecuencia_pago_id"], name: "index_contratos_on_frecuencia_pago_id", using: :btree
   add_index "contratos", ["organizacion_id"], name: "index_contratos_on_organizacion_id", using: :btree
   add_index "contratos", ["plan_id"], name: "index_contratos_on_plan_id", using: :btree
 
@@ -350,7 +352,6 @@ ActiveRecord::Schema.define(version: 20150122004428) do
     t.integer "estatus"
     t.string  "logo"
     t.string  "slogan"
-    t.string  "pin"
     t.integer "pais_id"
     t.string  "direccion"
     t.text    "descripcion"
@@ -362,6 +363,7 @@ ActiveRecord::Schema.define(version: 20150122004428) do
     t.string  "email2"
     t.string  "email3"
     t.string  "email4"
+    t.integer "usuario_id"
   end
 
   add_index "organizacions", ["pais_id"], name: "index_organizacions_on_pais_id", using: :btree
@@ -372,8 +374,6 @@ ActiveRecord::Schema.define(version: 20150122004428) do
     t.integer  "usuario_id"
     t.integer  "contrato_id"
     t.integer  "modo_pago_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   add_index "pago_contratos", ["contrato_id"], name: "index_pago_contratos_on_contrato_id", using: :btree
@@ -415,8 +415,10 @@ ActiveRecord::Schema.define(version: 20150122004428) do
     t.string  "ocupacion"
     t.integer "usuario_id"
     t.text    "biografia"
+    t.integer "pais_id"
   end
 
+  add_index "perfils", ["pais_id"], name: "index_perfils_on_pais_id", using: :btree
   add_index "perfils", ["usuario_id"], name: "index_perfils_on_usuario_id", using: :btree
 
   create_table "plans", force: true do |t|
@@ -536,7 +538,6 @@ ActiveRecord::Schema.define(version: 20150122004428) do
     t.string   "apellido",                           default: "", null: false
     t.text     "pregunta_secreta"
     t.text     "respuesta_secreta"
-    t.integer  "pais_id"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -547,6 +548,5 @@ ActiveRecord::Schema.define(version: 20150122004428) do
   end
 
   add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true, using: :btree
-  add_index "usuarios", ["pais_id"], name: "index_usuarios_on_pais_id", using: :btree
 
 end

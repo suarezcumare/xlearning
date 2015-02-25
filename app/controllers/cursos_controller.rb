@@ -10,5 +10,9 @@ class CursosController < ApplicationController
 	def edit
 		render "/cursos/edit"
 	end
+
+
+
+	
 end
 

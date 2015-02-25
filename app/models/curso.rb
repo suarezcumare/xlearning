@@ -10,4 +10,8 @@ class Curso < ActiveRecord::Base
 	has_many :curso_categoria
   	has_many :categoria, :through => :curso_categoria
   	belongs_to :item_estructura, class_name: "ItemEstructuraOfertaAcademica", foreign_key: "item_estructura_id"
+  	accepts_nested_attributes_for :modulos
+
+
+
 end

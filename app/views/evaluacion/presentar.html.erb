@@ -10,117 +10,65 @@
     </ol>
   </div>
 </div>
-
 <div class="row pad45">
-	<div class="col-lg-10 block-center">
-		<h4 class="deep-orange-text lighten-2">Cuestionario: Distancias eulerianas</h4>
-		<span class="text-right"><i class="mdi-action-schedule"></i> 
-			<%= Time.now.strftime("%b, %d de %Y") %>
-		</span>
-		<hr>
-		<form id="presentar-examen" name="evaluacion" method="post" action="<%= evaluacion_corregir_path %>">
-			<div class="badge new cyan lighten-3"><strong>Pregunta #1</strong></div>
-			<div class="panel">
-				<div class="panel-body">
-					<p class="pad15-h">
-						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-					</p>
-				</div>
-			</div>
-			<div class="pad30-h">
-				<div class="form-control">
-					<%= check_box_tag(:opcion1) %>
-					<%= label_tag(:opcion1, "Opcion 1") %>
-				</div>
-				<div class="form-control">
-					<%= check_box_tag(:opcion2) %>
-					<%= label_tag(:opcion2, "Opcion 2") %>
-				</div>
-				<div class="form-control">
-					<%= check_box_tag(:opcion3) %>
-					<%= label_tag(:opcion3, "Opcion 3") %>
-				</div>
-				<div class="form-control">
-					<%= check_box_tag(:opcion4) %>
-					<%= label_tag(:opcion4, "Opcion 4") %>
-				</div>
-			</div>
-			<br/>
+				    
+	 <div class="col-lg-10 block-center">
+	 <%= form_tag(:url => {:action => 'create' , })%>
+		  <h4 class="deep-orange-text lighten-2">
+			Cuestionario: <%= @evaluacion.titulo%> </h4>
+		 <span class="text-right"><i class="mdi-action-schedule"></i> 
+			 <%= Time.now.strftime("%b, %d de %Y") %>
+		 </span>
+	   <hr>		
+		 	<% @evaluacion.pregunta.each do |p| %>
+		  	 <div class="badge new cyan lighten-3">
+						 <strong>Pregunta </strong>
+		    	  </div>			
+					 <div class="panel">
+							<div class="panel-body">
+							<p class="pad15-h">
+							<%= p.enunciado%>
+							</p>			
+							</div>		
+					 </div>			
+					<div class="pad30-h"> 	
+			     	  <% p.respuesta.each do |r| %>  
+					 	      	 <div class="form-control">
+					 	       	  	        <%if p.tipo == 2 %>   
+					 	       	  	         <span class='select_respuesta'>
+    										<%= check_box_tag "pregunta[respuesta_ids][#{r.id}]",r.id %>
+  											  <%= label_tag "pregunta[respuesta_ids][#{r.id}]", r.valor %>
+  											</span>	      
+                                                <% elsif p.tipo == 1  %>							
+												<input id="idR" name="respuesta" type="radio" value="valor" />
+												<label for="idR"><%= label_tag r.valor %></label>	
+	                        		        <% else %>	         			    
+     								 			   <%= label_tag :respuesta, "Ingresa Respuesta" %>
+           									 	   <%= r.text_field_tag :respuesta %>
+						 				    <% end %>	
+					               </div>							   
+			            <% end %>	
+			   	 </div>		   
+		    <% end %>
+<%= submit_tag 'enviar' %>
 
-			<div class="badge new cyan lighten-3"><strong>Pregunta #2</strong></div>
-			<div class="panel">
-				<div class="panel-body">
-					<p class="pad30-h">
-						Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un
-					</p>
-				</div>
-			</div>
-			<div class="pad30-h">
-				<div class="form-control">
-					<%= check_box_tag(:opcion1) %>
-					<%= label_tag(:opcion1, "Li Europan lingues es membres") %>
-				</div>
-				<div class="form-control">
-					<%= check_box_tag(:opcion2) %>
-					<%= label_tag(:opcion2, "Li Europan lingues es membres del sam familie. Lor separat existentie es") %>
-				</div>
-				<div class="form-control">
-					<%= check_box_tag(:opcion3) %>
-					<%= label_tag(:opcion3, "Sed ut perspiciatis unde omnis iste natus error sit") %>
-				</div>
-				<div class="form-control">
-					<%= check_box_tag(:opcion4) %>
-					<%= label_tag(:opcion4, "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean") %>
-				</div>
-			</div>
-			<br/>
-			<div class="badge new cyan lighten-3"><strong>Pregunta #3</strong></div>
-			<div class="panel">
-				<div class="panel-body">
-					<p class="pad30-h">
-						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-					</p>
-				</div>
-			</div>
-			<div class="pad30-h">
-				<div class="form-control">
-					<%= radio_button_tag(:falso, "Falso") %>
-					<%= label_tag(:falso, "Falso") %>
-				</div>
-				<div class="form-control">
-					<%= radio_button_tag(:verdadero, "Verdadero") %>
-					<%= label_tag(:verdadero, "Verdadero") %>
-				</div>
-			</div>
-			<br/>
 
-			<div class="badge new cyan lighten-3"><strong>Pregunta #4</strong></div>
-			<div class="panel">
-				<div class="panel-body">
-					<p class="pad30-h">
-						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-					</p>
-				</div>
-			</div>
-			<div class="pad30-h">
-				<div class="input-field">
-					<%= text_area_tag(:respuesta, "Escribe aquí") %>
-				</div>
-			</div>
-			<div class="pad45">
-				<div class="form-control block-center">
-					<button type="submit" href="" class="btn btn-success">Enviar</button>
-					<a href="" class="btn btn-primary">guardar</a>
-				</div>
-			</div>
-		</form>
+     </div>
+</div>
+
+
+ 
+<%  if @evaluacion.duracion > -1 %>
+	<div class="timer">
+		<div id="countdown">
+
+		</div>
 	</div>
-</div>
-<div class="timer">
-	<div id="countdown"></div>
-</div>
+<% end %>
+
 <% content_for :js_personalizado do %>
   <%= javascript_include_tag "jquery.scrolline" %>
   <%= javascript_include_tag "jquery.countdown360" %>
   <%= javascript_include_tag "evaluacion" %>
+
 <% end %>

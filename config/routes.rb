@@ -15,14 +15,17 @@ Xlearning::Application.routes.draw do
   devise_scope :usuario do
     post "/entrar" => "devise/sessions#create"
     get "/entrar" => "devise/sessions#new"
+
     #get "/registro" => "devise/registrations#new"
   end
   devise_for :usuarios, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }, via: :post
   match '/usuarios/:id/confirmar_registro' => 'usuarios#finish_signup', via: [:get, :patch], :as => :finish_signup
     constraints(SubdomainPresent) do
       match "/clases/:id" => "clases#index", via: :get
-      match "/clases/:id/evaluacion/:id/overview" => "evaluacion#overview", via: :get
-      match "/clases/:id/evaluacion/:id/presentar" => "evaluacion#presentar", via: :get
+      match "/clases/:id/evaluacion/:id_evaluacion/overview" => "evaluacion#overview", via: :get
+      match "/clases/:id/evaluacion/:id_evaluacion/presentar" => "evaluacion_grupos#new", via: :get
+      match "/clases/:id/evaluacion/:id_evaluacion/presentar" => "evaluacion_grupos#create", via: :post
+
       match "/clases/" => "grupos#index", via: :get
       match "/historial/pagos/" => "pagos#index", via: :get
       match "/historial/certificados/" => "certificados#index", via: :get
