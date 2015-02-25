@@ -2,11 +2,15 @@
   <%= stylesheet_link_tag    "cursos" %>
 <% end %>
 <div class="row">
-  <div id="baner" class="col s12 no-padding" style="background-image:url('/<%= request.subdomain%>/cursos/<%= @curso.foto %>')">  
 
+  <% if ! @curso.foto.nil? %>
+  <div id="baner" class="col s12 no-padding" style="background-image:url('/systems/<%= request.subdomain%>/cursos/<%= @curso.foto %>')">  
+  <% else %>
+    <div id="baner" class="col s12 no-padding" >  
+  <% end %>
 
      <% if ! @facilitador.perfil.foto.nil? and @facilitador.perfil.foto != "" %>
-          <img src="/<%= request.subdomain %>/avatar/<%= @facilitador.perfil.foto %>" class="circulo">
+          <img src="/systems/<%= request.subdomain %>/avatar/<%= @facilitador.perfil.foto %>" class="circulo">
         <% else %>
           <img src="/assets/avatar/sinfoto.jpg"  class="circulo">
          
@@ -47,20 +51,7 @@
         <% cursoc = cur %>
         <% end %>
 
-        <% if  cursoc.count > 0 %>
-        <% catego = Categoria.where("id = ?", cursoc.categoria_id).limit(1) %>
-
-        <% catego.each do |cur| %>
-        <% catego = cur %>
-        <% end %>
-        
-        <li class="" ><strong>Categoría: </strong> 
-           <% if ! catego.nombre.nil? and catego.nombre != "" %>
-                     <%= catego.nombre %> 
-            <% end %>
-
-        </li >
-        <% end %>
+     
         <li class=""> 
           <strong>Nivel:</strong>     Intermedio
         </li >
@@ -91,7 +82,7 @@
       <h5>Comparte este curso</h5>  
 
       <a class="g-plus" data-action="share" data-annotation="none" data-height="24"></a>
-      <a class="fb-share-button" data-href="/<%= request.subdomain %>/cursos/<%= params[:id]%>/ver" data-layout="button" ></a>
+      <a class="fb-share-button" data-href="/systems/<%= request.subdomain %>/cursos/<%= params[:id]%>/ver" data-layout="button" ></a>
       <a class="twitter-share-button" href="https://twitter.com/share" data-related="twitterdev" data-size="large" data-count="none"></a>
     </div>
     <br/>
@@ -110,7 +101,7 @@
         <td> 
 
         <% if ! @usuario.perfil.foto.nil? and @usuario.perfil.foto != "" %>
-          <img src="/<%= request.subdomain %>/avatar/<%= @usuario.perfil.foto %>" class="rosa">
+          <img src="/systems/<%= request.subdomain %>/avatar/<%= @usuario.perfil.foto %>" class="rosa">
         <% else %>
             <img  src="/assets/avatar/sinfoto.jpg" class="rosa">
         <% end %>
@@ -134,7 +125,22 @@
         <h5> <strong class="text-uppercase">Inversion </strong> Bs 1500</h5> 
       </div>
       <div class="col s4">
-        <a href="javascript:void()" id="" class="btn btn-danger">Inscríbete</a>
+        <% @grup3o = Grupo.includes(:curso).where("curso_id = ? and usuario_id = ?", @curso.id, current_usuario.id) %>
+          <% @grup3o.each do |gr| %>
+          <% @grup3o = gr %>
+        <% end %>
+
+        <% if  @grup3o.nil? %>
+          <a href="/inscribirte/cursos/<%= @curso.id %>/<%= current_usuario.id %>" id="" class="btn btn-danger">Inscríbete</a>
+        <% elsif @grup3o.estatus.nil? %>
+            <a href="javascript:void(0)" id="" class="btn btn-primary">Preinscrito</a>
+        <% elsif  @grup3o.estatus == false  %>
+            <a href="javascript:void(0)" id="" class="btn btn-info">Negado</a>
+        <% else   %>
+            <a href="javascript:void(0)" id="" class="btn btn-info">Inscrito</a>
+
+        <% end %>
+        
       </div>
     </div>
     <div></div>
@@ -210,9 +216,13 @@
           <% @objeto = ArchivoObjetoAprendizaje.includes(:objeto_aprendizaje).where("archivo_objeto_aprendizajes.id = ?",  contenido.objeto_aprendizaje.id ) %>
 
             <% @objeto.each do |archivoObjetoAprendizaje| %>
-        <tr>
-          <td>  <%= archivoObjetoAprendizaje.objeto_aprendizaje.nombre %> </td>
-        </tr>
+                
+                <% if ! archivoObjetoAprendizaje.objeto_aprendizaje.nil? %>
+                     <tr>
+                      <td>  <%= archivoObjetoAprendizaje.objeto_aprendizaje.nombre %> </td>
+                    </tr>
+                <% end %>
+
             <% end %> 
      <%  end %> 
       </tbody> 
@@ -238,22 +248,5 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
 
 <script src="https://apis.google.com/js/plusone.js"></script>
 
-<script>
-
-
-  $.ajax({
-
-      url:  "/json/cursos/1/ver/",
-      dataType: 'json',
-      type: 'POST',
-      data: "number="+ $("#ClasesNotificacionesEvaluaciones").attr("class"),
-      success: function(data) {
-        this.setState({data: data});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-</script>
 
 <% end %>

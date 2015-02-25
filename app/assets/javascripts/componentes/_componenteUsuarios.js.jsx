@@ -11,8 +11,10 @@
 
   componentDidMount: function() {
     $.ajax({
-      url: this.props.url,
+       url: this.props.url,
       dataType: 'json',
+      type: 'POST',
+      data: "number="+ $("#myListaMisCursos").attr("class"),
       success: function(data) {
         this.setState({data: data});
       }.bind(this),
@@ -76,10 +78,16 @@ var CommentListaMisCursos = React.createClass({
 });
 
 
+var id = $("#iddusuario").attr("class")
+
+if (id == "ididUsuario"){
+
+
 React.render(
   <CommentBoxListaMisCursos  url="/json/clases/generarClasesActuales" />,
   document.getElementById('myListaMisCursos')
 );
 
+}
 /* Fin Panel curso (mis cursos) */
 

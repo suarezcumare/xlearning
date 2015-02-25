@@ -15,69 +15,52 @@
     </ol>
   </div>
 </div>  
+
+
+
 <!-- <a href="#openObjetoAprendizaje" class="modal-trigger">Agregar Objeto Aprendizaje</a> -->
 <div class="pad15"></div>
 <!-- <div id="openObjetoAprendizaje" class=" panel-info modal" style="width:1500px;"> sss
 	<div class="panel-body" > -->
+
+    <%= form_for(@objetoAprendizaje,  :as => resource_name, :url => biblioteca_nuevo_path, :html => { :method => :post },  :multipart => true ) do |f| %>
 		  <div class="row">
         <div class="col s5">
            <h6 class="text-uppercase ">Configurando tus archivos</h6 >
 
-           <div class="input-field">
-              <label for="objetoAprendizaje[nombre]">Nombre</label>
-              <input id="objetoAprendizaje[nombre]" type="text" required></input>
+            <div class="input-field">
+             <%= f.label :nombre %>
+              <%= f.text_field :nombre, :required => true %>
             </div>
             <div class="input-field">
-              <label for="objetoAprendizaje[descripcion]">Descripción</label>
-              <input id="objetoAprendizaje[descripcion]" type="text" required></input>
+             <%= f.label :descripcion %>
+              <%= f.text_field :descripcion, :required => true %>
             </div>
+      
+             <%= f.fields_for :archivo_objeto_aprendizaje do |archivo| %>
+           
             <label>Tipo de Licencia</label>
-            <select name="usuario[pais]">
-              <option value="" disabled selected>Selecciona una licencia</option>
-              <option value="1">Atribución</option>
-              <option value="2">Atribución-Compartir Igual</option>
-              <option value="3">Atribución-Sin Derivadas</option>
-              <option value="4">Atribución-No Comercial</option>
-              <option value="5">Atribución-No Comercial-Compartir Igual</option>
-              <option value="6">Atribución-No Comercial-Sin Derivadas</option>
-            </select>
-            <%= check_box_tag(:biblioteca) %>
-            <%= label_tag(:biblioteca, "Mostrar contenido en la libreria virtual") %>
-
-            <div class="col s12">
-              <button type="submit" class="btn btn-success">Enviar</button>
-              <button type="reset" class="btn btn-info">Cancelar</button>
+            <div>
+             <% licencia_array = Licencia.all.map { |licencia| [licencia.nombre, licencia.id-1] } %>
+              <label>Licencia</label>
+              <%= archivo.select :licencia_id, options_for_select( licencia_array )   %> 
             </div>
+            
+            
 
+            <%= archivo.check_box :estatus_biblioteca %>
+             <%= archivo.label :estatus_biblioteca, "Mostrar contenido en la libreria virtual" %>
+            
+
+         
+            
         </div>
-        <div class="col s7">
+        
+       <div class="col s7">
           <h5>Agregar Archivo</h5>
-          <input id="laptop" type="file" class="file" data-upload-url="/usuario/guardar_foto"/>
+          <% archivo.file_field :laptop %>
+          <input id="laptop" name="laptop" type="file" class="file" required/>
         </div>
-      </div>
-      <div class="pad15"></div>
-      <div class="row">
-        <div class="col s7 panel">
-          <ul id="lista-archivos" class="vacia pad15-h">
-            <li>No haz agregado todas las versiones, Debes agregar todas las versiones para que se vean en todos los dispositivos.</li>  
-          </ul>
-        </div>
-        <div class="col s5 text-center">
-          <div class="dropdown">
-            <a href="javascript:void(0)" class="btn-floating btn-ms waves-effect waves-light red"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="mdi-content-add"></i>
-            </a>
-            <ul id="agregar-archivos" class='dropdown-menu list-inline' role="menu">
-              <li><a href="javascript:void(0)" class="phone" title="Versión movil"><i class="mdi-hardware-phone-android fb"></i></a></li>
-              <li><a href="javascript:void(0)" class="watch" title="Versión google watch"><i class="mdi-hardware-watch tw"></i></a></li>
-              <li><a href="javascript:void(0)" class="glass" title="Versión glass"><i class="mdi-communication-voicemail lk"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-     <!-- </div>
-</div> -->
 
 
 <% content_for :js_personalizado do %>
@@ -86,11 +69,11 @@
        $("#laptop").fileinput({
       'browseLabel':'cambiar',
       'showCaption':false,
-      'initialPreview': [
-        "<img src='/assets/profile_user.jpg' class='file-preview-image' alt='Avatar' title='Foto de perfil actual'>",
-      ],
       'initialPreviewShowDelete':false,
       'initialCaption':'archivo(s) seleccionado(s)',
+      'initialPreview': [
+        "<img src='' class='file-preview-image' alt='laptop' title='Foto de perfil actual'>"
+      ],
       
       'browseClass':'btn btn-primary',
       'browseIcon':'<i class="mdi-file-attachment"></i>',
@@ -110,7 +93,7 @@
         class_i = $(source).children().first().attr("class");
       $("#lista-archivos").append("<li> <h4>" +class_a +" </h4><div class='input-group col s12 panel'><span class='input-group-addon "+
             class_a+"'><i class='"+class_i+"'></i></span>"+
-            "<input id="+class_a+" type='file' class='file' data-upload-url='/usuario/guardar_foto'/></div></li>");
+            " <% archivo.file_field :"+class_a+" %> <input id="+class_a+" name="+class_a+" type='file' class='file' required/></div></li>");
       
 
 
@@ -118,7 +101,7 @@
       'browseLabel':'cambiar',
       'showCaption':false,
       'initialPreview': [
-        "<img src='/assets/profile_user.jpg' class='file-preview-image' alt='Avatar' title='Foto de perfil actual'>",
+        "<img src='' class='file-preview-image' alt='Avatar' title='Foto de perfil actual'>",
       ],
       'initialPreviewShowDelete':false,
       'initialCaption':'archivo(s) seleccionado(s)',
@@ -141,4 +124,46 @@
 
   </script>
 <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+       <% end %>
+      </div>
+      <div class="pad15"></div>
+      <div class="row">
+        <div class="col s7 panel">
+          <ul id="lista-archivos" class="vacia pad15-h">
+            <li>No haz agregado todas las versiones, Debes agregar todas las versiones para que se vean en todos los dispositivos.</li>  
+          </ul>
+        </div>
+        <div class="col s5 text-center">
+          <div class="dropdown">
+            <a href="javascript:void(0)" class="btn-floating btn-ms waves-effect waves-light red"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="mdi-content-add"></i>
+            </a>
+            <ul id="agregar-archivos" class='dropdown-menu list-inline' role="menu">
+              <li><a href="javascript:void(0)" class="phone" title="Versión movil"><i class="mdi-hardware-phone-android fb"></i></a></li>
+              <li><a href="javascript:void(0)" class="watch" title="Versión google watch"><i class="mdi-hardware-watch tw"></i></a></li>
+              <li><a href="javascript:void(0)" class="glass" title="Versión glass"><i class="mdi-communication-voicemail lk"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <% end %>
+      </div>
+     <!-- </div>
+</div> -->
+
+
+
 

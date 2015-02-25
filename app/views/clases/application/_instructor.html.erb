@@ -4,7 +4,7 @@
 		
 
 		 <% if ! @facilitador.perfil.foto.nil? and @facilitador.perfil.foto != "" %>
-          <img src="/<%= request.subdomain %>/avatar/<%= @facilitador.perfil.foto %>" class="img-responsive">
+          <img src="/systems/<%= request.subdomain %>/avatar/<%= @facilitador.perfil.foto %>" class="img-responsive">
         <% else %>
         	<img src="/assets/avatar/sinfoto.jpg" class="img-responsive">
         <% end %>
@@ -16,9 +16,11 @@
 		<ul class="list-inline pad15">
 			<li><a href="/usuarios/<%=  @facilitador.id %>" target="_blank" title="cuenta en <%= request.subdomain %>"><i class="fa fa-user gp"></i></a></li>	
 			
-		<% @usuredes.each do |red| %>
+	<% @usuredes.each do |red| %>
+		<% if ! red.red_social.nil? and ! red.nil? %>
            <li><a href="<%= red.red_social.url %><%= red.valor %>"  target="_blank"> <i class="<%= red.red_social.icono %> "></i></a></li>
            <% end %>
+        <% end %>   
 		</ul>
 	</div>
 </div>

@@ -1,4 +1,5 @@
 class OfertaAcademicasController < ApplicationController
+	before_action :authenticate_usuario!
 	def new
 		# carrera = ItemEstructuraOfertaAcademica.create(nombre: "Ingenieria Informatica")
 		# s1 = ItemEstructuraOfertaAcademica.create(nombre: "1")

@@ -16,6 +16,7 @@
 =end
 
 class EstadisticosController < ApplicationController
+	before_action :authenticate_usuario!
 
 
 	def index_organizacion

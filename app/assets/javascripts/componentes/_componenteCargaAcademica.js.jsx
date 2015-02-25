@@ -2,6 +2,213 @@
 /****************     Carga Academica Grupo                            ******************/
 /*********************************************************************************/
 
+
+
+/* Inicio myClase*/
+ var CommentBoxCargaAcademicaFuturas = React.createClass({
+     getInitialState: function() {
+    return { data : [] };
+  },
+
+  componentDidMount: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+
+  render: function() {
+   
+    return (
+
+      <div className="CommentBoxCargaAcademicaPasadas"> 
+           <CommentListFuturas data={this.state.data} />
+      </div>
+    );
+  }
+});
+
+var CommentListFuturas = React.createClass({
+  render: function() {
+    var commentNodes = this.props.data.map(function (comment) {
+      return (
+        <CommentCargaAcademicaPasadas porcentaje={comment.porcentaje} fechaI={comment.fechaI} nombre={comment.nombre}  img={comment.img} fechaF={comment.fechaF} url={comment.url} codigo={comment.codigo} descripcion={comment.descripcion} objetivos={comment.objetivos} perfil={comment.perfil} prerequisitos={comment.prerequisitos} modal={comment.modal} >
+          </CommentCargaAcademicaPasadas>
+      );
+    });
+    return (
+      <div className="commentListPasadas">
+        {commentNodes}
+      </div>
+    );
+  }
+});
+
+
+var converter = new Showdown.converter();
+var CommentCargaAcademicaFuturas = React.createClass({
+  render: function() {
+   
+    return (
+      <div className="CommentCargaAcademicaFuturas">
+                <div className="panel curso-actual">
+                <div className="media">
+                  <a className="media-left" href="#">
+                    <img src={this.props.img} alt=""> </img>
+                  </a>
+                 
+                   <div className="media-body">
+                    <h5 className="media-heading">{this.props.nombre} </h5>
+                    <div>
+                      <div className="progress">
+                      <div  className="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style={{"width": this.props.porcentaje}}>
+                        <span className="sr-only">{this.props.porcentaje} Completado {this.props.porcentaje}</span>
+                      </div>
+                    </div>
+                    <span className="fecha-inicio"> {this.props.fechaI} </span>
+                    <span className="fecha-fin">{this.props.fechaF}</span>
+                  </div>
+                  <br></br>
+                   <a className="text-uppercase" href={this.props.modal} > Información</a>
+                   <a  className="btn btn-danger ingresar" href={this.props.url}>Ir a clases </a>
+                  </div>
+
+                </div>
+              </div>
+
+      </div>
+
+           
+    );
+  }
+});
+
+var id = $("#idd").attr("class")
+
+if (id == "Futuras"){
+
+React.render(
+  <CommentBoxCargaAcademicaFuturas url="/json/clases/generarClasesFuturas" />,
+  document.getElementById('myClaseFuturas')
+);
+
+}
+
+/* Fin myClase*/
+
+
+
+
+/* Inicio myClase*/
+ var CommentBoxCargaAcademicaPasadas = React.createClass({
+     getInitialState: function() {
+    return { data : [] };
+  },
+
+  componentDidMount: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+
+  render: function() {
+   
+    return (
+
+      <div className="CommentBoxCargaAcademicaPasadas"> 
+           <CommentListPasadas data={this.state.data} />
+      </div>
+    );
+  }
+});
+
+var CommentListPasadas = React.createClass({
+  render: function() {
+    var commentNodes = this.props.data.map(function (comment) {
+      return (
+        <CommentCargaAcademicaPasadas porcentaje={comment.porcentaje} fechaI={comment.fechaI} nombre={comment.nombre}  img={comment.img} fechaF={comment.fechaF} url={comment.url} codigo={comment.codigo} descripcion={comment.descripcion} objetivos={comment.objetivos} perfil={comment.perfil} prerequisitos={comment.prerequisitos} modal={comment.modal} >
+          </CommentCargaAcademicaPasadas>
+      );
+    });
+    return (
+      <div className="commentListPasadas">
+        {commentNodes}
+      </div>
+    );
+  }
+});
+
+
+var converter = new Showdown.converter();
+var CommentCargaAcademicaPasadas = React.createClass({
+  render: function() {
+   
+    return (
+      <div className="CommentCargaAcademicaPasadas">
+                <div className="panel curso-actual">
+                <div className="media">
+                  <a className="media-left" href="#">
+                    <img src={this.props.img} alt=""> </img>
+                  </a>
+                 
+                   <div className="media-body">
+                    <h5 className="media-heading">{this.props.nombre} </h5>
+                    <div>
+                      <div className="progress">
+                      <div  className="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style={{"width": this.props.porcentaje}}>
+                        <span className="sr-only">{this.props.porcentaje} Completado {this.props.porcentaje}</span>
+                      </div>
+                    </div>
+                    <span className="fecha-inicio"> {this.props.fechaI} </span>
+                    <span className="fecha-fin">{this.props.fechaF}</span>
+                  </div>
+                  <br></br>
+                   <a className="text-uppercase" href={this.props.modal} > Información</a>
+                   <a  className="btn btn-danger ingresar" href={this.props.url}>Ir a clases </a>
+                  </div>
+
+                </div>
+              </div>
+
+      </div>
+
+           
+    );
+  }
+});
+
+var id = $("#idd").attr("class")
+
+if (id == "Pasadas"){
+
+React.render(
+  <CommentBoxCargaAcademicaPasadas  url="/json/clases/generarClasesPasadas" />,
+  document.getElementById('myClasePasadas')
+);
+
+}
+
+/* Fin myClase*/
+
+
+
+
+
+
+
 /* Inicio myClase*/
  var CommentBoxCargaAcademica = React.createClass({
      getInitialState: function() {
@@ -36,7 +243,7 @@ var CommentList = React.createClass({
   render: function() {
     var commentNodes = this.props.data.map(function (comment) {
       return (
-        <CommentCargaAcademica porcentaje={comment.porcentaje} fechaI={comment.fechaI} nombre={comment.nombre}  img={comment.img} fechaF={comment.fechaF} url={comment.url} codigo={comment.codigo} descripcion={comment.descripcion} objetivos={comment.objetivos} perfil={comment.perfil} prerequisitos={comment.prerequisitos} >
+        <CommentCargaAcademica porcentaje={comment.porcentaje} fechaI={comment.fechaI} nombre={comment.nombre}  img={comment.img} fechaF={comment.fechaF} url={comment.url} codigo={comment.codigo} descripcion={comment.descripcion} objetivos={comment.objetivos} perfil={comment.perfil} prerequisitos={comment.prerequisitos} modal={comment.modal} >
           </CommentCargaAcademica>
       );
     });
@@ -73,25 +280,12 @@ var CommentCargaAcademica = React.createClass({
                     <span className="fecha-fin">{this.props.fechaF}</span>
                   </div>
                   <br></br>
-                   <a className="modal-trigger text-uppercase" href="#modal1"> Información</a>
+                   <a className="text-uppercase" href={this.props.modal} > Información</a>
                    <a  className="btn btn-danger ingresar" href={this.props.url}>Ir a clases </a>
                   </div>
 
                 </div>
               </div>
-
-
-            <div id="modal1" className="modal">
-                <a href="#" style={{"float":"right"}} className="waves-effect btn-flat modal-close"><i className="mdi-content-clear"></i></a>
-              
-                  <h4 className="text-primary pad15 pad30-h">{this.props.nombre}</h4>
-
-              <p className="pad15 pad15-h"><span> <b> Descripción: </b> </span> {this.props.descripcion} </p>
-              <p className="pad15 pad15-h"><span> <b> Objetivos: </b> </span> {this.props.objetivos}</p>
-               <p className="pad15 pad15-h">{this.props.perfil}</p>
-              <p className="pad15 pad15-h">{this.props.prerequisitos} </p>
-            </div>
-
 
       </div>
 
@@ -100,13 +294,19 @@ var CommentCargaAcademica = React.createClass({
   }
 });
 
+var id = $("#idd").attr("class")
+
+if (id == "Actuales"){
 
 React.render(
   <CommentBoxCargaAcademica  url="/json/clases/generarClasesActuales" />,
-  document.getElementById('myClaseActual')
+  document.getElementById('myClaseActuales')
 );
-
+}
 /* Fin myClase*/
+
+
+
 
 
 /* Inicio ListaDeseos*/
@@ -191,11 +391,15 @@ var CommentListaDeseos = React.createClass({
 });
 
 
+var id = $("#ididdeseos").attr("class")
+if (id == "ididdeseos"){
+
 React.render(
   <CommentBoxListaDeseo  url="/json/clases/generarListaDeseos" />,
   document.getElementById('myListaDeseos')
 );
 
+}
 /* Fin ListaDeseos*/
 
 
@@ -280,10 +484,16 @@ var CommentListaRecomendados = React.createClass({
   }
 });
 
+var id = $("#ididrecomendados").attr("class")
+if (id == "ididrecomendados"){
+
 
 React.render(
   <CommentBoxListaRecomendados  url="/json/clases/generarListaRecomendados" />,
   document.getElementById('myListaRecomendados')
 );
 
+}
 /* Fin Recomendados para ti*/
+
+

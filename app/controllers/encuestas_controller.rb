@@ -16,6 +16,7 @@
 =end
 
 class EncuestasController < ApplicationController
+	before_action :authenticate_usuario!
 
 	
 	def index

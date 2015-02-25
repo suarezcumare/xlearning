@@ -1,6 +1,7 @@
 # app/controllers/sessions_controller.rb
  
 class MenuController < ApplicationController
+    before_action :authenticate_usuario!
   def find
     #menu = Menu.includes(:opcionmenu).where(opcion_menus: {raiz: true}).where(rol_id: current_usuario.rol_actual.id).first
     #usuario = Usuario.includes(:rols).find(1)

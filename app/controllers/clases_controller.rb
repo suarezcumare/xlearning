@@ -1,4 +1,5 @@
 class ClasesController < ApplicationController
+	before_action :authenticate_usuario!
 	def index
 		if current_usuario.rol_actual.id == 1
 
@@ -18,10 +19,10 @@ class ClasesController < ApplicationController
 								@facilitador = facilitador
 							end
 					
-							@modulo = Modulo.includes(:curso).where("curso_id = ?", @eval.grupo.curso.id).order("orden ASC")
+							@modulo = Modulo.includes(:curso).where("curso_id = ?", @eval.grupo.curso.id).order("sorden ASC")
 
 
-		@usuredes = UsuarioRedSocial.includes(:red_social).where("usuario_id = ?", @facilitador.id)
+				@usuredes = UsuarioRedSocial.includes(:red_social).where("usuario_id = ?", @facilitador.id)
 
 
 							render '/clases/index'
@@ -30,7 +31,7 @@ class ClasesController < ApplicationController
 				end
 
 		else
-			render '/clases/index_facilitador'
+			render "/clases/calendario_facilitador"
 		end
 	end
 
@@ -44,6 +45,9 @@ class ClasesController < ApplicationController
 		def calendario_facilitador
 			render "/clases/calendario_facilitador"
 		end	
+
+
+		
 
 		def generarClasesNotificacionesEvaluaciones
 
@@ -208,6 +212,8 @@ class ClasesController < ApplicationController
 			   
 			  		render :json => $tirajson2 	
 		end
+
+		
 
 
 		def generarClasesCalendarioFacilitador

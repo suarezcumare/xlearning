@@ -57,7 +57,11 @@
           <div class="pad15"></div>
         <% if request.subdomain.present? %>
           <% redes.each do |red| %>
+               <% if ! red.red_social.nil? %>
+              
                <li><a class="grey-text lighten-3" href="<%= red.red_social.url %> <%= red.valor %>"> <i class="<%= red.red_social.icono %> "></i></a></li>
+
+              <% end %>
            <% end %>
           <% else %>
                <li><a class="grey-text lighten-3" href="https://www.facebook.com/Xleaning"> <i class="fa fa-facebook fb"></i></a></li>

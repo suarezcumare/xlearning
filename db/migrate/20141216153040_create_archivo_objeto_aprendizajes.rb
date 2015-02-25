@@ -8,6 +8,8 @@ class CreateArchivoObjetoAprendizajes < ActiveRecord::Migration
       t.references :tipo_formato, index: true
       t.references :dispositivo, index: true
       t.references :objeto_aprendizaje, index: true
+      t.boolean :estatus_biblioteca
+       t.string :filename
     end
   end
 end
