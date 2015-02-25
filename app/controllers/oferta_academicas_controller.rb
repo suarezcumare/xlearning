@@ -36,8 +36,22 @@ class OfertaAcademicasController < ApplicationController
 			item = ItemEstructuraOfertaAcademica.find params[:id]
 			#item.destroy
 			render json: "ok"
+		else
+			render json: "no existe el elemento"
 		end
-		render json: "no existe el elemento"
+	end
+	def create
+		if ItemEstructuraOfertaAcademica.exists? params[:nivel][:id]
+			item = ItemEstructuraOfertaAcademica.find params[:nivel][:id]
+			item.nombre = params[:nivel][:nombre]
+			item.save
+			render json: item
+		else
+			item = ItemEstructuraOfertaAcademica.create(nombre: params[:nivel][:nombre])
+			item.update(parent_id: params[:nivel][:pid])
+			item.update(est_oferta_acad_id: params[:nivel][:estructura_id])
+			render json: item
+		end
 	end
 	private
 		def jsonify element
@@ -46,9 +60,11 @@ class OfertaAcademicasController < ApplicationController
 				hijos << jsonify(h)
 			end
 			if element.leaf?
-				return Hash["self"=>element,"estructura"=>element.estructura, "cursos"=>element.cursos]
+				subnivel = {"id"=>0, "nombre"=>"curso"}				
+				return Hash["self"=>element,"estructura"=>element.estructura, "subnivel"=>subnivel, "cursos"=>element.cursos]
 			else
-				return Hash["self"=>element,"estructura"=>element.estructura, "hijos"=>hijos]
+				subnivel = element.estructura.children[0]
+				return Hash["self"=>element,"estructura"=>element.estructura, "subnivel"=>subnivel, "hijos"=>hijos]
 			end
 		end
 end

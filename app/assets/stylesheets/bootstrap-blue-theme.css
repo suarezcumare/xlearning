@@ -8,6 +8,17 @@
  * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=dd9976b8d66c8d1a5e31)
  * Config saved to config.json and https://gist.github.com/dd9976b8d66c8d1a5e31
  */
+
+ /*******************************************************/
+ /*                   FIX MATERIALIZE                   */
+ /*******************************************************/
+
+textarea.materialize-textarea{
+  min-height: initial !important;
+  padding: 5px 0;
+}
+
+ /*******************************************************/
 hr{
   width: 50%;
 }

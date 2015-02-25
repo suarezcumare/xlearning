@@ -375,11 +375,19 @@ width: 20px;
   font-size: 25px;
   color: rgb(255, 255, 255)
 }
+.panel.panel-curso{
+  margin: 0;
+}
 .panel.panel-curso .panel-heading{
   padding: 0;
+   border-bottom: 1px solid rgb(239, 239, 239);
+}
+.panel.panel-curso .media{
+  margin: 0;
 }
 .panel.panel-curso .media-left{
   width: 50px;
+  background-color: gray;
   background-size: cover;
   background-position-x: center; 
 }
@@ -421,10 +429,16 @@ width: 20px;
   font-size: 16px;
   line-height: 18px;
   margin: 0;
+  display: inline-block;
 }
 
 #arbol{
   max-width: 66.66667%;
   -webkit-transition: width 0.5s;
   transition: width 0.5s;
+}
+
+#modal-principal{
+  max-width: 80% !important;
+  width: auto !important;
 }

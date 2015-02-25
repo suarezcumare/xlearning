@@ -25,11 +25,11 @@
         		<div class="media logged-in-usuario">
         			<div class="media-left">
               
-                <% if ! current_usuario.perfil.foto.nil? and current_usuario.perfil.foto != "" %>
-    						      <img src="/<%= request.subdomain %>/avatar/<%= current_usuario.perfil.foto %>" class="img-circle" alt=""/>
-    					   <% else %>
+                <%# if ! current_usuario.perfil.foto.nil? and current_usuario.perfil.foto != "" %>
+    						      <!-- <img src="/<%#= request.subdomain %>/avatar/<%#= current_usuario.perfil.foto %>" class="img-circle" alt=""/> -->
+    					   <% #else %>
                       <img src="/assets/avatar/sinfoto.jpg" class="img-circle" alt=""/>
-                 <% end %>
+                 <% #end %>
               </div>
     					<div class="media-body">
     						<h6 class="media-heading"><%= current_usuario.nombre%></h6>

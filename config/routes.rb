@@ -68,6 +68,15 @@ Xlearning::Application.routes.draw do
     match '/politicas' => 'grupos#politica_admision', via: :get
     match "/encuestas/modificar/:id" => "encuestas#edit", via: :get
 
+    resources :cursos do
+      resources :modulos, only: [:destroy, :create]
+    end
+    resources :modulos do
+      resources :asignacions, only: [:destroy, :create]
+      resources :evaluacions, only: [:destroy, :create]
+      resources :contenidos, only: [:destroy, :create]
+    end
+
     #Manejo de Ofertas academicas
     resources :oferta_academica, controller: 'oferta_academicas'
 

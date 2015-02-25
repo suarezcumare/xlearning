@@ -19,7 +19,9 @@
   <div id="arbol" class="col"></div>
   <div id="detalles" class="col s4"></div>
 </div>
+<div id="modal-principal" class="modal modal-fixed-footer grey lighten-5"></div>
 <% content_for :js_personalizado do %>
+  <script type="text/javascript" src="/assets/componentes/_cursos.jsx"></script>
   <script type="text/javascript">
     var id = <%= params[:id] %>
     React.render(

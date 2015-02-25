@@ -1,9 +1,9 @@
 class Modulo < ActiveRecord::Base
   belongs_to :curso
-  has_many :contenidos
+  has_many :contenidos, :dependent => :destroy
   has_many :objeto_aprendizajes, :through => :contenidos
-  has_many :evaluacions
-  has_many :asignacions
+  has_many :evaluacions, :dependent => :destroy
+  has_many :asignacions, :dependent => :destroy
 
 
   def porcentajeCurso(id)
