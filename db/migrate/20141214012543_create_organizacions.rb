@@ -5,6 +5,7 @@ class CreateOrganizacions < ActiveRecord::Migration
       t.string :subdominio
       t.integer :estatus
       t.string :logo
+      t.string :portada
       t.string :slogan
       t.references :pais, index: true
       t.string :direccion

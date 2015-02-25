@@ -8,21 +8,40 @@
 
 <body data-spy="scroll" data-target="#navbar" data-offset="0">
     
-    <section id="main-slider" class="carousel">
+   <% @organizacion = Organizacion.find_by(subdominio: request.subdomain) %>
+      
+    <% if ! @organizacion.portada.nil?  and @organizacion.portada != ""%>
+        <section id="main-slider" style="background-image: url(/systems/<%= request.subdomain%>/portafolio/<%= @organizacion.portada %>)" class="carousel">
+    <% else %>
+        <section id="main-slider" class="carousel">
+    <% end %>
         <div class="carousel-inner">
             <div class="item active">
                 <div class="container">
                     <div class="carousel-content">
-                        <h1>Aprende a Cocinar Facil!</h1>
-                        <p class="lead">Ofrecemos los mejores cursos de cocina, gracias al sistema XLearning de ultima tecnologia<br>Inscribete ya!</p>
+                         <% if ! @organizacion.nombre.nil? and @organizacion.nombre != "" %>
+                            <h1><%= @organizacion.nombre %></h1>
+                        <% end %>
+                         <% if ! @organizacion.slogan.nil? and @organizacion.slogan != "" %>
+                        <p class="lead"> <%= @organizacion.slogan %> </p>
+                        <% else %>
+                             <p class="lead"> Edita el slogan de tu organización </p>
+                        <% end %>
                     </div>
                 </div>
             </div><!--/.item-->
             <div class="item">
                 <div class="container">
                     <div class="carousel-content">
-                        <h1>Comida internacional</h1>
-                        <p class="lead">Comida Española, Italiana, Francesa, Asiática, Latinoamericana e Internacional <br> Esculturas de Hielo y Tailandesas Talladas en Frutas y Vegetales </p>
+                         <% if ! @organizacion.nombre.nil? and @organizacion.nombre != "" %>
+                            <h1><%= @organizacion.nombre %></h1>
+                        <% end %>
+
+                         <% if ! @organizacion.descripcion.nil? and @organizacion.descripcion != "" %>
+                        <p class="lead"> <%= @organizacion.descripcion %> </p>
+                        <% else %>
+                             <p class="lead"> Edita la descripcion de tu organización </p>
+                        <% end %>
                     </div>
                 </div>
             </div><!--/.item-->
@@ -86,103 +105,62 @@
             <div class="box">
                 <div class="center gap">
                     <h2>Cursos Disponibles</h2>
-                    <p class="lead">Elige tu gastronomia favorita</p>
+                    <% if ! @organizacion.slogan.nil? %>
+                         <p class="lead"><% @organizacion.slogan %></p>
+                     <% end %>
                 </div><!--/.center-->
                 <ul class="portfolio-filter">
                     <li><a class="btn btn-primary active" href="#" data-filter="*">Todas</a></li>
-                    <li><a class="btn btn-primary" href="#" data-filter=".bootstrap">Venezolana</a></li>
-                    <li><a class="btn btn-primary" href="#" data-filter=".html">Italiana</a></li>
-                    <li><a class="btn btn-primary" href="#" data-filter=".wordpress">Vegetariana</a></li>
+                    <li><a class="btn btn-primary" href="#" data-filter=".bootstrap">Actuales</a></li>
+                    <li><a class="btn btn-primary" href="#" data-filter=".wordpress">Pasados</a></li>
                 </ul><!--/#portfolio-filter-->
                 <ul class="portfolio-items col-4">
-                    <li class="portfolio-item apps">
-                        <div class="item-inner">
-                            <div class="portfolio-image">
-                                <img src="assets/cocina/portfolio/thumb/item1.jpg" alt="">
-                                <div class="overlay">
-                                    <a class="preview btn btn-danger" title="Todo con Frutas" href="assets/cocina/portfolio/full/item1.jpg"><i class="fa fa-eye"></i></a>             
-                                </div>
-                            </div>
-                            <h5>Todo con Frutas</h5>
-                        </div>
-                    </li><!--/.portfolio-item-->
-                    <li class="portfolio-item joomla bootstrap">
-                        <div class="item-inner">
-                            <div class="portfolio-image">
-                                <img src="assets/cocina/portfolio/thumb/item2.jpg" alt="">
-                                <div class="overlay">
-                                    <a class="preview btn btn-danger" title="El Pabellon" href="assets/cocina/portfolio/full/item2.jpg"><i class="fa fa-eye"></i></a>  
-                                </div>
-                            </div> 
-                            <h5>El Pabellon</h5>         
-                        </div>
-                    </li><!--/.portfolio-item-->
-                    <li class="portfolio-item bootstrap wordpress">
-                        <div class="item-inner">
-                            <div class="portfolio-image">
-                                <img src="assets/cocina/portfolio/thumb/item3.jpg" alt="">
-                                <div class="overlay">
-                                    <a class="preview btn btn-danger" title="Las mejores sopas" href="assets/cocina/portfolio/full/item3.jpg"><i class="fa fa-eye"></i></a>        
-                                </div> 
-                            </div>
-                            <h5>Las mejores sopas</h5>          
-                        </div>           
-                    </li><!--/.portfolio-item-->
-                    <li class="portfolio-item joomla wordpress apps">
-                        <div class="item-inner">
-                            <div class="portfolio-image">
-                                <img src="assets/cocina/portfolio/thumb/item4.jpg" alt="">
-                                <div class="overlay">
-                                    <a class="preview btn btn-danger" title="Parrilla Vegetariana" href="assets/cocina/portfolio/full/item4.jpg"><i class="fa fa-eye"></i></a>          
-                                </div>   
-                            </div>
-                            <h5>Parrilla Vegetariana</h5>        
-                        </div>           
-                    </li><!--/.portfolio-item-->
-                    <li class="portfolio-item joomla html">
-                        <div class="item-inner">
-                            <div class="portfolio-image">
-                                <img src="assets/cocina/portfolio/thumb/item5.jpg" alt="">
-                                <div class="overlay">
-                                    <a class="preview btn btn-danger" title="Pizzas" href="assets/cocina/portfolio/full/item5.jpg"><i class="fa fa-eye"></i></a>          
-                                </div>  
-                            </div>
-                            <h5>Pizzas</h5>  
-                        </div>       
-                    </li><!--/.portfolio-item-->
-                    <li class="portfolio-item wordpress html">
-                        <div class="item-inner">
-                            <div class="portfolio-image">
-                                <img src="assets/cocina/portfolio/thumb/item6.jpg" alt="">
-                                <div class="overlay">
-                                    <a class="preview btn btn-danger" title="Pastas" href="assets/cocina/portfolio/full/item6.jpg"><i class="fa fa-eye"></i></a>           
-                                </div>  
-                            </div>
-                            <h5>Pastas</h5>         
-                        </div>           
-                    </li><!--/.portfolio-item-->
-                    <li class="portfolio-item joomla html">
-                        <div class="item-inner">
-                            <div class="portfolio-image">
-                                <img src="assets/cocina/portfolio/thumb/item5.jpg" alt="">
-                                <div class="overlay">
-                                    <a class="preview btn btn-danger" title="Pizzas II" href="assets/cocina/portfolio/full/item5.jpg"><i class="fa fa-eye"></i></a>          
-                                </div>  
-                            </div>
-                            <h5>Pizzas II</h5>  
-                        </div>       
-                    </li><!--/.portfolio-item-->
-                    <li class="portfolio-item wordpress html">
-                        <div class="item-inner">
-                            <div class="portfolio-image">
-                                <img src="assets/cocina/portfolio/thumb/item6.jpg" alt="">
-                                <div class="overlay">
-                                    <a class="preview btn btn-danger" title="Pastas II" href="assets/cocina/portfolio/full/item6.jpg"><i class="fa fa-eye"></i></a>           
-                                </div>   
-                            </div>
-                            <h5>Pastas II</h5>        
-                        </div>         
-                    </li><!--/.portfolio-item-->
+
+                    <%  @grupos = Grupo.includes(:curso).where('fecha_inicio <= ? and ? <= fecha_fin', Time.now.midnight,Time.now.midnight) %>
+
+                    
+                    <% if @grupos.count > 0 %>
+                        <% @grupos.each do |grupo| %>
+                                
+                                <li class="portfolio-item joomla bootstrap">
+                                    <div class="item-inner">
+                                        <div class="portfolio-image">
+                                            <img src="/systems/<%= request.subdomain %>/cursos/<%= grupo.curso.foto %>" alt="">
+                                            <div class="overlay">
+                                                <a class="preview btn btn-danger" title="<%= grupo.curso.nombre %>" href="/systems/<%= request.subdomain %>/cursos/<%= grupo.curso.foto %>"><i class="fa fa-eye"></i></a>  
+                                            </div>
+                                        </div> 
+                                        <h5><%= grupo.curso.nombre %></h5>         
+                                    </div>
+                                </li><!--/.portfolio-item-->
+                        <% end %>
+
+                    <% end %>
+
+                    <% @curso = Curso.all %>
+
+                    <%  @curso.each do |curso| %>
+                        <% @grupos = Grupo.includes(:curso).where('cursos.id', curso.id) %>
+                            <% if @grupo.nil? %>
+
+                                 <li class="portfolio-item joomla wordpress apps">
+                                    <div class="item-inner">
+                                        <div class="portfolio-image">
+                                            <img src="/systems/<%= request.subdomain %>/cursos/<%= curso.foto %>" alt="">
+                                            <div class="overlay">
+                                                <a class="preview btn btn-danger" title="<%= curso.nombre %>" href="/systems/<%= request.subdomain %>/cursos/<%= curso.foto %>"><i class="fa fa-eye"></i></a>  
+                                            </div>
+                                        </div> 
+                                        <h5><%= curso.nombre %></h5>         
+                                    </div>
+                                </li><!--/.portfolio-item-->
+                              
+
+
+                            <% end %>
+                                
+                    <% end %>
+
                 </ul>   
             </div><!--/.box-->
         </div><!--/.container-->
@@ -231,32 +209,63 @@
         <div class="container">
             <div class="box">
                 <div class="center">
-                    <h2>Instructores</h2>
-                    <p class="lead">Los mas preparados cheffs internacionales te guiaran a en la cocina.<br>Juntos suman 50 años de experiencia.</p>
+                    <h2>El mejor equipo</h2>
+                    <p class="lead">Los mas preparados Instrucctores.</p>
                 </div>
                 <div class="gap"></div>
                 <div id="team-scroller" class="carousel scale">
                     <div class="carousel-inner">
                         <div class="item active">
-                            
-                                <div class="col-sm-4">
-                                   <div class="member">
-                                        <p><img class="img-responsive img-thumbnail img-circle" src="assets/cocina/team1.jpg" alt="" ></p>
-                                        <h3>Vincent Calaguas<small class="designation">President</small></h3>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="member">
-                                        <p><img class="img-responsive img-thumbnail img-circle" src="assets/cocina/team2.jpg" alt="" ></p>
-                                        <h3>Karen Richardson<small class="designation">Senior Vice President</small></h3>
-                                    </div>
-                                </div>        
-                                <div class="col-sm-4">
-                                    <div class="member">
-                                        <p><img class="img-responsive img-thumbnail img-circle" src="assets/cocina/team3.jpg" alt="" ></p>
-                                        <h3>Donald Ford<small class="designation">Assitant Vice President</small></h3>
-                                    </div>
-                                </div>
+
+                              <% @usuariosrol = UsuarioRol.where("rol_id = ?", 6).limit(2) %>
+                                <% if @usuariosrol.count > 0 %>
+
+                                    <% @usuariosrol.each do |usuarRol| %>
+                                       <% if ! usuarRol.usuario.perfil.nil?%>
+
+                                         <div class="col-sm-4">
+                                           <div class="member">
+                                             <%if ! usuarRol.usuario.perfil.foto.nil? and usuarRol.usuario.perfil.foto != "" %>
+                                                <p><img class="img-responsive img-thumbnail img-circle" src="<%= usuarRol.usuario.perfil.foto %>" alt="" ></p>
+                                            <% else %>
+                                                 <p><img class="img-responsive img-thumbnail img-circle" src="/assets/avatar/sinfoto.jpg" alt="" ></p>
+                                            <% end %>
+
+                                                <h3> <%= usuarRol.usuario.nombre %> <%= usuarRol.usuario.apellido %><small class="designation">Ejecutivo</small></h3>
+                                            </div>
+                                        </div>
+
+                                     <% end %>
+
+                                    <% end %>
+
+
+                            <% end %>
+
+
+                            <% @usuariosrol = UsuarioRol.where("rol_id = ?", 2).limit(1) %>
+                                <% if @usuariosrol.count > 0 %>
+
+                                    <% @usuariosrol.each do |usuarRol| %>
+                                         <% if ! usuarRol.usuario.perfil.nil?%>
+
+                                         <div class="col-sm-4">
+                                          <div class="member">
+                                             <%if ! usuarRol.usuario.perfil.foto.nil? and usuarRol.usuario.perfil.foto != "" %>
+                                                <p><img class="img-responsive img-thumbnail img-circle" src="<%= usuarRol.usuario.perfil.foto %>" alt="" ></p>
+                                            <% else %>
+                                                 <p><img class="img-responsive img-thumbnail img-circle" src="/assets/avatar/sinfoto.jpg" alt="" ></p>
+                                            <% end %>
+
+                                                <h3> <%= usuarRol.usuario.nombre %> <small class="designation">Instructor</small></h3>
+                                            </div>
+                                        </div>
+
+                                    <% end %>
+                                <% end %>
+
+
+                            <% end %>
                             
                         </div>
                         
@@ -277,70 +286,92 @@
             <div class="box last">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h1>Contact Form</h1>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                        <h1>Formulario de Contactos</h1>
+                        <p>Si necesitas mas información no dudes en comunicarte con nosotros.</p>
                         <div class="status alert alert-success" style="display: none"></div>
                         <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php" role="form">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" required="required" placeholder="Name">
+                                        <input type="text" class="form-control" required="required" placeholder="nombre">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" required="required" placeholder="Email address">
+                                        <input type="text" class="form-control" required="required" placeholder="Correo">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Message"></textarea>
+                                        <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Mensaje"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-danger btn-lg">Send Message</button>
+                                        <button type="submit" class="btn btn-danger btn-lg">Enviar Mensaje</button>
                                     </div>
                                 </div>
                             </div>
                         </form>
                     </div><!--/.col-sm-6-->
                     <div class="col-sm-6">
-                        <h1>Our Address</h1>
+                        <h1>Direcciones</h1>
                         <div class="row">
                             <div class="col-md-6">
                                 <address>
-                                    <strong>Twitter, Inc.</strong><br>
-                                    795 Folsom Ave, Suite 600<br>
-                                    San Francisco, CA 94107<br>
-                                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                                    <strong> Datos </strong><br>
+                              
+                                    <% if ! @organizacion.pais_id.nil? %>
+                                    <% idpa = @organizacion.pais_id + 1 %>
+                                    <% pais = Pais.find_by(id: idpa) %>
+                                     <%= pais.nombre %> <br>
+                                    <% end %>
+
+                                    <% if ! @organizacion.telefono1.nil? %>
+                                         <abbr title="Telefono">Telf.:</abbr> <%= @organizacion.telefono1 %>
+                                     <%= pais.nombre %> <br>
+                                    <% end %>
+
+                                    <% if ! @organizacion.email1.nil? %>
+                                         <abbr title="Telefono">Telf.:</abbr> <%= @organizacion.email1 %>
+                                     <%= pais.nombre %> <br>
+                                    <% end %>
+                            
                                 </address>
                             </div>
                             <div class="col-md-6">
                                 <address>
-                                    <strong>Twitter, Inc.</strong><br>
-                                    795 Folsom Ave, Suite 600<br>
-                                    San Francisco, CA 94107<br>
-                                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                                    <strong> Datos </strong><br>
+                                   <% if ! @organizacion.telefono2.nil? %>
+                                         <abbr title="Telefono">Telf.:</abbr> <%= @organizacion.telefono2 %>
+                                     <%= pais.nombre %> <br>
+                                    <% end %>
+
+                                    <% if ! @organizacion.email2.nil? %>
+                                         <abbr title="Telefono">Telf.:</abbr> <%= @organizacion.email2 %>
+                                     <%= pais.nombre %> <br>
+                                    <% end %>
+
                                 </address>
                             </div>
                         </div>
-                        <h1>Connect with us</h1>
+                     <% redes = OrganizacionRedSocial.includes(:red_social).where("organizacion_id = ?", 1) %>
+
+                        <h1>Contactanos</h1>
                         <div class="row">
                             <div class="col-md-6">
                                 <ul class="social">
-                                    <li><a href="#"><i class="fa fa-facebook icon-social"></i> Facebook</a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus icon-social"></i> Google Plus</a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest icon-social"></i> Pinterest</a></li>
+
+                                    <% redes.each do |red| %>
+                                           <% if ! red.red_social.nil? %>
+                                           <li><a class="grey-text lighten-3" href="<%= red.red_social.url %> <%= red.valor %>"> <i class="<%= red.red_social.icono %>"></i> <%= red.valor %> </a>  </li>
+                                          <% end %>
+                                    <% end %>
+
+                                
                                 </ul>
                             </div>
-                            <div class="col-md-6">
-                                <ul class="social">
-                                    <li><a href="#"><i class="fa fa-linkedin icon-social"></i> Linkedin</a></li>
-                                    <li><a href="#"><i class="fa fa-twitter icon-social"></i> Twitter</a></li>
-                                    <li><a href="#"><i class="fa fa-youtube icon-social"></i> Youtube</a></li>
-                                </ul>
-                            </div>
+                            
                         </div>
                     </div><!--/.col-sm-6-->
                 </div><!--/.row-->

@@ -1,4 +1,6 @@
 class EvaluacionController < ApplicationController
+
+	before_action :authenticate_usuario!
 	def overview
 		@evaluaciongrupos=EvaluacionGrupo.new
 		@evaluaciongrupos = EvaluacionGrupo.includes(:evaluacion).where("grupo_id = ? and evaluacion_id = ? ", params[:id], params[:id_evaluacion]).limit(1)
@@ -8,6 +10,9 @@ class EvaluacionController < ApplicationController
 		end		
 	end
 	
+	def presentar
+		render "evaluacion/presentar"
+	end
 
 
 	#	private

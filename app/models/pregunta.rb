@@ -1,4 +1,4 @@
-class Pregunta < ActiveRecord::Base	
+class Pregunta < ActiveRecord::Base
 	belongs_to :evaluacion, class_name: "Evaluacion", foreign_key: "evaluacion_id"
-	has_many :respuesta, class_name: "Respuesta"
+	has_many :respuesta
 end

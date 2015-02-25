@@ -7,7 +7,6 @@ $(document).ready(function(){
 	$("#presentar-examen").submit(function(event){	
         return ok=true;
     });
-
     
   	$("#countdown").countdown360({
 	  radius      : 50,
@@ -43,6 +42,3 @@ $(document).ready(function(){
 	    return confirm("Si cierras el cuestionario, se contará como un intento. ¿Abandonar esta página?");
 	});
 });
-  
-
-

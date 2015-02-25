@@ -1,22 +1,24 @@
 <!--Inicio del acordion -->
-<!-- <div class="panel-group" id="leccionesaccordion" role="tablist" aria-multiselectable="true"> -->
   <!-- Aqui ira el for, cambiando el id="headingNumero", href="collapseNumero" -->
+
+<% @count = 1 %>
+<% @modulo.each do  |modulo| %>
   <div class="panel panel-primary leccion">
-    <div class="panel-heading" role="tab" id="leccionesheading1">
-      <a data-toggle="collapse" href="#leccionescollapse1" 
-        aria-expanded="true" aria-controls="leccionescollapse1" class="titulo-leccion panel-title">
+    <div class="panel-heading" role="tab" id="leccionesheading<%= @count %>">
+      <a data-toggle="collapse" href="#leccionescollapse<%= @count %>" 
+        aria-expanded="true" aria-controls="leccionescollapse<%= @count %>" class="titulo-leccion panel-title">
         <h4>
-           Lección 1: Distancias Euleriana 
+           Lección <%= @count %>:  <%= modulo.nombre %>
         </h4>
         <span class="porcentaje-completado">
-          Completado 100%
+          <% @modulo2 = Modulo.new %>
+          Completado  <%= @porcentajeCurso = @modulo2.porcentajeModulo(params[:id], modulo.id) %>%
         </span>
       </a>
     </div>
-    <div id="leccionescollapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="leccionesheading1">
+    <div id="leccionescollapse<%= @count %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="leccionesheading<%= @count %>">
       <div class="panel-body">
-        <div class="descripcion-leccion pad15 pad30-h">Descripcion del material es la que va en este espacio pero como no la 
-            tengo que solo estoy inventando un poco.</div>
+        <div class="descripcion-leccion pad15 pad30-h"><%= modulo.descripcion %>.</div>
           <!-- Inicio de Material -->
           <table class="bordered contenido material">
             <tr  class="header">
@@ -26,142 +28,146 @@
                 <a href="javascript:void(0)"><i class="fa fa-download"></i></a>  
               </th>
             </tr>
-            <!-- aqui seria el for -->
-            <tr>
-              <td></td>
-              <td colspan="2">
-                <a href="javascript:void(0)" class="visualizador-contenido" data-contenido="imagen"
-                  data-url="/assets/curso1.jpg">
-                  <i class="mdi-image-slideshow"></i>
-                <!-- <span class="fa-stack ">
-                  <i class="fa fa-circle fa-stack-2x red-text lighten-1"></i>
-                  <i class="fa fa-video-camera fa-stack-1x white-text" ></i>
-                </span> -->
-                Imagen</a> <span class="badge  grey lighten-2">15 min.</span>
-                <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td  colspan="2">
-                <i class="fa fa-file-archive-o"></i>
-                <!-- <span class="fa-stack ">
-                  <i class="fa fa-circle fa-stack-2x red-text lighten-1"></i>
-                  <i class="fa fa-file-zip-o fa-stack-1x white-text" ></i>
-                </span> -->
-                Archivo zip <span class="badge grey lighten-2">37 Mb</span>
-                <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
-              </td>
-            </tr>   
-             <!-- Aqui termina el for -->
+         
+          <% modulo.contenidos.each do |contenido| %>
+            
+             <% @objeto = ArchivoObjetoAprendizaje.includes(:objeto_aprendizaje).where("archivo_objeto_aprendizajes.id = ?",  contenido.objeto_aprendizaje.id ) %>
+
+            <% @objeto.each do |archivoObjetoAprendizaje| %>
+               <% if ! archivoObjetoAprendizaje.objeto_aprendizaje.nil?  %>  
+
+
+                    <% if archivoObjetoAprendizaje.tipo_formato_id == 9 or archivoObjetoAprendizaje.tipo_formato_id == 10 or archivoObjetoAprendizaje.tipo_formato_id == 11 or archivoObjetoAprendizaje.tipo_formato_id == 12 %>  
+                            <tr>
+                              <td></td>
+                              <td colspan="2">
+                                <a href="javascript:void(0)" class="visualizador-contenido" data-contenido="imagen"
+                                  data-url="/biblioteca/<%= archivoObjetoAprendizaje.id %>/mostrar">
+                                  <i class="mdi-image-slideshow"></i>
+                                    Imagen: <%= archivoObjetoAprendizaje.objeto_aprendizaje.nombre %> </a> <span class="badge  grey lighten-2"></span>
+                                <a href="/biblioteca/<%= archivoObjetoAprendizaje.id %>/descargar" ><i class="fa fa-download"></i></a>
+                              </td>
+                            </tr>
+
+
+                   
+                     <% elsif archivoObjetoAprendizaje.tipo_formato_id == 1 or archivoObjetoAprendizaje.tipo_formato_id == 2  %>  
+                   
+                               <tr>
+                                  <td></td>
+                                  <td  colspan="2">
+                                    <i class="fa fa-file-archive-o"></i>
+                                    Archivo zip: <%= archivoObjetoAprendizaje.objeto_aprendizaje.nombre %>  <span class="badge grey lighten-2">37 Mb</span>
+                                    <a href="/biblioteca/<%= archivoObjetoAprendizaje.id %>/descargar"><i class="fa fa-download"></i></a>
+                                  </td>
+                                </tr> 
+
+                  
+
+                     <% elsif archivoObjetoAprendizaje.tipo_formato_id == 3 or archivoObjetoAprendizaje.tipo_formato_id == 4  or archivoObjetoAprendizaje.tipo_formato_id == 5  or archivoObjetoAprendizaje.tipo_formato_id == 6  or archivoObjetoAprendizaje.tipo_formato_id == 7  or archivoObjetoAprendizaje.tipo_formato_id == 8  %>  
+
+                               <tr>
+                                  <td></td>
+                                  <td  colspan="2">
+                                    <i class="fa fa-file-text-o"></i>
+                                    Archivo zip: <%= archivoObjetoAprendizaje.objeto_aprendizaje.nombre %>  <span class="badge grey lighten-2">1 Mb</span>
+                                    <a href="/biblioteca/<%= archivoObjetoAprendizaje.id %>/descargar"><i class="fa fa-download"></i></a>
+                                  </td>
+                                </tr> 
+
+
+
+                     <% elsif archivoObjetoAprendizaje.tipo_formato_id == 13 or archivoObjetoAprendizaje.tipo_formato_id == 14 or archivoObjetoAprendizaje.tipo_formato_id == 15 %>  
+
+                                <tr>
+                                  <td></td>
+                                  <td  colspan="2">
+                                    <i class="fa fa-movie-o"></i>
+                                    Video: <%= archivoObjetoAprendizaje.objeto_aprendizaje.nombre %>  <span class="badge grey lighten-2">12 Mb</span>
+                                    <a href="/biblioteca/<%= archivoObjetoAprendizaje.id %>/descargar"><i class="fa fa-download"></i></a>
+                                  </td>
+                                </tr> 
+
+
+              
+
+                     <% else %>  
+
+                               <tr>
+                                  <td></td>
+                                  <td  colspan="2">
+                                    <i class="fa fa-file-code-o"></i>
+                                    Video: <%= archivoObjetoAprendizaje.objeto_aprendizaje.nombre %>  <span class="badge grey lighten-2">12 Mb</span>
+                                    <a href="/biblioteca/<%= archivoObjetoAprendizaje.id %>/descargar"><i class="fa fa-download"></i></a>
+                                  </td>
+                                </tr> 
+
+
+                    <% end %> 
+
+
+               <%  end %> 
+              
+
+            <% end %>
+            
+      <% end %>
+           
           </table>
-          <!-- fin de material -->
-          <!-- Inicio Evaluaciones  -->
           <table class="bordered contenido evaluaciones">
             <tr class="header">
               <th style="width:25px;"></th>
               <th><i class="fa fa-graduation-cap"></i> Evaluaciones</th>
             </tr>
-            <!-- aqui seria el for -->
-            <tr>
-              <td></td>
-              <td>
-                <a href="/clases/1/evaluacion/1/overview">
-                  <i class="mdi-social-whatshot orange-text accent-4"></i>Quiz contenido 1 <span class="badge grey lighten-2">20 min.</span>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>
-                <a href="/clases/1/asignacion/1/overview">Actividad</a>
-              </td>
-            </tr>
-             <!-- Aqui termina el for -->
+     
+      <% modulo.asignacions.each do |asignacion| %>
+      
+              <% @asignaciongrupos = AsingnacionGrupo.includes(:asignacion).where("grupo_id = ? and asignacion_id = ?", params[:id], asignacion.id).order('fecha_habilitacion ASC') %>
+               
+                  <% @asignaciongrupos.each do |gruposAsig| %>
+                   <% if gruposAsig.asignacion.estatus == true %>
+                    
+                    <tr>
+                      <td></td>
+                      <td>
+                        <a href="/clases/<%= params[:id] %>/asignacion/<%= gruposAsig.id %>/overview">Actividad <%= gruposAsig.asignacion.titulo %></a>
+                      </td>
+                    </tr>
+                    <% end %>
+
+                  <% end %>
+
+
+            <% end %>
+
+           
+            <% modulo.evaluacions.each do |evaluacion| %>
+      
+              <% @evaluaciongrupos = EvaluacionGrupo.includes(:evaluacion).where("grupo_id = ? and evaluacion_id = ? ", params[:id], evaluacion.id).order('fecha_habilitacion ASC') %>
+               
+                  <% @evaluaciongrupos.each do |gruposEval| %>
+                   <% if gruposEval.evaluacion.estatus == true %>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <a href="/clases/<%= params[:id] %>/evaluacion/<%= gruposEval.id %>/overview">
+                          <i class="mdi-social-whatshot orange-text accent-4"></i>Quiz: <%= gruposEval.evaluacion.titulo %><span class="badge grey lighten-2"><%= gruposEval.evaluacion.duracion %> min.</span>
+                        </a>
+                      </td>
+                    </tr>
+                    <% end %>
+
+                  <% end %>
+
+
+            <% end %>
           </table>                 
       </div>
     </div>
   </div>
-  <div class="panel panel-primary leccion">
-    <div class="panel-heading" role="tab" id="leccionesheading2">
-      <a data-toggle="collapse" href="#leccionescollapse2" 
-        aria-expanded="true" aria-controls="leccionescollapse2" class="titulo-leccion panel-title">
-        <h4>
-           Lección 2: Distancias geodésicas 
-        </h4>
-        <span class="porcentaje-completado">
-          Completado 20%
-       </span>
-      </a>
-    </div>
-    <div id="leccionescollapse2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="leccionesheading2">
-      <div class="panel-body">
-        <div class="descripcion-leccion pad15 pad30-h">Descripcion del material es la que va en este espacio pero como no la 
-            tengo que solo estoy inventando un poco.</div>
-          <!-- Inicio de Material -->
-          <table class="bordered contenido material">
-            <tr  class="header">
-              <th style="width:25px;"></th>
-              <th><i class="fa fa-graduation-cap"></i> Material </th>
-              <th>
-                <a href="javascript:void(0)"><i class="fa fa-download"></i></a>  
-              </th>
-            </tr>
-            <!-- aqui seria el for -->
-            <tr>
-              <td></td>
-              <td colspan="2">
-                <a href="javascript:void(0)" data-contenido="video" class="visualizador-contenido"><i class="mdi-image-slideshow"></i>
-                <!-- <span class="fa-stack ">
-                  <i class="fa fa-circle fa-stack-2x red-text lighten-1"></i>
-                  <i class="fa fa-video-camera fa-stack-1x white-text" ></i>
-                </span> -->
-                Contenido</a> <span class="badge grey lighten-2">15 min.</span>
-                <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td  colspan="2">
-                <i class="fa fa-file-archive-o"></i>
-                <!-- <span class="fa-stack ">
-                  <i class="fa fa-circle fa-stack-2x red-text lighten-1"></i>
-                  <i class="fa fa-file-zip-o fa-stack-1x white-text" ></i>
-                </span> -->
-                Archivo zip <span class="badge grey lighten-2">37 Mb</span>
-                <a href="javascript:void(0)"><i class="fa fa-download"></i></a>
-              </td>
-            </tr>   
-             <!-- Aqui termina el for -->
-          </table>
-          <!-- fin de material -->
-          <!-- Inicio Evaluaciones  -->
-          <table class="bordered contenido evaluaciones">
-            <tr class="header">
-              <th style="width:25px;"></th>
-              <th><i class="fa fa-graduation-cap"></i> Evaluaciones</th>
-            </tr>
-            <!-- aqui seria el for -->
-            <tr>
-              <td></td>
-              <td>
-                <a href="/clases/1/evaluacion/1/overview">
-                  <i class="mdi-social-whatshot orange-text accent-4"></i>Quiz contenido 1 <span class="badge blue-grey lighten-4">20 min.</span>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>
-                <a href="/clases/:id/actividad/:id/overview">Actividad</a>
-              </td>
-            </tr>
-             <!-- Aqui termina el for -->
-          </table>                 
-      </div>
-    </div>
-  </div>
-<!-- </div> -->
+  <% @count =  @count + 1 %>
+<% end %>
+
 <!-- fin del acordion -->
 
 <div class="modal" id="visualizador">

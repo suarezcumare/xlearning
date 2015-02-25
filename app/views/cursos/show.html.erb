@@ -2,10 +2,23 @@
   <%= stylesheet_link_tag    "cursos" %>
 <% end %>
 <div class="row">
-  <div id="baner" class="col s12 no-padding" style="background-image:url('/assets/torre.jpg')">  
-    <img  src="/assets/instructor3.jpeg" class="circulo"/>  
+
+  <% if ! @curso.foto.nil? %>
+  <div id="baner" class="col s12 no-padding" style="background-image:url('/systems/<%= request.subdomain%>/cursos/<%= @curso.foto %>')">  
+  <% else %>
+    <div id="baner" class="col s12 no-padding" >  
+  <% end %>
+
+     <% if ! @facilitador.perfil.foto.nil? and @facilitador.perfil.foto != "" %>
+          <img src="/systems/<%= request.subdomain %>/avatar/<%= @facilitador.perfil.foto %>" class="circulo">
+        <% else %>
+          <img src="/assets/avatar/sinfoto.jpg"  class="circulo">
+         
+        <% end %>
+
+
     <div class="titulo">  
-      <h4> <strong>API de Google Maps</strong></h4>
+      <h4> <strong><%= @curso.nombre %></strong></h4>
     </div>
   </div>  
 </div>
@@ -13,28 +26,44 @@
   <div class="col s4" style="padding-left:55px;">
     <div id="info-instructor">
       <h5 class="text-center">Instructor<br/> 
-        Richard Sanz</h5> 
-        <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+        <%= @facilitador.nombre %> <%= @facilitador.apellido %></h5> 
+        <p> <%=  @facilitador.perfil.biografia %></p>
+         <p> <%=  @facilitador.perfil.intereses %></p>
     </div>
     <div>
       <ul class="">
         <li class="">
-          <strong>Costo :</strong>    Bs1500  </li >
+          <strong>Costo :</strong>  <% if ! @curso.costo.nil? and @curso.costo != "" %>
+                    Bs  <%= @curso.costo %> 
+               <% else %>
+                    Gratis.
+               <% end %> </li >
         <li><strong>Puntuacion :</strong>
-          <div class="ec-stars-wrapper">
-           <a href="#" data-value="1" title="">&#9733;</a>
-           <a href="#" data-value="2" title="">&#9733;</a>
-           <a href="#" data-value="3" title="">&#9733;</a>
-           <a href="#" data-value="4" title="">&#9733;</a>
-           <a href="#" data-value="5" title="">&#9733;</a>
-          </div> 
+           <a id="value1"  href="#" data-value="1" title="" >&#9733;</a>
+           <a id="value2"  href="#" data-value="2" title="">&#9733;</a>
+           <a id="value3" href="#" data-value="3" title="">&#9733;</a>
+           <a id="value4" href="#" data-value="4" title="">&#9733;</a>
+           <a id="value5" href="#" data-value="5" title="">&#9733;</a>
         </li>
-        <li class="" ><strong>Categoría: </strong>   Servicios </li >
+        <% cursoc = CursoCategoria.where("curso_id = ?", @curso.id).limit(1) %>
+
+        <% cursoc.each do |cur| %>
+        <% cursoc = cur %>
+        <% end %>
+
+     
         <li class=""> 
           <strong>Nivel:</strong>     Intermedio
         </li >
+
+        
         <li class=""> 
-          <strong>Duración:</strong>   2 meses</li >
+          <% modulo = Modulo.new %>
+          <% grupo = Grupo.where("curso_id = ?", @curso.id)%>
+          <% grupo.each do |gru|%>
+          <% grupo = gru %>
+          <% end %>
+          <strong>Duración:</strong>  <%= modulo.duracion_curso(grupo.id)  %>  Dias</li >
         <li><p>Aproximadamente 4 horas de trabajo semanal.</p></li>
       </ul>
     </div >
@@ -51,35 +80,37 @@
 
     <div>
       <h5>Comparte este curso</h5>  
-      <a href="javascript:void(0)" class="gp"><i class="fa fa-google"></i> </a>
-      <a href="javascript:void(0)" class="fb"><i class="fa fa-facebook"></i></a>
-      <a href="javascript:void(0)" class="tw"><i class="fa fa-twitter"></i></a>
+
+      <a class="g-plus" data-action="share" data-annotation="none" data-height="24"></a>
+      <a class="fb-share-button" data-href="/systems/<%= request.subdomain %>/cursos/<%= params[:id]%>/ver" data-layout="button" ></a>
+      <a class="twitter-share-button" href="https://twitter.com/share" data-related="twitterdev" data-size="large" data-count="none"></a>
     </div>
     <br/>
     <br/>
+
     <table>
+      <% @critica = CriticaCurso.where("curso_id = ?", @curso.id).order("id desc") %>
+      <%  @critica.each do |crit|  %>
+       <%  @usuario = Usuario.includes(:perfil).where("id = ?", crit.autor_id).limit(1) %>
+
+       <% @usuario.each do |usu| %>
+       <% @usuario = usu %>
+       <% end %>
+
       <tr>
         <td> 
-          <img  src="/assets/chico1.jpeg" class="rosa">
+
+        <% if ! @usuario.perfil.foto.nil? and @usuario.perfil.foto != "" %>
+          <img src="/systems/<%= request.subdomain %>/avatar/<%= @usuario.perfil.foto %>" class="rosa">
+        <% else %>
+            <img  src="/assets/avatar/sinfoto.jpg" class="rosa">
+        <% end %>
         </td>
-        <td><p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <img  src="/assets/chico3.jpg" class="rosa" >
-        </td>
-        <td>
-          <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+        <td><p> <%= crit.contenido %> </p>
         </td>
       </tr>
-      <tr>
-        <td>
-          <img  src="/assets/chico2.jpg" class="rosa">
-        </td>
-        <td>
-          <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
-        </td>
+    <% end %>
+
       </tr>
     </table>
     <div>
@@ -94,49 +125,75 @@
         <h5> <strong class="text-uppercase">Inversion </strong> Bs 1500</h5> 
       </div>
       <div class="col s4">
-        <a href="javascript:void()" id="" class="btn btn-danger">Inscríbete</a>
+        <% @grup3o = Grupo.includes(:curso).where("curso_id = ? and usuario_id = ?", @curso.id, current_usuario.id) %>
+          <% @grup3o.each do |gr| %>
+          <% @grup3o = gr %>
+        <% end %>
+
+        <% if  @grup3o.nil? %>
+          <a href="/inscribirte/cursos/<%= @curso.id %>/<%= current_usuario.id %>" id="" class="btn btn-danger">Inscríbete</a>
+        <% elsif @grup3o.estatus.nil? %>
+            <a href="javascript:void(0)" id="" class="btn btn-primary">Preinscrito</a>
+        <% elsif  @grup3o.estatus == false  %>
+            <a href="javascript:void(0)" id="" class="btn btn-info">Negado</a>
+        <% else   %>
+            <a href="javascript:void(0)" id="" class="btn btn-info">Inscrito</a>
+
+        <% end %>
+        
       </div>
     </div>
     <div></div>
     <ul class="collapsible white">
       <li class="active">
         <div class="collapsible-header  descripcionuno"><h5><strong>Descripción</strong></h5></div>
-        <div class="collapsible-body"><p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+        <div class="collapsible-body"><p>
 
-          Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+           <% if ! @curso.descripcion.nil? and @curso.descripcion != "" %>
+                    <%= @curso.descripcion %> 
+               <% else %>
+                    No se conoce su descripción.
+               <% end %>
 
-          Maecenas sed di
-          am eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+        </p>
         </div>
       </li>
       <li>
         <div class="collapsible-header  descripcionuno"><h5><strong>Objetivos</strong></h5></div>
         <div class="collapsible-body">
-          <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+          <p>
 
-          Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+               <% if ! @curso.objetivos.nil? and @curso.objetivos != "" %>
+                    <%= @curso.objetivos %> 
+               <% else %>
+                    No se conocen sus objetivos.
+               <% end %>
 
-          Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
           </p>
         </div>
       </li>
       <li>
         <div class="collapsible-header  descripcionuno"><h5><strong>Requisitos</strong></h5></div>
         <div class="collapsible-body">
-          <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
-          Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
-
-          Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+          <p>
+              <% if ! @curso.prerequisitos.nil? and @curso.prerequisitos != "" %>
+                    <%= @curso.prerequisitos %> 
+               <% else %>
+                    No se conocen sus prerequisitos.
+               <% end %>
           </p>
         </div>
       </li>
       <li>
         <div class="collapsible-header  descripcionuno"><h5><strong>A quién está dirigido?</strong></h5></div>
         <div class="collapsible-body">
-          <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
-          Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
-
-          Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+          <p>
+             <% if ! @curso.perfil_estudiante.nil? and @curso.perfil_estudiante != "" %>
+                    <%= @perfil_estudiante %> 
+               <% else %>
+                    No se conoce su a quien va dirigido.
+               <% end %>
+          </p>
         </div>
       </li>
      
@@ -145,55 +202,51 @@
    
     <h5 class="text-center">Currículum</h5>
     <table class="bordered hoverable z-depth-1 white">
+      
+<% @count = 1 %>
+<% @modulo.each do  |modulo| %>
       <thead>
       <tr>
-        <th class="td"><strong class="text-uppercase">Seccion 1: </strong>  Introduccion
+        <th class="td"><strong class="text-uppercase"> Lección <%= @count %>: </strong>  <%= modulo.nombre %>
         </th>
       </tr>
       </thead>
       <tbody class="pad15-h">
-        <tr>
-          <td >What Does the Cpurse Cover?</td>
-        </tr>
-        <tr> 
-          <td>What you get with the course?</td>
-        </tr>
-        <tr>
-          <td>Frequently asked questions</td>
-        </tr>
+         <% modulo.contenidos.each do |contenido| %>
+          <% @objeto = ArchivoObjetoAprendizaje.includes(:objeto_aprendizaje).where("archivo_objeto_aprendizajes.id = ?",  contenido.objeto_aprendizaje.id ) %>
+
+            <% @objeto.each do |archivoObjetoAprendizaje| %>
+                
+                <% if ! archivoObjetoAprendizaje.objeto_aprendizaje.nil? %>
+                     <tr>
+                      <td>  <%= archivoObjetoAprendizaje.objeto_aprendizaje.nombre %> </td>
+                    </tr>
+                <% end %>
+
+            <% end %> 
+     <%  end %> 
       </tbody> 
-      <thead>
-        <tr>
-          <th class="td"><strong class="text-uppercase">Seccion 2: </strong> Installing OSX on windows PC</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr> 
-          <td>What Does the Cpurse Cover?</td>
-        </tr>
-        <tr>
-          <td>What Does the Cpurse Cover?</td>
-        </tr>
-        <tr>
-          <td>What Does the Cpurse Cover?</td>
-        </tr>
-      </tbody>
-      <thead>
-        <tr>
-          <th class="td "><strong class="text-uppercase">Seccion 3: </strong>Setup & Hello Word</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>What Does the Cpurse Cover?</td>
-        </tr>
-        <tr>
-          <td>What Does the Cpurse Cover?</td>  
-        </tr>
-        <tr>
-          <td>What Does the Cpurse Cover?</td>
-        </tr>
-      </tbody>
+      <% @count = @count + 1 %>
+<%  end %>      
     </table>
   </div>
 </div> 
+
+<% content_for :js_personalizado do %>
+
+<script>
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+</script>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script src="https://apis.google.com/js/plusone.js"></script>
+
+
+<% end %>

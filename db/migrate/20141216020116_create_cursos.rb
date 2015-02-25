@@ -2,6 +2,7 @@ class CreateCursos < ActiveRecord::Migration
   def change
     create_table :cursos do |t|
       t.string :nombre
+      t.string :imagen
       t.text :descripcion
       t.text :objetivos
       t.text :prerequisitos
@@ -12,8 +13,8 @@ class CreateCursos < ActiveRecord::Migration
       t.float :puntaje_aprobacion
       t.integer :horas_semanales
       t.boolean :estatus
-      t.references :facilitador, index: true
-      t.references :comentario, index: true
+      t.string :imagen_url
+      t.string :foto
     end
   end
 end

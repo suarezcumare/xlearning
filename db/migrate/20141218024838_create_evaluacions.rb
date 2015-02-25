@@ -1,7 +1,7 @@
 class CreateEvaluacions < ActiveRecord::Migration
   def change
     create_table :evaluacions do |t|
-      t.references :curso, index: true
+      t.references :modulo, index: true
       t.string :titulo
       t.text :descripcion
       t.integer :duracion, :default => -1
@@ -13,6 +13,7 @@ class CreateEvaluacions < ActiveRecord::Migration
       t.float :valor_preguntas_cerradas
       t.float :puntuacion
       t.boolean :tipo
+      t.references :modulo, index: true
     end
   end
 end

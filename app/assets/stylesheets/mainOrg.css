@@ -12,7 +12,7 @@ a:focus {
   outline: none;
 }
 #main-slider {
-  background-image: url(../assets/cocina/slider-bg.jpg);
+  
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 50%;

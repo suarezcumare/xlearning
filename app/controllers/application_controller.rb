@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :load_db, :load_menu
+  before_action :authenticate_usuario!
 
   def ensure_signup_complete
     # Ensure we don't go into an infinite loop
@@ -24,12 +25,11 @@ class ApplicationController < ActionController::Base
   end
 
   private
-  	def load_db
-  		Apartment::Tenant.switch()
-  		return unless request.subdomain.present?
-
-  		o = BaseDato.find_by(nombre: request.subdomain)
-  		if o
+    def load_db
+      Apartment::Tenant.switch()
+      return unless request.subdomain.present?
+  		o = Organizacion.where(["subdominio = ?", request.subdomain]).pluck(:subdominio)
+  		if o.length > 0
   			Apartment::Tenant.switch(request.subdomain)
   		else
   			redirect_to root_url(subdomain: false)

@@ -27,6 +27,7 @@
     <%= stylesheet_link_tag    "materialize.min" %>
     <%= stylesheet_link_tag    "bootstrap-blue-theme" %>
     <%= stylesheet_link_tag    "font-awesome.min" %>
+    <%= stylesheet_link_tag    "plugins/sweet-alert" %>
     <% #stylesheet_link_tag "http://fonts.googleapis.com/css?family=Roboto" %>
     <% #stylesheet_link_tag "http://fonts.googleapis.com/css?family=Raleway:600" %>
 
@@ -55,7 +56,7 @@
         </div>
       <% else %>
         <%= yield %>
-        <footer>
+        <footer class="page-footer">
           <%= render "application/portal/footer" %>
         </footer>
       <% end %>

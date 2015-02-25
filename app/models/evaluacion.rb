@@ -3,8 +3,4 @@ class Evaluacion < ActiveRecord::Base
   has_many :evaluacion_grupos
   has_many :grupos, :through => :evaluacion_grupos
   belongs_to :modulo
-  accepts_nested_attributes_for :evaluacion_grupos
-  accepts_nested_attributes_for :pregunta
-
-
 end

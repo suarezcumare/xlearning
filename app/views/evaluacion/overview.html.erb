@@ -13,23 +13,15 @@
 	<div class="col-lg-7">
 		<div class="panel block-center">
 			<div class="panel-body pad30 pad45-h">
-										
-
-				<h4>Cuestionario: <%= @evaluaciongrupos.evaluacion.titulo %></h4>
-				<p>Con este cuestionario se pretende:  <%= @evaluaciongrupos.evaluacion.descripcion %>.
+				<h4>Cuestionario: Distancias eulerianas</h4>
+				<p>Con este cuestionario se pretende evaluar el conocimiento teórico del estudiante en el área de distancias eulerianas.
 					<br/>
-					<i class="mdi-action-schedule"></i> Tiempo: <%= @evaluaciongrupos.evaluacion.duracion %> min.<br>
+					<i class="mdi-action-schedule"></i> Tiempo: 15 min.<br>
 					<i class=""></i> Intentos: 2 de 5<br>
-					<i class=""></i> Ponderación: <%= @evaluaciongrupos.evaluacion.puntuacion %> puntos<br> 
-					<i class=""></i> Abierto hasta: <%=h  @evaluaciongrupos.fecha_cierre.strftime('%d-%m-%Y') %><br> 
+					<i class=""></i> Ponderación: 10 puntos<br> 
+					<i class=""></i> Abierto hasta: Enero, 15 de 2015<br> 
 				</p>
-				<% hoy =  Date.today %>
-				<% cierre =   @evaluaciongrupos.fecha_cierre %>
-				<% if  hoy >=  cierre %>
-					<a href="/clases/1/evaluacion/1/presentar" class="btn btn-primary" disabled>comenzar</a>
-				<% else %>
-					<a href="/clases/1/evaluacion/1/presentar" class="btn btn-primary">comenzar</a>
-				<% end %>
+				<a href="/clases/1/evaluacion/1/presentar" class="btn btn-primary">comenzar</a>
 			</div>
 		</div>
 	</div>

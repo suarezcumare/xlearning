@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150122004428) do
+ActiveRecord::Schema.define(version: 20150217145409) do
 
   create_table "archivo_objeto_aprendizajes", force: true do |t|
     t.binary   "archivo"
@@ -45,9 +45,11 @@ ActiveRecord::Schema.define(version: 20150122004428) do
     t.text    "instrucciones"
     t.float   "puntuacion",    limit: 24
     t.integer "curso_id"
+    t.integer "modulo_id"
   end
 
   add_index "asignacions", ["curso_id"], name: "index_asignacions_on_curso_id", using: :btree
+  add_index "asignacions", ["modulo_id"], name: "index_asignacions_on_modulo_id", using: :btree
 
   create_table "autenticacions", force: true do |t|
     t.integer  "usuario_id"
@@ -161,6 +163,15 @@ ActiveRecord::Schema.define(version: 20150122004428) do
   add_index "entrega_asignacions", ["tipoformato_id"], name: "index_entrega_asignacions_on_tipoformato_id", using: :btree
   add_index "entrega_asignacions", ["usuario_id"], name: "index_entrega_asignacions_on_usuario_id", using: :btree
 
+  create_table "estructura_oferta_academica_hierarchies", id: false, force: true do |t|
+    t.integer "ancestor_id",   null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations",   null: false
+  end
+
+  add_index "estructura_oferta_academica_hierarchies", ["ancestor_id", "descendant_id", "generations"], name: "estructura_oferta_academica_anc_desc_idx", unique: true, using: :btree
+  add_index "estructura_oferta_academica_hierarchies", ["descendant_id"], name: "estructura_oferta_academica_desc_idx", using: :btree
+
   create_table "estructura_oferta_academicas", force: true do |t|
     t.integer  "padre_id"
     t.string   "nombre"
@@ -206,9 +217,11 @@ ActiveRecord::Schema.define(version: 20150122004428) do
     t.float   "valor_preguntas_cerradas", limit: 24
     t.float   "puntuacion",               limit: 24
     t.boolean "tipo"
+    t.integer "modulo_id"
   end
 
   add_index "evaluacions", ["curso_id"], name: "index_evaluacions_on_curso_id", using: :btree
+  add_index "evaluacions", ["modulo_id"], name: "index_evaluacions_on_modulo_id", using: :btree
 
   create_table "frecuencia_pagos", force: true do |t|
     t.string   "nombre"
@@ -238,6 +251,15 @@ ActiveRecord::Schema.define(version: 20150122004428) do
 
   add_index "historials", ["curso_id"], name: "index_historials_on_curso_id", using: :btree
   add_index "historials", ["usuario_id"], name: "index_historials_on_usuario_id", using: :btree
+
+  create_table "item_estructura_oferta_academica_hierarchies", id: false, force: true do |t|
+    t.integer "ancestor_id",   null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations",   null: false
+  end
+
+  add_index "item_estructura_oferta_academica_hierarchies", ["ancestor_id", "descendant_id", "generations"], name: "item_estructura_oferta_academica_anc_desc_idx", unique: true, using: :btree
+  add_index "item_estructura_oferta_academica_hierarchies", ["descendant_id"], name: "item_estructura_oferta_academica_desc_idx", using: :btree
 
   create_table "item_estructura_oferta_academicas", force: true do |t|
     t.string  "nombre"
@@ -364,6 +386,7 @@ ActiveRecord::Schema.define(version: 20150122004428) do
     t.string  "email3"
     t.string  "email4"
     t.integer "usuario_id"
+    t.string  "portada",     limit: 256
   end
 
   add_index "organizacions", ["pais_id"], name: "index_organizacions_on_pais_id", using: :btree
@@ -408,7 +431,7 @@ ActiveRecord::Schema.define(version: 20150122004428) do
   end
 
   create_table "perfils", force: true do |t|
-    t.binary  "foto"
+    t.string  "foto",         limit: 100
     t.string  "formato_foto"
     t.boolean "sexo"
     t.text    "intereses"
@@ -502,6 +525,12 @@ ActiveRecord::Schema.define(version: 20150122004428) do
   end
 
   add_index "sugerencia", ["usuario_id"], name: "index_sugerencia_on_usuario_id", using: :btree
+
+  create_table "tipo_archivos", force: true do |t|
+    t.string "nombre"
+    t.text   "descripcion"
+    t.string "icono"
+  end
 
   create_table "tipo_eventos", force: true do |t|
     t.string   "titulo"

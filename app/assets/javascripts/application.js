@@ -16,9 +16,12 @@
 //= require react
 //= require react_ujs
 //= require bootstrap.min
+//= require fluxxor
+// require fluxxor.js.map
 //= require materialize.min
 //= require jquery.validate.min
 //= require additional-methods.min
+//= require plugins/sweet-alert.min.js
 //= require validaciones
 //= require main
-// require_tree ./componentes
+//= require_tree ./componentes

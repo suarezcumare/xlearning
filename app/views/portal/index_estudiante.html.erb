@@ -16,35 +16,47 @@
 <div class="row">
 	<div class="col s6">
 		<div class="panel panel-success">
+			
 			<div class="panel-heading"><i class="fa fa-bullhorn"></i> Últimos Mensajes</div>
 				<ul id="lista-ultimos-mensajes" class="bordered hoverable">
-					<li class="mensaje-instructor">
-						<div class="media">
-						  <a class="media-left media-middle" href="javascript:void(0)">
-						    <img src="/assets/profile_user.jpg" alt="..." class=" avatar img-circle img-responsive">
-						  </a>
-						  <div class="media-body">
-						    <blockquote>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget ...</blockquote>
-						    <!-- <a href="javascript:void(0)" class="btn btn-link">Ver todo</a> -->
-						  </div>
-						</div>
-						<div class="text-muted text-right">9 de Ene de 2015, 4:35 p.m.</div>
-						<div class="text-muted text-right">Publicado en el curso de API de Google Maps</div>
-					</li>
-					<li class="mensaje-chat">
-						<div class="media">
-						  <a class="media-left media-middle" href="javascript:void(0)">
-						    <img src="/assets/chico2.jpg" alt="..." class=" avatar img-circle img-responsive">
-						  </a>
-						  <div class="media-body">
-						    <blockquote>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget ...</blockquote>
-						    <!-- <a href="javascript:void(0)" class="btn btn-link">Ver todo</a> -->
-						  </div>
-						</div>
-						<div class="text-muted text-right">7 de Ene de 2015, 4:13 p.m.</div>
-						<div class="text-muted text-right">Mensaje privado</div>
-					</li>
+					<% @gru = Grupo.where("grupos.usuario_id  = ? and fecha_fin >= ?", current_usuario.id, Date.today) %>
+
+					<% if @gru.count > 0%>
+
+						<% @gru.each do |grupo| %>
+					   <%  @mensaje = Mensaje.where("grupo_id = ?", grupo.id).order("publicado DESC").limit(4) %>
+
+						<% @mensaje.each do |mensaje|%>
+						<% if ! mensaje.nil? %>
+
+								<li class="mensaje-instructor">
+									<div class="media">
+									  <a class="media-left media-middle" href="javascript:void(0)">
+									  	<% if ! mensaje.usuario.perfil.foto.nil? and mensaje.usuario.perfil.foto != ""  %>
+									      <img src="/systems/<%= request.subdomain%>/avatar/<%= mensaje.usuario.perfil.foto %>" alt="..." class=" avatar img-circle img-responsive">
+									      <% else %>
+									      	 <img src="/assets/avatar/sinfoto.jpg" alt="..." class=" avatar img-circle img-responsive">
+									      <% end %>
+									  </a>
+									  <div class="media-body">
+									    <blockquote><%= mensaje.titulo %>: <%= mensaje.contenido %></blockquote>
+									    <!-- <a href="javascript:void(0)" class="btn btn-link">Ver todo</a> -->
+									  </div>
+									</div>
+									<div class="text-muted text-right"> <%=h mensaje.publicado.strftime('%d/%m/%Y') %>, <%=h mensaje.publicado.strftime('%H:%M') %>.</div>
+									<div class="text-muted text-right">Publicado en el curso de <%= grupo.curso.nombre %></div>
+								</li>
+
+						<% end  %>
+						<% end  %>
+					<% end %>
+
+					<% end %>
+
+
+					
 				</ul>
+
 		</div>
 	</div>
 	<div class="col s6">
@@ -54,11 +66,25 @@
 			</div>
 			<div class="panel-body">
 				<ul id="lista-ultimas-acciones" class="bordered hoverable">
-					<li>Se publicó la unidad 3 del curso "API de Google Maps".</li>
-					<li>Se corrigió el cuestionario de la unidad 2.</li>
-					<li>Finalizó el tiempo de entrega para la actividad 3.</li>
-					<li>Se aperturó una nueva edición de "Seguridad Web".</li>
-					<li>Hay un nuevo mensaje en el tema que estás siguiendo.</li>
+
+					<% @gru = Grupo.where("grupos.usuario_id  = ? and fecha_fin >= ?", current_usuario.id, Date.today) %>
+
+					<% if @gru.count > 0 %>
+						<% @gru.each do |grupo| %>
+						<% 	@evaluaciongrupos = EvaluacionGrupo.includes(:evaluacion).where("grupo_id = ?", grupo.id).order('fecha_habilitacion ASC').limit(4) %>
+
+								<% @evaluaciongrupos.each do |evaluaciongrupo| %>
+									<% if ! evaluaciongrupo.nil? %>
+											<li>Tienes pendiente: <%=  evaluaciongrupo.evaluacion.titulo %> en: "<%= grupo.curso.nombre %>".</li>
+
+									<% end %>
+
+								<% end %>	
+
+					<% end %>
+
+					<% end %>
+
 				</ul>
 			</div>
 		</div>

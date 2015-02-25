@@ -3,7 +3,7 @@ class CreateObjetoAprendizajes < ActiveRecord::Migration
     create_table :objeto_aprendizajes do |t|
       t.string :nombre
       t.text :descripcion
-      t.integer :orden
+      t.references :tipo_archivo
     end
   end
 end

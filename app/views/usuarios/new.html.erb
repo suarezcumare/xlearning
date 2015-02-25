@@ -1,5 +1,5 @@
 <% content_for :css_personalizado do %>
-   <%= stylesheet_link_tag    "usuarios" %>
+   <%= stylesheet_link_tag    "organizacion" %>
 <% end %>
 
 <div class="row titulo-seccion">
@@ -25,14 +25,6 @@
 						<span class="desc">
 						<i class="fa fa-check"></i> Cuenta </span>
 						</a>
-						 <!--  <span class='select_respuesta'>
-    										<%= #check_box_tag "pregunta[respuesta_ids][#{r.id}]",r.id %>
-  											  <%= #label_tag "pregunta[respuesta_ids][#{r.id}]", r.valor %>
-  											</span>	-->
-
-
-						<input id="idRespuesta" name="respuesta" type="radio" value="valor" />
-												<label for="idRespuesta"><%= label_tag r.valor %></label>	
 					</li>
 					<li>
 						<a href="#tab2" data-toggle="tab" class="step">

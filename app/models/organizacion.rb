@@ -2,12 +2,21 @@ class Organizacion < ActiveRecord::Base
 
 	after_create do
 		Apartment::Tenant.create(self.subdominio)
-		BaseDato.create(nombre: self.subdominio)
 		@u = self.usuario.clone
 		Apartment::Tenant.switch(self.subdominio)
 		@u.save
 		@nuevo_rol = @u.usuario_rols.build(:rol => Rol.first) 
 		@nuevo_rol.save
+
+			dir = "public/systems/"+ self.subdominio + "/avatar"
+		    FileUtils.mkdir_p(dir) unless File.directory?(dir)
+
+		 	dir = "public/systems/"+ self.subdominio + "/portafolio"
+			 FileUtils.mkdir_p(dir) unless File.directory?(dir)
+
+			 dir = "public/systems/"+ self.subdominio + "/cursos"
+			 FileUtils.mkdir_p(dir) unless File.directory?(dir)
+			 
 		Apartment::Tenant.switch()
 	end
 	RESTRICTED_SUBDOMAINS = %w{www}
@@ -26,7 +35,8 @@ class Organizacion < ActiveRecord::Base
 	belongs_to :usuario, class_name: "Usuario", foreign_key: "usuario_id", :inverse_of=>:organizacion
 	has_many :organizacion_red_social, class_name: "OrganizacionRedSocial"
 	has_many :contratos, class_name: "Contrato"
-  	has_many :redes_sociales, :through => :organizacion_red_social
+  	has_many :red_social, :through => :organizacion_red_social
 
   	accepts_nested_attributes_for :contratos
 end
+

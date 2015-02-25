@@ -6,6 +6,7 @@ class CreateAsignacions < ActiveRecord::Migration
       t.text :instrucciones
       t.float :puntuacion
       t.references :curso, index: true
+       t.references :modulo, index: true
     end
   end
 end

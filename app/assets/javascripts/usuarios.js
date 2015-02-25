@@ -32,50 +32,56 @@ $(document).ready(function(){
     $('#form_wizard_1 .alert-success').hide();
     $('#form_wizard_1').find('.button-previous').hide();
     $('#form_wizard_1 .button-submit').hide();
-    $('#usuario_password').pwstrength({
-        common: {
-            minChar:8,
-            usernameField:"#usuario_email",
-            viewports: {
-                progress: ".pwstrength_viewport_progress"
-            }
-        },
-        ui: {
-            showVerdictsInsideProgressBar: false,
-            showStatus:false,
-            verdicts: ["Seguridad: Débil", "Seguridad: Normal", "Seguridad: Medio",
-                "Seguridad: Fuerte", "Seguridad: Muy fuerte"]
-        },
-        rules:{
-            scores:{
-              wordNotEmail: -80,
-              wordLength: -8,
-              wordSimilarToUsername: -30,
-              wordSequences: -20,
-              wordTwoCharacterClasses: 2,
-              wordRepetitions: -50,
-              wordLowercase: 1,
-              wordUppercase: 3,
-              wordOneNumber: 8,
-              wordThreeNumbers: 15,
-              wordOneSpecialChar: 5,
-              wordTwoSpecialChar: 10,
-              wordUpperLowerCombo: 8,
-              wordLetterNumberCombo: 2,
-              wordLetterNumberCharCombo: 2
-            }
-        }
-    });
+    // $('#usuario_password').pwstrength({
+    //     common: {
+    //         minChar:8,
+    //         usernameField:"#usuario_email",
+    //         viewports: {
+    //             progress: ".pwstrength_viewport_progress"
+    //         }
+    //     },
+    //     ui: {
+    //         showVerdictsInsideProgressBar: false,
+    //         showStatus:false,
+    //         verdicts: ["Seguridad: Débil", "Seguridad: Normal", "Seguridad: Medio",
+    //             "Seguridad: Fuerte", "Seguridad: Muy fuerte"]
+    //     },
+    //     rules:{
+    //         scores:{
+    //           wordNotEmail: -80,
+    //           wordLength: -8,
+    //           wordSimilarToUsername: -30,
+    //           wordSequences: -20,
+    //           wordTwoCharacterClasses: 2,
+    //           wordRepetitions: -50,
+    //           wordLowercase: 1,
+    //           wordUppercase: 3,
+    //           wordOneNumber: 8,
+    //           wordThreeNumbers: 15,
+    //           wordOneSpecialChar: 5,
+    //           wordTwoSpecialChar: 10,
+    //           wordUpperLowerCombo: 8,
+    //           wordLetterNumberCombo: 2,
+    //           wordLetterNumberCharCombo: 2
+    //         }
+    //     }
+    // });
+ 
     $("#agregar-red-social a").click(function(){
     	var source = this;
     	if($("#lista-redes-sociales").hasClass("vacia"))
     		$("#lista-redes-sociales").removeClass("vacia").addClass("llena");
     	var class_a = $(source).attr("class"),
-    		class_i = $(source).children().first().attr("class");
-    	$("#lista-redes-sociales").append("<li><div class='input-group'><span class='input-group-addon "+
-    				class_a+"'><i class='"+class_i+"'></i></span>"+
-  					"<input type='text' class='form-control'></div></li>");
+    		class_i = $(source).children().first().attr("class"),
+             id_a = $(source).attr("id");
+    	 $("#lista-redes-sociales").append("<li><div class='input-group'><span class='input-group-addon "+
+                    class_a+"'><i class='"+class_i+"'></i></span>"+
+                    "<input id='usuario_perfil_attributes_"+id_a+"' name='usuario[perfil_attributes]["+id_a+"]' type='text' class='form-control'></div></li>");
     });
+
+
+   
+
 
     //Mostrar el mensaje de cuando se vence el contrato actual
     $(".tab-pane").on("change","#usuario_organizacion_attributes_contratos_attributes_0_frecuencia_pago_id",

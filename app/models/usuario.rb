@@ -15,8 +15,8 @@ class Usuario < ActiveRecord::Base
   has_many :autenticacions, dependent: :delete_all
   has_many :usuario_rols, class_name: "UsuarioRol", foreign_key: "usuario_id"
   has_many :rols, :through => :usuario_rols
-  has_many :usuario_red_social, class_name: "UsuarioRedSocial", foreign_key: "usuario_id"
-  has_many :redes_sociales, :through => :usuario_red_social
+  has_many :usuario_red_social, class_name: "UsuarioRedSocial"
+  has_many :red_social, :through => :usuario_red_social
   has_many :sugerencia
   has_many :entrega_asignacions
   has_many :matriculas
@@ -29,8 +29,10 @@ class Usuario < ActiveRecord::Base
   has_one :perfil
   has_one :organizacion, :inverse_of=>:usuario
 
+
   accepts_nested_attributes_for :organizacion
   accepts_nested_attributes_for :perfil
+  accepts_nested_attributes_for :pais
 
   attr_accessor :rol_actual
   @rol_actual
@@ -89,3 +91,9 @@ class Usuario < ActiveRecord::Base
   end
 
 end
+
+
+   
+
+
+

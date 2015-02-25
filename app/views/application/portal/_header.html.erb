@@ -1,7 +1,15 @@
 <nav id="menu-header">
     <div class="nav-wrapper inverse">
       <a href="javascript:void(0)" class="brand-logo">
-      	<img src="/assets/logo-header.png"/>Learning
+
+     
+        <% @organizacion = Organizacion.find_by(subdominio: request.subdomain) %>
+    
+         <% if ! @organizacion.logo.nil? and @organizacion.logo != "" %>
+          <img src="/systems/<%= request.subdomain %>/portafolio/<%= @organizacion.logo %>" style="width: 33px;"> <%= @organizacion.nombre %>
+        <% else %>
+          <img src="/assets/logo-header.png" /> <%= @organizacion.nombre %>
+        <% end %>  
       </a>
       <a id="busqueda-trigger" class="activar-busqueda" href="javascript:void(0)"><i class="mdi-action-search"></i></a>
       <% if usuario_signed_in? %>
@@ -20,8 +28,13 @@
         	<a href="javascript.html" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
         		<div class="media logged-in-usuario">
         			<div class="media-left">
-    						<img src="/assets/avatar/usuario-<%= current_usuario.id%>.jpg" class="img-circle" alt=""/>
-    					</div>
+              
+                <% if ! current_usuario.perfil.foto.nil? and current_usuario.perfil.foto != "" %>
+    						      <img src="/systems/<%= request.subdomain %>/avatar/<%= current_usuario.perfil.foto %>" class="img-circle" alt=""/>
+    					   <% else %>
+                      <img src="/assets/avatar/sinfoto.jpg" />
+                 <% end %>
+              </div>
     					<div class="media-body">
     						<h6 class="media-heading"><%= current_usuario.nombre%></h6>
     						<span class="rol"><%= current_usuario.rol_actual.nombre %></span>
@@ -29,8 +42,9 @@
 				    </div>
         	</a>
         	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-  			    <li role="presentation"></li> 
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Cambiar rol</a></li>
+            <li role="presentation">
+              <a id="cambiar-rol"role="menuitem" tabindex="-1" href="javascript:void(0)">Cambiar rol</a>
+            </li>
   			    <li role="presentation"><%= link_to "Salir", destroy_usuario_session_url,method: :delete %></li>
 			    </ul>
         </li>

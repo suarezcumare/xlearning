@@ -12,15 +12,24 @@
 
 <div class="pad15"></div>
 <div class="row">
-	<div class="col s7">
-		<form action="javascript:void(0)" method="post">
-			<label>Quién puede ver mi perfil</label>
-			<select>
-				<option>Cualquier persona</option>
-				<option>Solo usuarios registrados</option>
-				<option>Solo yo</option>
-			</select>
-			<label>Enviarme un correo cuando se notifique </label>
-		</form>
-	</div>
+	
+		 <%= form_for(@usuario,  :as => resource_name, :url => preferencias_path, :html => { :method => :post }) do |f| %>
+		  <%= f.fields_for :perfil do |perfil| %>
+			
+		<div class="col s6">
+              <label>Quién puede ver mi perfil</label>
+              <%= perfil.select :preferencia, options_for_select( [ ["Cualquier Persona", "cualquier persona"], ["Solo Usuarios Registrados","solo usuarios registrados"], ["Solo yo","solo yo"] ],  @usuario.perfil.preferencia   )  %>
+               
+         </div>
+         <div class="col s6">
+              <%= f.submit "Actualizar", :class => 'btn btn-success' %>  
+         </div>
+
+          <% end %> 
+         <% end %> 
+
+
+	
 </div>
+
+<label>Enviarme un correo cuando se notifique </label>
